@@ -10,5 +10,5 @@ I am currently a Lecturer in linguistics at [Washington University in St. Louis]
 
 ## From Posts
 
-* [Designing the Smart City]({% link 2024-12-10-designing-the-smart-city.md %})
+* [Designing the Smart City]({% link _includes/_posts/2024-12-10-designing-the-smart-city.md %})
 * [KMLA Forge & BUZ Aerospace](https://realtonypark3.github.io/)
