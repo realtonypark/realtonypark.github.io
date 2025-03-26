@@ -3,6 +3,8 @@ layout: post
 title: The Visual Grammar of Anthropocentrism in Jaws
 tags: film 
 published: true
+excerpt: |
+    <p>An argument essay. Building on Brett Mills' article about <i>Jaws</i>, this essay analyzes how cinematographic techniques like edge framing, lens choices, and slow-motion reinforce the film's anthropocentric perspective. The analysis demonstrates how these formal elements center human experiences while reducing the shark to a narrative device, extending Mills' argument that cinema inherently privileges human perspectives and constructs animals as monsters rather than natural beings.</p>
 ---
 
 In his article "Jaws, Anthropocentrism and Cinema as a Monster-Making Machine," Brett Mills distinguishes between the film <i>Jaws</i> (Spielberg 1975) and the novel version, arguing that cinema's form inherently privileges human perspectives. While the novel presents sharks as biological entities in a real-world context, the film utilizes the shark as a narrative device that primarily serves to tell human stories. Mills argues that this difference isn't just due to Spielberg's choices, but rather that cinema as a medium contains embedded conventions and reliance on audio-visual elements that make it especially prone to anthropocentrism, the perspective that humans are central and all other beings are valued only in relation to human experience. His argument of how <i>Jaws</i> constructs the shark as a monster through cinematic techniques can be extended further by analyzing how additional formal elements in the film reinforce the anthropocentric view. <i>Jaws</i>' cinematographic techniques, such as cinemascope camera, edge framing, dolly zoom effect, and slow-motion, not only participate in monster-making but actively center the human experience while reducing the shark to a narrative device supporting human drama.
@@ -22,8 +24,8 @@ To sum up, the cinematographic techniques that isolate chief Brody, the choice o
 
 Actually, Mills' argument has implications beyond <i>Jaws</i> itself. As he notes, the "Jaws effect" has an impact on the real world, with "fictional narratives of shark behaviour from film used as historical analogies to frame real-life situations" (Mills 23). The film's monster-making techniques have contributed to prejudices and a cultural understanding that considers sharks extremely dangerous, although shark attacks on humans are rarer than people imagine. By recognizing the inherent anthropocentrism caused by the limitations of the medium of cinema, we can become more critical viewers, especially when we see animals that claim to present a perspective other than that of humans.
 
-
-Works Cited  
+<br>
+<b>Works Cited<b> 
 
 <i>Jaws<i/>. Directed by Steven Spielberg, Universal Pictures, 1975. <i>Ares</i>. 
 
