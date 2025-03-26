@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Identity Division and Dissolution: Mind-Body Split in \"Sleep\""
-tags: fun
+tags: analysis
 published: true
 excerpt: |
     <p>An analysis on short story. This essay examines how Murakami's short story "Sleep" portrays a woman's insomnia as creating a split between mind and body that evolves into a deeper fracture between her social roles and autonomous self. Though this division initially seems liberating, allowing her to reclaim her pre-marriage identity as a passionate reader, the essay argues that her eventual psychological fragmentation serves as a warning that true authenticity requires integrating personal desires with social obligations.</p>

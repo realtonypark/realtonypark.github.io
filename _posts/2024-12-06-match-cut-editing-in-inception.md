@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Match Cut Editing in Inception
-tags: film fun 
+tags: film analysis fun 
 published: true
 excerpt: |
     <p>A film multi-shot analysis essay. This essay explores how Nolan's <i>Inception</i> employs match cut editing to visually connect actions across different dream levels. By analyzing three key match cuts—water as a kick mechanism, the tilting van affecting gravity, and the van's impact causing Arthur's fall—the essay shows how this editing technique helps viewers comprehend the complex vertical relationships between simultaneous dream layers and understand the film's intricate plot structure.</p>

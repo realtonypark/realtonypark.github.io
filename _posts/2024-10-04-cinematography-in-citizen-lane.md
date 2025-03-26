@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Cinematography in <em>Citizen Kane</em>"
-tags: film fun 
+title: Cinematography in Citizen Kane
+tags: film analysis fun 
 published: true
 excerpt: |
     <p>A film one-shot analysis essay. This analysis focuses on how <i>Citizen Kane</i> uses deep focus and long take cinematography in a pivotal scene where adults decide young Kane's future while he plays in the snow. The essay argues that by simultaneously presenting multiple planes of action through deep focus, the scene visually expresses the film's key themes: the loss of childhood innocence, the unreliability of memory, and the elusive nature of truth, mirroring how the reporter must piece together Kane's fragmented story.</p>

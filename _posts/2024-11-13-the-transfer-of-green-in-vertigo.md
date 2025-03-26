@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Transfer of Green in Vertigo
-tags: film fun 
+tags: film analysis fun 
 published: true
 excerpt: |
     <p>A film multi-shot analysis essay. This analysis examines how Hitchcock's <i>Vertigo</i> uses the color green as a visual motif that shifts from Madeleine to Scottie, symbolizing how Scottie is consumed by his love for someone who doesn't exist. Through three key shots—Madeleine in a green dress, her green car, and Scottie wearing a green sweater—the essay demonstrates how this color transfer visually reinforces the film's central theme of destructive obsession with illusion.</p>
