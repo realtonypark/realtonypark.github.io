@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Identity Division and Dissolution\: Mind-Body Split in "Sleep"
+title: Identity Division and Dissolution Mind-Body Split in Sleep
 tags: fun
 published: true
 ---
@@ -15,5 +15,7 @@ However, this partition between social and egoistic identities ultimately collap
 
 Through the protagonist's experience from initial mind-body separation to complete psychological fragmentation, Murakami's "Sleep" offers a warning about the dangers of viewing personal desires and social roles as mutually exclusive states. While modern society often encourages us to "find ourselves" by breaking free from social constraints, the protagonist's descent into chaos suggests that authentic self-realization cannot come from rejecting our connections to others. This short story thus challenges discourse about individual freedom, suggesting that true authenticity must find ways to integrate, rather than escape, our obligations to others.
 
-Works Cited  
+
+Works Cited
+
 Murakami, Haruki. “Sleep.” <i>The Elephant Vanishes</i>, Vintage Books, 1993, pp. 74-110.

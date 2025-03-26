@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Designing the Smart City (<a href="https://realtonypark2.github.io">Full Post</a>)
+title: Designing the Smart City
 tags: project
 published: true
 excerpt: |
@@ -10,4 +10,4 @@ excerpt: |
 >In "Triumph of the City," Glaeser describes cities as "the absence of physical space between people and companies" and demonstrates their fundamental role in human progress. His research reveals that more urbanized countries experience five times higher incomes and lower infant mortality rates compared to their less urbanized counterparts. Glaeser argues that meaningful human innovation began with the establishment of cities. When people live in close proximity, they become smarter through collaboration, leading to the advancement of civilization.
 >I propose a more comprehensive definition of a smart city: an environment that beyond technology use, (1) promotes citizen's well-being, (2) maximizes human interactions while (3) occupying less space. This definition builds on Glaeser's emphasis on cities as catalysts for human interaction and addresses contemporary challenges due to rapid urbanization. [...]
 
-[Full post →](https://realtonypark2.github.io)
+[Full paper →](https://realtonypark2.github.io)

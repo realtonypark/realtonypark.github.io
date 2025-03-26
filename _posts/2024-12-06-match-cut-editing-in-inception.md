@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Match Cut Editing in <i>Inception</i>"
+title: Match Cut Editing in Inception
 tags: film fun 
 published: true
 ---
