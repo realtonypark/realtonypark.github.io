@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Transfer of Green in Vertigo
+title: The Transfer of Green in *Vertigo*
 tags: film fun 
 published: true
 ---

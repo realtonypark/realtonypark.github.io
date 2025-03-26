@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cinematography in Citizen Kane
+title: Cinematography in *Citizen Kane*
 tags: film fun 
 published: true
 ---
