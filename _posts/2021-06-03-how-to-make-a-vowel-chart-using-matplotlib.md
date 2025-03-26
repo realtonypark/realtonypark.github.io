@@ -4,7 +4,7 @@ title: How to make a vowel chart using matplotlib and python
 tags: phonetics phonology tutorial python
 toc: true
 thumbnail: /assets/posts/output_14_0.png
-published: true
+published: false
 ---
 
 This post explains several methods for plotting a phonetic vowel space from F1 and F2 values. The data here is generated randomly, but any Excel or CSV file of your own can be imported in its place. 

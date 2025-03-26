@@ -1,15 +1,13 @@
 # personal info
-url: https://www.nickdanis.com
-title: Tony (Seunghyeon) Park
+url: https://realtonypark.github.io
+title: Tony Park
 author:
   name: Tony (Seunghyeon) Park
-  email: realtonypark@gmail.com
+  email: realtonypark [at] gmail [dot] com
 description: >
-  Washington University in St. Louis
+  WashU
   
-address-1: Campus Box 1073
-address-2: One Brookings Drive
-address-3: St. Louis, MO 63130 
+address-1: St. Louis, MO
 
 # teaching info
 current_semester: Spring 2025
@@ -35,14 +33,9 @@ collections:
 
 
 # site info
-github:  https://github.com/nickdanis
-# twitter: https://twitter.com/autosegment
-orcid: https://orcid.org/0000-0002-1854-0000
-medium: https://nickdanis.medium.com/
-google_scholar: https://scholar.google.com/citations?user=wAsnRk4AAAAJ
-linkedin: https://www.linkedin.com/in/nickdanis/
+github:  https://github.com/realtonypark
+linkedin: https://www.linkedin.com/in/realtonypark/
 
-google_analytics: G-YBJDGB84MG
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this

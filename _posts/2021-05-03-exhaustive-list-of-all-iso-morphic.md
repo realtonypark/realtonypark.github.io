@@ -3,6 +3,7 @@ layout: post
 title: Exhaustive list of all ISO-morphic languages (languages whose name equals its ISO 639-3 code)
 tags: fun
 thumbnail: /assets/posts/isopie.png
+published: false
 ---
 
 Every unique language is assigned a three-letter code based on [ISO 639-3 specifications](https://en.wikipedia.org/wiki/ISO_639-3). Information on these codes, and the data files used here, can be accessed [here](https://www.ethnologue.com/codes). (As you may now need a subscription to Ethnologue, also check out [SIL](https://iso639-3.sil.org/code_tables/639/data) and [Glottolog](https://glottolog.org/).)
