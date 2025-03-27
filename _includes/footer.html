@@ -15,8 +15,8 @@
             {% if site.author.email -%}
               <li>{{ site.author.email }}</li>
             {%- endif %}
-            {% if site.author.pronouns -%}
-              <li class="p-bio">{{ site.author.pronouns | escape }} | [{{ site.author.ipa | escape }}]</li>
+            {% if site.author.education -%}
+              <li>{{ site.author.uni | escape }} | [{{ site.author.hs | escape }}]</li>
             {% endif -%}
 
           </ul>
