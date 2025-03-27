@@ -10,6 +10,7 @@ As a Data Science student at Washington University in St. Louis, I'm constantly 
 
 
 
+
 ### Affiliated Websites
 
 * [Designing the Smart City](https://realtonypark2.github.io/)
