@@ -27,5 +27,5 @@ Actually, Mills' argument has implications beyond <i>Jaws</i> itself. As he note
 <br>
 <b>Works Cited<b> 
 
-* <i>Jaws<i/>. Directed by Steven Spielberg, Universal Pictures, 1975. <i>Ares</i>. 
+* <i>Jaws</i>. Directed by Steven Spielberg, Universal Pictures, 1975. <i>Ares</i>. 
 * Mills, Brett. “Jaws, Anthropocentrism and Cinema as a Monster-Making Machine.” <i>Journal of Adaptation in Film & Performance</i>, vol. 16, no. 1-2, 2023, pp. 21-36.
