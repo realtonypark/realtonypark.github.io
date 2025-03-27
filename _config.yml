@@ -4,12 +4,12 @@ title: Tony Park
 author:
   name: Tony (Seunghyeon) Park
   email: realtonypark [at] gmail [dot] com
-description: >
+description1: >
   WashU
-address-1: St. Louis, MO
-
+address-1a: St. Louis, MO
+description2: >
   Home
-address-1: Daejeon, South Korea
+address-1b: Daejeon, South Korea
 
 # teaching info
 current_semester: Spring 2025
@@ -47,11 +47,11 @@ minima:
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 header_pages:
-- research.md
-- teaching.md
-- publications.md
+#- research.md
+#- teaching.md
+#- publications.md
 - posts.md
-- cv.md
+#- cv.md
 
 permalink: pretty
 show_excerpts: true # set to true to show excerpts on the homepage

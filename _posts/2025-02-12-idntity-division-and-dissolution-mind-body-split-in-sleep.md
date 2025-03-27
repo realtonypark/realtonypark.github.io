@@ -21,4 +21,4 @@ Through the protagonist's experience from initial mind-body separation to comple
 <br>
 <b>Works Cited<b> 
 
-Murakami, Haruki. “Sleep.” <i>The Elephant Vanishes</i>, Vintage Books, 1993, pp. 74-110.
+* Murakami, Haruki. “Sleep.” <i>The Elephant Vanishes</i>, Vintage Books, 1993, pp. 74-110.

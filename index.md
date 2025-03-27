@@ -8,7 +8,7 @@ My focus is in theoretical phonology. Empirical domains include African language
 
 I am currently a Lecturer in linguistics at [Washington University in St. Louis](https://linguistics.wustl.edu/). See my [teaching]({% link teaching.md %}) page for my current office hours and course info. My office on campus is January 206.
 
-## From Posts
+## Affiliated Websites
 
-* [Designing the Smart City]({% link _includes/_posts/2024-12-10-designing-the-smart-city.md %})
+* [Designing the Smart City](https://realtonypark2.github.io/)
 * [KMLA Forge & BUZ Aerospace](https://realtonypark3.github.io/)

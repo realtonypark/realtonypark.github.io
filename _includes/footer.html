@@ -13,7 +13,7 @@
               <li class="p-name">{{ site.author.name | escape }}</li>
             {% endif -%}
             {% if site.author.email -%}
-              <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+              <li>{{ site.author.email }}</li>
             {%- endif %}
             {% if site.author.pronouns -%}
               <li class="p-bio">{{ site.author.pronouns | escape }} | [{{ site.author.ipa | escape }}]</li>
@@ -26,8 +26,14 @@
   
         <div class="footer-col">
           
-          <p>{{- site.description | escape -}}
-            <br> {{- site.address-1 | escape -}}
+          <p>{{- site.description1 | escape -}}
+            <br> {{- site.address-1a | escape -}}
+            <br> {{- site.address-2 | escape -}}
+            <br> {{- site.address-3 | escape -}}
+          </p>
+          <br>
+          <p>{{- site.description2 | escape -}}
+            <br> {{- site.address-1b | escape -}}
             <br> {{- site.address-2 | escape -}}
             <br> {{- site.address-3 | escape -}}
           </p>
