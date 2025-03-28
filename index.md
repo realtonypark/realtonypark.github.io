@@ -2,7 +2,7 @@
 layout: home
 ---
 
-![](/assets/banner.webp)
+![](/assets/me.webp)
 
 Welcome to my digital archive. This site is intentionally minimal for now, merely a simple repository for my essays and projects, but will expand to include my CV, a gallery of visual projects, and a curated portfolio.
 
