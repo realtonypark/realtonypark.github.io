@@ -13,5 +13,14 @@
     {%- if site.google_analytics -%}
       {%- include google-analytics4.html -%}
     {%- endif -%}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1NKJG1GJ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P1NKJG1GJ2');
+    </script>
   </head>
   
