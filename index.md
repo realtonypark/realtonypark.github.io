@@ -19,4 +19,4 @@ As a Data Science student at Washington University in St. Louis, I'm constantly 
 ### Featured Articles
 
 * [The Visual Grammar of Anthropocentrism in Jaws](_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md)
-* [MediaMatch](_posts/2025-04-15-MediaMatch.md)
+* [MediaMatch](_posts/2025-04-15-mediamatch.md)
