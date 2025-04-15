@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Makes the ‘Dream Team’ in MLB : Identifying Key Batting Metrics that Drive MLB Offensive Production in the Statcast Era (2015-2023)
+title: "What Makes the 'Dream Team' in MLB - Identifying Key Batting Metrics that Drive MLB Offensive Production in the Statcast Era (2015-2023)"
 tags: cs/ds research project baseball
 published: true
 excerpt: |
