@@ -1,7 +1,7 @@
 ---
 layout: post
 title: KMLA Forge and BUZ Aerospace
-tags: project
+tags: project/research
 published: true
 excerpt: |
     <p><a href="https://realtonypark3.github.io">Project website</a>.</p>

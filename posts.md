@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Works (Essays, Projects, and Researches)
+title: Works (Essay, Project/Research)
 ---
 
 Sort by: [**date**]({{ site.baseurl }}{% link posts.md %}) \| [tag]({{ site.baseurl }}{% link posts-by-tag.md %})

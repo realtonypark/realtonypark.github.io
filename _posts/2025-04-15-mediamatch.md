@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MediaMatch
-tags: cs/ds project
+tags: cs/ds project/research
 published: true
 excerpt: |
     <p><a href="https://github.com/realtonypark/google-hack.git">Project repository</a>. A web application that helps users log and discover their next favorite book, movie, or TV series using AI-powered recommendations. Built with Next.js and leveraging Google's Gemini AI, Google Books API, and TMDB API for a comprehensive media discovery experience.</p>

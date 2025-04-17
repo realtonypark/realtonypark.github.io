@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Designing the Smart City
-tags: project
+tags: project/research
 published: true
 excerpt: |
     <p><a href="https://realtonypark2.github.io">Project website</a>. This paper challenges the traditional technology-centric definition of smart cities and proposes a new model focusing on three key elements: promoting citizen well-being, maximizing human interaction, and minimizing land use. The author introduces an innovative hexagonal city design with cyclic road networks that reduces land usage by approximately 20% compared to circular designs. At each city's center, a "gradient of nature" provides tiered green spaces that balance preservation with accessibility. Active sidewalks following Jane Jacobs' principles ensure safety through natural surveillance rather than invasive technology. The design is completed with an advanced participatory budgeting system that leverages technology to enhance civic engagement while maintaining meaningful human connection. Together, these elements address the environmental and social challenges of rapid urbanization while putting human needs at the center of urban development.</p>
