@@ -57,7 +57,6 @@ NEXT_PUBLIC_TMDB_API_KEY=your_api_key
 
 NEXTAUTH_SECRET=your_nextauth_secret
 NEXTAUTH_URL=http://localhost:3000
-
 ```
 
 ## Running the Application
