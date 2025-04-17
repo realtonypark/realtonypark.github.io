@@ -11,7 +11,7 @@ As a Data Science student at Washington University in St. Louis, I'm constantly 
 
 ### Featured Articles
 
-* [What Makes the ‘Dream Team’ in MLB: Identifying Key Batting Metrics that Drive MLB Offensive Production in the Statcast Era (2015-2023)](_posts/2025-04-16-what-makes-‘dream-team’-mlb.md)
+* [What Makes the ‘Dream Team’ in MLB: Identifying Key Batting Metrics that Drive Offensive Production in the Statcast Era (2015-2024)](_posts/2025-04-17-what-makes-‘dream-team’-mlb.md)
 * [The Visual Grammar of Anthropocentrism in Jaws](_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md)
 * [MediaMatch](_posts/2025-04-15-mediamatch.md)
 
