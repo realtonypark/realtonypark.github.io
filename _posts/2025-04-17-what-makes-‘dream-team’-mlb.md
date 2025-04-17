@@ -9,6 +9,6 @@ excerpt: |
 
 
 
-[Full paper →]
+[Research Paper →]
 
 [Code →](https://github.com/realtonypark/mlb-statcast-analysis.git)
