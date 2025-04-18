@@ -43,7 +43,7 @@ npm install --legacy-peer-deps
 
 3. Set up environment variables:
 Create a `.env.local` file in the root directory with the following variables:
-```
+```plaintext
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
@@ -62,7 +62,7 @@ NEXTAUTH_URL=http://localhost:3000
 ## Running the Application
 
 1. Start the development server:
-```
+``` bash
 npm run dev
 ```
 
