@@ -62,7 +62,7 @@ NEXTAUTH_URL=http://localhost:3000
 ## Running the Application
 
 1. Start the development server:
-``` bash
+```bash
 npm run dev
 ```
 
