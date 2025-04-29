@@ -11,7 +11,6 @@ excerpt: |
 
 [Analysis Code →](https://github.com/realtonypark/mlb-statcast-analysis.git)
 
-<br>
 
 <b>Abstract</b>
 
@@ -20,7 +19,7 @@ This study investigates which batting metrics most consistently correlate with t
 <br>
 <b>Introduction</b>
 
-Baseball has long been intertwined with statistics, perhaps more than any other sport. As Oakland Athletics General Manager Billy Beane famously stated in Moneyball: “Your goal shouldn’t be to buy players, your goal should be to buy wins” (Miller, 2011, 0:19:55). This philosophy revolutionized baseball operations to emphasize that statistical analysis could help us recognize undervalued attributes that translate directly to team success. The quest to identify which player attributes genuinely contribute to winning has driven decades of analytical innovation, with each new technological advancement offering deeper insights into team-building strategies.
+Baseball has long been intertwined with statistics, perhaps more than any other sport. As Oakland Athletics General Manager Billy Beane famously stated in *Moneyball*: “Your goal shouldn’t be to buy players, your goal should be to buy wins” (Miller, 2011, 0:19:55). This philosophy revolutionized baseball operations to emphasize that statistical analysis could help us recognize undervalued attributes that translate directly to team success. The quest to identify which player attributes genuinely contribute to winning has driven decades of analytical innovation, with each new technological advancement offering deeper insights into team-building strategies.
 
 In 2015, Major League Baseball introduced Statcast, a state-of-the-art tracking system that fundamentally transformed baseball analytics. Statcast uses radar and optical tracking technology to provide unprecedented data on previously unquantifiable aspects of player performance, such as exit velocity (the speed at which the ball leaves the bat), launch angle (the vertical angle at which the ball is hit), barrel percentage (optimally struck balls), and hard-hit percentage (balls hit at 95+ mph) (Baseball Savant, n.d.). This technological revolution was a significant milestone in baseball’s analytical evolution and had already progressed from basic counting statistics to sophisticated metrics over the previous decade. Indeed, the Tampa Bay Rays have been at the forefront of baseball’s information age, leveraging advanced analytics and innovative player evaluation methods to construct a successful team despite having one of the league’s lowest payrolls (MLB, 2019).
 
