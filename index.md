@@ -6,7 +6,7 @@ layout: home
 
 Welcome to my digital archive. This site is intentionally minimal for now, merely a simple repository for my essays and projects, but will expand to include my CV, a gallery of visual projects, and a curated portfolio.
 
-As a Data Science student at Washington University in St. Louis, I'm constantly exploring the intersection of data science and seemingly unrelated fields like film and sports. My four favorite movies are The Social Network, Inglourious Basterds, Moneyball, and Decision to Leave.
+As a Data Science student at Northwestern University, I'm constantly exploring the intersection of data science and seemingly unrelated fields like film and sports. My four favorite movies are The Social Network, Inglourious Basterds, Moneyball, and Decision to Leave.
 
 
 ### Featured Articles
