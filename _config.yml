@@ -4,16 +4,15 @@ title: Tony Park
 author:
   name: Tony (Seunghyeon) Park
   email: realtonypark [at] gmail [dot] com
-  education: 
-    uni: Northwestern
-    hs: Korean Minjok Leadership Academy (KMLA) '24
+  education:
+    uni: Northwestern University
+    hs: Korean Minjok Leadership Academy '24
 description1: >
   Northwestern University
 address-1a: Evanston, IL
 description2: >
   Home
 address-1b: South Korea
-
 # teaching info
 current_semester: Spring 2025
 office-hours: TBD
@@ -22,7 +21,6 @@ office-location: January 206
 fa2023-office-hours: Wednesdays 1-2pm
 fa2024-office-hours: Wednesdays 12-1pm
 sp2025-office-hours: Tuesdays 12-1pm
-
 
 collections:
   syllabi:
@@ -36,13 +34,11 @@ collections:
   #   output: false
   #   sort-by: chapter
 
-
 # site info
-github:  https://github.com/realtonypark
+github: https://github.com/realtonypark
 linkedin: https://www.linkedin.com/in/realtonypark/
 instagram: https://www.instagram.com/tnyprk
 letterboxd: https://pedia.watcha.com/en-US/users/3BnvwpQ22B5PA
-
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -52,10 +48,10 @@ minima:
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 header_pages:
-#- research.md
-#- teaching.md
-#- publications.md
-- posts.md
+  #- research.md
+  #- teaching.md
+  #- publications.md
+  - posts.md
 #- cv.md
 
 permalink: pretty
@@ -65,5 +61,5 @@ show_excerpts: true # set to true to show excerpts on the homepage
 theme: minima
 
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-seo-tag
