@@ -14,10 +14,7 @@
             {% endif -%}
             {% if site.author.email -%}
               <li>
-                {{ site.author.education.uni | escape }} |
-                <a href="https://ibxworks.com" target="_blank" rel="noopener">
-                {{ site.author.education.hs | escape }}
-                </a>
+                {{ site.author.education.uni | escape }} | {{ <a href="https://ibxworks.com" target="_blank" rel="noopener">site.author.education.hs</a>| escape }}
               </li>
             {%- endif %}
             {% if site.author.education -%}
