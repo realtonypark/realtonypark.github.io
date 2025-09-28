@@ -52,6 +52,7 @@ header_pages:
   #- teaching.md
   #- publications.md
   - posts.md
+  - holdings.md
 #- cv.md
 
 permalink: pretty
