@@ -28,18 +28,14 @@ title: Portfolio
       </tr>
     </thead>
     <tbody>
+      {% for holding in site.data.portfolio.holdings %}
       <tr>
-        <td style="text-align: center;">1</td>
-        <td>TSLA</td>
-        <td style="text-align: center;">Tesla, Inc.</td>
-        <td style="text-align: right;">12.56%</td>
+        <td style="text-align: center;">{{ holding.rank }}</td>
+        <td>{{ holding.ticker }}</td>
+        <td style="text-align: center;">{{ holding.company }}</td>
+        <td style="text-align: right;">{{ holding.weight }}</td>
       </tr>
-      <tr>
-        <td style="text-align: center;">2</td>
-        <td>ROKU</td>
-        <td style="text-align: center;">Roku, Inc.</td>
-        <td style="text-align: right;">6.07%</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
