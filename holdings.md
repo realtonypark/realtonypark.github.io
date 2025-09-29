@@ -7,7 +7,7 @@ title: Portfolio
 <div id="password-prompt" style="text-align: center; padding: 50px;">
   <h2>Protected Content</h2>
   <p>Please enter the password to access this page:</p>
-  <input type="password" id="password-input" placeholder="Enter password" style="padding: 10px; margin: 10px; border: 1px solid #ccc; border-radius: 4px;">
+  <input type="password" id="password-input" placeholder="yymmdd" style="padding: 10px; margin: 10px; border: 1px solid #ccc; border-radius: 4px;">
   <br>
   <button onclick="checkPassword()" style="padding: 10px 20px; margin: 10px; background-color: #007cba; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
   <p id="error-message" style="color: red; display: none;">Incorrect password. Please try again.</p>
