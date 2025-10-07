@@ -8,7 +8,7 @@ layout: home
 
 Welcome to my digital archive.
 
-As a Data Science student at Northwestern University, I'm constantly exploring the intersection of data science and seemingly unrelated fields like film and sports. My four favorite movies are The Social Network, Inglourious Basterds, Moneyball, and Decision to Leave.
+I believe in the infinite possibility that blockchain technology can bring. Also, as a Data Science student at Northwestern University, I'm constantly exploring the intersection of data science and seemingly unrelated fields like film and sports. 
 
 ### Featured Articles
 
