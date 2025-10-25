@@ -18,6 +18,8 @@ title: Portfolio
 
   <p>This page contains information about my stock portfolio, not project portfolio. <em>This page is for personal use.</em></p>
 
+  <p>Holdings as of Oct 25, 2025</p>
+
   <table>
     <thead>
       <tr>

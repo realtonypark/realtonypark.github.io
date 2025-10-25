@@ -4,107 +4,117 @@ holdings:
   - rank: 1
     ticker: "Bitcoin"
     company: "Bitcoin"
-    weight: "19.73%"
+    weight: "15.13%"
 
   - rank: 2
-    ticker: "TIGER US Nasdaq 100"
-    company: "Nasdaq 100 ETF"
-    weight: "12.92%"
-
-  - rank: 3
-    ticker: "TIGER US S&P 500"
-    company: "S&P 500 ETF"
-    weight: "12.67%"
-
-  - rank: 4
     ticker: "AMZN"
     company: "Amazon.com, Inc."
-    weight: "10.61%"
+    weight: "11.82%"
+
+  - rank: 3
+    ticker: "TIGER 미국S&P500"
+    company: "TIGER US S&P 500 ETF"
+    weight: "12.02%"
+
+  - rank: 4
+    ticker: "TIGER 미국나스닥100"
+    company: "TIGER US Nasdaq 100 ETF"
+    weight: "11.80%"
 
   - rank: 5
-    ticker: "IEF"
-    company: "iShares 7-10 Year Treasury Bond ETF"
-    weight: "7.29%"
-
-  - rank: 6
     ticker: "AMD"
     company: "Advanced Micro Devices, Inc."
-    weight: "7.06%"
+    weight: "6.67%"
+
+  - rank: 6
+    ticker: "IEF"
+    company: "iShares 7-10 Year Treasury Bond ETF"
+    weight: "6.10%"
 
   - rank: 7
     ticker: "VGLT"
     company: "Vanguard Long-Term Treasury ETF"
-    weight: "5.67%"
+    weight: "5.74%"
 
   - rank: 8
     ticker: "PLTR"
     company: "Palantir Technologies Inc."
-    weight: "4.27%"
+    weight: "5.47%"
 
   - rank: 9
     ticker: "UNH"
     company: "UnitedHealth Group Incorporated"
-    weight: "4.12%"
+    weight: "3.58%"
 
   - rank: 10
-    ticker: "TEM"
-    company: "Tempus AI, Inc."
-    weight: "2.81%"
+    ticker: "Ethurium"
+    company: "Ethereum"
+    weight: "2.98%"
 
   - rank: 11
-    ticker: "MSTR"
-    company: "MicroStrategy Incorporated"
-    weight: "2.60%"
+    ticker: "TEM"
+    company: "Tempus AI, Inc."
+    weight: "2.94%"
 
   - rank: 12
-    ticker: "TMO"
-    company: "Thermo Fisher Scientific Inc."
-    weight: "1.84%"
+    ticker: "META"
+    company: "Meta Platforms, Inc."
+    weight: "2.43%"
 
   - rank: 13
-    ticker: "TIGER US S&P 500 Consumer Staples"
-    company: "S&P 500 Consumer Staples ETF"
-    weight: "1.82%"
+    ticker: "MSTR"
+    company: "MicroStrategy Incorporated"
+    weight: "1.90%"
 
   - rank: 14
-    ticker: "CPRX"
-    company: "Catalyst Pharmaceuticals, Inc."
-    weight: "1.63%"
+    ticker: "FIG"
+    company: "Fortress Value Acquisition Corp. II"
+    weight: "1.58%"
 
   - rank: 15
-    ticker: "ABSI"
-    company: "Absci Corporation"
-    weight: "1.54%"
+    ticker: "CPRX"
+    company: "Catalyst Pharmaceuticals, Inc."
+    weight: "1.45%"
 
   - rank: 16
-    ticker: "FIG"
-    company: "Figma, Inc."
-    weight: "1.48%"
+    ticker: "TSLA"
+    company: "Tesla, Inc."
+    weight: "1.43%"
 
   - rank: 17
-    ticker: "DUOL"
-    company: "Duolingo, Inc."
-    weight: "1.31%"
+    ticker: "IREN"
+    company: "Iris Energy Limited"
+    weight: "1.24%"
 
   - rank: 18
-    ticker: "CRCL"
-    company: "Circle Internet Financial"
-    weight: "1.06%"
+    ticker: "KoAct 글로벌양자컴퓨팅액티브"
+    company: "KoAct Global Quantum Computing Active ETF"
+    weight: "1.23%"
 
   - rank: 19
-    ticker: "MRX"
-    company: "Marex Group plc"
-    weight: "0.81%"
+    ticker: "DUOL"
+    company: "Duolingo, Inc."
+    weight: "1.03%"
 
   - rank: 20
-    ticker: "NEXN"
-    company: "Nexxen International Ltd - ADR"
-    weight: "0.81%"
+    ticker: "ABSI"
+    company: "Absci Corporation"
+    weight: "1.01%"
 
   - rank: 21
-    ticker: "KoAct Global Quantum Computing Active"
-    company: "Global Quantum Computing Active ETF"
-    weight: "0.78%"
+    ticker: "CRCL"
+    company: "Circle Internet Financial"
+    weight: "0.94%"
+
+  - rank: 22
+    ticker: "BMNR"
+    company: "Biomerica, Inc."
+    weight: "0.83%"
+
+  - rank: 23
+    ticker: "ZETA"
+    company: "Zeta Global Holdings Corp."
+    weight: "0.68%"
 # Can add more holdings following this format:
 # - rank: 3
 #   ticker: "AAPL"
