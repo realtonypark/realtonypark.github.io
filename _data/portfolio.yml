@@ -7,8 +7,8 @@ holdings:
     weight: "15.13%"
 
   - rank: 2
-    ticker: "TIGER US S&P 500"
-    company: "TIGER US S&P 500 ETF"
+    ticker: "TIGER US S&P 500 ETF"
+    company: "TIGER US S&P 500"
     weight: "12.02%"
 
   - rank: 3
@@ -17,8 +17,8 @@ holdings:
     weight: "11.82%"
 
   - rank: 4
-    ticker: "TIGER US Nasdaq 100"
-    company: "TIGER US Nasdaq 100 ETF"
+    ticker: "TIGER US Nasdaq 100 ETF"
+    company: "TIGER US Nasdaq 100"
     weight: "11.80%"
 
   - rank: 5
@@ -68,7 +68,7 @@ holdings:
 
   - rank: 14
     ticker: "FIG"
-    company: "Fortress Value Acquisition Corp. II"
+    company: "Figma, Inc."
     weight: "1.58%"
 
   - rank: 15
@@ -87,8 +87,8 @@ holdings:
     weight: "1.24%"
 
   - rank: 18
-    ticker: "KoAct Global Quantum Computing Active"
-    company: "KoAct Global Quantum Computing Active ETF"
+    ticker: "KoAct Global Quantum Computing Active ETF"
+    company: "KoAct Global Quantum Computing Active"
     weight: "1.23%"
 
   - rank: 19
@@ -108,7 +108,7 @@ holdings:
 
   - rank: 22
     ticker: "BMNR"
-    company: "Biomerica, Inc."
+    company: "Bitmine Immersion Technologies, Inc."
     weight: "0.83%"
 
   - rank: 23
