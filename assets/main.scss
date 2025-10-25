@@ -5,6 +5,17 @@
 @import "minima";
 
 /**
+ * Base font family override
+ */
+body,
+html {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+// Override minima's base font family
+$base-font-family: "Times New Roman", Times, serif;
+
+/**
  * Scroll bar hehavior
  */
 html {
@@ -12,11 +23,10 @@ html {
   margin-right: 0;
 }
 
-
 /**
  * Blockquotes
  */
- blockquote {
+blockquote {
   color: $grey-color;
   border-left: 3px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
@@ -38,7 +48,7 @@ html {
     top: 59px;
   }
 }
- .site-header {
+.site-header {
   padding-top: 50px;
   border-top: 0px solid $grey-color-dark;
   border-bottom: 0px solid $grey-color-light;
@@ -47,7 +57,6 @@ html {
   // Positioning context for the mobile navigation icon
   position: relative;
 }
-
 
 // .page-link {
 //   float: right;
@@ -86,7 +95,7 @@ html {
   text-decoration: underline;
   line-height: $base-line-height;
 
-    // Gaps between nav items, but not on the last one
+  // Gaps between nav items, but not on the last one
   &:not(:last-child) {
     margin-right: 20px;
   }
@@ -95,7 +104,7 @@ html {
 /**
  * Site footer
  */
- .site-footer {
+.site-footer {
   border-top: 0px solid $grey-color-light;
   padding: $spacing-unit 0;
 }
@@ -103,7 +112,7 @@ html {
   list-style-type: none;
   padding: 0;
   margin: 0 0 1em 0;
-  }
+}
 
 .social-media-icon {
   display: inline;
@@ -115,14 +124,13 @@ html {
   svg {
     height: 20px;
     width: 20px;
-    fill:grey;
+    fill: grey;
   }
-  
+
   svg:hover {
-    fill:black;
+    fill: black;
   }
 }
-
 
 .footer-col-wrapper {
   display: flex;
@@ -139,11 +147,10 @@ html {
 }
 
 .footer-col {
-  float:none;
+  float: none;
   margin-bottom: $spacing-unit / 2;
   padding-left: 0;
 }
-
 
 .p-name {
   font-weight: bold;
@@ -200,7 +207,6 @@ ul.post-list {
   @include relative-font-size(1.1);
 }
 
-
 .post-content {
   margin-bottom: $spacing-unit;
 
@@ -213,7 +219,7 @@ ul.post-list {
   }
 
   h3 {
-    font-style:italic;
+    font-style: italic;
     @include relative-font-size(1.2);
 
     @include media-query($on-laptop) {
@@ -230,8 +236,6 @@ ul.post-list {
     }
   }
 }
-
-
 
 /**
  * Tags
@@ -251,7 +255,7 @@ li.tag-link {
 
 .by-tag {
   display: flex;
-  flex-flow: row wrap; 
+  flex-flow: row wrap;
 }
 
 .by-tag-item {
@@ -267,15 +271,14 @@ li.tag-link {
     line-height: 1.2;
   }
   .syllabus {
-    th, td {
+    th,
+    td {
       padding: 1pt ($spacing-unit / 5);
     }
     font-size: 90%;
     line-height: 1.3;
   }
 }
-
-
 
 @media print, screen and (max-width: 1200px) {
   .sidetoc {
@@ -286,7 +289,7 @@ li.tag-link {
 // syllabus footer
 @media screen {
   .syl-footer {
-    display: none
+    display: none;
   }
 }
 
@@ -295,19 +298,20 @@ li.tag-link {
  */
 
 .syllabus {
-  font-family: 'Crimson Text';
+  font-family: "Times New Roman", Times, serif;
   font-size: 110%;
   th {
-     line-height: 1.3;
-     padding: ($spacing-unit / 6) ($spacing-unit / 5) 1px; //  top rightleft bottom
+    line-height: 1.3;
+    padding: ($spacing-unit / 6) ($spacing-unit / 5) 1px; //  top rightleft bottom
   }
   td {
-    padding: ($spacing-unit / 10) ($spacing-unit / 5); 
+    padding: ($spacing-unit / 10) ($spacing-unit / 5);
   }
   span {
     background-color: gold;
   }
-  th, thead {
+  th,
+  thead {
     vertical-align: bottom;
   }
   h1 {
@@ -323,13 +327,14 @@ li.tag-link {
     margin-top: 0.5em;
     margin-right: auto;
     margin-left: 30px;
-    width:auto;
+    width: auto;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     margin-bottom: 0;
     letter-spacing: -1px;
-  } 
+  }
 }
 
 .syl-header {
@@ -348,7 +353,7 @@ li.tag-link {
 }
 
 .sidetoc {
-  font-family: $base-font-family;
+  font-family: "Times New Roman", Times, serif;
   float: left;
   margin-left: auto;
   margin-right: 30px;
@@ -389,23 +394,18 @@ ul.syl-toc-sub {
 header.logo {
   margin-right: 15px;
   svg {
-      height: 100px;
-      width: auto;
-      fill:black;
+    height: 100px;
+    width: auto;
+    fill: black;
   }
 }
-
-
 
 /**
  * CV
  */
 
- 
-
-
 .cv-all {
-  font-family: 'Crimson Text';
+  font-family: "Times New Roman", Times, serif;
   font-size: 110%;
   h3 {
     font-style: italic;
@@ -425,7 +425,8 @@ header.logo {
     border: 0;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    th, td {
+    th,
+    td {
       padding: 0;
       padding-right: 1em;
     }
@@ -470,36 +471,36 @@ header.logo {
 .cv-back {
   padding-top: 30px;
   padding-bottom: 50px;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
- .cv-name {
-   text-align: center;
- }
+.cv-name {
+  text-align: center;
+}
 
- .cv-flex {
-   display:flex;
-   flex-direction: row;
-   justify-content: space-between;
- }
+.cv-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
- .print-footer {
-   text-align: center;
-   font-size: small;
-   font-style: italic;
- }
+.print-footer {
+  text-align: center;
+  font-size: small;
+  font-style: italic;
+}
 
- #skill-list {
-   list-style-type: none;
-   margin-left: $spacing-unit / 2;
- }
-
- #skill-list > li > ul {
+#skill-list {
   list-style-type: none;
   margin-left: $spacing-unit / 2;
- }
+}
 
- /**
+#skill-list > li > ul {
+  list-style-type: none;
+  margin-left: $spacing-unit / 2;
+}
+
+/**
  * Tables
  */
 table {
@@ -514,7 +515,8 @@ table {
       background-color: lighten($grey-color-light, 6%);
     }
   }
-  th, td {
+  th,
+  td {
     padding: ($spacing-unit / 5) ($spacing-unit / 5);
   }
   th {
@@ -539,7 +541,7 @@ table.ottab {
     counter-reset: cand;
   }
   td {
-    &:nth-child(n+3) {
+    &:nth-child(n + 3) {
       text-align: center;
     }
   }
@@ -554,14 +556,14 @@ table.vt {
   }
   td:nth-child(1) {
     border-right: none !important;
-    font-family: 'Segoe UI Symbol';
+    font-family: "Segoe UI Symbol";
     font-size: 120%;
   }
   td:nth-child(2) {
     border-left: none !important;
     &::before {
       counter-increment: cand;
-      content: counter(cand, lower-alpha)". ";
+      content: counter(cand, lower-alpha) ". ";
     }
   }
 }
@@ -572,13 +574,13 @@ table.ct {
   }
   tr:nth-child(1) {
     td:nth-child(1)::before {
-      content: ""
+      content: "";
     }
   }
-  tr:nth-child(n+2) {
+  tr:nth-child(n + 2) {
     td:nth-child(1)::before {
       counter-increment: cand;
-      content: counter(cand, lower-alpha)". ~";
+      content: counter(cand, lower-alpha) ". ~";
     }
   }
 }
@@ -607,11 +609,11 @@ table.ct {
 }
 
 a.prev {
-  float:left;
+  float: left;
 }
 
 a.next {
-  float:right;
+  float: right;
 }
 
 ul.wiki-list {
