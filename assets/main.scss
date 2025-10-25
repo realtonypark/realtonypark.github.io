@@ -5,15 +5,29 @@
 @import "minima";
 
 /**
- * Base font family override
+ * WOFF2 Font Declaration
+ */
+@font-face {
+  font-family: "Times New Roman Web";
+  src: url("https://fonts.gstatic.com/s/crimsontext/v19/wlp2gwHKFkZgtmSR3NB0oRJX-g5jb2wjgw.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Base font family and size overrides
  */
 body,
 html {
-  font-family: "Times New Roman", Times, serif !important;
+  font-family: "Times New Roman Web", "Times New Roman", Times, serif !important;
+  font-size: 110% !important; /* 10% increase */
 }
 
-// Override minima's base font family
-$base-font-family: "Times New Roman", Times, serif;
+// Override minima's base font family and size
+$base-font-family: "Times New Roman Web", "Times New Roman", Times, serif;
+$base-font-size: 17.6px; /* 16px * 1.1 = 17.6px for 10% increase */
 
 /**
  * Scroll bar hehavior
@@ -267,7 +281,7 @@ li.tag-link {
     display: none !important;
   }
   .cv-all {
-    font-size: 80%;
+    font-size: 88%; /* 80% * 1.1 = 88% for 10% increase */
     line-height: 1.2;
   }
   .syllabus {
@@ -275,7 +289,7 @@ li.tag-link {
     td {
       padding: 1pt ($spacing-unit / 5);
     }
-    font-size: 90%;
+    font-size: 99%; /* 90% * 1.1 = 99% for 10% increase */
     line-height: 1.3;
   }
 }
@@ -298,8 +312,8 @@ li.tag-link {
  */
 
 .syllabus {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 110%;
+  font-family: "Times New Roman Web", "Times New Roman", Times, serif;
+  font-size: 121%; /* 110% * 1.1 = 121% for additional 10% increase */
   th {
     line-height: 1.3;
     padding: ($spacing-unit / 6) ($spacing-unit / 5) 1px; //  top rightleft bottom
@@ -353,7 +367,7 @@ li.tag-link {
 }
 
 .sidetoc {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman Web", "Times New Roman", Times, serif;
   float: left;
   margin-left: auto;
   margin-right: 30px;
@@ -367,7 +381,7 @@ li.tag-link {
   top: 15px; /* Stay at the top */
   // left: -200px;
   // overflow-x: hidden; /* Disable horizontal scroll */
-  font-size: 80%;
+  font-size: 88%; /* 80% * 1.1 = 88% for 10% increase */
 }
 
 .toc-wrapper {
@@ -405,8 +419,8 @@ header.logo {
  */
 
 .cv-all {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 110%;
+  font-family: "Times New Roman Web", "Times New Roman", Times, serif;
+  font-size: 121%; /* 110% * 1.1 = 121% for additional 10% increase */
   h3 {
     font-style: italic;
   }
@@ -557,7 +571,7 @@ table.vt {
   td:nth-child(1) {
     border-right: none !important;
     font-family: "Segoe UI Symbol";
-    font-size: 120%;
+    font-size: 132%; /* 120% * 1.1 = 132% for 10% increase */
   }
   td:nth-child(2) {
     border-left: none !important;
@@ -586,7 +600,7 @@ table.ct {
 }
 
 .wiki-toc-heading {
-  font-size: 90%;
+  font-size: 99%; /* 90% * 1.1 = 99% for 10% increase */
   display: inline-block;
   width: auto;
   background-color: #f0f0f0;
