@@ -7,17 +7,17 @@ holdings:
     weight: "15.13%"
 
   - rank: 2
+    ticker: "TIGER US S&P 500"
+    company: "TIGER US S&P 500 ETF"
+    weight: "12.02%"
+
+  - rank: 3
     ticker: "AMZN"
     company: "Amazon.com, Inc."
     weight: "11.82%"
 
-  - rank: 3
-    ticker: "TIGER 미국S&P500"
-    company: "TIGER US S&P 500 ETF"
-    weight: "12.02%"
-
   - rank: 4
-    ticker: "TIGER 미국나스닥100"
+    ticker: "TIGER US Nasdaq 100"
     company: "TIGER US Nasdaq 100 ETF"
     weight: "11.80%"
 
@@ -47,7 +47,7 @@ holdings:
     weight: "3.58%"
 
   - rank: 10
-    ticker: "Ethurium"
+    ticker: "Ethureum"
     company: "Ethereum"
     weight: "2.98%"
 
@@ -87,7 +87,7 @@ holdings:
     weight: "1.24%"
 
   - rank: 18
-    ticker: "KoAct 글로벌양자컴퓨팅액티브"
+    ticker: "KoAct Global Quantum Computing Active"
     company: "KoAct Global Quantum Computing Active ETF"
     weight: "1.23%"
 
