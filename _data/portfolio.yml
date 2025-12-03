@@ -57,44 +57,44 @@ holdings:
     weight: "3.55%"
 
   - rank: 12
-    ticker: "ZETA"
-    company: "Zeta Global Holdings Corp."
-    weight: "1.49%"
-
-  - rank: 13
     ticker: "UNH"
     company: "UnitedHealth Group Incorporated"
     weight: "2.91%"
 
-  - rank: 14
+  - rank: 13
     ticker: "IREN"
     company: "Iris Energy Limited"
     weight: "2.53%"
 
-  - rank: 15
+  - rank: 14
     ticker: "RKLB"
     company: "Rocket Lab USA, Inc."
     weight: "2.29%"
 
+  - rank: 15
+    ticker: "GRNY"
+    company: "Fundstrat Granny Shots US Large Cap ETF"
+    weight: "2.06%"
+
   - rank: 16
     ticker: "ACE US Big Tech TOP7 PLUS"
     company: "ACE US Big Tech TOP7 PLUS ETF"
-    weight: "2.06%"
-
-  - rank: 17
-    ticker: "GRNY"
-    company: "Fundstrat Granny Shots US Large Cap ETF"
     weight: "1.94%"
 
-  - rank: 18
+  - rank: 17
     ticker: "TEM"
     company: "Tempus AI, Inc."
     weight: "1.78%"
 
-  - rank: 19
+  - rank: 18
     ticker: "NBIS"
     company: "Nebius Group N.V."
     weight: "1.76%"
+
+  - rank: 19
+    ticker: "ZETA"
+    company: "Zeta Global Holdings Corp."
+    weight: "1.49%"
 
   - rank: 20
     ticker: "CPRX"
@@ -102,13 +102,13 @@ holdings:
     weight: "1.36%"
 
   - rank: 21
-    ticker: "TSLA"
-    company: "Tesla, Inc."
+    ticker: "FIGR"
+    company: "Figure Technology Solutions, Inc."
     weight: "1.28%"
 
   - rank: 22
-    ticker: "FIGR"
-    company: "Figure Technology Solutions, Inc."
+    ticker: "TSLA"
+    company: "Tesla, Inc."
     weight: "1.27%"
 
   - rank: 23
