@@ -76,7 +76,7 @@ holdings:
     company: "ACE US Big Tech TOP7 PLUS ETF"
     weight: "2.05%"
 
-   - rank: 16
+  - rank: 16
     ticker: "ZETA"
     company: "Zeta Global Holdings Corp."
     weight: "1.81%"
@@ -115,7 +115,6 @@ holdings:
     ticker: "UBER"
     company: "Uber Technologies, Inc."
     weight: "1.08%"
-    
 # Can add more holdings following this format:
 # - rank: 3
 #   ticker: "AAPL"
