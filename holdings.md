@@ -16,9 +16,9 @@ title: Portfolio
 <div id="protected-content" style="display: none;">
   <h2>My Holdings</h2>
 
-  <p>This page contains information about my stock portfolio, not project portfolio. <em>This page is for personal use.</em></p>
+  <p>This page contains information about my stock portfolio. <em>This page is for personal use.</em></p>
 
-  <p>Holdings as of Dec 3, 2025</p>
+  <p>Holdings as of Dec 4, 2025</p>
 
   <table>
     <thead>
