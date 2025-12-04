@@ -4,27 +4,27 @@ holdings:
   - rank: 1
     ticker: "AMZN"
     company: "Amazon.com, Inc."
-    weight: "10.53%"
+    weight: "10.52%"
 
   - rank: 2
-    ticker: "TIGER US S&P 500"
-    company: "S&P 500 ETF"
-    weight: "9.89%"
+    ticker: "S&P 500 ETF"
+    company: "TIGER US S&P 500 ETF"
+    weight: "9.92%"
 
   - rank: 3
-    ticker: "TIGER US Nasdaq 100"
-    company: "Nasdaq 100 ETF"
-    weight: "9.83%"
+    ticker: "Nasdaq 100 ETF"
+    company: "TIGER US Nasdaq 100 ETF"
+    weight: "9.84%"
 
   - rank: 4
     ticker: "META"
     company: "Meta Platforms, Inc."
-    weight: "9.67%"
+    weight: "9.52%"
 
   - rank: 5
-    ticker: "Bitcoin"
+    ticker: "BTC"
     company: "Bitcoin"
-    weight: "8.33%"
+    weight: "8.52%"
 
   - rank: 6
     ticker: "AMD"
@@ -34,52 +34,52 @@ holdings:
   - rank: 7
     ticker: "PLTR"
     company: "Palantir Technologies Inc."
-    weight: "6.16%"
+    weight: "6.27%"
 
   - rank: 8
     ticker: "IEF"
     company: "iShares 7-10 Year Treasury Bond ETF"
-    weight: "4.63%"
+    weight: "4.62%"
 
   - rank: 9
-    ticker: "GOOGL"
-    company: "Alphabet Inc."
-    weight: "3.79%"
+    ticker: "ETF"
+    company: "Ethereum"
+    weight: "3.83%"
 
   - rank: 10
-    ticker: "Ethureum"
-    company: "Ethereum"
-    weight: "3.70%"
+    ticker: "GOOGL"
+    company: "Alphabet Inc."
+    weight: "3.82%"
 
   - rank: 11
     ticker: "VGLT"
     company: "Vanguard Long-Term Treasury ETF"
-    weight: "3.55%"
+    weight: "3.54%"
 
   - rank: 12
     ticker: "UNH"
     company: "UnitedHealth Group Incorporated"
-    weight: "2.91%"
+    weight: "3.04%"
 
   - rank: 13
     ticker: "IREN"
     company: "Iris Energy Limited"
-    weight: "2.53%"
+    weight: "2.73%"
 
   - rank: 14
     ticker: "RKLB"
     company: "Rocket Lab USA, Inc."
-    weight: "2.29%"
+    weight: "2.44%"
 
   - rank: 15
-    ticker: "GRNY"
-    company: "Fundstrat Granny Shots US Large Cap ETF"
-    weight: "2.06%"
-
-  - rank: 16
     ticker: "ACE US Big Tech TOP7 PLUS"
     company: "ACE US Big Tech TOP7 PLUS ETF"
-    weight: "1.94%"
+    weight: "2.05%"
+
+   - rank: 16
+    ticker: "ZETA"
+    company: "Zeta Global Holdings Corp."
+    weight: "1.81%"
 
   - rank: 17
     ticker: "TEM"
@@ -92,34 +92,30 @@ holdings:
     weight: "1.76%"
 
   - rank: 19
-    ticker: "ZETA"
-    company: "Zeta Global Holdings Corp."
-    weight: "1.49%"
+    ticker: "FIGR"
+    company: "Figure Technology Solutions Inc."
+    weight: "1.57%"
 
   - rank: 20
     ticker: "CPRX"
     company: "Catalyst Pharmaceuticals, Inc."
-    weight: "1.36%"
+    weight: "1.37%"
 
   - rank: 21
-    ticker: "FIGR"
-    company: "Figure Technology Solutions, Inc."
-    weight: "1.28%"
-
-  - rank: 22
     ticker: "TSLA"
     company: "Tesla, Inc."
-    weight: "1.27%"
+    weight: "1.32%"
+
+  - rank: 22
+    ticker: "KoAct Global Quantum Computing Active ETF"
+    company: "KoAct Global Quantum Computing Active ETF"
+    weight: "1.12%"
 
   - rank: 23
-    ticker: "KoAct Global Quantum Computing Active"
-    company: "KoAct Global Quantum Computing Active ETF"
-    weight: "1.09%"
-
-  - rank: 24
     ticker: "UBER"
     company: "Uber Technologies, Inc."
-    weight: "1.05%"
+    weight: "1.08%"
+    
 # Can add more holdings following this format:
 # - rank: 3
 #   ticker: "AAPL"
