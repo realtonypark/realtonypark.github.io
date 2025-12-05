@@ -21,26 +21,26 @@ Only a select few companies possess the capital to build and operate hyperscale 
 The Dot-Com bubble was fueled by debt-ridden startups with no revenue. The AI rally is led by the most financially sound, cash-rich companies in history.
 
 <br>
-<b> 2. Valuations Supported by Earnings (Fundamentals) </b>
+<b> 2. Valuations Supported by Earnings </b>
 
 The most recent earnings reports (Q3 2025) confirm that valuations are being driven by tangible results, not hype.
 
 Demand for enterprise AI adoption is explosive, with companies reporting significant gains in productivity and efficiency. This is reflected in the financials of the industry leaders:
 
-- **Nvidia (AI Hardware):** Revenue grew **62% YoY** (22% QoQ), and EPS surged **60% YoY** (24% QoQ).
+- Nvidia (AI Hardware): Revenue grew **62% YoY** (22% QoQ), and EPS surged **60% YoY** (24% QoQ).
 
-- **Palantir (AI Software):** Revenue increased **63% YoY** with an EPS of $0.21.
+- Palantir (AI Software): Revenue increased **63% YoY** with an EPS of $0.21.
 
 To measure software efficiency, we often look at the _Rule of 40_, where a successful SaaS company is defined by: **Revenue Growth (%) + EBITDA Margin (%) ≥ 40.**
 
 Palantir recently recorded a score of **114%**.
 
-Comparing the price/EPS charts of **Cisco Systems** (the poster child of the Dot-Com bubble) during its peak against **Nvidia** today supports the argument that the current trend is fundamentally different. Nvidia’s price appreciation is tracking its earnings growth; Cisco’s was pure multiple expansion.
+Comparing the price/EPS charts of Cisco (the poster child of the Dot-Com bubble) during its peak against Nvidia today supports the argument that the current trend is fundamentally different. Nvidia’s price appreciation is tracking its earnings growth; Cisco’s was pure multiple expansion.
 
 ![Cisco vs. Nvidia](/assets/posts/not-bubble.jpg)
 <br>
 <br>
-<b> 3. Investor's Learning Effect: The "Wall of Worry" </b>
+<b> 3. Investor's Learning Effect </b>
 
 The market has learned from history. Investors distinctly remember how the Dot-Com bubble burst, leading to a healthy level of skepticism today.
 
