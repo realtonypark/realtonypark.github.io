@@ -55,20 +55,21 @@ In finance, we say "stocks climb a wall of worry." As long as investors remain c
 Based on this Super Cycle, here are the sectors and specific assets I find attractive.
 
 <b> 1. Hyperscalers </b>
-
 - AMZN (Amazon): The prime beneficiary of AI-driven efficiency. AI directly boosts revenue and decreases operational costs, leading to hyper-growth in net income.
     
 - GOOGL (Google): Just as Apple locked consumers into their ecosystem, Google is positioned to lock global users into its comprehensive AI service ecosystem. They do everything, plus AI.
     
 - META (Meta): While Apple has dominated personal mobile devices, Meta is betting on the next form of personal device: AI Smart Glasses. If their vision for personal superintelligence is correct, they are currently leading the race for the next hardware platform.
+
 <br>
 <b> 2. AI Software & Services </b>
-
 - PLTR (Palantir), ZETA
+
 <br>
 <b> 3. AI Infrastructure </b>
 
 - AMD, IREN, NBIS: We are still in the early stages of LLM (Large Language Model) development. We have yet to fully tackle "World Models," and the demand for compute is twofold: **Training** (teaching the models) and Inference (running the models). Data center demand is nowhere near its peak.
+
 <br>
 <b> 4. The Contrarian Play: Duolingo (DUOL)</b>
 
