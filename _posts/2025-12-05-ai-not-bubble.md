@@ -56,13 +56,14 @@ Based on this Super Cycle, here are the sectors and specific assets I find attra
 
 <b> 1. Hyperscalers </b>
 - AMZN (Amazon): The prime beneficiary of AI-driven efficiency. AI directly boosts revenue and decreases operational costs, leading to hyper-growth in net income.
-    
+
 - GOOGL (Google): Just as Apple locked consumers into their ecosystem, Google is positioned to lock global users into its comprehensive AI service ecosystem. They do everything, plus AI.
     
 - META (Meta): While Apple has dominated personal mobile devices, Meta is betting on the next form of personal device: AI Smart Glasses. If their vision for personal superintelligence is correct, they are currently leading the race for the next hardware platform.
 
 <br>
 <b> 2. AI Software & Services </b>
+
 - PLTR (Palantir), ZETA
 
 <br>
