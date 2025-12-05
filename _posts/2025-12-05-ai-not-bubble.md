@@ -31,15 +31,14 @@ Demand for enterprise AI adoption is explosive, with companies reporting signifi
 
 - **Palantir (AI Software):** Revenue increased **63% YoY** with an EPS of $0.21.
 
-To measure software efficiency, we often look at the _Rule of 40_, where a successful SaaS company is defined by:
-
-$$ \text{Revenue Growth (\%)} + \text{EBITDA Margin (\%)} \geq 40 $$
+To measure software efficiency, we often look at the _Rule of 40_, where a successful SaaS company is defined by: **Revenue Growth (%) + EBITDA Margin (%) ≥ 40.**
 
 Palantir recently recorded a score of **114%**.
 
 Comparing the price/EPS charts of **Cisco Systems** (the poster child of the Dot-Com bubble) during its peak against **Nvidia** today supports the argument that the current trend is fundamentally different. Nvidia’s price appreciation is tracking its earnings growth; Cisco’s was pure multiple expansion.
 
 ![Cisco vs. Nvidia](/assets/posts/not-bubble.jpg)
+<br>
 <br>
 <b> 3. Investor's Learning Effect: The "Wall of Worry" </b>
 
@@ -62,12 +61,10 @@ Based on this Super Cycle, here are the sectors and specific assets I find attra
 - GOOGL (Google): Just as Apple locked consumers into their ecosystem, Google is positioned to lock global users into its comprehensive AI service ecosystem. They do everything, plus AI.
     
 - META (Meta): While Apple has dominated personal mobile devices, Meta is betting on the next form of personal device: AI Smart Glasses. If their vision for personal superintelligence is correct, they are currently leading the race for the next hardware platform.
-
 <br>
 <b> 2. AI Software & Services </b>
 
 - PLTR (Palantir), ZETA
-
 <br>
 <b> 3. AI Infrastructure </b>
 
