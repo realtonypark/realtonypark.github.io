@@ -10,7 +10,7 @@ Arguments that the AI industry is overvalued and forming a bubble are becoming i
 Here are three interconnected reasons why AI is structurally different from the Dot-Com Bubble.
 
 <br> 
-<b> 1. High Barriers to Entry (The "Moat") </b>
+<b> 1. High Barriers to Entry (The Moat) </b>
 
 Unlike the Dot-Com era, the barriers to entry in the AI sector are astronomically high.
 
@@ -69,7 +69,7 @@ Based on this Super Cycle, here are the sectors and specific assets I find attra
 <br>
 <b> 3. AI Infrastructure </b>
 
-- AMD, IREN, NBIS: We are still in the early stages of LLM (Large Language Model) development. We have yet to fully tackle "World Models," and the demand for compute is twofold: **Training** (teaching the models) and Inference (running the models). Data center demand is nowhere near its peak.
+- AMD, IREN, NBIS: We are still in the early stages of LLM (Large Language Model) development. We have yet to fully tackle "World Models," and the demand for compute is twofold: **Training** (teaching the models) and **Inference** (running the models). Data center demand is nowhere near its peak.
 
 <br>
 <b> 4. The Contrarian Play: Duolingo (DUOL)</b>
