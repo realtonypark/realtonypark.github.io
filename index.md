@@ -6,7 +6,7 @@ layout: home
 
 <p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 5px; font-style: italic;">Montreux, Switzerland, 2024</p>
 
-Welcome to my digital archive. As a Data Science student at Northwestern University, I'm constantly exploring the intersection of data science and seemingly unrelated fields like film and sports. Also, I believe in the infinite possibility that blockchain technology can bring. 
+Welcome to my digital archive. You can never lose if you never quit.
 
 
 ### Featured Articles
