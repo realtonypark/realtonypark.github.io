@@ -6,7 +6,7 @@ layout: home
 
 <p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 5px; font-style: italic;">Montreux, Switzerland, 2024</p>
 
-Welcome to my digital archive. You can never lose if you never quit.
+You can never lose if you never quit.
 
 
 ### Featured Articles
