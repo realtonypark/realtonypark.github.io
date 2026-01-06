@@ -1,118 +1,105 @@
-# Portfolio Holdings Configuration
-
 holdings:
   - rank: 1
     ticker: "AMZN"
     company: "Amazon.com, Inc."
-    weight: "10.50%"
+    weight: "10.02%"
 
   - rank: 2
-    ticker: "S&P 500 ETF"
-    company: "TIGER US S&P 500 ETF"
-    weight: "9.40%"
-
-  - rank: 3
     ticker: "META"
     company: "Meta Platforms, Inc."
-    weight: "9.27%"
+    weight: "8.34%"
+
+  - rank: 3
+    ticker: "S&P 500 ETF"
+    company: "TIGER US S&P 500 ETF"
+    weight: "7.96%"
 
   - rank: 4
     ticker: "Nasdaq 100 ETF"
     company: "TIGER US Nasdaq 100 ETF"
-    weight: "8.76%"
+    weight: "7.92%"
 
   - rank: 5
-    ticker: "BTC"
-    company: "Bitcoin"
-    weight: "7.75%"
-
-  - rank: 6
-    ticker: "IEF"
-    company: "iShares 7-10 Year Treasury Bond ETF"
-    weight: "6.59%"
-
-  - rank: 7
-    ticker: "AMD"
-    company: "Advanced Micro Devices, Inc."
-    weight: "6.25%"
-
-  - rank: 8
-    ticker: "PLTR"
-    company: "Palantir Technologies Inc."
-    weight: "5.86%"
-
-  - rank: 9
-    ticker: "ETH"
-    company: "Ethereum"
-    weight: "3.70%"
-
-  - rank: 10
-    ticker: "GOOGL"
-    company: "Alphabet Inc."
-    weight: "3.59%"
-
-  - rank: 11
     ticker: "IREN"
     company: "Iris Energy Limited"
-    weight: "3.50%"
+    weight: "6.64%"
+
+  - rank: 6
+    ticker: "ZETA"
+    company: "Zeta Global Holdings Corp."
+    weight: "5.76%"
+
+  - rank: 7
+    ticker: "BTC"
+    company: "Bitcoin"
+    weight: "5.41%"
+
+  - rank: 8
+    ticker: "AMD"
+    company: "Advanced Micro Devices, Inc."
+    weight: "5.60%"
+
+  - rank: 9
+    ticker: "FIGR"
+    company: "Figure Technology Solutions Inc."
+    weight: "4.33%"
+
+  - rank: 10
+    ticker: "ETH"
+    company: "Ethereum"
+    weight: "4.09%"
+
+  - rank: 11
+    ticker: "NBIS"
+    company: "Nebius Group N.V."
+    weight: "3.78%"
 
   - rank: 12
     ticker: "RKLB"
     company: "Rocket Lab USA, Inc."
-    weight: "3.24%"
+    weight: "3.52%"
 
   - rank: 13
-    ticker: "UNH"
-    company: "UnitedHealth Group Incorporated"
-    weight: "2.90%"
+    ticker: "GOOGL"
+    company: "Alphabet Inc."
+    weight: "3.24%"
 
   - rank: 14
-    ticker: "ZETA"
-    company: "Zeta Global Holdings Corp."
-    weight: "2.73%"
+    ticker: "UBER"
+    company: "Uber Technologies, Inc."
+    weight: "3.07%"
 
   - rank: 15
-    ticker: "FIGR"
-    company: "Figure Technology Solutions Inc."
-    weight: "2.54%"
+    ticker: "UNH"
+    company: "UnitedHealth Group Incorporated"
+    weight: "2.59%"
 
   - rank: 16
-    ticker: "ACE US Big Tech TOP7 PLUS ETF"
-    company: "ACE US Big Tech TOP7 PLUS ETF"
-    weight: "2.23%"
+    ticker: "PLTR"
+    company: "Palantir Technologies Inc."
+    weight: "2.64%"
 
   - rank: 17
-    ticker: "TEM"
-    company: "Tempus AI, Inc."
-    weight: "2.11%"
-
-  - rank: 18
-    ticker: "NBIS"
-    company: "Nebius Group N.V."
-    weight: "1.87%"
-
-  - rank: 19
     ticker: "DUOL"
     company: "Duolingo, Inc."
-    weight: "1.72%"
+    weight: "2.35%"
+
+  - rank: 18
+    ticker: "ACE US Big Tech TOP7 PLUS"
+    company: "ACE US Big Tech TOP7 PLUS ETF"
+    weight: "2.01%"
+
+  - rank: 19
+    ticker: "TEM"
+    company: "Tempus AI, Inc."
+    weight: "1.64%"
 
   - rank: 20
     ticker: "CPRX"
     company: "Catalyst Pharmaceuticals, Inc."
-    weight: "1.31%"
+    weight: "1.21%"
 
   - rank: 21
-    ticker: "TSLA"
-    company: "Tesla, Inc."
-    weight: "1.27%"
-
-  - rank: 22
     ticker: "KoAct Global Quantum Computing Active ETF"
     company: "KoAct Global Quantum Computing Active ETF"
-    weight: "0.97%"
-    
-# Can add more holdings following this format:
-# - rank: 3
-#   ticker: "AAPL"
-#   company: "Apple Inc."
-#   weight: "8.25%"
+    weight: "0.88%"
