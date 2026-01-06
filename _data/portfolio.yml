@@ -30,8 +30,8 @@ holdings:
     weight: "5.76%"
 
   - rank: 7
-    ticker: "₿ BTC"
-    company: "Bitcoin"
+    ticker: "₿TC"
+    company: "₿itcoin"
     weight: "5.41%"
 
   - rank: 8
@@ -45,8 +45,8 @@ holdings:
     weight: "4.33%"
 
   - rank: 10
-    ticker: "ETH"
-    company: "Ethereum"
+    ticker: "ΞTH"
+    company: "Ξthereum"
     weight: "4.09%"
 
   - rank: 11
