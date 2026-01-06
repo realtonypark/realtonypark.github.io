@@ -30,7 +30,7 @@ holdings:
     weight: "5.76%"
 
   - rank: 7
-    ticker: "BTC"
+    ticker: "₿ BTC"
     company: "Bitcoin"
     weight: "5.41%"
 
