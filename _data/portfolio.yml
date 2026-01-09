@@ -12,12 +12,12 @@ holdings:
   - rank: 3
     ticker: "S&P 500 ETF"
     company: "TIGER US S&P 500 ETF"
-    weight: "7.77%"
+    weight: "7.89%"
 
   - rank: 4
     ticker: "Nasdaq 100 ETF"
     company: "TIGER US Nasdaq 100 ETF"
-    weight: "7.89%"
+    weight: "7.77%"
 
   - rank: 5
     ticker: "IREN"
@@ -25,13 +25,13 @@ holdings:
     weight: "6.92%"
 
   - rank: 6
-    ticker: "ZETA"
-    company: "Zeta Global Holdings Corp."
-    weight: "5.74%"
-
-  - rank: 7
     ticker: "₿TC"
     company: "₿itcoin"
+    weight: "5.74%"
+    
+  - rank: 7
+    ticker: "ZETA"
+    company: "Zeta Global Holdings Corp."
     weight: "5.73%"
 
   - rank: 8
@@ -50,14 +50,14 @@ holdings:
     weight: "4.50%"
 
   - rank: 11
-    ticker: "NBIS"
-    company: "Nebius Group N.V."
-    weight: "3.99%"
-
-  - rank: 12
     ticker: "DUOL"
     company: "Duolingo, Inc."
     weight: "4.03%"
+
+  - rank: 12
+    ticker: "NBIS"
+    company: "Nebius Group N.V."
+    weight: "3.99%"
 
   - rank: 13
     ticker: "RKLB"
