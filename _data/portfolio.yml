@@ -2,104 +2,99 @@ holdings:
   - rank: 1
     ticker: "AMZN"
     company: "Amazon.com, Inc."
-    weight: "10.02%"
+    weight: "10.74%"
 
   - rank: 2
     ticker: "META"
     company: "Meta Platforms, Inc."
-    weight: "8.34%"
+    weight: "8.30%"
 
   - rank: 3
     ticker: "S&P 500 ETF"
     company: "TIGER US S&P 500 ETF"
-    weight: "7.96%"
+    weight: "7.77%"
 
   - rank: 4
     ticker: "Nasdaq 100 ETF"
     company: "TIGER US Nasdaq 100 ETF"
-    weight: "7.92%"
+    weight: "7.89%"
 
   - rank: 5
     ticker: "IREN"
     company: "Iris Energy Limited"
-    weight: "6.64%"
+    weight: "6.92%"
 
   - rank: 6
     ticker: "ZETA"
     company: "Zeta Global Holdings Corp."
-    weight: "5.76%"
+    weight: "5.74%"
 
   - rank: 7
     ticker: "₿TC"
     company: "₿itcoin"
-    weight: "5.41%"
+    weight: "5.73%"
 
   - rank: 8
     ticker: "AMD"
     company: "Advanced Micro Devices, Inc."
-    weight: "5.60%"
+    weight: "5.25%"
 
   - rank: 9
     ticker: "FIGR"
     company: "Figure Technology Solutions Inc."
-    weight: "4.33%"
+    weight: "4.85%"
 
   - rank: 10
     ticker: "ΞTH"
     company: "Ξthereum"
-    weight: "4.09%"
+    weight: "4.50%"
 
   - rank: 11
     ticker: "NBIS"
     company: "Nebius Group N.V."
-    weight: "3.78%"
+    weight: "3.99%"
 
   - rank: 12
-    ticker: "RKLB"
-    company: "Rocket Lab USA, Inc."
-    weight: "3.52%"
+    ticker: "DUOL"
+    company: "Duolingo, Inc."
+    weight: "4.03%"
 
   - rank: 13
-    ticker: "GOOGL"
-    company: "Alphabet Inc."
-    weight: "3.24%"
+    ticker: "RKLB"
+    company: "Rocket Lab USA, Inc."
+    weight: "3.84%"
 
   - rank: 14
     ticker: "UBER"
     company: "Uber Technologies, Inc."
-    weight: "3.07%"
+    weight: "3.61%"
 
   - rank: 15
-    ticker: "UNH"
-    company: "UnitedHealth Group Incorporated"
-    weight: "2.59%"
+    ticker: "GOOGL"
+    company: "Alphabet Inc."
+    weight: "3.34%"
 
   - rank: 16
     ticker: "PLTR"
     company: "Palantir Technologies Inc."
-    weight: "2.64%"
+    weight: "1.81%"
 
   - rank: 17
-    ticker: "DUOL"
-    company: "Duolingo, Inc."
-    weight: "2.35%"
-
-  - rank: 18
     ticker: "ACE US Big Tech TOP7 PLUS"
     company: "ACE US Big Tech TOP7 PLUS ETF"
-    weight: "2.01%"
+    weight: "1.94%"
 
-  - rank: 19
+  - rank: 18
     ticker: "TEM"
     company: "Tempus AI, Inc."
-    weight: "1.64%"
+    weight: "1.41%"
+
+  - rank: 19
+    ticker: "KoAct Global Quantum Computing Active ETF"
+    company: "KoAct Global Quantum Computing Active ETF"
+    weight: "0.92%"
 
   - rank: 20
     ticker: "CPRX"
     company: "Catalyst Pharmaceuticals, Inc."
-    weight: "1.21%"
-
-  - rank: 21
-    ticker: "KoAct Global Quantum Computing Active ETF"
-    company: "KoAct Global Quantum Computing Active ETF"
-    weight: "0.88%"
+    weight: "0.29%"
