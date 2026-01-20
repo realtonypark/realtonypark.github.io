@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-12-05-ai-not-bubble.md",
+                "file": "_posts/2026-01-19-investement-strategy-memo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-12-05-ai-not-bubble"
+              "title": "2026-01-19-investement-strategy-memo"
             }
           },
           {
@@ -183,10 +183,12 @@
   },
   "active": "0f3dbefaa99d63d7",
   "lastOpenFiles": [
-    "_posts/2025-04-29-what-makes-‘dream-team’-mlb.md",
-    "_posts/2025-12-05-ai-not-bubble.md",
-    "assets/posts/not-bubble.jpg",
     "index.md",
+    "_posts/2026-01-19-investement-strategy-memo.md",
+    "_posts/2025-10-27-nu-osm.md",
+    "_posts/2025-12-05-ai-not-bubble.md",
+    "_posts/2025-04-29-what-makes-‘dream-team’-mlb.md",
+    "assets/posts/not-bubble.jpg",
     "not-bubble.jpg",
     "teaching.md",
     "research.md",
@@ -197,7 +199,6 @@
     "posts.md",
     "cv.md",
     "holdings.md",
-    "_posts/2025-10-27-nu-osm.md",
     "_posts/2025-04-15-mediamatch.md",
     "_includes/graphs/cands.svg"
   ]
