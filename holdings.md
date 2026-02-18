@@ -18,7 +18,7 @@ title: Portfolio
 
   <p>This page contains information about my stock portfolio. <em>This page is for personal use.</em></p>
 
-  <p>Holdings as of Jan 5, 2026</p>
+  <p>Holdings as of Feb 17, 2026</p>
 
   <table>
     <thead>
