@@ -2,99 +2,84 @@ holdings:
   - rank: 1
     ticker: "AMZN"
     company: "Amazon.com, Inc."
-    weight: "10.74%"
+    weight: "11.03%"
 
   - rank: 2
     ticker: "META"
     company: "Meta Platforms, Inc."
-    weight: "8.30%"
+    weight: "9.79%"
 
   - rank: 3
-    ticker: "S&P 500 ETF"
-    company: "TIGER US S&P 500 ETF"
-    weight: "7.89%"
-
-  - rank: 4
-    ticker: "Nasdaq 100 ETF"
-    company: "TIGER US Nasdaq 100 ETF"
-    weight: "7.77%"
-
-  - rank: 5
     ticker: "IREN"
     company: "Iris Energy Limited"
-    weight: "6.92%"
+    weight: "9.34%"
+
+  - rank: 4
+    ticker: "S&P 500 ETF"
+    company: "TIGER US S&P 500 ETF"
+    weight: "9.12%"
+
+  - rank: 5
+    ticker: "Nasdaq 100 ETF"
+    company: "TIGER US Nasdaq 100 ETF"
+    weight: "8.98%"
 
   - rank: 6
-    ticker: "₿TC"
-    company: "₿itcoin"
-    weight: "5.74%"
-    
-  - rank: 7
     ticker: "ZETA"
     company: "Zeta Global Holdings Corp."
-    weight: "5.73%"
+    weight: "7.01%"
+
+  - rank: 7
+    ticker: "₿TC"
+    company: "₿itcoin"
+    weight: "6.81%"
 
   - rank: 8
-    ticker: "AMD"
-    company: "Advanced Micro Devices, Inc."
-    weight: "5.25%"
-
-  - rank: 9
-    ticker: "FIGR"
-    company: "Figure Technology Solutions Inc."
-    weight: "4.85%"
-
-  - rank: 10
-    ticker: "ΞTH"
-    company: "Ξthereum"
-    weight: "4.50%"
-
-  - rank: 11
-    ticker: "DUOL"
-    company: "Duolingo, Inc."
-    weight: "4.03%"
-
-  - rank: 12
     ticker: "NBIS"
     company: "Nebius Group N.V."
-    weight: "3.99%"
+    weight: "5.91%"
 
-  - rank: 13
+  - rank: 9
+    ticker: "ETH"
+    company: "Ethereum"
+    weight: "5.34%"
+
+  - rank: 10
+    ticker: "AMD"
+    company: "Advanced Micro Devices, Inc."
+    weight: "4.83%"
+
+  - rank: 11
     ticker: "RKLB"
     company: "Rocket Lab USA, Inc."
-    weight: "3.84%"
+    weight: "4.56%"
 
-  - rank: 14
-    ticker: "UBER"
-    company: "Uber Technologies, Inc."
-    weight: "3.61%"
+  - rank: 12
+    ticker: "DUOL"
+    company: "Duolingo, Inc."
+    weight: "4.47%"
 
-  - rank: 15
+  - rank: 13
     ticker: "GOOGL"
     company: "Alphabet Inc."
-    weight: "3.34%"
+    weight: "3.66%"
 
-  - rank: 16
+  - rank: 14
     ticker: "PLTR"
     company: "Palantir Technologies Inc."
-    weight: "1.81%"
+    weight: "3.24%"
 
-  - rank: 17
-    ticker: "ACE US Big Tech TOP7 PLUS"
-    company: "ACE US Big Tech TOP7 PLUS ETF"
-    weight: "1.94%"
+  - rank: 15
+    ticker: "FIGR"
+    company: "Figure Technology Solutions Inc."
+    weight: "2.85%"
 
-  - rank: 18
+  - rank: 16
     ticker: "TEM"
     company: "Tempus AI, Inc."
-    weight: "1.41%"
+    weight: "1.93%"
 
-  - rank: 19
-    ticker: "KoAct Global Quantum Computing Active ETF"
-    company: "KoAct Global Quantum Computing Active ETF"
-    weight: "0.92%"
-
-  - rank: 20
-    ticker: "CPRX"
-    company: "Catalyst Pharmaceuticals, Inc."
-    weight: "0.29%"
+  - rank: 17
+    ticker: "XLF"
+    company: "Financial Select Sector SPDR Fund"
+    weight: "1.12%"
