@@ -11,6 +11,7 @@ You can never lose if you never quit.
 
 ### Featured Articles
 
+- [The Knowledge Problem and AI Governance: Hayek on the Anthropic–Pentagon Conflict](_posts/2026-03-06-ai-governance.md)
 - [The ONE Thing](_posts/2026-03-01-one-thing.md)
 - [What Makes the ‘Dream Team’ in the MLB: Identifying Key Batting Metrics that Drive Offensive Production in the Statcast Era (2015-2024)](_posts/2025-04-29-what-makes-‘dream-team’-mlb.md)
 - [The Visual Grammar of Anthropocentrism in Jaws](_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md)
