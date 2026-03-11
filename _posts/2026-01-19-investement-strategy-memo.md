@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Investment Strategy Memo: Focus on ‘Bottlenecks’ and ‘Misconceptions’"
+title: "Simple Investment Strategy Memo: ‘Bottlenecks’ and ‘Misconceptions’"
 tags:
 published: true
 excerpt: <p>Investors bet money on the future they foresee, accumulating wealth or suffering losses based on the results. While corporate analysis and earnings reports are important, the essence of the battle lies in gauging what kind of future will unfold. However, we do not possess memories of a future we have actually experienced. Therefore, we have no choice but to imagine in our minds which future has the highest probability of realization.</p>
