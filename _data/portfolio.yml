@@ -1,81 +1,81 @@
 holdings:
   - rank: 1
-    ticker: "AMZN"
-    company: "Amazon.com, Inc."
-    weight: "11.04%"
-  - rank: 2
     ticker: "IREN"
     company: "Iris Energy Limited"
-    weight: "10.32%"
+    weight: "11.60%"
+  - rank: 2
+    ticker: "QQQM"
+    company: "Nasdaq 100 ETF"
+    weight: "9.26%"
   - rank: 3
-    ticker: "Nasdaq 100 ETF"
-    company: "TIGER US Nasdaq 100 ETF"
-    weight: "9.79%"
+    ticker: "AMZN"
+    company: "Amazon.com, Inc."
+    weight: "9.00%"
   - rank: 4
-    ticker: "META"
-    company: "Meta Platforms, Inc."
-    weight: "8.95%"
-  - rank: 5
     ticker: "ETH"
     company: "Ethereum"
-    weight: "8.31%"
+    weight: "8.43%"
+  - rank: 5
+    ticker: "SPYM"
+    company: "S&P 500 ETF"
+    weight: "7.99%"
   - rank: 6
-    ticker: "S&P 500 ETF"
-    company: "TIGER US S&P 500 ETF"
-    weight: "8.26%"
+    ticker: "META"
+    company: "Meta Platforms, Inc."
+    weight: "7.30%"
   - rank: 7
-    ticker: "ZETA"
-    company: "Zeta Global Holdings Corp."
-    weight: "7.48%"
-  - rank: 8
     ticker: "₿TC"
     company: "₿itcoin"
-    weight: "7.02%"
+    weight: "7.21%"
+  - rank: 8
+    ticker: "NVDA"
+    company: "NVIDIA Corporation"
+    weight: "6.18%"
   - rank: 9
     ticker: "RKLB"
     company: "Rocket Lab USA, Inc."
-    weight: "4.92%"
+    weight: "4.91%"
   - rank: 10
-    ticker: "NBIS"
-    company: "Nebius Group N.V."
-    weight: "4.90%"
-  - rank: 11
     ticker: "GOOGL"
     company: "Alphabet Inc."
-    weight: "4.22%"
+    weight: "4.62%"
+  - rank: 11
+    ticker: "ZETA"
+    company: "Zeta Global Holdings Corp."
+    weight: "4.43%"
   - rank: 12
+    ticker: "COIN"
+    company: "Coinbase Global, Inc."
+    weight: "4.13%"
+  - rank: 13
+    ticker: "NBIS"
+    company: "Nebius Group N.V."
+    weight: "3.71%"
+  - rank: 14
+    ticker: "CRCL"
+    company: "Circle Internet Group Inc."
+    weight: "3.59%"
+  - rank: 15
     ticker: "AMD"
     company: "Advanced Micro Devices, Inc."
-    weight: "3.92%"
-  - rank: 13
-    ticker: "XLF"
-    company: "Financial Select Sector SPDR Fund"
-    weight: "2.03%"
-  - rank: 14
-    ticker: "CDE"
-    company: "Coeur Mining, Inc."
-    weight: "1.65%"
-  - rank: 15
+    weight: "3.46%"
+  - rank: 16
     ticker: "FIGR"
     company: "Figure Technology Solutions Inc."
-    weight: "1.56%"
-  - rank: 16
-    ticker: "NVDA"
-    company: "NVIDIA Corporation"
-    weight: "1.52%"
+    weight: "1.75%"
   - rank: 17
     ticker: "TEM"
     company: "Tempus AI, Inc."
-    weight: "1.44%"
+    weight: "1.65%"
   - rank: 18
-    ticker: "PLTR"
-    company: "Palantir Technologies Inc."
-    weight: "1.24%"
+    ticker: "CDE"
+    company: "Coeur Mining, Inc."
+    weight: "0.34%"
   - rank: 19
-    ticker: "ARKF"
-    company: "ARK Fintech Innovation ETF"
-    weight: "0.90%"
-  - rank: 20
     ticker: "DUOL"
     company: "Duolingo, Inc."
-    weight: "0.54%"
+    weight: "0.27%"
+  - rank: 20
+    ticker: "INFQ"
+    company: "Infleqtion, Inc."
+    weight: "0.18%"
