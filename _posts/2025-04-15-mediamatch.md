@@ -7,7 +7,7 @@ excerpt: <p><a href="https://github.com/realtonypark/google-hack.git">Project re
 ---
 [Project repository →](https://github.com/realtonypark/google-hack.git)
 
-# Media Match - Google DevFest WashU Hackathon Project
+# Media Match 
 
 A web application that helps users log and discover their next favorite book, movie, or TV series using AI-powered recommendations. Built with Next.js and leveraging Google's Gemini AI, Google Books API, and TMDB API for a comprehensive media discovery experience.
 
