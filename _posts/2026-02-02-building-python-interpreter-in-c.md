@@ -3,7 +3,8 @@ layout: post
 title: "Building a Python Interpreter in C: How nuPython Works Under the Hood"
 tags: cs/ds
 published: true
-excerpt: <p>What does it actually mean to "run" a program? nuPython is a Python interpreter written in C from scratch — no garbage collector, no runtime, no safety net. This post dissects its three-stage pipeline: scanning raw characters into tokens, parsing tokens into a typed program graph, and executing that graph against a custom RAM abstraction where every variable is a named slot in a heap-allocated array. If you've ever wondered what happens between <code>python script.py</code> and seeing output, this is the answer.</p>
+excerpt: |
+  <p>What does it actually mean to "run" a program? nuPython is a Python interpreter written in C from scratch — no garbage collector, no runtime, no safety net. This post dissects its three-stage pipeline: scanning raw characters into tokens, parsing tokens into a typed program graph, and executing that graph against a custom RAM abstraction where every variable is a named slot in a heap-allocated array. If you've ever wondered what happens between <code>python script.py</code> and seeing output, this is the answer.</p>
 ---
 
 [GitHub Repo →](https://github.com/realtonypark/python-interpreter-c)
