@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_memo/Oddity 1 — Security & Privacy Technical Design.md",
+                "file": "_memo/2026-04-17-tokenization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Oddity 1 — Security & Privacy Technical Design"
+              "title": "2026-04-17-tokenization"
             }
           }
         ]
@@ -167,10 +167,23 @@
       "bases:Create new base": false
     }
   },
-  "active": "d37fa37bc4bc8be9",
+  "active": "ce75e6c5186f776c",
   "lastOpenFiles": [
-    "_memo/CPS.md",
+    "_posts/2026-02-02-building-python-interpreter-in-c.md",
+    "_posts/2026-05-02-building-python-interpreter-in-c.md",
+    "nupython/tokenqueue.h",
+    "nupython/test-while.py",
+    "nupython/token.h",
+    "nupython/test-if.py",
+    "nupython/test-funct.py",
+    "nupython/test-expr.py",
+    "nupython/scanner.h",
+    "nupython/ram.x86.o",
+    "nupython/ram.h",
+    "nupython/ram.o",
+    "nupython/README.md",
     "_memo/Oddity 1 — Security & Privacy Technical Design.md",
+    "_memo/CPS.md",
     "_memo/District Outreach Email.md",
     "_memo/Product Memo.md",
     "_memo/Improving the College Letter of Rec. process for ___ High School.md",
@@ -192,11 +205,6 @@
     "_posts/2021-06-03-how-to-make-a-vowel-chart-using-matplotlib.md",
     "_posts/2020-03-07-typing-ipa-symbols.md",
     "_posts/2021-04-27-how-to-write-phonological-rule.md",
-    "_posts/2025-12-05-ai-not-bubble.md",
-    "_posts/2024-12-06-match-cut-editing-in-inception.md",
-    "_posts/2024-11-13-the-transfer-of-green-in-vertigo.md",
-    "Untitled 1",
-    "_memo",
     "assets/posts/not-bubble.jpg",
     "not-bubble.jpg",
     "_includes/graphs/cands.svg"
