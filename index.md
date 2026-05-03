@@ -1,23 +1,6 @@
 ---
-layout: home
+layout: posts
+title: Posts
 ---
 
-![](/assets/banner.webp)
-
-<p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 5px; font-style: italic;">Montreux, Switzerland, 2024</p>
-
-You can never lose if you never quit.
-
-
-### Featured Articles
-
-- [The Knowledge Problem and AI Governance: Hayek on the Anthropic–Pentagon Conflict](_posts/2026-03-06-ai-governance.md)
-- [The ONE Thing](_posts/2026-03-01-one-thing.md)
-- [What Makes the ‘Dream Team’ in the MLB: Identifying Key Batting Metrics that Drive Offensive Production in the Statcast Era (2015-2024)](_posts/2025-04-29-what-makes-‘dream-team’-mlb.md)
-- [The Visual Grammar of Anthropocentrism in Jaws](_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md)
-- [Northwestern Open Street Map](_posts/2025-10-27-nu-osm.md)
-
-### Affiliated Websites
-
-- [Designing the Smart City](https://realtonypark2.github.io/)
-- [KMLA Forge & BUZ Aerospace](https://realtonypark3.github.io/)
+Sort by: [**date**]({{ site.baseurl }}{% link index.md %}) \| [tag]({{ site.baseurl }}{% link posts-by-tag.md %})

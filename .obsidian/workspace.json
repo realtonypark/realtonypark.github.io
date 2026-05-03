@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "751b4a51307f2d5f",
+        "id": "ece72910c18b431b",
         "type": "tabs",
         "children": [
           {
-            "id": "d37fa37bc4bc8be9",
+            "id": "9466a53212acdf34",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/2025-04-15-mediamatch.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-04-15-mediamatch"
+              "title": "New tab"
             }
           }
         ]
@@ -167,11 +163,27 @@
       "bases:Create new base": false
     }
   },
-  "active": "d37fa37bc4bc8be9",
+  "active": "9466a53212acdf34",
   "lastOpenFiles": [
-    "_memo/Oddity 1 — Security & Privacy Technical Design.md",
-    "_memo/2026-04-17-tokenization.md",
+    "Profile.pdf",
+    "_memo/founder info.md",
+    "Pasted image 20260502230437.png",
+    "Pasted image 20260502230451.png",
+    "_memo/about me.md",
+    "_memo/second brain.md",
     "_posts/2026-05-01-tokenization.md",
+    "_memo/Improving the College Letter of Rec. process for ___ High School.md",
+    "_memo/Oddity 1 — Security & Privacy Technical Design.md",
+    "_memo/Hernan Cortes.md",
+    "_memo/Prior Startup PullUp's Strategy Memo.md",
+    "_memo/Product Memo.md",
+    "_memo/District Outreach Email.md",
+    "_memo/CPS.md",
+    "_memo/Ark by Oddity1 Playbook.md",
+    "_memo/2025-12-05-ai-not-bubble.md",
+    "Oddity1 Chrome Extension.md",
+    "_posts/2025-04-15-mediamatch.md",
+    "_memo/2026-04-17-tokenization.md",
     "_posts/2026-04-17-tokenization.md",
     "_posts/2026-02-02-building-python-interpreter-in-c.md",
     "_posts/2026-05-02-building-python-interpreter-in-c.md",
@@ -184,27 +196,12 @@
     "nupython/scanner.h",
     "nupython/ram.x86.o",
     "nupython/ram.h",
-    "nupython/ram.o",
     "nupython/README.md",
-    "_memo/CPS.md",
-    "_memo/District Outreach Email.md",
-    "_memo/Product Memo.md",
-    "_memo/Improving the College Letter of Rec. process for ___ High School.md",
-    "_memo/Ark by Oddity1 Playbook.md",
     "_memo/Sales Playbook.md",
-    "_memo/Hernan Cortes.md",
     "Ark by Oddity1.md",
     "_posts/2026-04-12-lessons.md",
     "_posts/2026-03-06-ai-governance.md",
-    "_posts/2025-04-15-mediamatch.md",
     "_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md",
-    "_posts/2025-10-27-nu-osm.md",
-    "_memo/Lessons learned after 1 year of building a startup..md",
-    "_posts/2026-01-19-investement-strategy-memo.md",
-    "_posts/2026-03-01-one-thing.md",
-    "_posts/2024-12-10-designing-the-smart-city.md",
-    "_posts/2021-05-03-exhaustive-list-of-all-iso-morphic.md",
-    "_posts/2021-06-03-how-to-make-a-vowel-chart-using-matplotlib.md",
     "assets/posts/not-bubble.jpg",
     "not-bubble.jpg",
     "_includes/graphs/cands.svg"
