@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Future of Finance: Tokenization and Ethereum"
-tags:
+tags: essay investing
 published: true
 excerpt: <p>Larry Fink built an $18.8 trillion empire on ETFs. Now he says tokenization is next — and this time, the infrastructure is blockchain. This post maps where the real institutional money is flowing and why the EVM is quietly becoming the operating system of global finance.</p>
 ---
