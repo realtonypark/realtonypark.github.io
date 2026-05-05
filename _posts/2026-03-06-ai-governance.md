@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "The Knowledge Problem and AI Governance: Hayek on the Anthropic–Pentagon Conflict"
-tags:
+tags: essay
 published: true
 excerpt: |-
   <p>Who should govern AI: the state, the market, or neither?
   In this essay, I use Hayek’s “knowledge problem” to argue that centralized command over AI is often clumsy and uninformed—but that leaving frontier AI entirely to private firms is also unstable.</p>
 ---
+
 In late February 2026, a conflict between the artificial intelligence company Anthropic and the United States Department of Defense brought an important question: who should govern the utilization of AI systems? Anthropic, the creator of the Claude AI, held a Pentagon contract worth up to two hundred million dollars. The Department of Defense demanded that the company remove its self-imposed safety restrictions and allow military use of the technology for “all lawful purposes.” Anthropic refused, citing potential misuse, and the Pentagon decided to designate the company a “supply-chain risk,” a label ordinarily applied to foreign adversaries (Shalal et al.). Friedrich Hayek’s essay “The Use of Knowledge in Society” provides a powerful framework for understanding why state attempts to forcibly control private AI companies are likely to be clumsy and counterproductive. Hayek argues that socially relevant knowledge is dispersed, local, and constantly changing, so no central authority can fully gather and direct it. Applying this perspective to the Anthropic–Pentagon conflict reveals that attempts by the government to pressure companies into reversing their safety judgments are flawed. However, Hayek's framework alone is insufficient. Frontier AI has the potential to concentrate private power and amplify the risks of surveillance and militarization to a societal scale. While this may not justify arbitrary state coercion against specific companies, it can justify generally applicable public rules.
 
 Hayek’s core argument is that the basic problem of social order is not simply one of abstract calculation. The real problem is the “utilization of knowledge not given to anyone in its totality” (Hayek 520). Much of the knowledge needed for sensible decision-making exists only in fragmented form, distributed across many different people. Thereroe, Hayek rejects the fantasy that a single authority could possess all relevant information and direct society from above. According to Hayek, the dispute about planning is really a dispute about who does the planning: whether it is done centrally by one authority or decentrally by many persons whose separate decisions must somehow be coordinated (520–21).  For Hayek, competition is important not because it eliminates planning, but because it decentralizes it.
@@ -29,7 +30,7 @@ After all, that is the most compelling lesson to draw from the Anthropic–Penta
 
 <br>
 
-<b>Works Cited</b> 
+<b>Works Cited</b>
 
 - Hayek, F. A. “The Use of Knowledge in Society.” The American Economic Review, vol. 35, no. 4, Sept. 1945, pp. 519–530.
 - Shalal, Andrea, et al. “Trump Directs US Agencies to Toss Anthropic’s AI as Pentagon Calls Startup a Supply Risk.” Reuters, 27 Feb. 2026.

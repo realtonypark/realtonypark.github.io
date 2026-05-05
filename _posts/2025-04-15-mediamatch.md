@@ -1,13 +1,14 @@
 ---
 layout: post
 title: MediaMatch
-tags: cs/ds project/research
+tags: dev project
 published: true
 excerpt: <p><a href="https://github.com/realtonypark/google-hack.git">Project repository</a>. A web application that helps users log and discover their next favorite book, movie, or TV series using AI-powered recommendations. Built with Next.js and leveraging Google's Gemini AI, Google Books API, and TMDB API for a comprehensive media discovery experience.</p>
 ---
+
 [Project repository →](https://github.com/realtonypark/google-hack.git)
 
-# Media Match 
+# Media Match
 
 A web application that helps users log and discover their next favorite book, movie, or TV series using AI-powered recommendations. Built with Next.js and leveraging Google's Gemini AI, Google Books API, and TMDB API for a comprehensive media discovery experience.
 
@@ -20,7 +21,6 @@ A web application that helps users log and discover their next favorite book, mo
 - 🔄 Real-time data handling
 - 🎯 Type-safe development with TypeScript
 
-
 ## Prerequisites
 
 - Node.js (v18 or higher)
@@ -30,18 +30,21 @@ A web application that helps users log and discover their next favorite book, mo
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/realtonypark/google-hack.git
 cd google-hack
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install --legacy-peer-deps
 ```
 
 3. Set up environment variables:
-Create a `.env.local` file in the root directory with the following variables:
+   Create a `.env.local` file in the root directory with the following variables:
+
 ```python
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
@@ -61,6 +64,7 @@ NEXTAUTH_URL=http://localhost:3000
 ## Running the Application
 
 1. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -75,11 +79,10 @@ npm run dev
 - **Database**: Firebase Firestore
 - **State Management**: React Context
 - **AI Integration**: Google Gemini API
-- **Media APIs**: 
+- **Media APIs**:
   - Google Books API for book data
   - TMDB API for movie and TV series data
 
-
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.

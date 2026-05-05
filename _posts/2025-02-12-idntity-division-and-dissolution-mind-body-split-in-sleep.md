@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Identity Division and Dissolution: Mind-Body Split in \"Sleep\""
-tags: analysis
+title: 'Identity Division and Dissolution: Mind-Body Split in "Sleep"'
+tags: essay
 published: true
 excerpt: |
-    <p>An analysis on short story. This essay examines how Murakami's short story "Sleep" portrays a woman's insomnia as creating a split between mind and body that evolves into a deeper fracture between her social roles and autonomous self. Though this division initially seems liberating, allowing her to reclaim her pre-marriage identity as a passionate reader, the essay argues that her eventual psychological fragmentation serves as a warning that true authenticity requires integrating personal desires with social obligations.</p>
+  <p>An analysis on short story. This essay examines how Murakami's short story "Sleep" portrays a woman's insomnia as creating a split between mind and body that evolves into a deeper fracture between her social roles and autonomous self. Though this division initially seems liberating, allowing her to reclaim her pre-marriage identity as a passionate reader, the essay argues that her eventual psychological fragmentation serves as a warning that true authenticity requires integrating personal desires with social obligations.</p>
 ---
 
 "Sleep" by Haruki Murakami is a short story of a woman with insomnia. It describes the protagonist's experience and the changes sleeplessness brings to her life. In "Sleep," Murakami exposes how the protagonist's insomnia creates a split between mind and body, suggesting she exists in two simultaneous yet distinct states. Through her seventeen days without sleep, what begins as a physical-mental division evolves into a deeper fracture between her social roles and her autonomous self, particularly her pre-marriage identity as a passionate reader. While this division initially appears liberating, allowing her to pursue her intellectual interests beyond social constraints, the story ultimately reveals how such apparent freedom leads to psychological fragmentation, suggesting that attempting to completely separate one's authentic desires from social obligations results in self-destruction.
@@ -17,8 +17,7 @@ However, this partition between social and egoistic identities ultimately collap
 
 Through the protagonist's experience from initial mind-body separation to complete psychological fragmentation, Murakami's "Sleep" offers a warning about the dangers of viewing personal desires and social roles as mutually exclusive states. While modern society often encourages us to "find ourselves" by breaking free from social constraints, the protagonist's descent into chaos suggests that authentic self-realization cannot come from rejecting our connections to others. This short story thus challenges discourse about individual freedom, suggesting that true authenticity must find ways to integrate, rather than escape, our obligations to others.
 
-
 <br>
-<b>Works Cited<b> 
+<b>Works Cited<b>
 
-* Murakami, Haruki. “Sleep.” <i>The Elephant Vanishes</i>, Vintage Books, 1993, pp. 74-110.
+- Murakami, Haruki. “Sleep.” <i>The Elephant Vanishes</i>, Vintage Books, 1993, pp. 74-110.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What Makes the 'Dream Team' in the MLB - Identifying Key Batting Metrics that Drive Offensive Production in the Statcast Era (2015-2024)"
-tags: cs/ds project/research
+tags: dev project
 published: true
 excerpt: |
   <p>This study investigates which batting metrics most consistently correlate with team run production in Major League Baseball during the Statcast era (2015-2024). Using team-level offensive statistics for all 30 MLB teams, the research analyzes traditional metrics alongside advanced Statcast measurements through correlation analysis, multiple regression modeling, and longitudinal trend analysis. Results reveal that traditional metrics, particularly walks (r = 0.890) and home runs (r = 0.875), demonstrate stronger correlations with run production than Statcast metrics such as exit velocity (r = 0.216) and barrel percentage (r = 0.039). Regression models using traditional statistics significantly outperform Statcast-based models in predicting team run totals (R-squared = 0.955 vs. much lower values for Statcast-only models). These findings suggest that despite technological advancements in baseball analytics, traditional outcome-based statistics remain more directly tied to offensive production, with important implications for how MLB teams should evaluate offensive talent and construct lineups to maximize run production.</p>
@@ -11,7 +11,6 @@ excerpt: |
 
 [Analysis Code →](https://github.com/realtonypark/mlb-statcast-analysis.git)
 
-
 <b>Abstract</b>
 
 This study investigates which batting metrics most consistently correlate with team run production in Major League Baseball during the Statcast era (2015-2024). Using team-level offensive statistics for all 30 MLB teams, the research analyzes traditional metrics alongside advanced Statcast measurements through correlation analysis, multiple regression modeling, and longitudinal trend analysis. Results reveal that traditional metrics, particularly walks (r = 0.890) and home runs (r = 0.875), demonstrate stronger correlations with run production than Statcast metrics such as exit velocity (r = 0.216) and barrel percentage (r = 0.039). Regression models using traditional statistics significantly outperform Statcast-based models in predicting team run totals (R-squared = 0.955 vs. much lower values for Statcast-only models). These findings suggest that despite technological advancements in baseball analytics, traditional outcome-based statistics remain more directly tied to offensive production, with important implications for how MLB teams should evaluate offensive talent and construct lineups to maximize run production.
@@ -19,7 +18,7 @@ This study investigates which batting metrics most consistently correlate with t
 <br>
 <b>Introduction</b>
 
-Baseball has long been intertwined with statistics, perhaps more than any other sport. As Oakland Athletics General Manager Billy Beane famously stated in *Moneyball*: “Your goal shouldn’t be to buy players, your goal should be to buy wins” (Miller, 2011, 0:19:55). This philosophy revolutionized baseball operations to emphasize that statistical analysis could help us recognize undervalued attributes that translate directly to team success. The quest to identify which player attributes genuinely contribute to winning has driven decades of analytical innovation, with each new technological advancement offering deeper insights into team-building strategies.
+Baseball has long been intertwined with statistics, perhaps more than any other sport. As Oakland Athletics General Manager Billy Beane famously stated in _Moneyball_: “Your goal shouldn’t be to buy players, your goal should be to buy wins” (Miller, 2011, 0:19:55). This philosophy revolutionized baseball operations to emphasize that statistical analysis could help us recognize undervalued attributes that translate directly to team success. The quest to identify which player attributes genuinely contribute to winning has driven decades of analytical innovation, with each new technological advancement offering deeper insights into team-building strategies.
 
 In 2015, Major League Baseball introduced Statcast, a state-of-the-art tracking system that fundamentally transformed baseball analytics. Statcast uses radar and optical tracking technology to provide unprecedented data on previously unquantifiable aspects of player performance, such as exit velocity (the speed at which the ball leaves the bat), launch angle (the vertical angle at which the ball is hit), barrel percentage (optimally struck balls), and hard-hit percentage (balls hit at 95+ mph) (Baseball Savant, n.d.). This technological revolution was a significant milestone in baseball’s analytical evolution and had already progressed from basic counting statistics to sophisticated metrics over the previous decade. Indeed, the Tampa Bay Rays have been at the forefront of baseball’s information age, leveraging advanced analytics and innovative player evaluation methods to construct a successful team despite having one of the league’s lowest payrolls (MLB, 2019).
 
@@ -43,31 +42,31 @@ While batting metrics have advanced significantly, gaps remain in our understand
 <br>
 <b>Methodology and Discussion</b>
 
-The comprehensive baseball dataset used in this study provides a foundation for investigating the relationship between batting metrics and offensive productivity. This dataset includes both traditional and advanced Statcast statistics for all 30 MLB teams, collected from FanGraphs, a leading baseball analytics website that presents statistical data for professional baseball teams. Rather than relying on a single-season snapshot, this data includes batting statistics across 10 seasons (2015–2024), thereby enabling a robust analysis of which metrics are consistently correlated with offensive production. 
+The comprehensive baseball dataset used in this study provides a foundation for investigating the relationship between batting metrics and offensive productivity. This dataset includes both traditional and advanced Statcast statistics for all 30 MLB teams, collected from FanGraphs, a leading baseball analytics website that presents statistical data for professional baseball teams. Rather than relying on a single-season snapshot, this data includes batting statistics across 10 seasons (2015–2024), thereby enabling a robust analysis of which metrics are consistently correlated with offensive production.
 
 To analyze the relationship between batting metrics and run production, I took a three-step approach. This methodological approach builds upon the analytical frameworks established by Albert (2016) and Wulff and De Silva (2022) while extending their application to team-level analysis across the Statcast era. This method addresses a gap in the literature where individual player metrics have been more thoroughly studied than team-level offensive production. First, I calculated Pearson correlation coefficients between each metric and team runs scored to identify the strength and direction of these relationships. As shown in Figure 1, these correlations varied considerably across metrics, with traditional statistics generally showing stronger relationships with run production than Statcast metrics.
 
 ![Relationship Between Batting Metrics and Run Production - All Years](/assets/posts/Image2.jpg)
-*Figure 1: Relationship Between Batting Metrics and Run Production - All Years*
+_Figure 1: Relationship Between Batting Metrics and Run Production - All Years_
 
 The correlation scatter plots reveal that walks (BB, r = 0.890) and home runs (HR, r = 0.875) have the strongest linear relationships with total runs scored, while batting average (AVG, r = 0.402), slugging percentage (SLG, r = 0.374), and on-base percentage (OBP, r = 0.324) show moderate correlations. In contrast, Statcast metrics demonstrate notably weaker relationships: exit velocity (EV, r = 0.216), hard-hit percentage (HardHit%, r = 0.095), barrel percentage (Barrel%, r = 0.039), and launch angle (LA, r = 0.070) all show minimal correlation with run production. These results clearly indicate that despite the technological sophistication of Statcast measurements, traditional outcome-based statistics remain more directly tied to offensive production.
 
 The second stage of analysis was developing multiple regression models to identify which combination of metrics best predicts team run totals. Three distinct models were created: one using only traditional metrics, one using only Statcast metrics, and a combined model. Figure 2 illustrates the evolution of model performance across the Statcast era. It shows that the traditional metrics model consistently outperformed the other approaches throughout the study period.
 
 ![Model Performance Evolution (2015-2024)](/assets/posts/Image1.jpg)
-*Figure 2: Model Performance Evolution (2015-2024)*
+_Figure 2: Model Performance Evolution (2015-2024)_
 
 The traditional model achieved an exceptionally high R-squared value of 0.955 (which means traditional metrics model explains 95.5% of the variance in team run production). Within this model, batting average was the most significant predictor with a coefficient of 5972.642 (p < 0.001), though interestingly, OBP showed a negative coefficient of -2486.658 (p < 0.001), and SLG also had a negative coefficient of -866.524 (p = 0.002). These counterintuitive coefficients likely result from multicollinearity issues, as shown in Figure 3, where strong correlations exist between AVG and OBP (r = 0.74), AVG and SLG (r = 0.71), and OBP and SLG (r = 0.81).
 
 ![Correlation Between Batting Metrics - All Years](/assets/posts/Image4.jpg)
-*Figure 3: Correlation Between Batting Metrics - All Years*
+_Figure 3: Correlation Between Batting Metrics - All Years_
 
 The Statcast model showed an R-squared value of just 0.091, which means this model have significantly lower explanatory power. Within this model, exit velocity was the only significant predictor (coefficient = 99.840, p < 0.001). This suggests that the quality of contact measured by Statcast provides some information about offensive potential, but it captures a relatively small portion of what drives run production. The combined model showed performance intermediate between the traditional and Statcast models, though much closer to the traditional model's effectiveness. This indicates that Statcast metrics do not represent a huge breakthrough in predicting offensive production at the team level but only provide additional information beyond traditional statistics.
 
 The longitudinal analysis of these relationships, shown in Figure 4, demonstrates trends in how various metrics correlate with run production over time. The figure shows that the relative importance of different metrics fluctuated somewhat from year to year. These fluctuations likely reflect changing strategic approaches across the league and rule modifications during this period. However, traditional statistics, particularly BB, HR, and the traditional slash line statistics (AVG, OBP, SLG), consistently outperformed Statcast metrics throughout the entire study period.
 
 ![Correlation with Run Production Over Time](/assets/posts/Image3.jpg)
-*Figure 4: Correlation with Run Production Over Time*
+_Figure 4: Correlation with Run Production Over Time_
 
 One notable trend is the negative correlation between strikeout rate (K_rate) and run production. Indeed, the negative correlation strengthened over time (reaching approximately r = -0.4 by 2024). This indicates the growing cost of strikeouts in the modern game. Another interesting observation is the relative stability of most correlations despite some rule changes during this period, such as the introduction of the universal designated hitter, pitch clock, and restrictions on defensive shifts. This stability suggests that the fundamental relationships between batting outcomes and run production remain consistent even as the strategic environment of the game evolves.
 
@@ -89,24 +88,24 @@ Future research can explore several promising directions based on these findings
 <br>
 <b>References</b>
 
-* Albert, J. (2016). Improved component predictions of batting and pitching measures. *Journal of Quantitative Analysis in Sports, 12*(2), 73-85.
+- Albert, J. (2016). Improved component predictions of batting and pitching measures. _Journal of Quantitative Analysis in Sports, 12_(2), 73-85.
 
-* Barry, D., & Hartigan, J. A. (1993). Choice Models for Predicting Divisional Winners in Major League Baseball. *Journal of the American Statistical Association, 88*(423), 766–774.
+- Barry, D., & Hartigan, J. A. (1993). Choice Models for Predicting Divisional Winners in Major League Baseball. _Journal of the American Statistical Association, 88_(423), 766–774.
 
-* Baseball Savant. (n.d.). *Statcast Glossary*. Baseball Savant. https://baseballsavant.mlb.com/
+- Baseball Savant. (n.d.). _Statcast Glossary_. Baseball Savant. https://baseballsavant.mlb.com/
 
-* Baumer, B., & Zimbalist, A. (2014). *The sabermetric revolution: Assessing the growth of analytics in baseball*. University of Pennsylvania Press.
+- Baumer, B., & Zimbalist, A. (2014). _The sabermetric revolution: Assessing the growth of analytics in baseball_. University of Pennsylvania Press.
 
-* Kohn, J. N., Lochhead, L., Feng, J., Bobb, R., & Appelbaum, L. G. (2024). Strength, speed, and anthropometric predictors of in-game batting performance in baseball. *Journal of Sports Sciences, 42*(8), 720-727.
+- Kohn, J. N., Lochhead, L., Feng, J., Bobb, R., & Appelbaum, L. G. (2024). Strength, speed, and anthropometric predictors of in-game batting performance in baseball. _Journal of Sports Sciences, 42_(8), 720-727.
 
-* Koop, G. (2002). Comparing the Performance of Baseball Players: A Multiple-Output Approach. *Journal of the American Statistical Association, 97*(459), 710–720.
+- Koop, G. (2002). Comparing the Performance of Baseball Players: A Multiple-Output Approach. _Journal of the American Statistical Association, 97_(459), 710–720.
 
-* Lindbergh, B., & Sawchik, T. (2019). *The MVP machine: How baseball's new nonconformists are using data to build better players*. Basic Books.
+- Lindbergh, B., & Sawchik, T. (2019). _The MVP machine: How baseball's new nonconformists are using data to build better players_. Basic Books.
 
-* Miller, B. (Director). (2011). *Moneyball* [Film]. Columbia Pictures.
+- Miller, B. (Director). (2011). _Moneyball_ [Film]. Columbia Pictures.
 
-* MLB. (2019, August 25). *Rays success built on analytics, development*. MLB.com. https://www.mlb.com/news/rays-success-built-on-analytics-development.
+- MLB. (2019, August 25). _Rays success built on analytics, development_. MLB.com. https://www.mlb.com/news/rays-success-built-on-analytics-development.
 
-* Pinheiro, R., & Szymanski, S. (2022). All runs are created equal: labor market efficiency in major league baseball. *Journal of Sports Economics, 23*(8), 1046-1075.
+- Pinheiro, R., & Szymanski, S. (2022). All runs are created equal: labor market efficiency in major league baseball. _Journal of Sports Economics, 23_(8), 1046-1075.
 
-* Wulff, S. S., & De Silva, W. P. (2022). A multi-criteria approach for evaluating major league baseball batting performance. *Journal of Sports Analytics, 8*(2), 85-98.
+- Wulff, S. S., & De Silva, W. P. (2022). A multi-criteria approach for evaluating major league baseball batting performance. _Journal of Sports Analytics, 8_(2), 85-98.
