@@ -30,9 +30,6 @@ collections:
   research:
     output: true
     permalink: /:collection/:name
-  # wiki:
-  #   output: false
-  #   sort-by: chapter
 
 # site info
 github: https://github.com/realtonypark
@@ -61,6 +58,9 @@ show_excerpts: true # set to true to show excerpts on the homepage
 
 # Build settings
 theme: minima
+
+exclude:
+  - _brain
 
 plugins:
   - jekyll-feed

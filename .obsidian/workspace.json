@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_memo/risk paradox.md",
+                "file": "_brain/SCHEMA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "risk paradox"
+              "title": "SCHEMA"
             }
           }
         ]
@@ -169,7 +169,16 @@
   },
   "active": "953311b523dfa2bf",
   "lastOpenFiles": [
+    "_brain/log.md",
+    "_brain/index.md",
     "_memo/risk paradox.md",
+    "_brain/SCHEMA.md",
+    "_brain/synthesis",
+    "_brain/sources",
+    "_brain/entities",
+    "_brain/concepts",
+    "_brain",
+    "CLAUDE.md",
     "_memo/Clippings/AI Agent & MCP Security Platform.md",
     "_memo/Clippings/Circle Internet Group Deep Dive.md",
     "about.md",
@@ -197,16 +206,7 @@
     "_memo/Product Memo.md",
     "_memo/District Outreach Email.md",
     "_memo/CPS.md",
-    "_memo/2025-12-05-ai-not-bubble.md",
-    "Oddity1 Chrome Extension.md",
-    "_posts/2025-04-15-mediamatch.md",
-    "_memo/2026-04-17-tokenization.md",
     "nupython/tokenqueue.h",
-    "nupython/test-while.py",
-    "nupython/token.h",
-    "nupython/test-if.py",
-    "nupython/test-funct.py",
-    "nupython/test-expr.py",
     "assets/posts/not-bubble.jpg",
     "not-bubble.jpg",
     "_includes/graphs/cands.svg"
