@@ -23,7 +23,7 @@ _brain/
 - `_memo/Clippings/` — web clippings inside memo folder
 - `_posts/` — published blog posts (git-tracked, Tony's refined public writing)
 
-These are **immutable** during wiki operations. The LLM reads from them but never modifies them.
+These are the primary source directories. Any other source can also be ingested on request — URLs, uploaded files, PDFs, or documents from outside the vault. Sources are **immutable** during wiki operations. The LLM reads from them but never modifies them.
 
 ## Page Conventions
 

@@ -8,7 +8,7 @@ This repository is Tony Park's Second Brain — a personal knowledge system that
 Raw Sources → Wiki → Published Blog
 ```
 
-- **Raw sources** (`_memo/`, `_memo/Clippings/`, `_posts/`): Immutable inputs. Articles, memos, startup docs, web clippings, personal notes, published blog posts. Never modify these during wiki operations.
+- **Raw sources** (`_memo/`, `_memo/Clippings/`, `_posts/`, and any other requested source): Immutable inputs. Articles, memos, startup docs, web clippings, personal notes, published blog posts, URLs, uploaded files. Never modify these during wiki operations.
 - **Wiki** (`_brain/`): LLM-maintained knowledge layer. Summaries, entity pages, concept pages, synthesis. Compounds over time. See `_brain/SCHEMA.md` for operating instructions.
 - **Blog** (`_posts/`): Curated public output. Also a raw source — published posts contain Tony's refined thinking and should be ingested into the brain.
 

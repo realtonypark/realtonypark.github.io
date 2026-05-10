@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_brain/SCHEMA.md",
+                "file": "_memo/Clippings/Circle Internet Group Deep Dive.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SCHEMA"
+              "title": "Circle Internet Group Deep Dive"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 271.5
+    "width": 220.5
   },
   "right": {
     "id": "6fff58713367b69b",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2025-10-27-nu-osm.md",
+                "file": "_memo/Clippings/Circle Internet Group Deep Dive.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-10-27-nu-osm"
+              "title": "Backlinks for Circle Internet Group Deep Dive"
             }
           },
           {
@@ -113,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "_memo/Clippings/Circle Internet Group Deep Dive.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Circle Internet Group Deep Dive"
             }
           },
           {
@@ -141,15 +142,17 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "_memo/Clippings/Circle Internet Group Deep Dive.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Circle Internet Group Deep Dive"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -169,43 +172,45 @@
   },
   "active": "953311b523dfa2bf",
   "lastOpenFiles": [
-    "_brain/log.md",
-    "_brain/index.md",
-    "_memo/risk paradox.md",
-    "_brain/SCHEMA.md",
+    "_posts/2026-05-09-second-brain.md",
+    "_brain/concepts/multicollinearity.md",
+    "_brain/concepts/moneyball.md",
+    "_brain/concepts/statcast.md",
+    "_brain/concepts/sabermetrics.md",
+    "_brain/concepts/radical-prioritization.md",
+    "_brain/concepts/compounding.md",
+    "_brain/concepts/habit-formation.md",
+    "_brain/concepts/focusing-question.md",
+    "_brain/concepts/framing-effects.md",
+    "_brain/concepts/risk-opportunity-duality.md",
+    "_brain/concepts/urban-density.md",
+    "_brain/concepts/natural-surveillance.md",
+    "_brain/concepts/participatory-budgeting.md",
+    "_brain/concepts/hexagonal-city-design.md",
+    "_brain/concepts/smart-city.md",
+    "_brain/concepts/cinematic-form-as-ideology.md",
+    "_brain/concepts/dolly-zoom.md",
+    "_brain/concepts/umwelt.md",
+    "_brain/concepts/monster-making.md",
+    "_brain/concepts/anthropocentrism.md",
+    "_brain/concepts/identity-fragmentation.md",
+    "_brain/concepts/mind-body-dualism.md",
+    "_brain/concepts/visual-pedagogy.md",
+    "_brain/concepts/dream-layers.md",
+    "_brain/concepts/match-cut.md",
+    "Untitled.canvas",
+    "Untitled 1.canvas",
     "_brain/synthesis",
     "_brain/sources",
     "_brain/entities",
     "_brain/concepts",
     "_brain",
-    "CLAUDE.md",
-    "_memo/Clippings/AI Agent & MCP Security Platform.md",
-    "_memo/Clippings/Circle Internet Group Deep Dive.md",
-    "about.md",
-    "_memo/second brain.md",
     "_memo/YC.pdf",
     "_memo/YC-Founder.pdf",
-    "_memo/about me.md",
-    "_memo/App (founder profile).md",
-    "_memo/App (team).md",
-    "_memo/Ark by Oddity1 Playbook.md",
-    "_memo/Improving the College Letter of Rec. process for ___ High School.md",
-    "_memo/Hernan Cortes.md",
-    "_memo/Oddity 1 — Security & Privacy Technical Design.md",
-    "_memo/Oddity 1 YC.md",
-    "_posts/2026-05-08-circle.md",
     "Pasted image 20260502230451.png",
-    "Clippings/Accretion - SaaS Landing Page Template 1.md",
-    "Clippings/Accretion - SaaS Landing Page Template.md",
     "_memo/Clippings",
     "Profile.pdf",
-    "_memo/founder info.md",
     "Pasted image 20260502230437.png",
-    "_posts/2026-05-01-tokenization.md",
-    "_memo/Prior Startup PullUp's Strategy Memo.md",
-    "_memo/Product Memo.md",
-    "_memo/District Outreach Email.md",
-    "_memo/CPS.md",
     "nupython/tokenqueue.h",
     "assets/posts/not-bubble.jpg",
     "not-bubble.jpg",
