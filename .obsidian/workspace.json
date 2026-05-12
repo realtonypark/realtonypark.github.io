@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "cc1043dea78884fa",
+        "id": "10f175904cc4291b",
         "type": "tabs",
         "children": [
           {
-            "id": "793cd92bb2c54ef1",
+            "id": "13eff5befe54f12c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "_memo/Scalable Software Architecture (Backend).md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Scalable Software Architecture (Backend)"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 220.5
+    "width": 281.5
   },
   "right": {
     "id": "6fff58713367b69b",
@@ -163,35 +167,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "793cd92bb2c54ef1",
+  "active": "13eff5befe54f12c",
   "lastOpenFiles": [
-    "_memo/App (founder profile).md",
-    "_memo/Clippings/Why Coinbase Wins in an AI-Native Finance World.md",
-    "_memo/Clippings/Repricing Coinbase For The Agent Economy.md",
+    "_memo/Role.md",
+    "_memo/Scalable Software Architecture (Backend).md",
+    "Pasted image 20260512170918.png",
+    "Pasted image 20260512170632.png",
+    "_memo/risk paradox.md",
     "_posts/2026-05-09-second-brain.md",
-    "Clippings",
+    "Pasted image 20260512161346.png",
+    "Pasted image 20260512150935.png",
     "CLAUDE.md",
-    "_posts/2026-05-08-circle.md",
-    "_brain/concepts/painkiller-vs-vitamin.md",
-    "_brain/sources/startup-lessons.md",
-    "_brain/entities/tony-park.md",
-    "_brain/sources/about-me.md",
-    "_brain/entities/northwestern.md",
-    "_brain/index.md",
-    "_memo/Clippings/Circle Internet Group Deep Dive.md",
-    "_brain/concepts/multicollinearity.md",
-    "_brain/concepts/moneyball.md",
-    "_brain/concepts/statcast.md",
-    "_brain/concepts/sabermetrics.md",
-    "_brain/concepts/radical-prioritization.md",
-    "_brain/concepts/compounding.md",
-    "_brain/concepts/habit-formation.md",
-    "_brain/concepts/focusing-question.md",
+    "cta.md",
+    "_memo/District Outreach Email.md",
+    "_memo/CPS.md",
+    "_brain/sources/risk-paradox.md",
     "_brain/concepts/framing-effects.md",
-    "_brain/concepts/risk-opportunity-duality.md",
-    "_brain/concepts/urban-density.md",
-    "_brain/concepts/natural-surveillance.md",
-    "_brain/concepts/participatory-budgeting.md",
+    "_brain/entities/tony-park.md",
+    "_brain/sources/tony-park-founder-profile.md",
+    "_brain/entities/northwestern.md",
+    "_brain/sources/nu-openstreetmap.md",
+    "object-oriented-design.md",
+    "_brain/sources/about-me.md",
+    "personal-branding.md",
+    "_brain/sources/tony-park-resume.md",
+    "_brain/sources/oddity1-yc-application.md",
+    "_brain/sources/isef-wheelchair.md",
+    "_brain/entities/isef.md",
+    "_brain/concepts/bottleneck-investing.md",
+    "_brain/sources/investment-strategy-memo.md",
+    "_brain/sources/oddity1-security-privacy.md",
+    "_memo/Resume (temp).md",
+    "Clippings",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "_brain/synthesis",
