@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_memo/Scalable Software Architecture (Backend).md",
+                "file": "_posts/2026-05-09-second-brain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Scalable Software Architecture (Backend)"
+              "title": "2026-05-09-second-brain"
             }
           }
         ]
@@ -167,16 +167,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "13eff5befe54f12c",
+  "active": "ce75e6c5186f776c",
   "lastOpenFiles": [
-    "_memo/Role.md",
+    "_posts/2025-04-29-what-makes-‘dream-team’-mlb.md",
+    "_posts/2026-05-09-second-brain.md",
+    "assets/posts/obsidian-brain-graph.png",
+    "Pasted image 20260512150935.png",
     "_memo/Scalable Software Architecture (Backend).md",
+    "_memo/Role.md",
     "Pasted image 20260512170918.png",
     "Pasted image 20260512170632.png",
     "_memo/risk paradox.md",
-    "_posts/2026-05-09-second-brain.md",
-    "Pasted image 20260512161346.png",
-    "Pasted image 20260512150935.png",
     "CLAUDE.md",
     "cta.md",
     "_memo/District Outreach Email.md",
