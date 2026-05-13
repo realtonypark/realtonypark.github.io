@@ -106,7 +106,7 @@ When I publish a post, I ingest it back into the wiki. The blog post becomes a s
 
 ## Current state
 
-178 wiki pages: 33 source pages, 54 entity pages, 91 concept pages. Covering startups, investing, film analysis, urban design, programming, sports analytics, productivity frameworks, and philosophy. All cross-linked. All indexed.
+195 wiki pages: 36 source pages, 59 entity pages, 100 concept pages. Covering startups, investing, film analysis, programming, sports analytics, productivity frameworks, and philosophy. All cross-linked. All indexed.
 
 The system took about an hour to set up and an afternoon to run the initial mass ingest. Now it's maintenance mode — I ingest new sources as they come in, query when I need to think through something, lint occasionally. The compounding has already started. Each new source I ingest connects to more existing pages than the last one did.
 
