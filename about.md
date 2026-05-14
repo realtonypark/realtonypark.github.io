@@ -5,7 +5,7 @@ title: About
 
 ![](/assets/banner.webp)
 
-<p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 5px; font-style: italic;">Montreux, Switzerland, 2024</p>
+<p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 5px; font-style: italic;">Moneyball, 2011</p>
 
 You can never lose if you never quit.
 
