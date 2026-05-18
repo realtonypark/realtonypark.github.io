@@ -7,7 +7,7 @@ excerpt: |
   <p>A film multi-shot analysis essay. This analysis examines how Hitchcock's <i>Vertigo</i> uses the color green as a visual motif that shifts from Madeleine to Scottie, symbolizing how Scottie is consumed by his love for someone who doesn't exist. Through three key shots—Madeleine in a green dress, her green car, and Scottie wearing a green sweater—the essay demonstrates how this color transfer visually reinforces the film's central theme of destructive obsession with illusion.</p>
 ---
 
-![[vertigo.webp]]
+![img](/assets/posts/vertigo.webp)
 
 In <i>Vertigo</i> (Alfred Hitchcock, 1958), the intentional shift of green coloring from Madeleine to Scottie serves as a motif to visually imply that Scottie will eventually be destroyed by falling in love with someone that doesn't exist. In this paper, I will describe and analyze how this color motif develops across three key shots: Scottie (James Stewart) first seeing Madeleine (Kim Novak) in her green dress at Ernie's restaurant (17:58-18:10), Scottie following her green car (19:13-19:17), and finally, Scottie himself appearing in green sweater (44:00-44:32). Through these shots, the transfer of green from Madeleine to Scottie visualizes how something fictional -- Madeleine herself -- eventually consumes the man who believes in her.
 

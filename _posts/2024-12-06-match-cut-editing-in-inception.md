@@ -6,7 +6,7 @@ published: true
 excerpt: |
   <p>A film multi-shot analysis essay. This essay explores how Nolan's <i>Inception</i> employs match cut editing to visually connect actions across different dream levels. By analyzing three key match cuts—water as a kick mechanism, the tilting van affecting gravity, and the van's impact causing Arthur's fall—the essay shows how this editing technique helps viewers comprehend the complex vertical relationships between simultaneous dream layers and understand the film's intricate plot structure.</p>
 ---
-![[inception.webp]]
+![img](/assets/posts/inception.webp)
 
 In <i>Inception</i> (Christopher Nolan, 2010), the motif of match cut editing that juxtaposes cause and effect across different dream levels serves to visualize how actions in one reality influence others, helping viewers comprehend the film's complex plot. In this paper, I will describe and analyze how this editing motif is used across three key juxtapositions of shots -- Cobb's (Leonardo DiCaprio) kick using water (11:09-11:14), the van's tilt creating shifted gravity (1:29:34-1:29:38), and the van's impact causing Arthur's (Joseph Gordon-Levitt) fall (1:39:43-1:39:46). The match cuts between intentionally juxtaposed shots in different dream levels create a visual system that allows audiences to track and understand how events are related across simultaneous dream levels.
 

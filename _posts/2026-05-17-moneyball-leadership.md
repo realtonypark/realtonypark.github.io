@@ -3,7 +3,7 @@ layout: post
 title: Learning innovation and leadership from Moneyball
 tags:
   - essay
-published: true
+published: false
 excerpt: Karpathy showed that an LLM can maintain a wiki that compounds over time instead of rediscovering knowledge from scratch on every query. I took that idea, wired it into my Obsidian vault alongside my blog, and now Claude Code runs the whole thing. Here's the system.
 ---
 ![Obsidian Graph View](/assets/posts/obsidian-brain-graph.png)

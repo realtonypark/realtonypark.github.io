@@ -5,7 +5,7 @@ tags: essay investing
 published: true
 excerpt: <p>Larry Fink built an $18.8 trillion empire on ETFs. Now he says tokenization is next, and this time, the infrastructure is blockchain. This post maps where the institutional money is actually flowing and why the EVM is quietly becoming the operating system of global finance.</p>
 ---
-![[eth.webp]]
+![img](/assets/posts/eth.webp)
 
 In September 2025, the global ETF market crossed $18.8 trillion in assets under management, a record, growing over 26% in less than a year. Larry Fink built that empire. BlackRock's CEO democratized investing by making low-cost market access available to anyone with a brokerage account. Thirty years of relentless distribution. Eighteen trillion dollars.
 
