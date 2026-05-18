@@ -8,34 +8,63 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c42dbb84f980f197",
+            "id": "895971d654e45ff9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_memo/Clippings/Cut Through the Noise.md",
+                "file": "_memo/dev/09-ai-agents-mcp-deep-dive.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cut Through the Noise"
+              "title": "09-ai-agents-mcp-deep-dive"
             }
           },
           {
-            "id": "0ac5536b95de6cc5",
+            "id": "2b71c47424e0d7fb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_memo/Clippings/When Knowledge Is Cheap, Insight Is Everything Jevons Paradox applied to Torah Learning.md",
+                "file": "_memo/Phils.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "When Knowledge Is Cheap, Insight Is Everything Jevons Paradox applied to Torah Learning"
+              "title": "Phils"
+            }
+          },
+          {
+            "id": "163a2530c38a4a25",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2026-05-17-moneyball-leadership.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-05-17-moneyball-leadership"
+            }
+          },
+          {
+            "id": "3b1e966f52988f12",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-10-04-cinematography-in-citizen-lane.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2024-10-04-cinematography-in-citizen-lane"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -181,39 +210,47 @@
       "bases:Create new base": false
     }
   },
-  "active": "c42dbb84f980f197",
+  "active": "3b1e966f52988f12",
   "lastOpenFiles": [
-    "_memo/hist/Nutmeg's historical significance.md",
-    "_memo/Clippings/Cut Through the Noise.md",
-    "_memo/Clippings/When Knowledge Is Cheap, Insight Is Everything Jevons Paradox applied to Torah Learning.md",
-    "about.md",
+    "_posts/2024-11-13-the-transfer-of-green-in-vertigo.md",
+    "_posts/2024-12-06-match-cut-editing-in-inception.md",
+    "_posts/2024-12-10-designing-the-smart-city.md",
+    "_posts/2025-02-12-idntity-division-and-dissolution-mind-body-split-in-sleep.md",
+    "_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md",
+    "_posts/2026-05-08-circle.md",
+    "_posts/2026-05-01-tokenization.md",
+    "assets/posts/citizen-kane.webp",
+    "assets/posts/inception.webp",
+    "assets/posts/vertigo.webp",
+    "assets/posts/circle.webp",
+    "assets/posts/eth.webp",
+    "assets/posts/jaws.gif",
+    "_posts/2026-04-12-lessons.md",
     "_posts/2026-03-06-ai-governance.md",
-    "_memo/Clippings/Why Coinbase Wins in an AI-Native Finance World.md",
-    "_memo/hist/Global Crisis.md",
-    "_memo/hist/Atlantic slave trade.md",
-    "_memo/hist/Slavery and Trade in Africa.md",
-    "_memo/hist/Material culture reflections.md",
-    "_memo/hist/Global trade in luxury goods.md",
-    "_memo/hist",
+    "_posts/2026-03-01-one-thing.md",
+    "_posts/2026-02-02-building-python-interpreter-in-c.md",
+    "_posts/2026-01-19-investement-strategy-memo.md",
+    "_posts/2025-10-27-nu-osm.md",
+    "_posts/2025-04-29-what-makes-‘dream-team’-mlb.md",
+    "_posts/2025-04-15-mediamatch.md",
+    "_posts/2024-10-04-cinematography-in-citizen-lane.md",
+    "_posts/2026-05-17-moneyball-leadership.md",
+    "_memo/Phils.md",
+    "_memo/dev/01-backend-architecture.md",
+    "assets/banner.webp",
     "_posts/2026-05-09-second-brain.md",
-    "_brain/concepts/horizontal-scaling.md",
-    "_brain/sources/scalable-backend-architecture.md",
-    "_brain/concepts/serverless.md",
-    "_brain/concepts/restful-api.md",
-    "_brain/concepts/async-patterns.md",
-    "_brain/concepts/jwt-auth.md",
-    "_brain/entities/aws.md",
-    "_brain/entities/tony-park.md",
-    "_brain/sources/startup-lessons.md",
-    "_brain/concepts/compounding.md",
-    "_brain/sources/the-one-thing.md",
-    "_brain/concepts/focusing-question.md",
-    "_memo/Circle 1Q  2026 Earnings Review (+ Ethereum).md",
-    "_brain/concepts/cdn.md",
+    "_posts/2023-11-10-kmla-forge-and-buz-aerospace.md",
+    "_memo/dev/09-ai-agents-mcp-deep-dive.md",
+    "_brain/SCHEMA.md",
+    "_memo/dev/00-positioning.md",
+    "_memo/dev/05-ai-security-mcp.md",
+    "_memo/dev/07-projects-oddity1.md",
+    "_memo/dev",
+    "_memo/dev",
+    "_memo/hist",
     "assets/posts/obsidian-brain-graph.png",
     "Pasted image 20260512150935.png",
     "Pasted image 20260512170918.png",
-    "Pasted image 20260512170632.png",
     "Clippings",
     "Untitled.canvas",
     "Untitled 1.canvas",
@@ -222,13 +259,6 @@
     "_brain/entities",
     "_brain/concepts",
     "_brain",
-    "_memo/YC.pdf",
-    "_memo/YC-Founder.pdf",
-    "Pasted image 20260502230451.png",
-    "_memo/Clippings",
-    "Pasted image 20260502230437.png",
-    "assets/posts/not-bubble.jpg",
-    "not-bubble.jpg",
-    "_includes/graphs/cands.svg"
+    "_memo/YC.pdf"
   ]
 }

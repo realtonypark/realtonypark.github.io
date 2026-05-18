@@ -6,6 +6,7 @@ published: true
 excerpt: |
   <p>A film one-shot analysis essay. This analysis focuses on how <i>Citizen Kane</i> uses deep focus and long take cinematography in a pivotal scene where adults decide young Kane's future while he plays in the snow. The essay argues that by simultaneously presenting multiple planes of action through deep focus, the scene visually expresses the film's key themes: the loss of childhood innocence, the unreliability of memory, and the elusive nature of truth, mirroring how the reporter must piece together Kane's fragmented story.</p>
 ---
+![[citizen-kane.webp]]
 
 In <i>Citizen Kane</i> (Orson Welles, 1941), the cinematography elements of deep focus and long take in the shot where adults are negotiating young Charles Kane's future while he plays outside in the snow (00:19:02-00:20:47) serve thematic functions central to the film's exploration of the loss of childhood innocence, the unreliability of memory, and the elusive nature of truth by simultaneously presenting multiple planes of action, forcing the audience to view conflicting information much like the reporter piecing together Kane's life story.
 
