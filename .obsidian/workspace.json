@@ -41,26 +41,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-05-17-moneyball-leadership.md",
+                "file": "_memo/list.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-17-moneyball-leadership"
+              "title": "list"
             }
           },
           {
-            "id": "3b1e966f52988f12",
+            "id": "26c81ac2dacb8a5e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-05-17-moneyball-leadership.md",
+                "file": "_posts/2026-05-09-second-brain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-17-moneyball-leadership"
+              "title": "2026-05-09-second-brain"
             }
           }
         ],
@@ -210,8 +210,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "3b1e966f52988f12",
+  "active": "26c81ac2dacb8a5e",
   "lastOpenFiles": [
+    "_posts/2026-05-17-moneyball-leadership.md",
+    "assets/posts/obsidian-brain-graph.png",
+    "_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md",
+    "_memo/TLA HW6.md",
+    "assets/posts/jaws.webp",
+    "_memo/list.md",
+    "_memo/Phils.md",
     "_posts/2026-05-09-second-brain.md",
     "_posts/2026-05-08-circle.md",
     "assets/posts/graph-obsidian.webp",
@@ -224,7 +231,6 @@
     "_posts/2025-10-27-nu-osm.md",
     "_posts/2025-04-29-what-makes-‘dream-team’-mlb.md",
     "_posts/2025-04-15-mediamatch.md",
-    "_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md",
     "_posts/2024-12-10-designing-the-smart-city.md",
     "_posts/2024-11-13-the-transfer-of-green-in-vertigo.md",
     "_posts/2024-10-04-cinematography-in-citizen-lane.md",
@@ -233,23 +239,17 @@
     "_posts/2024-12-06-match-cut-editing-in-inception.md",
     "assets/posts/eth.webp",
     "assets/posts/crying-face_1f622.png",
-    "_posts/2026-05-17-moneyball-leadership.md",
     "assets/posts/citizen-kane.webp",
     "assets/posts/inception.webp",
     "assets/posts/vertigo.webp",
     "assets/posts/circle.webp",
     "assets/posts/jaws.gif",
-    "_memo/Phils.md",
     "_memo/dev/01-backend-architecture.md",
-    "assets/banner.webp",
     "_memo/dev/09-ai-agents-mcp-deep-dive.md",
     "_brain/SCHEMA.md",
-    "_memo/dev/00-positioning.md",
-    "_memo/dev/05-ai-security-mcp.md",
     "_memo/dev",
     "_memo/dev",
     "_memo/hist",
-    "assets/posts/obsidian-brain-graph.png",
     "Clippings",
     "Untitled.canvas",
     "Untitled 1.canvas",

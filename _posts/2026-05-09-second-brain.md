@@ -5,7 +5,7 @@ tags: dev
 published: true
 excerpt: "Karpathy showed that an LLM can maintain a wiki that compounds over time instead of rediscovering knowledge from scratch on every query. I took that idea, wired it into my Obsidian vault alongside my blog, and now Claude Code runs the whole thing. Here's the system."
 ---
-![Obsidian Graph View](/assets/posts/graph-obsidian.webp)
+![Obsidian Graph View](/assets/posts/obsidian-brain-graph.png)
 
 Andrej Karpathy published a workflow earlier this year that reframed how I think about LLMs and documents. The core observation: most people use LLMs in a retrieval pattern. You upload files, the model grabs relevant chunks at query time, and generates an answer. RAG. NotebookLM. ChatGPT file uploads. They all work this way, and they all share the same weakness — the model rediscovers knowledge from scratch on every question. Nothing compounds. Ask a subtle question that requires synthesizing five documents, and the LLM has to find and stitch together the relevant fragments every single time.
 
