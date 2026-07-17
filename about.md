@@ -11,6 +11,7 @@ You can never lose if you never quit.
 
 ### Featured Posts
 
+- [Building a (Mini) Bitcoin: How a Blockchain Actually Reaches Consensus](_posts/2026-07-17-building-a-mini-bitcoin.md)
 - [Building a Python Interpreter in C](_posts/2026-02-02-building-python-interpreter-in-c.md)
 - [The Knowledge Problem and AI Governance: Hayek on the Anthropic–Pentagon Conflict](_posts/2026-03-06-ai-governance.md)
 - [The ONE Thing](_posts/2026-03-01-one-thing.md)
