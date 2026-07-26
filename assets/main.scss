@@ -276,6 +276,9 @@ ul.post-list {
   line-height: 1.45;
   &:visited { color: var(--text); }
   &:hover { color: var(--link-hover); }
+  // harden against browser visited privacy quirks and minima early a:visited
+  // ensure list titles are always var(--text) like charlieoneill.com .post-preview h2 a
+  &.post-link:visited { color: var(--text); }
 }
 
 .post-meta {
@@ -289,16 +292,30 @@ ul.post-list {
   margin-bottom: 0;
 }
 
-// excerpt — always block, consistently below meta (fixes inline bug)
+// excerpt — always block, consistently below meta; match charlieoneill.com reference:
+// .post-preview .post-description { font-size: 0.9rem; font-style: italic; color: var(--meta); margin: 2px 0 0 }
 .post-excerpt {
   display: block;
   margin-top: 2px;
-  color: var(--text);
-  font-size: 0.95rem;
-  line-height: 1.65;
+  color: var(--meta);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.5;
   p {
     margin: 0;
     display: block;
+    color: var(--meta);
+    font-style: italic;
+  }
+  // if excerpt contains a link (e.g. GitHub Repository), keep it readable but muted-ish
+  a {
+    color: var(--meta);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--meta) 35%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    &:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
+    &:visited { color: var(--meta); }
   }
 }
 
