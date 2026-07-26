@@ -280,6 +280,26 @@ ul.post-list {
   font-size: 0.8rem;
 }
 
+// wrapper around meta to keep date/tags on their own line
+.post-meta-row {
+  display: block;
+  margin-bottom: 2px;
+}
+
+// excerpt — always block, consistently below meta (fixes inline bug)
+.post-excerpt {
+  display: block;
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  // normalize both bare text and <p> wrapped excerpts to same appearance
+  p {
+    margin: 0;
+    display: block;
+  }
+}
+
 .post-content {
   margin-bottom: $spacing-unit;
   font-size: 1rem;
