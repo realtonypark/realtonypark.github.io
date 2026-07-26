@@ -132,6 +132,7 @@ blockquote {
   }
   .page-link {
     color: var(--meta);
+    &:visited { color: var(--meta); }
     &:hover { color: var(--text); }
   }
 }
@@ -165,6 +166,7 @@ blockquote {
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
   line-height: $base-line-height;
+  &:visited { color: var(--text); }
   &:not(:last-child) { margin-right: 20px; }
 }
 
@@ -272,6 +274,7 @@ ul.post-list {
   color: var(--text);
   font-weight: 600;
   line-height: 1.45;
+  &:visited { color: var(--text); }
   &:hover { color: var(--link-hover); }
 }
 
