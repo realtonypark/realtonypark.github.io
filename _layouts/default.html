@@ -3,7 +3,7 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body{% if page.layout == 'post' %} class="is-post"{% endif %}>
 
     {%- include header.html -%}
 
@@ -25,6 +25,7 @@
     {%- include footer.html -%}
     <script type="text/javascript">{%- include js-sort.js -%}</script>
     <!-- from https://github.com/CharlesStover/table-sort -->
+    <script type="text/javascript">{%- include blog-nav.js -%}</script>
   </body>
 
 </html>

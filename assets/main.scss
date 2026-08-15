@@ -79,7 +79,11 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  body { animation: page-fade 0.35s ease both; }
+  // `backwards`, not `both`: a forwards fill would keep this animation affecting
+  // `transform` forever, which makes <body> the containing block for every
+  // position: fixed descendant — the posts rail lands at the wrong offset. The
+  // `to` state is the element's normal state, so forwards fill buys nothing.
+  body { animation: page-fade 0.35s ease backwards; }
   @keyframes page-fade { from { opacity: 0; transform: translateY(4px); } }
 }
 
@@ -260,14 +264,14 @@ ul.post-list {
 }
 
 .post-title {
-  @include relative-font-size(2.3);
+  @include relative-font-size(1.84);
   letter-spacing: -0.015em;
   line-height: 1.15;
   font-weight: 600;
   color: var(--heading);
   margin-bottom: 12px;
   @include media-query($on-laptop) {
-    @include relative-font-size(1.8);
+    @include relative-font-size(1.44);
   }
 }
 
@@ -816,4 +820,201 @@ pre > code { border: 0; background: transparent; padding: 0; }
     color: var(--bg) !important;
     &:hover { background-color: var(--link-hover) !important; }
   }
+}
+
+/**
+ * Blog navigation — posts index rail, post table of contents, post masthead band.
+ * Rail and ToC live in the gutters either side of the 680px column and are hidden
+ * below 1200px, matching the existing .sidetoc breakpoint.
+ */
+$nav-breakpoint: 1199px;
+
+// --- Posts index rail (left gutter) ---
+.post-rail {
+  position: fixed;
+  top: 50%;
+  left: 28px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  // Shrink the pitch as the archive grows so the rail always fits the viewport.
+  // Interpolated so libsass (what GitHub Pages compiles with) emits CSS min/max
+  // verbatim instead of trying to evaluate them as Sass functions.
+  gap: #{"max(2px, min(6px, calc((70vh - (var(--rail-count, 20) * 2px)) / var(--rail-count, 20))))"};
+  z-index: 5;
+}
+
+.post-rail-item {
+  position: relative;
+  display: block;
+  // expand the hover target without adding layout height
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -4px -10px -4px -6px;
+  }
+}
+
+.post-rail-line {
+  display: block;
+  width: 14px;
+  height: 2px;
+  background: var(--muted);
+  opacity: 0.45;
+  transition: width 0.18s ease, opacity 0.18s ease, background-color 0.18s ease;
+}
+
+.post-rail-item:hover .post-rail-line,
+.post-rail-item.is-active .post-rail-line {
+  width: 26px;
+  opacity: 1;
+  background: var(--text);
+}
+
+.post-rail-card {
+  position: absolute;
+  left: 38px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  width: max-content;
+  max-width: 280px;
+  padding: 8px 12px;
+  background: var(--box-bg);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.post-rail-item:hover .post-rail-card {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.post-rail-title {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.post-rail-meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: var(--meta);
+}
+
+.post-list-item { scroll-margin-top: 90px; }
+
+// --- Post table of contents (right gutter) ---
+// Floated fully outside the text column via a negative margin, so no line box
+// ever wraps around it and the 680px reading column is unmoved.
+.post-toc {
+  position: sticky;
+  top: 40px;
+  float: right;
+  width: 200px;
+  // -(width + gap): pushes the float clear of the text column by the gap
+  margin-right: -256px;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.post-toc-link {
+  display: block;
+  padding: 4px 0 4px 12px;
+  border-left: 2px solid var(--hairline);
+  color: var(--meta);
+  transition: color 0.15s ease, border-color 0.15s ease;
+  &:hover { color: var(--text); text-decoration: none; }
+  &.is-active {
+    color: var(--text);
+    border-left-color: var(--text);
+  }
+  &.lvl-3 {
+    padding-left: 24px;
+    font-size: 0.94em;
+  }
+}
+
+.post-content h2,
+.post-content h3 { scroll-margin-top: 80px; }
+
+// --- Post page masthead: drafting-sheet band + vertical offset ---
+// The band runs from the very top of the page (behind the site header) down to
+// the title, fading to nothing exactly where the title and ToC begin — so no
+// text is ever read through it. Post pages only; `is-post` is set on <body> by
+// _layouts/default.html.
+body.is-post {
+  // how far the title / ToC / body sit below the header
+  --post-offset: 80px;
+  @media (max-width: 768px) { --post-offset: 32px; }
+
+  // 400px of off-screen lead-in + main's 30px padding-top, plus the 24px
+  // .wrapper picks up below 480px
+  --band-lead: 430px;
+  @media (max-width: 480px) { --band-lead: 454px; }
+
+  .post { padding-top: var(--post-offset); }
+
+  // let the band show through the site chrome
+  .site-header { background-color: transparent; }
+
+  main.page-content { position: relative; }
+
+  // The band's bottom edge lands exactly on the title; its top runs far above
+  // the page top, which is simply not visible (overflow above the origin isn't
+  // scrollable). Anchoring the bottom rather than the top means we never have to
+  // hard-code the site header's height — it grows from 80px to 128px when the
+  // nav wraps on small screens.
+  main.page-content::before {
+    content: '';
+    position: absolute;
+    top: -400px;
+    left: 0;
+    // width: 100%, never 100vw — html's `margin-left: calc(100vw - 100%)`
+    // scrollbar hack makes viewport units overhang on the right
+    width: 100%;
+    height: calc(var(--band-lead) + var(--post-offset));
+    // behind the header text and the title, above the page background
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.11;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' fill='none' stroke='%23211d16'%3E%3Cg stroke-width='0.6' opacity='0.6'%3E%3Cpath d='M120 0V480M360 0V480M0 120H480M0 360H480'/%3E%3C/g%3E%3Cg stroke-width='1.2'%3E%3Cpath d='M0.5 0V480M240.5 0V480M479.5 0V480M0 0.5H480M0 240.5H480M0 479.5H480'/%3E%3C/g%3E%3Cg stroke-width='0.85'%3E%3Cpath d='M0 0L120 120M120 0L0 120M240 120L360 240M360 120L240 240M120 360L240 480M240 360L120 480M360 240L480 360M480 240L360 360'/%3E%3C/g%3E%3Cg stroke-width='0.85'%3E%3Ccircle cx='300' cy='60' r='42'/%3E%3Ccircle cx='60' cy='300' r='42'/%3E%3Ccircle cx='420' cy='420' r='42'/%3E%3Ccircle cx='180' cy='180' r='26'/%3E%3C/g%3E%3Cg stroke-width='0.45'%3E%3Cpath d='M420 0V120M360 60H480M180 240V360M120 300H240'/%3E%3C/g%3E%3Cg fill='%23211d16' stroke='none'%3E%3Ccircle cx='120' cy='120' r='1.9'/%3E%3Ccircle cx='240' cy='240' r='1.9'/%3E%3Ccircle cx='360' cy='120' r='1.9'/%3E%3Ccircle cx='120' cy='360' r='1.9'/%3E%3Ccircle cx='360' cy='360' r='1.9'/%3E%3Ccircle cx='240' cy='0' r='1.9'/%3E%3Ccircle cx='0' cy='240' r='1.9'/%3E%3Ccircle cx='480' cy='240' r='1.9'/%3E%3Ccircle cx='240' cy='480' r='1.9'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 480px 480px;
+    background-position: center bottom;
+    // fade measured from the bottom edge, i.e. upward from the title
+    -webkit-mask-image: linear-gradient(to top, transparent 0, #000 110px);
+            mask-image: linear-gradient(to top, transparent 0, #000 110px);
+    @media (max-width: 768px) { background-size: 240px 240px; }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body.is-post main.page-content::before {
+    opacity: 0.15;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' fill='none' stroke='%23e6dfd2'%3E%3Cg stroke-width='0.6' opacity='0.6'%3E%3Cpath d='M120 0V480M360 0V480M0 120H480M0 360H480'/%3E%3C/g%3E%3Cg stroke-width='1.2'%3E%3Cpath d='M0.5 0V480M240.5 0V480M479.5 0V480M0 0.5H480M0 240.5H480M0 479.5H480'/%3E%3C/g%3E%3Cg stroke-width='0.85'%3E%3Cpath d='M0 0L120 120M120 0L0 120M240 120L360 240M360 120L240 240M120 360L240 480M240 360L120 480M360 240L480 360M480 240L360 360'/%3E%3C/g%3E%3Cg stroke-width='0.85'%3E%3Ccircle cx='300' cy='60' r='42'/%3E%3Ccircle cx='60' cy='300' r='42'/%3E%3Ccircle cx='420' cy='420' r='42'/%3E%3Ccircle cx='180' cy='180' r='26'/%3E%3C/g%3E%3Cg stroke-width='0.45'%3E%3Cpath d='M420 0V120M360 60H480M180 240V360M120 300H240'/%3E%3C/g%3E%3Cg fill='%23e6dfd2' stroke='none'%3E%3Ccircle cx='120' cy='120' r='1.9'/%3E%3Ccircle cx='240' cy='240' r='1.9'/%3E%3Ccircle cx='360' cy='120' r='1.9'/%3E%3Ccircle cx='120' cy='360' r='1.9'/%3E%3Ccircle cx='360' cy='360' r='1.9'/%3E%3Ccircle cx='240' cy='0' r='1.9'/%3E%3Ccircle cx='0' cy='240' r='1.9'/%3E%3Ccircle cx='480' cy='240' r='1.9'/%3E%3Ccircle cx='240' cy='480' r='1.9'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@media (max-width: $nav-breakpoint) {
+  .post-rail,
+  .post-toc { display: none; }
+}
+
+@media print {
+  .post-rail,
+  .post-toc { display: none !important; }
+  body.is-post main.page-content::before { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-rail-line,
+  .post-rail-card,
+  .post-toc-link { transition: none; }
 }
