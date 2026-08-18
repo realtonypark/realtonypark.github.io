@@ -15,8 +15,7 @@ mini-bitcoin is that trick, implemented from scratch in Rust. It's a full node: 
 
 This post is about what each piece is and how it actually works, at the level of structs and loops.
 
-<br>
-<b>The Block: A Hash-Linked Commitment</b>
+## The Block: A Hash-Linked Commitment
 
 Everything in the system reduces to one data structure:
 
@@ -39,8 +38,7 @@ A block's identity is the SHA-256 hash of its serialized header — not its cont
 
 The genesis block is hardcoded: zero parent, zero nonce, empty transaction list. Every node starts from the same genesis, so every node's chain shares the same root.
 
-<br>
-<b>Mining: A 256-Bit Lottery</b>
+## Mining: A 256-Bit Lottery
 
 Proof-of-work sounds mystical until you see the actual check. Here it is, in full:
 
@@ -70,8 +68,7 @@ Each loop iteration, the miner re-reads the chain tip (someone else may have ext
 
 The deeper point: proof-of-work is a clock. It doesn't verify anything about the transactions. It just makes block production *expensive and rate-limited*, so that the network produces blocks slowly enough to agree on them. Which brings us to the interesting part.
 
-<br>
-<b>The Longest Chain: Consensus Without a Vote</b>
+## The Longest Chain: Consensus Without a Vote
 
 Two nodes will sometimes mine blocks at nearly the same moment, each extending the same parent. Now the network has a fork: two valid, competing versions of history. Nobody is in charge, so who decides?
 
@@ -93,8 +90,7 @@ Note the strict inequality: a fork of *equal* length doesn't displace the curren
 
 The blockchain isn't stored as a list. It's a `HashMap<H256, Block>` plus a height index — a *tree* of every valid block ever seen, with the "chain" just being the path from the current tip back to genesis. Forks aren't an error condition; they're the normal state of the data structure.
 
-<br>
-<b>The Orphan Buffer: Handling Out-of-Order Arrival</b>
+## The Orphan Buffer: Handling Out-of-Order Arrival
 
 A gossip network makes no ordering guarantees. Block 42 can arrive before block 41 — its parent — has ever been seen. The block can't be validated (validation requires the parent's ledger state), but throwing it away would be wasteful. So it goes into an orphan buffer, keyed by the hash of the parent it's waiting for:
 
@@ -115,8 +111,7 @@ for child in bc.take_orphans(&hash) {
 
 The worklist matters: if blocks 41, 42, and 43 all arrived out of order, accepting 41 releases 42, and accepting 42 releases 43 — a whole buffered subtree can cascade into the chain from a single arrival.
 
-<br>
-<b>Transactions: Signatures, Nonces, and the Ledger</b>
+## Transactions: Signatures, Nonces, and the Ledger
 
 mini-bitcoin uses an account model (like Ethereum) rather than Bitcoin's UTXOs. The ledger is a map from address to `(nonce, balance)`, and a transaction is a signed instruction to move value:
 
@@ -147,8 +142,7 @@ One subtlety: the ledger state is stored *per block hash*, not globally. Every b
 
 There's no coinbase reward in this implementation; balances are seeded by a deterministic "ICO" at genesis, and a background transaction generator produces a steady stream of signed transfers to keep the mempool full and blocks non-empty.
 
-<br>
-<b>Gossip: How Blocks Travel</b>
+## Gossip: How Blocks Travel
 
 The P2P layer is a non-blocking TCP server (built on `mio`) speaking an eight-message protocol:
 
@@ -171,8 +165,7 @@ Hashes-first is a bandwidth economy: in a gossip network every node hears about 
 
 When a node receives and accepts a block it hasn't seen, it re-broadcasts the hash to *its* peers. That's the "gossip": each node tells its neighbors, who tell their neighbors, and a block mined anywhere reaches everywhere in a few hops — no routing, no central relay.
 
-<br>
-<b>Watching Consensus Happen</b>
+## Watching Consensus Happen
 
 Each node exposes an HTTP API, so a three-node network on one machine is three commands:
 
@@ -186,8 +179,7 @@ Start mining on all three (`curl "localhost:7000/miner/start?lambda=2000000"`), 
 
 The tunable mining rate makes one of the deepest tradeoffs in blockchain design directly observable. Crank the mining rate up until blocks are produced faster than they propagate, and forks multiply — nodes keep extending tips that are already stale, and mining power is wasted on branches that lose. Slow the rate down and forks all but vanish. This is exactly why real Bitcoin targets a block every ten minutes: block time must comfortably exceed network propagation delay, or the network burns its security on orphaned work. Here, that's not a claim in a whitepaper — it's a parameter you can turn and a fork rate you can watch change.
 
-<br>
-<b>What's Deliberately Missing</b>
+## What's Deliberately Missing
 
 mini-bitcoin has no difficulty adjustment (the target is fixed at genesis), no mining rewards, no UTXO model, no scripting language, no persistent storage, and no peer discovery beyond the `-c` flag. Each omission marks where a real system spends its complexity: difficulty adjustment is what keeps Bitcoin's block time stable as hashpower changes by orders of magnitude; coinbase rewards are the entire incentive layer; UTXOs trade the account model's simplicity for parallelism and privacy; Script turns transactions from transfers into programs.
 

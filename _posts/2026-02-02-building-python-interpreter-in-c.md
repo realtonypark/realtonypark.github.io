@@ -22,8 +22,7 @@ execute(program, memory);
 
 Scan characters into tokens. Build a graph from those tokens. Allocate memory. Execute the graph against that memory. Then destroy everything in reverse. Every language runtime — CPython, V8, the JVM — follows this same pipeline. What nuPython makes explicit is what each stage actually is in memory: a struct, a linked list, a union, a heap-allocated array.
 
-<br>
-<b>Stage 1: Characters to Tokens</b>
+## Stage 1: Characters to Tokens
 
 The scanner reads a raw stream of bytes. Its job is to recognize that `while` is not five characters — it's `nuPy_KEYW_WHILE`. This is called tokenization. A **token** is the smallest unit of meaning in a language: a keyword, a literal, an operator, a name.
 
@@ -41,15 +40,13 @@ Three integers. Twelve bytes. The `id` encodes what the token _is_ — one of 81
 
 The token struct doesn't store a string value — `nuPy_PLUS` is always `+`, there's nothing to store. Only identifiers and literals carry a string payload, and that lives in the token queue node.
 
-<br>
-<b>The Token Queue</b>
+## The Token Queue
 
 Tokens are collected into a **TokenQueue**: a singly-linked list where each node holds the token metadata, an optional `char* value` (the identifier's name, the literal's text), and a `next` pointer.
 
 Two operations make parsing possible without committing prematurely. `peekToken()` inspects the front of the queue without consuming it. `peek2Token()` looks one further ahead. This two-token lookahead is necessary because the grammar is ambiguous at one token: `*x` at the start of a line could be a pointer dereference assignment or the beginning of an expression, and you can't tell until the second character. `duplicate()` copies the entire queue for speculation — the parser can attempt a parse on the copy, abandon it on failure, and retry on the original. Classic backtracking without modifying the primary stream.
 
-<br>
-<b>Stage 2: Tokens to Program Graph</b>
+## Stage 2: Tokens to Program Graph
 
 The parser validates syntax and hands a token queue to `programgraph_build()`, which produces the **program graph** — the structure the execution engine will traverse. This is roughly what other systems call an Abstract Syntax Tree (AST), except statements form a linked list rather than a true tree.
 
@@ -86,8 +83,7 @@ The `STMT_IF_THEN_ELSE` struct has a `true_path` (statements to run if the condi
 
 The `next_stmt` pointer deserves attention. It's the **stop-node** mechanism. When `execute_until(program, memory, stop_node)` is called to run an `if` body, it receives the outermost `next_stmt` as the stop. The recursive call stops there — it doesn't bleed into whatever statement follows the entire if block. No explicit return-address stack. The program graph's pointer structure _is_ the control flow graph.
 
-<br>
-<b>Stage 3: RAM — A Custom Memory Abstraction</b>
+## Stage 3: RAM — A Custom Memory Abstraction
 
 When Python executes `x = 5`, something has to store the integer 5 and associate it with the name `"x"`. CPython uses a reference-counted object heap. nuPython uses `struct RAM` — a flat, explicitly-managed variable store.
 
@@ -130,8 +126,7 @@ print(x)   # prints 99
 
 String ownership is explicit throughout. Every `ram_write_cell_by_name()` call duplicates the string — the RAM owns its copy. Every `ram_read_cell_by_name()` call also duplicates the string — the caller owns that copy and must call `ram_free_value()` when done. Conservative, but correct. No use-after-free from a stale pointer into RAM's internal storage.
 
-<br>
-<b>Stage 4: Execution</b>
+## Stage 4: Execution
 
 The execution engine is a dispatch loop:
 
@@ -172,8 +167,7 @@ y = x * x
 print(y)
 ```
 
-<br>
-<b>What Was Left Out (and What That Teaches You)</b>
+## What Was Left Out (and What That Teaches You)
 
 nuPython supports integer, float, string, boolean, and None types. Assignments, while loops, if/elif/else, and four builtins. No `def`, no `for`, no lists, no dicts, no exceptions.
 

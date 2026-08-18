@@ -13,8 +13,7 @@ Then, in his annual letter to investors and a series of CNBC appearances, Fink s
 
 This is not a crypto enthusiast talking. This is the man running an $18 trillion empire pointing at his next destination and calling it blockchain.
 
-<br>
-<b>What every transaction actually costs you</b>
+## What every transaction actually costs you
 
 When you tap "buy" on your brokerage app, the screen shows a trade that looks instant. It is not. Behind the UI, an aging infrastructure of custodians, clearinghouses, and settlement agents is still running on rails built in the 1970s. Full settlement, the moment the asset is legally yours and your capital is legally theirs, takes two business days (T+2).
 
@@ -24,8 +23,7 @@ BlackRock's own executives wrote in _The Economist_: "Ledgers have not been this
 
 This is what tokenization actually is: taking a real-world asset, a Treasury bond, a share of stock, a slice of real estate, and representing it as a digital token on a blockchain. When that token changes hands, the underlying ownership changes hands simultaneously. No intermediary. No T+2 window.
 
-<br>
-<b>BlackRock's first move: BUIDL</b>
+## BlackRock's first move: BUIDL
 
 In March 2024, BlackRock stopped theorizing and launched BUIDL, the BlackRock USD Institutional Digital Liquidity Fund, on the Ethereum public blockchain. Each token is worth $1. Behind it, actual US Treasuries and cash are held in custody. Interest accrues in real time, directly to token holders' wallets.
 
@@ -33,8 +31,7 @@ This is not a proof of concept. This is a $13 trillion asset manager putting its
 
 The stablecoin market had already demonstrated this at scale. USDT and USDC together represent over $200 billion in tokenized fiat currency, processing trillions of dollars in transactions annually. Tokenized money works. BUIDL proved tokenized yield works. The logical next step is tokenizing everything else.
 
-<br>
-<b>The institutional green light</b>
+## The institutional green light
 
 On December 4, 2025, the SEC's Investor Advisory Committee convened a formal public session on a single topic: the tokenization of equities. Most retail investors missed it.
 
@@ -42,8 +39,7 @@ The attendees tell the whole story. Nasdaq. Citadel Securities. Robinhood. Coinb
 
 This is where the framing shifted. The SEC is no longer treating tokenization as a crypto speculation problem to regulate away. It is treating it as an infrastructure upgrade to the existing securities market, one that needs new rules, not a ban. Combined with the Trump administration's rollback of SAB 121 (which had prevented banks from custodying digital assets) and a visibly more crypto-friendly commission, the regulatory environment in 2025 looks nothing like 2022.
 
-<br>
-<b>Two tiers, two different battles</b>
+## Two tiers, two different battles
 
 The tokenization market is not monolithic. It is two separate layers operating in parallel.
 
@@ -53,8 +49,7 @@ This layer is impenetrable to public chains. It was never going to be Ethereum's
 
 The frontend (public chains) is where institutional products are packaged and sold to the global market. BUIDL. Franklin Templeton's BENJI fund. On-chain Treasuries. Tokenized credit. This is where liquidity aggregates, where retail and institutional investors interact, where DeFi composability creates entirely new product structures. This is Ethereum's market.
 
-<br>
-<b>The Solana trap: 99% of a tiny market</b>
+## The Solana trap: 99% of a tiny market
 
 Here is the data point that sounds like it changes everything: Solana controls 90% of tokenized equity issuance and 99% of tokenized equity trading volume. Tesla, Nvidia, Google, all available as tokens, traded almost entirely on Solana. It looks like Solana has already won the race for the future of stock markets.
 
@@ -68,8 +63,7 @@ Bybit, Kraken, and similar platforms only open these products to European and As
 
 The 99% figure reflects a small, unregulated, US-excluded market exploiting regulatory gaps. The real game, SEC-approved, compliant tokenized equities available to American investors with institutional capital behind them, has not yet begun. When that market opens, Solana's current lead is largely irrelevant.
 
-<br>
-<b>The Ethereum convergence</b>
+## The Ethereum convergence
 
 As of December 2025, approximately $18.5 billion in tokenized real-world assets (excluding stablecoins) sits on-chain. Of that, over $12.1 billion, 65%, is on Ethereum. US Treasuries, institutional money market funds, tokenized credit. The assets with the highest compliance requirements and the deepest capital behind them are overwhelmingly on Ethereum.
 
@@ -86,8 +80,7 @@ There is also a structural moat that competitors cannot easily replicate: DeFi c
 
 This convergence looks less like a competition and more like the standardization of an operating system. When global PC markets converged on Windows, it was not because Windows was technically superior to every alternative. It was because the network effect of shared infrastructure became self-reinforcing. The EVM is following the same path for institutional digital finance.
 
-<br>
-<b>2030: the map is already drawn</b>
+## 2030: the map is already drawn
 
 McKinsey's conservative estimate puts the tokenized asset market at $2 trillion by 2030. That is roughly 60 times today's size. Roland Berger and BCG are less conservative: their upper estimates reach $16 trillion, comparable to today's entire ETF market.
 
@@ -97,8 +90,7 @@ The ETF parallel is instructive. The first ETF, SPY, launched in January 1993, w
 
 Tokenization is at its January 1993 moment. BUIDL is SPY.
 
-<br>
-<b>The right question</b>
+## The right question
 
 The debate over Ethereum versus Solana is real, but it is a second-order question. Whether tokenization will happen has already been answered by the people with the most skin in the game.
 

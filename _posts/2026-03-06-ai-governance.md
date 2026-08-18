@@ -28,9 +28,7 @@ Therefore, Marx identifies a problem Hayek did not sufficiently develop: even if
 
 After all, that is the most compelling lesson to draw from the Anthropic–Pentagon conflict. Hayek is right that those closest to the technology possess knowledge that cannot be fully centralized, and that managers act unwisely when they try to override that knowledge through direct command. But Marx is also right in  that new transformative technology can create concentrations of private power. Therefore, the best response is a system of democratically established general rules that prohibits the most dangerous uses of AI and demands accountability, while leaving technical implementation and safety judgments to those with relevant expertise.
 
-<br>
-
-<b>Works Cited</b>
+## Works Cited
 
 - Hayek, F. A. “The Use of Knowledge in Society.” The American Economic Review, vol. 35, no. 4, Sept. 1945, pp. 519–530.
 - Shalal, Andrea, et al. “Trump Directs US Agencies to Toss Anthropic’s AI as Pentagon Calls Startup a Supply Risk.” Reuters, 27 Feb. 2026.
