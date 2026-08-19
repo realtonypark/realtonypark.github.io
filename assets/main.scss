@@ -1082,7 +1082,7 @@ body.is-post {
  * from the automatic light/dark axis and never flashes the classic theme.
  */
 html[data-design='modern'] {
-  --bg: #f7f6f4;
+  --bg: #ffffff;
   --text: #2c2a29;
   --heading: #1a1919;
   --link: #2c2a29;
@@ -1092,7 +1092,7 @@ html[data-design='modern'] {
   --muted: #8b8784;
   --box-bg: #efedeb;
   --hairline: #d9d6d3;
-  --inverse: #f7f6f4;
+  --inverse: #ffffff;
 
   font-size: 16px;
   background: var(--bg);
