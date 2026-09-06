@@ -3,7 +3,7 @@
 ---
 
 // Design language — Charlie O'Neill (https://charlesponeill.com)
-// Warm paper palette + Spectral serif. Layout preserved, width narrowed to 680px per approval.
+// White palette + Spectral serif. Layout preserved, width narrowed to 680px per approval.
 
 // SASS vars override minima BEFORE import
 $base-font-family: 'Spectral', Georgia, serif;
@@ -12,7 +12,7 @@ $base-font-weight: 400;
 $small-font-size: 14px;
 $base-line-height: 1.65;
 $text-color: #211d16;
-$background-color: #faf9f5;
+$background-color: #ffffff;
 $brand-color: #6b5947;
 $grey-color: #6f675c;        // meta
 $grey-color-light: #e6e0d3;  // hairline
@@ -25,10 +25,10 @@ $table-text-align: left;
 
 @import "minima";
 
-// CSS variables — runtime theming (light/dark) exactly from charlieoneill11.github.io
+// CSS variables — runtime light/dark theming for the default design.
 :root {
   color-scheme: light dark;
-  --bg: #faf9f5;
+  --bg: #ffffff;
   --text: #211d16;
   --heading: #211d16;
   --link: #6b5947;
@@ -39,6 +39,12 @@ $table-text-align: left;
   --box-bg: #f3efe5;
   --hairline: #e6e0d3;
 }
+
+html[data-design='classic'] {
+  --bg: #faf9f5;
+  background: var(--bg);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #181511;
@@ -183,7 +189,7 @@ blockquote {
 .design-toggle-track {
   position: relative;
   display: block;
-  width: 28px;
+  width: 40px;
   height: 16px;
   border: 1px solid var(--hairline);
   border-radius: 999px;
@@ -201,8 +207,13 @@ blockquote {
   transition: transform 160ms ease, background-color 160ms ease;
 }
 
-.design-toggle[aria-pressed='true'] .design-toggle-thumb {
+html[data-design='classic'] .design-toggle-thumb {
   transform: translateX(12px);
+  background: var(--accent);
+}
+
+html[data-design='modern'] .design-toggle-thumb {
+  transform: translateX(24px);
   background: var(--heading);
 }
 
@@ -331,9 +342,9 @@ ul.post-list {
 
 .post-link {
   display: block;
-  @include relative-font-size(1.1);
+  font-size: 17px;
   color: var(--text);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.45;
   &:visited { color: var(--text); }
   &:hover { color: var(--link-hover); }
@@ -355,8 +366,7 @@ ul.post-list {
   margin-bottom: 0;
 }
 
-// excerpt — always block, consistently below meta; match charlieoneill.com reference:
-// .post-preview .post-description { font-size: 0.9rem; font-style: italic; color: var(--meta); margin: 2px 0 0 }
+// Excerpts remain in the markup for the alternate design, but the default index hides them.
 .post-excerpt {
   display: block;
   margin-top: 2px;
@@ -379,6 +389,108 @@ ul.post-list {
     text-underline-offset: 3px;
     &:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
     &:visited { color: var(--meta); }
+  }
+}
+
+html:not([data-design]) {
+  .home > p:first-child { display: none; }
+
+  ul.post-list {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-top: 25.6px;
+    list-style: none;
+  }
+
+  .post-list-item {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6.4px;
+  }
+
+  .post-list-item + .post-list-item {
+    padding-top: 6.4px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      border-top: 1px solid color-mix(in srgb, var(--meta) 10%, transparent);
+      pointer-events: none;
+    }
+  }
+
+  .post-item {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    column-gap: 24px;
+    row-gap: 0;
+    align-items: baseline;
+    margin: 0;
+    padding: 17.28px 0;
+  }
+
+  .title-meta,
+  .post-meta-row { display: contents; }
+
+  .post-heading {
+    grid-area: 1 / 2;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .post-link { font-size: 18.57px; }
+
+  .post-list-date {
+    grid-area: 1 / 1;
+    color: var(--meta);
+    font-size: 17.64px;
+    white-space: nowrap;
+  }
+
+  .post-tags {
+    grid-area: 2 / 2;
+    margin-top: -4px;
+    color: var(--meta);
+    font-size: 0;
+
+    a {
+      margin-left: 0;
+      font-size: 0.92rem;
+    }
+    a + a::before { content: ', '; }
+  }
+
+  .post-excerpt { display: none; }
+}
+
+html[data-design='classic'] .post-link {
+  @include relative-font-size(1.1);
+  font-weight: 600;
+}
+
+html[data-design='classic'] body.is-post main.page-content::before {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  html:not([data-design]) {
+    ul.post-list {
+      width: auto;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .post-item {
+      grid-template-columns: 1fr;
+      margin: 0;
+      padding: 16px 0;
+    }
+
+    .post-list-date { grid-area: 1 / 1; }
+    .post-heading { grid-area: 2 / 1; }
+    .post-tags { grid-area: 3 / 1; }
   }
 }
 
@@ -1222,7 +1334,7 @@ html[data-design='modern'] {
   .design-toggle { padding: 3px; }
 
   .design-toggle-track {
-    width: 30px;
+    width: 42px;
     height: 18px;
     border-color: var(--meta);
     background: transparent;
@@ -1234,11 +1346,6 @@ html[data-design='modern'] {
     width: 12px;
     height: 12px;
     background: var(--meta);
-  }
-
-  .design-toggle[aria-pressed='true'] .design-toggle-thumb {
-    transform: translateX(12px);
-    background: var(--heading);
   }
 
   .page-content { padding: 0; }
