@@ -13,6 +13,7 @@ const head = fs.readFileSync(
   path.join(root, "_includes", "head.html"),
   "utf8",
 );
+const about = fs.readFileSync(path.join(root, "about.md"), "utf8");
 
 test("Thinking Machines post list is scoped to the default design", () => {
   assert.match(layout, /class="post-meta post-list-date"/);
@@ -96,4 +97,12 @@ test("modern theme follows the reference design language", () => {
     styles,
     /html\[data-design='classic'\] body\.is-post \{\s*--post-offset: 80px;/,
   );
+});
+
+test("about featured posts use build-time links", () => {
+  // Raw `_posts/*.md` targets only resolve via jekyll-relative-links (a
+  // GitHub Pages default, absent locally), producing /about/_posts/… 404s.
+  // {% link %} is Jekyll core and fails the build if a target is missing.
+  assert.doesNotMatch(about, /\]\(_posts\//);
+  assert.match(about, /\{% link _posts\/2026-02-02-building-python-interpreter-in-c\.md %\}/);
 });
