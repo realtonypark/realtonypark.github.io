@@ -24,6 +24,10 @@ test("Thinking Machines post list is scoped to the default design", () => {
     /\.post-link \{[\s\S]*?font-size: 17px;[\s\S]*?font-weight: 500;[\s\S]*?html:not\(\[data-design\]\)[\s\S]*?\.post-link \{ font-size: 18\.57px; \}/,
   );
   assert.match(styles, /html\[data-design='classic'\][\s\S]*?--bg: #faf9f5;/);
+  assert.match(
+    styles,
+    /@media \(prefers-color-scheme: dark\) \{\s*:root \{[\s\S]*?\}\s*html\[data-design='classic'\] \{\s*--bg: #181511;/,
+  );
   assert.match(styles, /\.post-item \{[\s\S]*?padding: 17\.28px 0;/);
   assert.match(
     styles,
@@ -43,6 +47,10 @@ test("Thinking Machines post list is scoped to the default design", () => {
     /html\[data-design='modern'\][\s\S]*?\.post-link \{[\s\S]*?font-size: 30px;[\s\S]*?font-weight: 400;/,
   );
   assert.match(
+    styles,
+    /html:not\(\[data-design\]\) body\.is-post main\.page-content::before \{\s*display: none;/,
+  );
+  assert.doesNotMatch(
     styles,
     /html\[data-design='classic'\] body\.is-post main\.page-content::before \{\s*display: none;/,
   );

@@ -58,6 +58,10 @@ html[data-design='classic'] {
     --box-bg: #221e18;
     --hairline: #332d24;
   }
+
+  html[data-design='classic'] {
+    --bg: #181511;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -470,7 +474,7 @@ html[data-design='classic'] .post-link {
   font-weight: 600;
 }
 
-html[data-design='classic'] body.is-post main.page-content::before {
+html:not([data-design]) body.is-post main.page-content::before {
   display: none;
 }
 
