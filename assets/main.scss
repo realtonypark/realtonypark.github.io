@@ -1332,11 +1332,7 @@ html[data-design='modern'] {
 
   .page-content { padding: 0; }
 
-  .toc-wrapper > .wrapper {
-    width: calc(100% - 48px);
-    max-width: 680px;
-    padding: 40px 24px 0;
-  }
+  .toc-wrapper > .wrapper { padding-top: 40px; }
 
   .post { padding-top: 0; }
 
@@ -1700,9 +1696,8 @@ html[data-design='modern'] {
   }
 
   .site-footer .wrapper {
-    width: calc(100% - 48px);
-    max-width: 680px;
-    padding: 0 24px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .nd-footer { font-size: 13px; }
@@ -1773,10 +1768,7 @@ html[data-design='modern'] {
 
   html[data-design='modern'] {
     // (nav inherits base header wholesale — see Phase 1 note above)
-    .toc-wrapper > .wrapper {
-      width: 100%;
-      padding: 32px 20px 0;
-    }
+    .toc-wrapper > .wrapper { padding-top: 32px; }
 
     .post-header { margin-bottom: 52px; }
 
@@ -1796,11 +1788,6 @@ html[data-design='modern'] {
     .site-footer {
       margin-top: 72px;
       padding: 36px 0;
-    }
-
-    .site-footer .wrapper {
-      width: calc(100% - 40px);
-      padding: 0;
     }
 
     .nd-footer { gap: 24px; }
