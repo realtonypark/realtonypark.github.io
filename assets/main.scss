@@ -1868,6 +1868,9 @@ html[data-design='modern'] {
 }
 
 @media (max-width: 480px) {
+  .site-header .wrapper { padding-bottom: 0; }
+  .page-content { padding-top: 8px; }
+
   .post-content { overflow-wrap: anywhere; }
 
   .nd-footer { flex-direction: column; }
