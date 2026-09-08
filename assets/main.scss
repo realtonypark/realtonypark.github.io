@@ -1130,9 +1130,10 @@ body.is-post {
   // the body background; once the animation ends the context vanishes and
   // the band drops behind the opaque body background and disappears.
   isolation: isolate;
-  // how far the title / ToC / body sit below the header
-  --post-offset: 80px;
-  @media (max-width: 768px) { --post-offset: 32px; }
+  // How far the title / ToC / body sit below the header. Only classic shows
+  // the masthead band, so only classic keeps the offset — default has no band
+  // and no gap (modern already zeroes it in its own block below).
+  --post-offset: 0;
 
   // 400px of off-screen lead-in + main's 30px padding-top, plus the 24px
   // .wrapper picks up below 480px
@@ -1172,6 +1173,12 @@ body.is-post {
             mask-image: linear-gradient(to top, transparent 0, #000 110px);
     @media (max-width: 768px) { background-size: 240px 240px; }
   }
+}
+
+// Classic keeps the band's clearance above the title.
+html[data-design='classic'] body.is-post {
+  --post-offset: 80px;
+  @media (max-width: 768px) { --post-offset: 32px; }
 }
 
 @media (prefers-color-scheme: dark) {

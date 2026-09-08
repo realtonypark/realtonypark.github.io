@@ -89,4 +89,11 @@ test("modern theme follows the reference design language", () => {
     styles,
     /\.site-nav \.page-link,[\s\S]*?\.curr-page-link \{[\s\S]*?font-size: 17px;/,
   );
+  // The 80px title offset exists only for classic's masthead band — default
+  // has no band and no gap.
+  assert.match(styles, /body\.is-post \{[^}]*--post-offset: 0;/);
+  assert.match(
+    styles,
+    /html\[data-design='classic'\] body\.is-post \{\s*--post-offset: 80px;/,
+  );
 });
