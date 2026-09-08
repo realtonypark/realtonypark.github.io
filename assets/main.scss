@@ -1260,31 +1260,33 @@ html[data-design='modern'] {
 
   // Display serif: post/page titles (+ nav, below). Body and section
   // headings stay Inter, mirroring the reference's serif/sans split.
+  // Titles use Light — the reference's title voice — never bold.
   .post-title,
   .project-title,
   .page-heading,
   .post-content h1 {
     font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: -0.015em;
     text-wrap: balance;
   }
 
   // Nav keeps the exact layout/sizing of the other modes (Phase 1) — only
-  // the voice changes to Fraunces, title and links alike.
+  // the voice changes to Fraunces, title and links alike, all regular weight.
   .site-title {
     font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
   }
 
   .site-nav .page-link,
   .curr-page-link {
     font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .site-footer .p-name {
     font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   a {
@@ -1337,8 +1339,8 @@ html[data-design='modern'] {
     order: 2;
     max-width: 848px;
     margin: 14px 0 0;
-    font-size: 44px;
-    font-weight: 400;
+    font-size: 36px;
+    font-weight: 300;
     line-height: 1.1;
     letter-spacing: -0.015em;
   }
@@ -1375,7 +1377,7 @@ html[data-design='modern'] {
     h1 {
       margin: 56px 0 16px;
       font-size: 36px;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 1.15;
     }
 
@@ -1561,7 +1563,7 @@ html[data-design='modern'] {
   .post-link {
     margin: 0 0 10px;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.22;
     letter-spacing: -0.025em;
     color: var(--heading);
@@ -1694,8 +1696,8 @@ html[data-design='modern'] {
 
   .project-title,
   .page-heading {
-    font-size: 44px;
-    font-weight: 400;
+    font-size: 36px;
+    font-weight: 300;
     line-height: 1.1;
   }
 
@@ -1712,8 +1714,8 @@ html[data-design='modern'] {
   .syllabus h1,
   .cv-all h1 {
     font-family: 'Fraunces', Georgia, serif;
-    font-size: 40px;
-    font-weight: 400;
+    font-size: 36px;
+    font-weight: 300;
   }
 
   .syllabus h3,
@@ -1760,12 +1762,12 @@ html[data-design='modern'] {
     .post-header { margin-bottom: 52px; }
 
     .post-title {
-      font-size: 34px;
+      font-size: 30px;
       line-height: 1.1;
     }
 
     .post-content {
-      h1 { font-size: 32px; }
+      h1 { font-size: 30px; }
       h2 { font-size: 26px; line-height: 1.35; }
       h3 { font-size: 22px; }
     }
