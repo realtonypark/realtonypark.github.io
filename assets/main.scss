@@ -1271,16 +1271,20 @@ html[data-design='modern'] {
     text-wrap: balance;
   }
 
-  // Nav keeps the exact layout/sizing of the other modes (Phase 1) and speaks
+  // Nav keeps the exact layout of the other modes (Phase 1) and speaks
   // in the same Inter voice as the rest of modern's UI — regular weight.
+  // Inter's larger x-height reads bigger than Spectral at the same px, so
+  // the size steps down 1px to match the other modes' perceived size.
   .site-title {
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 17px;
     font-weight: 400;
   }
 
   .site-nav .page-link,
   .curr-page-link {
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 17px;
     font-weight: 400;
   }
 
@@ -1562,7 +1566,7 @@ html[data-design='modern'] {
 
   .post-link {
     margin: 0 0 10px;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 1.22;
     letter-spacing: -0.025em;
@@ -1772,7 +1776,7 @@ html[data-design='modern'] {
       h3 { font-size: 22px; }
     }
 
-    .post-link { font-size: 26px; }
+    .post-link { font-size: 22px; }
 
     .site-footer {
       margin-top: 72px;

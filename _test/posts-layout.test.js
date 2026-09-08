@@ -48,7 +48,7 @@ test("Thinking Machines post list is scoped to the default design", () => {
   );
   assert.match(
     styles,
-    /html\[data-design='modern'\][\s\S]*?\.post-link \{[\s\S]*?font-size: 30px;[\s\S]*?font-weight: 400;/,
+    /html\[data-design='modern'\][\s\S]*?\.post-link \{[\s\S]*?font-size: 26px;[\s\S]*?font-weight: 400;/,
   );
   assert.match(
     styles,
@@ -85,4 +85,8 @@ test("modern theme follows the reference design language", () => {
     /\.site-nav \.page-link,[\s\S]*?\.curr-page-link \{[\s\S]*?font-family: 'Inter'/,
   );
   assert.match(styles, /\.highlight \.k,[\s\S]*?color: #007bb4;/);
+  assert.match(
+    styles,
+    /\.site-nav \.page-link,[\s\S]*?\.curr-page-link \{[\s\S]*?font-size: 17px;/,
+  );
 });
