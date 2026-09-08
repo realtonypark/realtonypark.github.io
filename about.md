@@ -3,9 +3,14 @@ layout: page
 title: About
 ---
 
-![](/assets/banner.webp)
+<figure class="ai-compare ai-compare-wide ai-compare-flat" role="slider" tabindex="0" aria-label="Drag to compare the original and AI-styled Moneyball banner" aria-valuemin="2" aria-valuemax="98" aria-valuenow="50">
+<img class="ai-after" src="/assets/moneyball-ai.webp" alt="" draggable="false">
+<img class="ai-before" src="/assets/banner.webp" alt="" draggable="false">
+<span class="ai-divider" aria-hidden="true"></span>
+<span class="ai-knob" aria-hidden="true">‹ ›</span>
+</figure>
 
-<p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 5px; font-style: italic;">Moneyball, 2011</p>
+<p style="text-align: center; color: #666; font-size: 0.9em; margin-top: 5px; font-style: italic;">Moneyball, 2011 · <a href="{% link _posts/2026-09-07-clone-aesthetic-image-online.md %}">AI-tuned</a></p>
 
 You can never lose if you never quit.
 

@@ -73,6 +73,8 @@
     }
 
     frame.addEventListener('pointerdown', function (e) {
+      // Let embedded links (e.g. the corner help button) behave normally.
+      if (e.target.closest && e.target.closest('a')) return;
       dragging = true;
       try { frame.setPointerCapture(e.pointerId); } catch (err) { /* older browser */ }
       fromClientX(e.clientX);

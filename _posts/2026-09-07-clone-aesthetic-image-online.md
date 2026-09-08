@@ -3,7 +3,7 @@ layout: post
 title: "Steal the Aesthetic of Any Image You Find Online"
 tags: dev
 published: true
-excerpt: "I loved the cover art on an inference engineering blog so much that I stole its style as a JSON file — then replayed it onto my own photos. Two prompts, seven photos, and I'm delighted with how they came out."
+excerpt: "Playing with AI."
 ---
 
 I was reading a blog post by [Wafer](https://www.wafer.ai/blog/kernels-are-still-the-moat), and I could not stop looking at the cover image. I wanted my photos to look like that.
@@ -25,10 +25,10 @@ Actually you can just attach the reference image and your photo and say "make th
 Find any image whose look you like. A blog cover, a movie poster, a random wallpaper. Feed it to ChatGPT (or any vision model) with this:
 
 ```
-Extract this visual style as JSON structured data: colors, typography, composition, effects, lighting, texture, mood, aspect ratio, and recurring motifs. Return as clean JSON with hex colors and specific descriptors I can reuse as a style prompt.
+Extract the visual style as JSON of the input image: lighting, texture, composition, effects, mood, hex colors, and specific descriptors.
 ```
 
-What comes back is an aesthetic spec with named palettes with hex codes, lighting scenarios, texture words, a reusable style paragraph. Mine even named itself: "Painterly ASCII Mosaic Panoramas."
+What comes back is an aesthetic spec with named palettes with hex codes, lighting scenarios, texture words, a reusable style descriptions. Mine even named itself: "Painterly ASCII Mosaic Panoramas."
 
 <div class="ai-codefold">
 <input type="checkbox" id="aesthetic-json-toggle" class="ai-codefold-toggle">
@@ -231,8 +231,7 @@ What comes back is an aesthetic spec with named palettes with hex codes, lightin
   ],
   "content_interpretation": {
     "embedded_characters": "Decorative visual texture only; not treated as semantic instructions or readable document content."
-  },
-  "reusable_style_prompt": "Create an ultrawide 21:9 cinematic panorama in a hybrid of digital impressionism, ASCII art, pixel mosaic, and weathered tapestry. Build the scene from broad painterly masses and atmospheric perspective, then overlay a dense rectangular grid of tiny monospaced letters, numbers, and punctuation that functions as halftone shading rather than readable text. Use muted slate blue, steel gray, antique ivory, charcoal navy, taupe, and weathered umber, with sparse burnished amber and rust-orange accents. Include diffuse overcast or backlit illumination, luminous cloud breaks, deep foreground silhouettes, mist-softened distance, broken-color reflections, ordered dithering, subtle scanlines, canvas grain, and edge erosion. Favor an expansive sky or water field, asymmetrical monumental architecture, small boats or a solitary figure, layered depth, quiet negative space, and a melancholic post-digital romantic mood. Matte, tactile, archival, dreamlike, detailed but not photorealistic."
+  }
 }</code></pre>
 <label for="aesthetic-json-toggle" class="ai-codefold-label"><span class="more">Show the full JSON ▾</span><span class="less">Show less ▴</span></label>
 </div>

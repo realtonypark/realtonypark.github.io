@@ -1935,6 +1935,18 @@ html[data-design='modern'] {
 
 .ai-compare:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+// Wide variant for panoramic banners (e.g. the About page Moneyball image).
+.ai-compare-wide { aspect-ratio: 5 / 2; }
+
+// Compare frames carry their own spacing: a tight caption gap, identical in
+// every theme (this beats theme figure margins, including modern's 40px).
+.post-content figure.ai-compare { margin-bottom: 12px; }
+
+// Flat variant: no rounding, for images that were rectangular originally.
+// Doubled class beats the modern theme's `figure img` rounding.
+.ai-compare-flat { border-radius: 0; }
+.ai-compare.ai-compare-flat img { border-radius: 0; }
+
 .ai-compare img {
   position: absolute;
   inset: 0;
