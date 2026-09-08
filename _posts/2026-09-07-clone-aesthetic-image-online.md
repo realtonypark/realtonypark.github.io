@@ -1,23 +1,24 @@
 ---
 layout: post
-title: "How to Clone the Aesthetic of Any Image You Find Online"
+title: "Steal the Aesthetic of Any Image You Find Online"
 tags: dev
 published: true
 excerpt: "I loved the cover art on an inference engineering blog so much that I stole its style as a JSON file — then replayed it onto my own photos. Two prompts, seven photos, and I'm delighted with how they came out."
 ---
 
-I was reading a blog post by [Wafer](https://www.wafer.ai/blog/kernels-are-still-the-moat), an inference engineering company, and I could not stop looking at the cover image. A painterly panorama of a waterfront castle, slate blue and antique ivory, with tiny ASCII glyphs doing the shading. It looked like a 19th-century landscape painting woven on a terminal screen. I wanted my photos to look like that.
+I was reading a blog post by [Wafer](https://www.wafer.ai/blog/kernels-are-still-the-moat), and I could not stop looking at the cover image. I wanted my photos to look like that.
 
 <div class="bleed">
 <figure>
 <img src="/assets/posts/ai-aesthetic/wafer-inspiration.jpg" alt="Painterly ASCII-mosaic panorama of a waterfront castle from Wafer's blog cover art">
-<figcaption>Cover art from <a href="https://www.wafer.ai/blog/kernels-are-still-the-moat">Wafer's "Kernels Are Still the Moat"</a> — the image that started all of this.</figcaption>
+<figcaption>Cover art from the blog post - notice the Gemini logo in the bottom right corner</figcaption>
 </figure>
 </div>
 
-The problem: I had no idea how to describe that style. Zoom into the bottom-right corner and you'll find the Gemini sparkle — the little tell that the image itself was AI-generated. So I knew exactly which machine made it, and still had no clue how to ask any machine to make me one. "Make my photo painterly ASCII mosaic-ish"? That gets you mush. Vague style words in, mush out.
+Actually you can just attach the reference image and your photo and say "make this look like that," but I extracted the style first for these reasons:
 
-The trick is to stop describing aesthetics altogether. Don't write the style prompt yourself. Steal it — as structured data — from any image you find online. The whole recipe is two prompts.
+- **Less risk of hallucination:** A reference image carries its castle and boats along with its palette, and they leak into your photo. The JSON holds zero content and just an aesthetic information, so my photo keeps exactly its own elements.
+- **Editability:** It's structured data. You can edit each style factor predictably.
 
 **Step 1: Steal the style as JSON**
 
@@ -27,10 +28,10 @@ Find any image whose look you like. A blog cover, a movie poster, a random wallp
 Extract this visual style as JSON structured data: colors, typography, composition, effects, lighting, texture, mood, aspect ratio, and recurring motifs. Return as clean JSON with hex colors and specific descriptors I can reuse as a style prompt.
 ```
 
-What comes back is an aesthetic spec: named palettes with hex codes, lighting scenarios, texture words, a reusable style paragraph. Mine even named itself — "Painterly ASCII Mosaic Panoramas." The full file is long, so it's tucked behind a click:
+What comes back is an aesthetic spec with named palettes with hex codes, lighting scenarios, texture words, a reusable style paragraph. Mine even named itself: "Painterly ASCII Mosaic Panoramas."
 
-<details>
-<summary><strong>Click to see the full aesthetic JSON I extracted</strong></summary>
+<div class="ai-codefold">
+<input type="checkbox" id="aesthetic-json-toggle" class="ai-codefold-toggle">
 <pre><code>{
   "style_name": "Painterly ASCII Mosaic Panoramas",
   "visual_genre": [
@@ -233,31 +234,19 @@ What comes back is an aesthetic spec: named palettes with hex codes, lighting sc
   },
   "reusable_style_prompt": "Create an ultrawide 21:9 cinematic panorama in a hybrid of digital impressionism, ASCII art, pixel mosaic, and weathered tapestry. Build the scene from broad painterly masses and atmospheric perspective, then overlay a dense rectangular grid of tiny monospaced letters, numbers, and punctuation that functions as halftone shading rather than readable text. Use muted slate blue, steel gray, antique ivory, charcoal navy, taupe, and weathered umber, with sparse burnished amber and rust-orange accents. Include diffuse overcast or backlit illumination, luminous cloud breaks, deep foreground silhouettes, mist-softened distance, broken-color reflections, ordered dithering, subtle scanlines, canvas grain, and edge erosion. Favor an expansive sky or water field, asymmetrical monumental architecture, small boats or a solitary figure, layered depth, quiet negative space, and a melancholic post-digital romantic mood. Matte, tactile, archival, dreamlike, detailed but not photorealistic."
 }</code></pre>
-</details>
-
-The key line at the bottom is `reusable_style_prompt` — a dense paragraph the model wrote about itself, basically. That paragraph alone is a better style prompt than anything I could have written by hand, because it was reverse-engineered from pixels instead of my vocabulary.
+<label for="aesthetic-json-toggle" class="ai-codefold-label"><span class="more">Show the full JSON ▾</span><span class="less">Show less ▴</span></label>
+</div>
 
 **Step 2: Replay it onto your photos**
 
-Attach the JSON and one of your photos to a new message and say:
+Attach the JSON and one of your photos and say:
 
 ```
 Generate an image with the JSON aesthetic attached.
 ```
 
-That's the whole second prompt. One sentence. The model keeps your photo's content — the street, the mountain, the skyline — and repaints it inside the stolen aesthetic.
+I ran my favorite photos through it (I tried both on Codex and Meta's Muse Image, and I kinda prefer Codex's). I'm honestly delighted with how these turned out. Next time you see an image and think "I wish my photos looked like that," steal it this way!
 
-**Why JSON instead of just attaching the reference image?**
-
-You could skip all of this: attach the reference and your photo, say "make this look like that," and it works. I extracted the style on purpose, for three reasons:
-
-- **Only the style travels, none of the content.** A reference image carries its castle and boats along with its palette, and they leak into your photo. The JSON holds zero content — just colors, light, texture — so my photo keeps exactly its own elements.
-- **I can reuse it without the reference.** Extract once, then apply it to any new photo anytime. No need to keep the reference image around or re-upload it every session.
-- **I can edit it in my own words.** It's structured data. Want everything a touch brighter? Bump a few hex values. That kind of precise tweak is impossible when your "prompt" is another picture.
-
-**What came out**
-
-I ran seven of my favorite photos through it. Each frame below holds both versions — drag the divider to wipe between the original and the AI repaint, and use the side arrows for the rest. I'm honestly delighted with how these turned out.
 
 <div class="bleed ai-gallery" role="region" aria-label="Before-and-after photo comparisons">
 <div class="ai-viewport">
@@ -344,9 +333,3 @@ I ran seven of my favorite photos through it. Each frame below holds both versio
 <button class="ai-nav ai-prev" data-ai-prev aria-label="Previous photos">‹</button>
 <button class="ai-nav ai-next" data-ai-next aria-label="Next photos">›</button>
 </div>
-
-**What I noticed**
-
-A few things surprised me. Night shots kept their glow — the amber streetlights and lit windows survived the repaint and actually anchor the whole thing. Flat blue daylight skies turned dramatic; the model can't resist putting moody clouds everywhere. And portrait-orientation photos stayed portrait. The style bends to fit your photo's shape instead of forcing everything into the source's ultrawide panorama, which I did not expect.
-
-None of this is groundbreaking. It's just genuinely fun. Total cost: two prompts and a few minutes. Next time you see an image and think "I wish my photos looked like that" — steal the aesthetic, replay it, and see what comes back.

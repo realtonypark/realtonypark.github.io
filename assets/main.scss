@@ -1846,6 +1846,33 @@ html[data-design='modern'] {
   margin-top: 2.2em;
 }
 
+// Collapsible code block (checkbox hack, no JS): shows the head of a long
+// block; the label bar below expands and collapses it.
+.ai-codefold-toggle { display: none; }
+
+.ai-codefold pre {
+  max-height: 260px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.ai-codefold-toggle:checked + pre { max-height: none; }
+
+.ai-codefold-label {
+  display: block;
+  margin-bottom: 28px;
+  font-size: 0.82rem;
+  color: var(--meta);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.ai-codefold-label:hover { color: var(--text); }
+.ai-codefold-label .less { display: none; }
+.ai-codefold-toggle:checked ~ .ai-codefold-label .more { display: none; }
+.ai-codefold-toggle:checked ~ .ai-codefold-label .less { display: inline; }
+
 /**
  * Before/after gallery (ai-aesthetic post).
  * Three draggable comparison frames per view; side arrows page through all
