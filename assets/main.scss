@@ -1813,6 +1813,7 @@ html[data-design='modern'] {
   .site-nav {
     width: 38px;
     height: 38px;
+    z-index: 4;
   }
 
   .site-nav .trigger {
@@ -1833,6 +1834,17 @@ html[data-design='modern'] {
     top: 56px;
     right: 56px;
     z-index: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-content { overflow-wrap: anywhere; }
+
+  .nd-footer { flex-direction: column; }
+
+  #password-prompt {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 }
 
