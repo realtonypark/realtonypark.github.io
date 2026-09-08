@@ -1123,6 +1123,13 @@ $nav-breakpoint: 1199px;
 // text is ever read through it. Post pages only; `is-post` is set on <body> by
 // _layouts/default.html.
 body.is-post {
+  // Keep this element a stacking context permanently (isolation does not
+  // create a containing block for fixed descendants, unlike transform).
+  // The ::before band uses z-index: -1: while the page-fade animation runs,
+  // body's transform makes it a stacking context so the band paints above
+  // the body background; once the animation ends the context vanishes and
+  // the band drops behind the opaque body background and disappears.
+  isolation: isolate;
   // how far the title / ToC / body sit below the header
   --post-offset: 80px;
   @media (max-width: 768px) { --post-offset: 32px; }

@@ -54,4 +54,8 @@ test("Thinking Machines post list is scoped to the default design", () => {
     styles,
     /html\[data-design='classic'\] body\.is-post main\.page-content::before \{\s*display: none;/,
   );
+  // The masthead band uses z-index: -1. body.is-post must stay a stacking
+  // context (via isolation, not transform) or the band drops behind the
+  // opaque body background once the page-fade animation ends.
+  assert.match(styles, /body\.is-post \{\s*[^}]*isolation: isolate;/);
 });
