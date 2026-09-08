@@ -9,6 +9,10 @@ const layout = fs.readFileSync(
   "utf8",
 );
 const styles = fs.readFileSync(path.join(root, "assets", "main.scss"), "utf8");
+const head = fs.readFileSync(
+  path.join(root, "_includes", "head.html"),
+  "utf8",
+);
 
 test("Thinking Machines post list is scoped to the default design", () => {
   assert.match(layout, /class="post-meta post-list-date"/);
@@ -58,4 +62,27 @@ test("Thinking Machines post list is scoped to the default design", () => {
   // context (via isolation, not transform) or the band drops behind the
   // opaque body background once the page-fade animation ends.
   assert.match(styles, /body\.is-post \{\s*[^}]*isolation: isolate;/);
+  // Phase 1: modern inherits the default/classic nav wholesale — none of the
+  // old modern header overrides (sticky bar, centered nav, underline-bar,
+  // mobile nav repositioning) may remain.
+  assert.doesNotMatch(styles, /\.site-nav \{\s*position: absolute;\s*left: 50%;/);
+  assert.doesNotMatch(styles, /bottom: -34px;/);
+  assert.doesNotMatch(styles, /min-height: 88px;/);
+  assert.doesNotMatch(styles, /\.curr-page-link::after/);
+  assert.doesNotMatch(styles, /\.site-nav label\[for='nav-trigger'\]/);
+});
+
+test("modern theme follows the reference design language", () => {
+  assert.match(head, /family=Fraunces:/);
+  assert.match(styles, /html\[data-design='modern'\] \{\s*--bg: #fcfcfc;/);
+  assert.match(
+    styles,
+    /@media \(prefers-color-scheme: dark\) \{\s*html\[data-design='modern'\] \{\s*--bg: #131313;/,
+  );
+  assert.match(styles, /\.post-title,[\s\S]*?font-family: 'Fraunces'/);
+  assert.match(
+    styles,
+    /\.site-nav \.page-link,[\s\S]*?\.curr-page-link \{[\s\S]*?font-family: 'Fraunces'/,
+  );
+  assert.match(styles, /\.highlight \.k,[\s\S]*?color: #007bb4;/);
 });
