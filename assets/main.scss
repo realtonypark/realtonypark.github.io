@@ -1271,21 +1271,21 @@ html[data-design='modern'] {
     text-wrap: balance;
   }
 
-  // Nav keeps the exact layout/sizing of the other modes (Phase 1) — only
-  // the voice changes to Fraunces, title and links alike, all regular weight.
+  // Nav keeps the exact layout/sizing of the other modes (Phase 1) and speaks
+  // in the same Inter voice as the rest of modern's UI — regular weight.
   .site-title {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
   }
 
   .site-nav .page-link,
   .curr-page-link {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
   }
 
   .site-footer .p-name {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
   }
 

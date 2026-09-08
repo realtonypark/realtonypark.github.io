@@ -82,7 +82,7 @@ test("modern theme follows the reference design language", () => {
   assert.match(styles, /\.post-title,[\s\S]*?font-family: 'Fraunces'/);
   assert.match(
     styles,
-    /\.site-nav \.page-link,[\s\S]*?\.curr-page-link \{[\s\S]*?font-family: 'Fraunces'/,
+    /\.site-nav \.page-link,[\s\S]*?\.curr-page-link \{[\s\S]*?font-family: 'Inter'/,
   );
   assert.match(styles, /\.highlight \.k,[\s\S]*?color: #007bb4;/);
 });
