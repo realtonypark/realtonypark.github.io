@@ -63,17 +63,23 @@ function bootController(initialValue, options = {}) {
 }
 
 test("restores either persisted legacy design", () => {
+  assert.equal(bootController("quiet").dataset.design, "quiet");
   assert.equal(bootController("classic").dataset.design, "classic");
   assert.equal(bootController("modern").dataset.design, "modern");
   assert.equal(bootController("unknown").dataset.design, undefined);
 });
 
-test("cycles default, classic, and modern while persisting non-default modes", () => {
+test("cycles default, quiet, classic, and modern while persisting non-default modes", () => {
   const state = bootController();
 
   assert.equal(state.dataset.design, undefined);
   assert.match(state.attributes["aria-label"], /Thinking Machines/);
   assert.equal(state.attributes["aria-pressed"], "false");
+
+  state.buttonEvents.click();
+  assert.equal(state.dataset.design, "quiet");
+  assert.equal(state.attributes["aria-pressed"], "mixed");
+  assert.equal(state.values.get("tony-design-language"), "quiet");
 
   state.buttonEvents.click();
   assert.equal(state.dataset.design, "classic");
@@ -94,5 +100,5 @@ test("cycles default, classic, and modern while persisting non-default modes", (
 test("still cycles when browser storage is unavailable", () => {
   const state = bootController(undefined, { storageThrows: true });
   assert.doesNotThrow(() => state.buttonEvents.click());
-  assert.equal(state.dataset.design, "classic");
+  assert.equal(state.dataset.design, "quiet");
 });

@@ -106,3 +106,29 @@ test("about featured posts use build-time links", () => {
   assert.doesNotMatch(about, /\]\(_posts\//);
   assert.match(about, /\{% link _posts\/2026-02-02-building-python-interpreter-in-c\.md %\}/);
 });
+
+test("quiet design shows the single-index markup and nothing else does", () => {
+  const index = fs.readFileSync(path.join(root, "index.md"), "utf8");
+  const footer = fs.readFileSync(
+    path.join(root, "_includes", "footer.html"),
+    "utf8",
+  );
+  const home = fs.readFileSync(
+    path.join(root, "_includes", "single-index.html"),
+    "utf8",
+  );
+  // Single-index markup ships hidden; only the designs that use it display it.
+  assert.match(index, /\{% include single-index\.html %\}/);
+  assert.match(home, /<section class="single-index" hidden>/);
+  assert.match(home, /moneyball-ai\.webp/);
+  assert.match(layout, /<span class="si-year" hidden>/);
+  assert.match(layout, /data-short="\{\{ post\.date \| date: '%b %-d' \}\}"/);
+  assert.match(footer, /<p class="si-clock" hidden>/);
+  assert.match(styles, /html\[data-design='quiet'\] \{\s*--bg: #fdfdfc;/);
+  assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.single-index \{\s*display: block;/);
+  assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
+  // Four stops on the toggle, 12px apart.
+  assert.match(styles, /html\[data-design='quiet'\] \.design-toggle-thumb \{\s*transform: translateX\(12px\);/);
+  assert.match(styles, /html\[data-design='classic'\] \.design-toggle-thumb \{\s*transform: translateX\(24px\);/);
+  assert.match(styles, /html\[data-design='modern'\] \.design-toggle-thumb \{\s*transform: translateX\(36px\);/);
+});

@@ -10,8 +10,8 @@
     }
   }
 
-  var designs = ["", "classic", "modern"];
-  var labels = ["Thinking Machines", "Classic", "Modern"];
+  var designs = ["", "quiet", "classic", "modern"];
+  var labels = ["Thinking Machines", "Quiet", "Classic", "Modern"];
 
   function writePreference(design) {
     try {
@@ -42,7 +42,7 @@
       toggle.setAttribute("aria-label", label);
       toggle.setAttribute(
         "aria-pressed",
-        index === 0 ? "false" : index === 1 ? "mixed" : "true",
+        index === 0 ? "false" : index === designs.length - 1 ? "true" : "mixed",
       );
       toggle.setAttribute("title", label);
     }
