@@ -127,8 +127,21 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(styles, /html\[data-design='quiet'\] \{\s*--bg: #fdfdfc;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.single-index \{\s*display: block;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
-  // Four stops on the toggle, 12px apart.
+  // Five stops on the toggle, 12px apart.
   assert.match(styles, /html\[data-design='quiet'\] \.design-toggle-thumb \{\s*transform: translateX\(12px\);/);
-  assert.match(styles, /html\[data-design='classic'\] \.design-toggle-thumb \{\s*transform: translateX\(24px\);/);
-  assert.match(styles, /html\[data-design='modern'\] \.design-toggle-thumb \{\s*transform: translateX\(36px\);/);
+  assert.match(styles, /html\[data-design='paper'\] \.design-toggle-thumb \{\s*transform: translateX\(24px\);/);
+  assert.match(styles, /html\[data-design='classic'\] \.design-toggle-thumb \{\s*transform: translateX\(36px\);/);
+  assert.match(styles, /html\[data-design='modern'\] \.design-toggle-thumb \{\s*transform: translateX\(48px\);/);
+});
+
+test("paper design shares the single-index markup and adds the hero name", () => {
+  const home = fs.readFileSync(
+    path.join(root, "_includes", "single-index.html"),
+    "utf8",
+  );
+  assert.match(home, /<h1 class="si-name">/);
+  assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.si-name \{ display: none; \}/);
+  assert.match(styles, /html\[data-design='paper'\] \{\s*--bg: #f6f3ec;/);
+  assert.match(styles, /html\[data-design='paper'\][\s\S]*?\.single-index \{\s*display: block;/);
+  assert.match(styles, /html\[data-design='paper'\][\s\S]*?\.site-nav \{ display: none; \}/);
 });

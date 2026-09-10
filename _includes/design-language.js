@@ -10,8 +10,23 @@
     }
   }
 
-  var designs = ["", "quiet", "classic", "modern"];
-  var labels = ["Thinking Machines", "Quiet", "Classic", "Modern"];
+  var designs = ["", "quiet", "paper", "classic", "modern"];
+  var labels = ["Thinking Machines", "Quiet", "Paper", "Classic", "Modern"];
+
+  // Fonts only one design uses load only when that design is active.
+  var fonts = {
+    paper:
+      "https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;1,400&family=Caveat:wght@600&family=Instrument+Serif:ital@1&display=swap",
+  };
+
+  function loadFonts(design) {
+    var href = fonts[design];
+    if (!href || document.querySelector('link[href="' + href + '"]')) return;
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    document.head.appendChild(link);
+  }
 
   function writePreference(design) {
     try {
@@ -26,6 +41,7 @@
     if (designs.indexOf(design) < 0) design = "";
     if (design) root.dataset.design = design;
     else delete root.dataset.design;
+    loadFonts(design);
   }
 
   applyDesign(readPreference());

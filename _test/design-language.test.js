@@ -29,9 +29,18 @@ function bootController(initialValue, options = {}) {
       attributes[name] = String(value);
     },
   };
+  const links = [];
   const document = {
     readyState: "loading",
     documentElement: { dataset },
+    head: {
+      appendChild(node) {
+        links.push(node);
+      },
+    },
+    createElement() {
+      return {};
+    },
     addEventListener(type, handler) {
       documentEvents[type] = handler;
     },
@@ -59,17 +68,18 @@ function bootController(initialValue, options = {}) {
     localStorage,
   });
   if (documentEvents.DOMContentLoaded) documentEvents.DOMContentLoaded();
-  return { attributes, buttonEvents, dataset, values };
+  return { attributes, buttonEvents, dataset, values, links };
 }
 
 test("restores either persisted legacy design", () => {
   assert.equal(bootController("quiet").dataset.design, "quiet");
+  assert.equal(bootController("paper").dataset.design, "paper");
   assert.equal(bootController("classic").dataset.design, "classic");
   assert.equal(bootController("modern").dataset.design, "modern");
   assert.equal(bootController("unknown").dataset.design, undefined);
 });
 
-test("cycles default, quiet, classic, and modern while persisting non-default modes", () => {
+test("cycles default, quiet, paper, classic, and modern while persisting non-default modes", () => {
   const state = bootController();
 
   assert.equal(state.dataset.design, undefined);
@@ -80,6 +90,11 @@ test("cycles default, quiet, classic, and modern while persisting non-default mo
   assert.equal(state.dataset.design, "quiet");
   assert.equal(state.attributes["aria-pressed"], "mixed");
   assert.equal(state.values.get("tony-design-language"), "quiet");
+
+  state.buttonEvents.click();
+  assert.equal(state.dataset.design, "paper");
+  assert.equal(state.attributes["aria-pressed"], "mixed");
+  assert.equal(state.values.get("tony-design-language"), "paper");
 
   state.buttonEvents.click();
   assert.equal(state.dataset.design, "classic");
@@ -101,4 +116,11 @@ test("still cycles when browser storage is unavailable", () => {
   const state = bootController(undefined, { storageThrows: true });
   assert.doesNotThrow(() => state.buttonEvents.click());
   assert.equal(state.dataset.design, "quiet");
+});
+
+test("paper loads its fonts only while active, and only once", () => {
+  assert.equal(bootController("quiet").links.length, 0);
+  const state = bootController("paper");
+  assert.equal(state.links.length, 1);
+  assert.match(state.links[0].href, /Besley/);
 });
