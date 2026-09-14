@@ -15,7 +15,7 @@ const head = fs.readFileSync(
 );
 const about = fs.readFileSync(path.join(root, "about.md"), "utf8");
 
-test("Thinking Machines post list is scoped to the default design", () => {
+test("Soft Classic post list is scoped to the default design", () => {
   assert.match(layout, /class="post-meta post-list-date"/);
   assert.match(layout, /class="post-meta post-tags"/);
   assert.match(layout, /class="post-excerpt"/);

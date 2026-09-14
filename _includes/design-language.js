@@ -10,20 +10,21 @@
     }
   }
 
-  var designs = ["", "quiet", "classic", "modern"];
-  var labels = ["Thinking Machines", "Quiet", "Classic", "Modern"];
+  var designs = ["quiet", "", "classic", "modern"];
+  var labels = ["Quiet", "Soft Classic", "Noisy Classic", "Modern"];
+  var defaultDesign = "quiet";
 
   function writePreference(design) {
     try {
-      if (design) localStorage.setItem(storageKey, design);
-      else localStorage.removeItem(storageKey);
+      if (design === defaultDesign) localStorage.removeItem(storageKey);
+      else localStorage.setItem(storageKey, design);
     } catch (error) {
       // The switch still works for this page when storage is unavailable.
     }
   }
 
   function applyDesign(design) {
-    if (designs.indexOf(design) < 0) design = "";
+    if (designs.indexOf(design) < 0) design = defaultDesign;
     if (design) root.dataset.design = design;
     else delete root.dataset.design;
   }

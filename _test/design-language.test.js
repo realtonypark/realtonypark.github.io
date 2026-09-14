@@ -134,36 +134,46 @@ function menuItem(menu, design) {
   );
 }
 
-test("restores either persisted legacy design", () => {
+test("restores the persisted design, defaulting to quiet", () => {
   assert.equal(bootController("quiet").dataset.design, "quiet");
   assert.equal(bootController("classic").dataset.design, "classic");
   assert.equal(bootController("modern").dataset.design, "modern");
-  assert.equal(bootController("unknown").dataset.design, undefined);
+  assert.equal(bootController("").dataset.design, undefined);
+  assert.equal(bootController("unknown").dataset.design, "quiet");
+  assert.equal(bootController().dataset.design, "quiet");
 });
 
-test("one button opens the menu and the chosen design applies and persists", () => {
+test("quiet is first; the menu applies the chosen design and persists it", () => {
   const state = bootController();
   const { button, menu } = state;
 
-  assert.equal(state.dataset.design, undefined);
-  assert.match(button.getAttribute("aria-label"), /Thinking Machines/);
+  assert.equal(state.dataset.design, "quiet");
+  assert.match(button.getAttribute("aria-label"), /Quiet/);
   assert.equal(menu.children.length, 4);
+  assert.equal(menu.children[0].getAttribute("data-design-value"), "quiet");
 
   button.events.click({});
   assert.equal(button.getAttribute("aria-expanded"), "true");
   assert.equal(menu.getAttribute("hidden"), null);
 
-  menu.events.click({ target: menuItem(menu, "quiet") });
-  assert.equal(state.dataset.design, "quiet");
-  assert.equal(state.values.get("tony-design-language"), "quiet");
-  assert.equal(menuItem(menu, "quiet").getAttribute("aria-checked"), "true");
-  assert.equal(menuItem(menu, "modern").getAttribute("aria-checked"), "false");
+  menu.events.click({ target: menuItem(menu, "classic") });
+  assert.equal(state.dataset.design, "classic");
+  assert.equal(state.values.get("tony-design-language"), "classic");
+  assert.equal(menuItem(menu, "classic").getAttribute("aria-checked"), "true");
+  assert.equal(menuItem(menu, "quiet").getAttribute("aria-checked"), "false");
+  assert.match(button.getAttribute("aria-label"), /Noisy Classic/);
   assert.equal(button.getAttribute("aria-expanded"), "false");
   assert.notEqual(menu.getAttribute("hidden"), null);
 
   button.events.click({});
   menu.events.click({ target: menuItem(menu, "") });
   assert.equal(state.dataset.design, undefined);
+  assert.equal(state.values.get("tony-design-language"), "");
+  assert.match(button.getAttribute("aria-label"), /Soft Classic/);
+
+  button.events.click({});
+  menu.events.click({ target: menuItem(menu, "quiet") });
+  assert.equal(state.dataset.design, "quiet");
   assert.equal(state.values.has("tony-design-language"), false);
 });
 
@@ -186,6 +196,7 @@ test("outside click and Escape dismiss the menu", () => {
 test("still applies the chosen design when browser storage is unavailable", () => {
   const state = bootController(undefined, { storageThrows: true });
   const { button, menu } = state;
+  assert.equal(state.dataset.design, "quiet");
   button.events.click({});
   assert.doesNotThrow(() =>
     menu.events.click({ target: menuItem(menu, "modern") }),
