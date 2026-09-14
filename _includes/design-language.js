@@ -32,29 +32,91 @@
 
   function initializeToggle() {
     var toggle = document.querySelector("[data-design-toggle]");
-    if (!toggle) return;
+    var menu = document.querySelector("[data-design-menu]");
+    if (!toggle || !menu) return;
 
-    function syncToggle() {
+    var items = designs.map(function (design, i) {
+      var item = document.createElement("button");
+      item.type = "button";
+      item.className = "design-menu-item";
+      item.setAttribute("role", "menuitemradio");
+      item.setAttribute("data-design-value", design);
+
+      var check = document.createElement("span");
+      check.className = "design-menu-check";
+      check.setAttribute("aria-hidden", "true");
+      check.textContent = "✓";
+      item.appendChild(check);
+
+      var name = document.createElement("span");
+      name.textContent = labels[i];
+      item.appendChild(name);
+
+      menu.appendChild(item);
+      return item;
+    });
+
+    function currentIndex() {
       var index = designs.indexOf(root.dataset.design || "");
-      var next = (index + 1) % designs.length;
-      var label =
-        "Design style: " + labels[index] + ". Switch to " + labels[next];
+      return index < 0 ? 0 : index;
+    }
+
+    function syncMenu() {
+      var current = currentIndex();
+      items.forEach(function (item, i) {
+        var selected = i === current;
+        item.setAttribute("aria-checked", selected ? "true" : "false");
+        if (item.classList) item.classList.toggle("is-selected", selected);
+      });
+      var label = "Design style: " + labels[current] + ". Open design options";
       toggle.setAttribute("aria-label", label);
-      toggle.setAttribute(
-        "aria-pressed",
-        index === 0 ? "false" : index === designs.length - 1 ? "true" : "mixed",
-      );
       toggle.setAttribute("title", label);
     }
 
-    syncToggle();
-    toggle.addEventListener("click", function () {
-      var index = designs.indexOf(root.dataset.design || "");
-      var design = designs[(index + 1) % designs.length];
+    function setOpen(open) {
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) menu.removeAttribute("hidden");
+      else menu.setAttribute("hidden", "");
+    }
+
+    function isOpen() {
+      return toggle.getAttribute("aria-expanded") === "true";
+    }
+
+    toggle.addEventListener("click", function (event) {
+      if (event.stopPropagation) event.stopPropagation();
+      setOpen(!isOpen());
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!isOpen()) return;
+      var target = event.target || {};
+      if (target.closest && target.closest("[data-design-menu]")) return;
+      setOpen(false);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && isOpen()) {
+        setOpen(false);
+        if (toggle.focus) toggle.focus();
+      }
+    });
+
+    menu.addEventListener("click", function (event) {
+      var target = event.target || {};
+      var item = target.closest
+        ? target.closest("[data-design-value]")
+        : null;
+      if (!item || !menu.contains(item)) return;
+      var design = item.getAttribute("data-design-value") || "";
       applyDesign(design);
       writePreference(design);
-      syncToggle();
+      syncMenu();
+      setOpen(false);
     });
+
+    syncMenu();
+    setOpen(false);
   }
 
   if (document.readyState === "loading") {

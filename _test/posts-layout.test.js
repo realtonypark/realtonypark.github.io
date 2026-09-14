@@ -117,18 +117,29 @@ test("quiet design shows the single-index markup and nothing else does", () => {
     path.join(root, "_includes", "single-index.html"),
     "utf8",
   );
+  const header = fs.readFileSync(
+    path.join(root, "_includes", "header.html"),
+    "utf8",
+  );
   // Single-index markup ships hidden; only the designs that use it display it.
   assert.match(index, /\{% include single-index\.html %\}/);
   assert.match(home, /<section class="single-index" hidden>/);
   assert.match(home, /moneyball-ai\.webp/);
   assert.match(layout, /<span class="si-year" hidden>/);
   assert.match(layout, /data-short="\{\{ post\.date \| date: '%b %-d' \}\}"/);
-  assert.match(footer, /<p class="si-clock" hidden>/);
+  // The Evanston clock footer is gone; quiet keeps only the hairline rule.
+  assert.doesNotMatch(footer, /si-clock/);
+  assert.match(styles, /\.nd-footer \{ display: none; \}/);
   assert.match(styles, /html\[data-design='quiet'\] \{\s*--bg: #fdfdfc;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.single-index \{\s*display: block;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
-  // Four stops on the toggle, 12px apart.
-  assert.match(styles, /html\[data-design='quiet'\] \.design-toggle-thumb \{\s*transform: translateX\(12px\);/);
-  assert.match(styles, /html\[data-design='classic'\] \.design-toggle-thumb \{\s*transform: translateX\(24px\);/);
-  assert.match(styles, /html\[data-design='modern'\] \.design-toggle-thumb \{\s*transform: translateX\(36px\);/);
+  // One "Aa" button opens the theme list everywhere; the active TOC entry
+  // carries its dot in a reserved gutter so the text never shifts.
+  assert.match(header, /data-design-toggle/);
+  assert.match(header, /aria-haspopup="menu"/);
+  assert.match(header, /<div class="design-menu" data-design-menu hidden/);
+  assert.match(styles, /\.design-menu \{[\s\S]*?position: absolute;/);
+  assert.match(styles, /\.design-menu-item\.is-selected \.design-menu-check/);
+  assert.doesNotMatch(styles, /design-toggle-thumb/);
+  assert.match(styles, /content: '•';[\s\S]*?position: absolute;/);
 });

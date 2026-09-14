@@ -167,6 +167,8 @@ blockquote {
   display: flex;
   align-items: center;
   gap: 14px;
+  // Anchor for the design menu popup.
+  position: relative;
 }
 
 .header-actions .site-nav { float: none; }
@@ -190,41 +192,54 @@ blockquote {
   }
 }
 
-.design-toggle-track {
-  position: relative;
-  display: block;
-  width: 52px;
-  height: 16px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: var(--box-bg);
+// --- Design menu: one "Aa" button opens the theme list, Safari reader-mode style. Universal across designs and mobile. ---
+.design-toggle-label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
-.design-toggle-thumb {
+.design-menu {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--meta);
-  transition: transform 160ms ease, background-color 160ms ease;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 50;
+  min-width: 180px;
+  max-width: calc(100vw - 32px);
+  padding: 6px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-html[data-design='quiet'] .design-toggle-thumb {
-  transform: translateX(12px);
-  background: var(--text);
+.design-menu[hidden] { display: none; }
+
+.design-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover { background: var(--box-bg); }
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 }
 
-html[data-design='classic'] .design-toggle-thumb {
-  transform: translateX(24px);
-  background: var(--accent);
+.design-menu-check {
+  width: 1em;
+  visibility: hidden;
 }
 
-html[data-design='modern'] .design-toggle-thumb {
-  transform: translateX(36px);
-  background: var(--heading);
-}
+.design-menu-item.is-selected .design-menu-check { visibility: visible; }
 
 .site-title {
   @include relative-font-size(1);
@@ -1207,8 +1222,7 @@ html[data-design='classic'] body.is-post {
 @media (prefers-reduced-motion: reduce) {
   .post-rail-line,
   .post-rail-card,
-  .post-toc-link,
-  .design-toggle-thumb { transition: none; }
+  .post-toc-link { transition: none; }
 }
 
 /**
@@ -1319,21 +1333,6 @@ html[data-design='modern'] {
   // Only the typeface (Phase 2) and the toggle's mode-indicator state differ.
 
   .design-toggle { padding: 3px; }
-
-  .design-toggle-track {
-    width: 54px;
-    height: 18px;
-    border-color: var(--meta);
-    background: transparent;
-  }
-
-  .design-toggle-thumb {
-    top: 2px;
-    left: 2px;
-    width: 12px;
-    height: 12px;
-    background: var(--meta);
-  }
 
   .page-content { padding: 0; }
 
@@ -1887,7 +1886,7 @@ html[data-design='modern'] {
 }
 
 @media print {
-  .design-toggle { display: none !important; }
+  .design-toggle, .design-menu { display: none !important; }
 }
 
 // Section labels: bold-only paragraphs standing in for headings get
@@ -2222,11 +2221,6 @@ html[data-design='quiet'] {
     &:hover, &:focus-visible { opacity: 1; }
   }
 
-  .design-toggle-track {
-    border-color: var(--hairline);
-    background: transparent;
-  }
-
   // --- Index ---
   .home > p:first-child,
   .post-rail { display: none; }
@@ -2544,16 +2538,28 @@ html[data-design='quiet'] {
   }
 
   .post-toc-link {
-    padding: 2px 0;
+    position: relative;
+    padding: 2px 0 2px 14px;
     border: 0;
     color: var(--muted);
     text-decoration: none;
     &:hover { color: var(--text); }
     &.is-active {
       color: var(--text);
-      &::before { content: '• '; }
+      // The dot lives in its own 14px gutter, absolutely positioned, so the
+      // text never shifts when the active section changes.
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
     }
-    &.lvl-3 { padding-left: 12px; font-size: 1em; }
+    &.lvl-3 {
+      padding-left: 26px;
+      font-size: 1em;
+      &.is-active::before { left: 12px; }
+    }
   }
 
   // --- Other pages (reachable by URL only) ---
@@ -2618,15 +2624,6 @@ html[data-design='quiet'] {
   }
 
   .nd-footer { display: none; }
-
-  .si-clock {
-    display: block;
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-  }
 }
 
 @media (max-width: 768px) {

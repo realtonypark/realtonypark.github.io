@@ -110,16 +110,4 @@
     }
   }
 
-  // --- Footer clock (single-index designs) ----------------------------------------
-  var clock = document.querySelector('[data-si-clock]');
-  if (clock && window.Intl && Intl.DateTimeFormat) {
-    var clockFormat = new Intl.DateTimeFormat('en-US', {
-      hour: 'numeric', minute: '2-digit', timeZone: 'America/Chicago'
-    });
-    var tick = function () {
-      clock.textContent = clockFormat.format(new Date()).replace(' ', '').toLowerCase() + ' in ';
-    };
-    tick();
-    setInterval(tick, 15000);
-  }
 })();
