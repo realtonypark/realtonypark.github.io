@@ -2549,7 +2549,10 @@ html[data-design='quiet'] {
     color: var(--muted);
     text-decoration: none;
     &:hover { color: var(--text); }
-    &.is-active { color: var(--text); }
+    &.is-active {
+      color: var(--text);
+      &::before { content: '• '; }
+    }
     &.lvl-3 { padding-left: 12px; font-size: 1em; }
   }
 
