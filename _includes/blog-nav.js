@@ -109,4 +109,5 @@
       Array.prototype.forEach.call(items, function (item) { railSpy.observe(item); });
     }
   }
+
 })();

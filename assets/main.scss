@@ -167,6 +167,8 @@ blockquote {
   display: flex;
   align-items: center;
   gap: 14px;
+  // Anchor for the design menu popup.
+  position: relative;
 }
 
 .header-actions .site-nav { float: none; }
@@ -190,36 +192,54 @@ blockquote {
   }
 }
 
-.design-toggle-track {
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 16px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: var(--box-bg);
+// --- Design menu: one "Aa" button opens the theme list, Safari reader-mode style. Universal across designs and mobile. ---
+.design-toggle-label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
-.design-toggle-thumb {
+.design-menu {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--meta);
-  transition: transform 160ms ease, background-color 160ms ease;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 50;
+  min-width: 180px;
+  max-width: calc(100vw - 32px);
+  padding: 6px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-html[data-design='classic'] .design-toggle-thumb {
-  transform: translateX(12px);
-  background: var(--accent);
+.design-menu[hidden] { display: none; }
+
+.design-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover { background: var(--box-bg); }
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 }
 
-html[data-design='modern'] .design-toggle-thumb {
-  transform: translateX(24px);
-  background: var(--heading);
+.design-menu-check {
+  width: 1em;
+  visibility: hidden;
 }
+
+.design-menu-item.is-selected .design-menu-check { visibility: visible; }
 
 .site-title {
   @include relative-font-size(1);
@@ -1202,8 +1222,7 @@ html[data-design='classic'] body.is-post {
 @media (prefers-reduced-motion: reduce) {
   .post-rail-line,
   .post-rail-card,
-  .post-toc-link,
-  .design-toggle-thumb { transition: none; }
+  .post-toc-link { transition: none; }
 }
 
 /**
@@ -1314,21 +1333,6 @@ html[data-design='modern'] {
   // Only the typeface (Phase 2) and the toggle's mode-indicator state differ.
 
   .design-toggle { padding: 3px; }
-
-  .design-toggle-track {
-    width: 42px;
-    height: 18px;
-    border-color: var(--meta);
-    background: transparent;
-  }
-
-  .design-toggle-thumb {
-    top: 2px;
-    left: 2px;
-    width: 12px;
-    height: 12px;
-    background: var(--meta);
-  }
 
   .page-content { padding: 0; }
 
@@ -1882,7 +1886,7 @@ html[data-design='modern'] {
 }
 
 @media print {
-  .design-toggle { display: none !important; }
+  .design-toggle, .design-menu { display: none !important; }
 }
 
 // Section labels: bold-only paragraphs standing in for headings get
@@ -2093,3 +2097,547 @@ html[data-design='modern'] {
 .ai-nav:disabled { opacity: 0.35; cursor: default; }
 .ai-nav[hidden] { display: none; }
 .ai-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/**
+ * Quiet — reference: benji.org. "A personal website should feel like you've
+ * briefly left the rest of the internet." One index page: a short bio, the
+ * Moneyball photo, and every post in one list grouped by year. Inter at
+ * 14–15px, near-white ground, greys made from opacity, no nav. The site
+ * title is the only way back from a post; the toggle stays so you can leave.
+ * The single-index markup (bio section, year markers, footer clock) ships
+ * with the hidden attribute; each design that uses it displays it here.
+ */
+html[data-design='quiet'] {
+  --bg: #fdfdfc;
+  --text: #111111;
+  --heading: #111111;
+  --link: #111111;
+  --link-hover: #111111;
+  --accent: #111111;
+  --meta: rgba(0, 0, 0, 0.4);
+  --muted: rgba(0, 0, 0, 0.4);
+  --box-bg: #f4f4f2;
+  --hairline: #ececea;
+  --q-new: #ff2d8f;
+
+  font-size: 15px;
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-design='quiet'] {
+    --bg: #121212;
+    --text: #e9e9e6;
+    --heading: #e9e9e6;
+    --link: #e9e9e6;
+    --link-hover: #e9e9e6;
+    --accent: #e9e9e6;
+    --meta: rgba(255, 255, 255, 0.45);
+    --muted: rgba(255, 255, 255, 0.45);
+    --box-bg: #1c1c1c;
+    --hairline: #262626;
+    --q-new: #ff4fa3;
+  }
+}
+
+html[data-design='quiet'] body {
+  font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+  background: var(--bg);
+  color: var(--text);
+}
+
+html[data-design='quiet'] {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--heading);
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: color-mix(in srgb, var(--text) 22%, transparent);
+    transition: text-decoration-color 0.15s ease, opacity 0.15s ease;
+    &:visited { color: var(--text); }
+    &:hover { color: var(--text); text-decoration-color: var(--text); }
+  }
+
+  ::selection { background: var(--box-bg); }
+
+  hr { margin: 32px 0; }
+
+  // --- Column: 582px, like the reference ---
+  .wrapper {
+    width: 100%;
+    max-width: 582px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .toc-wrapper { max-width: none; }
+  .page-content { padding: 0; }
+  .toc-wrapper > .wrapper { padding-top: 4px; padding-bottom: 0; }
+
+  // --- Header: name left, toggle right, no nav ---
+  .site-header {
+    padding: 80px 0 0;
+    min-height: 0;
+    background: transparent;
+  }
+
+  .site-header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .site-title {
+    float: none;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    &, &:visited, &:hover { color: var(--heading); }
+  }
+
+  // minima's clearfix ::after on .wrapper would take a flex slot; push past it.
+  .header-actions { float: none; margin: 0 0 0 auto; }
+  .site-nav { display: none; }
+
+  .design-toggle {
+    padding: 3px;
+    opacity: 0.45;
+    transition: opacity 0.15s ease;
+    &:hover, &:focus-visible { opacity: 1; }
+  }
+
+  // --- Index ---
+  .home > p:first-child,
+  .post-rail { display: none; }
+
+  .single-index {
+    display: block;
+    margin: 0;
+  }
+
+  .single-index p { margin: 0 0 16px; }
+
+  .si-updated {
+    margin: 0 0 40px;
+    color: var(--muted);
+  }
+
+  .si-motto { margin: 28px 0 0; }
+
+  .single-index .si-photo {
+    margin: 32px 0 0;
+    border-radius: 8px;
+    background: var(--box-bg);
+  }
+
+  .si-caption {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    a { color: var(--muted); &:hover { color: var(--text); } }
+  }
+
+  .si-section {
+    margin: 56px 0 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  ul.post-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .post-list-item {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--hairline);
+    scroll-margin-top: 0;
+  }
+
+  .post-list-item:last-child { border-bottom: 0; }
+
+  .si-year {
+    display: block;
+    grid-column: 1;
+    padding: 12px 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--muted);
+  }
+
+  .post-item {
+    display: flex;
+    grid-column: 2;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+    padding: 12px 0;
+  }
+
+  .title-meta,
+  .post-meta-row { display: contents; }
+
+  .post-heading {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .post-link {
+    display: inline;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    text-decoration: none;
+    transition: opacity 0.14s ease;
+    &:visited, &:hover { color: var(--text); }
+  }
+
+  .post-list-item.is-new .post-link::after {
+    content: 'New';
+    margin-left: 12px;
+    color: var(--q-new);
+  }
+
+  // The full date stays in the DOM for readers and copy; the eye gets "Sep 7".
+  .post-list-date {
+    font-size: 0;
+    line-height: 1.4;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: opacity 0.14s ease;
+    &::after {
+      content: attr(data-short);
+      font-size: 14px;
+    }
+  }
+
+  .post-tags,
+  .post-excerpt { display: none; }
+
+  // Hovering the list quiets every row but the one under the pointer.
+  @media (hover: hover) {
+    ul.post-list:hover .post-link,
+    ul.post-list:hover .post-list-date { opacity: 0.3; }
+    ul.post-list .post-list-item:hover .post-link,
+    ul.post-list .post-list-item:hover .post-list-date { opacity: 1; }
+  }
+
+  // --- Posts ---
+  body.is-post {
+    --post-offset: 0;
+    .site-header { background: transparent; }
+    main.page-content::before { display: none; }
+  }
+
+  .post { padding-top: 0; }
+
+  .post-header {
+    display: flex;
+    flex-direction: column;
+    margin: 44px 0 32px;
+  }
+
+  .post-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  .post-header .post-meta {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    a { display: none; }
+  }
+
+  .post-content {
+    margin-bottom: 48px;
+    font-size: 15px;
+    line-height: 1.6;
+
+    p { margin: 0 0 16px; }
+
+    h1, h2 {
+      margin: 40px 0 8px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      margin: 32px 0 8px;
+      font-size: 15px;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    h4 {
+      margin: 24px 0 8px;
+      font-size: 15px;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    ul, ol {
+      margin: 0 0 16px;
+      padding-left: 20px;
+      li { margin: 4px 0; }
+    }
+
+    a {
+      color: var(--text);
+      text-decoration-color: color-mix(in srgb, var(--text) 25%, transparent);
+      &:hover { color: var(--text); text-decoration-color: var(--text); }
+    }
+
+    img { border-radius: 6px; }
+
+    table {
+      margin: 24px 0;
+      font-size: 13px;
+    }
+
+    p:has(> strong:only-child) { margin-top: 32px; }
+  }
+
+  blockquote {
+    margin: 24px 0;
+    padding: 0 0 0 16px;
+    border-left: 2px solid var(--hairline);
+    font-size: 15px;
+    font-style: normal;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  pre,
+  code {
+    background: var(--box-bg);
+    border: 0;
+  }
+
+  code {
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
+  pre {
+    margin: 20px 0;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  // The inline-code rule above outranks minima's `pre > code` reset.
+  pre > code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: inherit;
+  }
+
+  div.highlighter-rouge,
+  div.highlighter-rouge > div.highlight { background: transparent; }
+
+  // Near-monochrome code: comments recede, strings and numbers sit between.
+  .highlight { color: var(--text); }
+  .highlight span {
+    color: inherit;
+    background: transparent;
+    font-weight: inherit;
+    font-style: inherit;
+  }
+  .highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs {
+    color: var(--muted);
+    font-style: italic;
+  }
+  .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1,
+  .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx,
+  .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi,
+  .highlight .mo, .highlight .il {
+    color: color-mix(in srgb, var(--text) 62%, transparent);
+  }
+  .highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr,
+  .highlight .kt { font-weight: 500; }
+
+  table {
+    border: 0;
+    th, td {
+      padding: 8px 10px 8px 0;
+      border: 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    th {
+      font-weight: 500;
+      background: transparent;
+    }
+    tr:nth-child(even) { background: transparent; }
+  }
+
+  figure { margin: 24px 0; }
+
+  figure figcaption,
+  .caption {
+    margin-top: 8px;
+    font-size: 13px;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: left;
+    color: var(--muted);
+  }
+
+  .footnotes {
+    margin-top: 40px;
+    padding-top: 16px;
+    font-size: 13px;
+  }
+
+  .ai-codefold-label { font-size: 13px; }
+
+  .post-toc {
+    top: 80px;
+    width: 180px;
+    margin-right: -220px;
+    margin-top: 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .post-toc-link {
+    position: relative;
+    padding: 2px 0 2px 14px;
+    border: 0;
+    color: var(--muted);
+    text-decoration: none;
+    &:hover { color: var(--text); }
+    &.is-active {
+      color: var(--text);
+      // The dot lives in its own 14px gutter, absolutely positioned, so the
+      // text never shifts when the active section changes.
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+    }
+    &.lvl-3 {
+      padding-left: 26px;
+      font-size: 1em;
+      &.is-active::before { left: 12px; }
+    }
+  }
+
+  // --- Other pages (reachable by URL only) ---
+  .page-heading,
+  .project-title {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  ul.tag-list {
+    gap: 4px 16px;
+    margin: 24px 0;
+  }
+
+  // The tag cloud sizes itself inline; under Quiet every tag speaks at 14px.
+  li.tag-link { padding: 0; font-size: 14px !important; }
+
+  .by-tag-item .post-meta { font-size: 13px; }
+
+  .post-content figure.ai-compare { margin-top: 24px; }
+
+  .syllabus,
+  .cv-all,
+  .sidetoc { font-family: inherit; }
+
+  #password-prompt {
+    padding: 48px 0 !important;
+    input, button {
+      font-family: inherit;
+      font-size: 14px;
+      border-radius: 6px !important;
+    }
+    input { background: transparent; }
+    button {
+      background: var(--text) !important;
+      color: var(--bg) !important;
+    }
+  }
+
+  // --- Footer: short rule, then the time where I am ---
+  .site-footer {
+    margin-top: 64px;
+    padding: 0 0 96px;
+    border-top: 0;
+    background: transparent;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .site-footer .wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    &::before {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 1px;
+      margin-bottom: 38px;
+      background: var(--hairline);
+    }
+  }
+
+  .nd-footer { display: none; }
+}
+
+@media (max-width: 768px) {
+  html[data-design='quiet'] {
+    .site-header { padding-top: 48px; }
+    .post-header { margin-top: 36px; }
+    .site-footer { padding-bottom: 64px; }
+  }
+}
+
+@media (max-width: 520px) {
+  html[data-design='quiet'] {
+    .post-list-item { grid-template-columns: 56px 1fr; }
+    .post-item { align-items: flex-start; }
+    .post-list-date { padding-top: 1px; }
+  }
+}

@@ -15,7 +15,7 @@ const head = fs.readFileSync(
 );
 const about = fs.readFileSync(path.join(root, "about.md"), "utf8");
 
-test("Thinking Machines post list is scoped to the default design", () => {
+test("Soft Classic post list is scoped to the default design", () => {
   assert.match(layout, /class="post-meta post-list-date"/);
   assert.match(layout, /class="post-meta post-tags"/);
   assert.match(layout, /class="post-excerpt"/);
@@ -105,4 +105,41 @@ test("about featured posts use build-time links", () => {
   // {% link %} is Jekyll core and fails the build if a target is missing.
   assert.doesNotMatch(about, /\]\(_posts\//);
   assert.match(about, /\{% link _posts\/2026-02-02-building-python-interpreter-in-c\.md %\}/);
+});
+
+test("quiet design shows the single-index markup and nothing else does", () => {
+  const index = fs.readFileSync(path.join(root, "index.md"), "utf8");
+  const footer = fs.readFileSync(
+    path.join(root, "_includes", "footer.html"),
+    "utf8",
+  );
+  const home = fs.readFileSync(
+    path.join(root, "_includes", "single-index.html"),
+    "utf8",
+  );
+  const header = fs.readFileSync(
+    path.join(root, "_includes", "header.html"),
+    "utf8",
+  );
+  // Single-index markup ships hidden; only the designs that use it display it.
+  assert.match(index, /\{% include single-index\.html %\}/);
+  assert.match(home, /<section class="single-index" hidden>/);
+  assert.match(home, /moneyball-ai\.webp/);
+  assert.match(layout, /<span class="si-year" hidden>/);
+  assert.match(layout, /data-short="\{\{ post\.date \| date: '%b %-d' \}\}"/);
+  // The Evanston clock footer is gone; quiet keeps only the hairline rule.
+  assert.doesNotMatch(footer, /si-clock/);
+  assert.match(styles, /\.nd-footer \{ display: none; \}/);
+  assert.match(styles, /html\[data-design='quiet'\] \{\s*--bg: #fdfdfc;/);
+  assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.single-index \{\s*display: block;/);
+  assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
+  // One "Aa" button opens the theme list everywhere; the active TOC entry
+  // carries its dot in a reserved gutter so the text never shifts.
+  assert.match(header, /data-design-toggle/);
+  assert.match(header, /aria-haspopup="menu"/);
+  assert.match(header, /<div class="design-menu" data-design-menu hidden/);
+  assert.match(styles, /\.design-menu \{[\s\S]*?position: absolute;/);
+  assert.match(styles, /\.design-menu-item\.is-selected \.design-menu-check/);
+  assert.doesNotMatch(styles, /design-toggle-thumb/);
+  assert.match(styles, /content: '•';[\s\S]*?position: absolute;/);
 });
