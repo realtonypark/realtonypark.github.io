@@ -161,7 +161,7 @@ test("quiet is first; the menu applies the chosen design and persists it", () =>
   assert.equal(state.values.get("tony-design-language"), "classic");
   assert.equal(menuItem(menu, "classic").getAttribute("aria-checked"), "true");
   assert.equal(menuItem(menu, "quiet").getAttribute("aria-checked"), "false");
-  assert.match(button.getAttribute("aria-label"), /Noisy Classic/);
+  assert.match(button.getAttribute("aria-label"), /Design style: Classic\./);
   assert.equal(button.getAttribute("aria-expanded"), "false");
   assert.notEqual(menu.getAttribute("hidden"), null);
 

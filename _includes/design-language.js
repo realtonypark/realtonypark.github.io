@@ -11,7 +11,7 @@
   }
 
   var designs = ["quiet", "", "classic", "modern"];
-  var labels = ["Quiet", "Soft Classic", "Noisy Classic", "Modern"];
+  var labels = ["Quiet", "Soft Classic", "Classic", "Modern"];
   var defaultDesign = "quiet";
 
   function writePreference(design) {
