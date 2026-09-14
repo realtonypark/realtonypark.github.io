@@ -2644,6 +2644,10 @@ html[data-design='quiet'] {
 // scroll in place instead of pushing the page sideways.
 @media (max-width: 600px) {
   html[data-design='quiet'] {
+    // Base themes drop to a 90% column on small screens; Quiet's full-width
+    // column outranks that rule, so restate it here for the same gutters.
+    .wrapper { width: 90%; }
+
     .post-list-item { grid-template-columns: 56px 1fr; }
     .post-item { align-items: flex-start; }
     .post-list-date { padding-top: 1px; }
