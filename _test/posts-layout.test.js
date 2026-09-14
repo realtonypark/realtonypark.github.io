@@ -142,4 +142,10 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(styles, /\.design-menu-item\.is-selected \.design-menu-check/);
   assert.doesNotMatch(styles, /design-toggle-thumb/);
   assert.match(styles, /content: '•';[\s\S]*?position: absolute;/);
+  // Phone layout shares the file's 600px breakpoint and compresses the
+  // desktop whitespace; the Aa button meets touch sizing on coarse pointers.
+  assert.match(styles, /@media \(max-width: 600px\) \{\s*html\[data-design='quiet'\]/);
+  assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.wrapper \{ width: 90%; \}/);
+  assert.match(styles, /table \{\s*display: block;\s*overflow-x: auto;\s*\}/);
+  assert.match(styles, /@media \(pointer: coarse\) \{\s*\.design-toggle \{ min-width: 44px; min-height: 44px; \}/);
 });

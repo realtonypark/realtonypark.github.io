@@ -241,6 +241,11 @@ blockquote {
 
 .design-menu-item.is-selected .design-menu-check { visibility: visible; }
 
+// Touch targets: the "Aa" button is small by desktop standards.
+@media (pointer: coarse) {
+  .design-toggle { min-width: 44px; min-height: 44px; }
+}
+
 .site-title {
   @include relative-font-size(1);
   font-weight: 600;
@@ -2104,7 +2109,7 @@ html[data-design='modern'] {
  * Moneyball photo, and every post in one list grouped by year. Inter at
  * 14–15px, near-white ground, greys made from opacity, no nav. The site
  * title is the only way back from a post; the toggle stays so you can leave.
- * The single-index markup (bio section, year markers, footer clock) ships
+ * The single-index markup (bio section, year markers) ships
  * with the hidden attribute; each design that uses it displays it here.
  */
 html[data-design='quiet'] {
@@ -2634,10 +2639,33 @@ html[data-design='quiet'] {
   }
 }
 
-@media (max-width: 520px) {
+// Phone layout on the same 600px vocabulary as the rest of the file: compact
+// the year list, tighten the desktop whitespace rhythm, and let wide tables
+// scroll in place instead of pushing the page sideways.
+@media (max-width: 600px) {
   html[data-design='quiet'] {
+    // Base themes drop to a 90% column on small screens; Quiet's full-width
+    // column outranks that rule, so restate it here for the same gutters.
+    .wrapper { width: 90%; }
+
     .post-list-item { grid-template-columns: 56px 1fr; }
     .post-item { align-items: flex-start; }
     .post-list-date { padding-top: 1px; }
+
+    .si-section { margin-top: 40px; }
+    .post-header { margin: 32px 0 24px; }
+
+    .post-content {
+      h1, h2 { margin-top: 32px; }
+      h3 { margin-top: 28px; }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    blockquote { margin: 20px 0; }
+    .site-footer { margin-top: 48px; }
   }
 }
