@@ -315,6 +315,9 @@ blockquote {
   justify-content: space-between;
 }
 
+// Quiet post footer ships in the markup but stays hidden unless Quiet shows it.
+.quiet-post-footer { display: none; }
+
 .footer-col {
   float: none;
   margin-bottom: $spacing-unit / 2;
@@ -2385,7 +2388,7 @@ html[data-design='quiet'] {
   }
 
   .post-content {
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     font-size: 15px;
     line-height: 1.6;
 
@@ -2604,6 +2607,57 @@ html[data-design='quiet'] {
       color: var(--bg) !important;
     }
   }
+
+  // --- Quiet post footer: full rule, two other posts, centered socials ---
+  .quiet-post-footer {
+    display: block;
+    margin-top: 24px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .quiet-post-footer-list {
+    margin: 0 0 72px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .quiet-post-footer-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+  }
+
+  .quiet-post-footer-link {
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+
+  .quiet-post-footer-date {
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .quiet-post-footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 16px;
+    font-size: 13px;
+    color: var(--muted);
+    a { color: var(--muted); text-decoration: none; &:hover { color: var(--text); } }
+  }
+
+  // The footer carries its own rule on posts; drop the short index rule there.
+  body.is-post .site-footer { margin-top: 48px; }
+  body.is-post .site-footer .wrapper::before { display: none; }
 
   // --- Footer: short rule, then the time where I am ---
   .site-footer {
