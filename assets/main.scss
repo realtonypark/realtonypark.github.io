@@ -2611,7 +2611,8 @@ html[data-design='quiet'] {
   // --- Quiet post footer: full rule, two other posts, centered socials ---
   .quiet-post-footer {
     display: block;
-    margin-top: 24px;
+    // Article-to-divider matches divider-to-first-link (border 1 + padding 40 + item 14) below.
+    margin-top: 55px;
     padding-top: 40px;
     border-top: 1px solid var(--hairline);
   }
