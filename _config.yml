@@ -96,6 +96,7 @@ exclude:
   - '*.gv'
   - assets/slides
   - assets/ai-img
+  - worker
 
 plugins:
   - jekyll-feed
