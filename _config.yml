@@ -112,7 +112,7 @@ defaults:
   - scope: {path: "index.md"}
     values:
       description: Essays and projects by Tony Park on software, AI, investing, startups, and film.
-      image: /assets/banner.webp
+      image: /assets/banner-1200.webp
   - scope: {path: "posts.md"}
     values:
       canonical_url: https://realtonypark.github.io/

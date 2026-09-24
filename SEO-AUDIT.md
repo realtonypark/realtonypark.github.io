@@ -15,7 +15,7 @@ Audited production at https://realtonypark.github.io/ and an isolated branch bas
 | Build output | Source scripts, README, agent instructions, and inherited presentation slides were publicly served. | Exclude development/private material and unused template slides from the build. Linked research PDFs remain available but are not separate sitemap entries. |
 | Favicon and errors | `/assets/icon.png` returned 404 on every page; there was no custom error page. | Add a scalable TP favicon and a noindex 404 page with links to the post and topic indexes. |
 | Structure and accessibility | Main indexes and pages lacked primary headings; social icons lacked explicit names; the design toggle failed contrast. | Restore page headings, use H1/H2 for the writing index, label social links, and increase toggle contrast. |
-| Loading | The homepage banner was lazy-loaded; all gallery images were eager. | Prioritize above-the-fold banners and the first post image. Apply native lazy loading to later post images through the layout, preserving explicit loading attributes. Compress generated CSS. |
+| Loading | The homepage banner was lazy-loaded; all gallery images were eager. | Prioritize above-the-fold banners and the first post image. Apply native lazy loading to later post images through the layout, preserving explicit loading attributes. Serve responsive 640/1200-pixel banner copies and compress generated CSS. |
 | Regression protection | No reproducible build or SEO check existed. | Pin the GitHub Pages Jekyll/theme/SEO/Markdown versions and add a generated-site check to CI. |
 
 The sitemap includes only canonical public HTML pages and uses existing publication dates. This follows [Google’s sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap). No fabricated freshness dates, ratings, FAQs, or keyword lists were added. Article and author metadata follow [Google’s article guidance](https://developers.google.com/search/docs/appearance/structured-data/article) and the [SEO plugin’s supported configuration](https://jekyll.github.io/jekyll-seo-tag/advanced-usage/).
@@ -40,16 +40,16 @@ Lighthouse 13.5.0, Chrome for Testing 153, default mobile device profile, DevToo
 | SEO | 92 | 100 |
 | Accessibility | 96 | 100 |
 | Best practices | 96 | 100 |
-| Performance | 72 | 72 |
-| Largest Contentful Paint | 16.1 s | 15.7 s |
-| Total Blocking Time | 90 ms | 110 ms |
+| Performance | 72 | 92 |
+| Largest Contentful Paint | 16.1 s | 2.7 s |
+| Total Blocking Time | 90 ms | 130 ms |
 | Cumulative Layout Shift | 0 | 0 |
 
-No meaningful overall performance gain is claimed. The shared banner payload must be reduced before calling this site fully optimized. Earlier simulated-throttling runs varied widely; those are not used as evidence of a performance gain. The image-heavy article separately scores 100 on SEO, accessibility, and best practices, but still needs smaller images for good mobile loading speed.
+Responsive banner copies reduce the pair from 2.43 MB to 68 KB at 640 pixels or 213 KB at 1200 pixels (91–97% smaller). The comparable homepage lab run improves performance from 72 to 92 and LCP from 16.1 to 2.7 seconds. Earlier simulated-throttling runs varied widely; those are not used as evidence of a performance gain. The image-heavy article separately scores 100 on SEO, accessibility, and best practices, but still needs smaller images for good mobile loading speed.
 
 **Remaining limits and follow-up**
 
-- Image transfer size remains the main performance opportunity. The two shared banners total 2.43 MB; the AI gallery references 7.43 MB of images, and the MLB article references 4.17 MB. Native lazy loading reduces eager requests but does not make the image files smaller. Responsive banner copies are awaiting the owner’s answer; all existing image files are preserved.
+- Article image transfer size remains a performance opportunity within the unchanged post content. The AI gallery references 7.43 MB of images, and the MLB article references 4.17 MB. Native lazy loading reduces eager requests but does not make these image files smaller. Shared banners now use smaller responsive copies; all original image files are preserved.
 - Post content is intentionally unchanged. Five posts use generic `img` alt text, and Jaws uses `img|676`; the AI comparisons use empty alt attributes with labels on their surrounding controls. MediaMatch and the OpenStreetMap post include additional H1 headings in their bodies. These are editorial/accessibility improvements for a separately authorized content pass, not reasons to rewrite published prose silently.
 - Search Console ownership, sitemap submission, Google-selected canonicals, actual indexed-page counts, manual actions, queries, click-through rates, and backlinks were not verified. After deployment, submit `/sitemap.xml` and inspect the homepage plus representative posts in Search Console. Only Google can confirm indexing. [Google’s starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) does not promise inclusion or rankings.
 - The public PageSpeed Insights API returned HTTP 429, so no CrUX field-performance claim is made. Local Lighthouse results depend on browser, throttling, cache, and third-party font/analytics timing. External Google Fonts and Analytics remain in place.
@@ -67,3 +67,5 @@ bundle exec jekyll doctor
 ```
 
 Use Ruby 3.3 or newer. The Gemfile pins the core versions from [GitHub Pages’ dependency list](https://pages.github.com/versions/). The SEO check uses only Python’s standard library. The workflow checks pull requests and pushes to `main`; deployment remains the existing GitHub Pages branch build.
+
+Banner derivatives can be reproduced with installed libwebp tools: `cwebp -q 82 -m 6 -resize WIDTH 0 assets/NAME.webp -o assets/NAME-WIDTH.webp`, for widths 640/1200 and names `banner`/`moneyball-ai`.

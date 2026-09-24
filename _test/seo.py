@@ -74,6 +74,12 @@ for file in sorted(root.rglob("*.html")):
 check(bool(pages), "No HTML pages found; build the site first")
 for path, page in pages.items():
     for tag, attrs in page.tags:
+        for candidate in attrs.get("srcset", "").split(","):
+            if candidate.strip():
+                image_path = urlsplit(urljoin(origin + path, candidate.split()[0]))
+                if image_path.netloc == urlsplit(origin).netloc:
+                    check((root / unquote(image_path.path).lstrip("/")).is_file(),
+                          f"{path}: broken srcset {candidate}")
         key = "href" if tag in ("a", "link") else "src" if tag in ("img", "script", "source", "iframe") else None
         if tag == "meta" and (attrs.get("property") == "og:image" or attrs.get("name") == "twitter:image"):
             key = "content"

@@ -4,8 +4,8 @@ title: About
 ---
 
 <figure class="ai-compare ai-compare-wide ai-compare-flat" role="slider" tabindex="0" aria-label="Drag to compare the original and AI-styled Moneyball banner" aria-valuemin="2" aria-valuemax="98" aria-valuenow="50">
-<img class="ai-after" src="/assets/moneyball-ai.webp" alt="" width="1600" height="640" fetchpriority="high" draggable="false">
-<img class="ai-before" src="/assets/banner.webp" alt="Moneyball, 2011" width="2048" height="819" fetchpriority="high" draggable="false">
+<img class="ai-after" src="/assets/moneyball-ai-1200.webp" srcset="/assets/moneyball-ai-640.webp 640w, /assets/moneyball-ai-1200.webp 1200w" sizes="(max-width: 680px) 90vw, 680px" alt="" width="1600" height="640" fetchpriority="high" draggable="false">
+<img class="ai-before" src="/assets/banner-1200.webp" srcset="/assets/banner-640.webp 640w, /assets/banner-1200.webp 1200w" sizes="(max-width: 680px) 90vw, 680px" alt="Moneyball, 2011" width="2048" height="819" fetchpriority="high" draggable="false">
 <span class="ai-divider" aria-hidden="true"></span>
 <span class="ai-knob" aria-hidden="true">‹ ›</span>
 </figure>
