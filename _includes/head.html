@@ -1,10 +1,11 @@
 <head>
-    <link rel="shortcut icon" type="image/png" href="/assets/icon.png">
     <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/icon.svg' | relative_url }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>{%- include design-language.js -%}</script>
     {%- seo -%}
+    <meta name="robots" content="{{ page.robots | default: 'max-image-preview:large' }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

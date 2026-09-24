@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Posts
+title: Essays and Projects
 ---
 
 Sort by: [**date**]({{ site.baseurl }}{% link index.md %}) \| [tag]({{ site.baseurl }}{% link posts-by-tag.md %})

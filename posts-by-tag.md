@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Posts
+title: Posts by Topic
 ---
 
-Sort by: [date]({{ site.baseurl }}{% link posts.md %}) \| [**tag**]({{ site.baseurl }}{% link posts-by-tag.md %})
+Sort by: [date]({{ site.baseurl }}{% link index.md %}) \| [**tag**]({{ site.baseurl }}{% link posts-by-tag.md %})
 
 <ul class="tag-list">
 {% assign all_tags = site.tags | sort %}

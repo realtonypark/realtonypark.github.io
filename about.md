@@ -4,8 +4,8 @@ title: About
 ---
 
 <figure class="ai-compare ai-compare-wide ai-compare-flat" role="slider" tabindex="0" aria-label="Drag to compare the original and AI-styled Moneyball banner" aria-valuemin="2" aria-valuemax="98" aria-valuenow="50">
-<img class="ai-after" src="/assets/moneyball-ai.webp" alt="" draggable="false">
-<img class="ai-before" src="/assets/banner.webp" alt="" draggable="false">
+<img class="ai-after" src="/assets/moneyball-ai.webp" alt="" width="1600" height="640" fetchpriority="high" draggable="false">
+<img class="ai-before" src="/assets/banner.webp" alt="Moneyball, 2011" width="2048" height="819" fetchpriority="high" draggable="false">
 <span class="ai-divider" aria-hidden="true"></span>
 <span class="ai-knob" aria-hidden="true">‹ ›</span>
 </figure>
@@ -14,7 +14,7 @@ title: About
 
 You can never lose if you never quit.
 
-### Featured Posts
+## Featured Posts
 
 - [Building a (Mini) Bitcoin: How a Blockchain Actually Reaches Consensus]({% link _posts/2026-07-17-building-a-mini-bitcoin.md %})
 - [Building a Python Interpreter in C]({% link _posts/2026-02-02-building-python-interpreter-in-c.md %})
@@ -23,7 +23,7 @@ You can never lose if you never quit.
 - [What Makes the 'Dream Team' in the MLB: Identifying Key Batting Metrics that Drive Offensive Production in the Statcast Era (2015-2024)]({% link _posts/2025-04-29-what-makes-‘dream-team’-mlb.md %})
 - [The Visual Grammar of Anthropocentrism in Jaws]({% link _posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md %})
 
-### Affiliated Websites
+## Affiliated Websites
 
 - [Designing the Smart City](https://realtonypark2.github.io/)
 - [KMLA Forge & BUZ Aerospace](https://realtonypark3.github.io/)
