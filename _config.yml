@@ -4,6 +4,7 @@ title: Tony Park
 description: Essays and projects by Tony Park on software, AI, investing, startups, and film.
 lang: en
 locale: en_US
+timezone: Etc/UTC
 author:
   name: Tony (Seunghyeon) Park
   url: https://realtonypark.github.io/about/

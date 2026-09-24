@@ -5,6 +5,7 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
+from urllib.robotparser import RobotFileParser
 from xml.etree import ElementTree as ET
 
 
@@ -85,6 +86,8 @@ for path, page in pages.items():
         check(file.is_file() or (file / "index.html").is_file(), f"{path}: broken {key} {attrs[key]}")
     canonical = page.values("link", "rel", "canonical", "href")
     robots = ",".join(page.values("meta", "name", "robots"))
+    is_post = any(t == "article" and "h-entry" in a.get("class", "").split() for t, a in page.tags)
+    check(not is_post or "noindex" not in robots, f"{path}: published post is noindex")
     if "noindex" in robots:
         continue
     check(bool(page.title.strip()) and page.title_count == 1, f"{path}: missing or duplicate title")
@@ -106,6 +109,7 @@ for path, page in pages.items():
         titles.add(page.title)
         descriptions.add(tuple(description))
     articles = [s for s in page.schemas if s.get("@type") == "BlogPosting"]
+    check(not is_post or len(articles) == 1, f"{path}: missing or duplicate article schema")
     if articles:
         posts.add(origin + path)
         check(len(articles) == 1, f"{path}: duplicate article schema")
@@ -126,6 +130,11 @@ if sitemap.is_file():
     check(set(urls) == indexable, f"Sitemap mismatch: {set(urls) ^ indexable}")
 robots = root / "robots.txt"
 check(robots.is_file() and f"Sitemap: {origin}/sitemap.xml" in robots.read_text(), "Missing sitemap discovery in robots.txt")
+if robots.is_file():
+    rules = RobotFileParser()
+    rules.parse(robots.read_text().splitlines())
+    for url in indexable:
+        check(rules.can_fetch("Googlebot", url) and rules.can_fetch("*", url), f"Robots.txt blocks {url}")
 feed = ET.parse(root / "feed.xml")
 feed_urls = {node.attrib["href"] for node in feed.findall("{http://www.w3.org/2005/Atom}entry/{http://www.w3.org/2005/Atom}link") if node.get("rel") == "alternate"}
 check(bool(feed_urls) and feed_urls <= posts, "Feed contains missing or noncanonical posts")

@@ -26,6 +26,7 @@ The sitemap includes only canonical public HTML pages and uses existing publicat
 - Generated pages: all canonical URLs, descriptions, social URLs, JSON-LD, local resource targets, feed links, sitemap membership, page languages, and primary headings pass the automated check. No broken internal fragment targets were found in a separate crawl.
 - External links: 15 of 16 distinct HTTPS destinations returned 200. LinkedIn returned its automated-request status 999; this is not evidence that the profile is missing.
 - All eight existing Node tests pass. Jekyll builds successfully and `jekyll doctor` reports no problems.
+- Build timestamps use UTC, matching production. The check also rejects crawler exclusions, `noindex` on published posts, and missing article schema.
 - The source diff contains no changes under `_posts/` or `assets/posts/`. All 22 rendered article bodies match the baseline after removing only the added image loading attributes and outer whitespace.
 - Browser checks cover the homepage at desktop and 390-pixel mobile widths, image-slider keyboard input, About-to-post navigation, and a representative post. No horizontal page overflow was observed in those mobile checks.
 - Mobile Lighthouse checks on the homepage and image-heavy AI article pass SEO, accessibility, and best practices at 100. These scores cover Lighthouse’s checks, not every ranking factor.
