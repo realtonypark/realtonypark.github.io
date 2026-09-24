@@ -2608,12 +2608,13 @@ html[data-design='quiet'] {
     }
   }
 
-  // --- Quiet post footer: full rule, two other posts, centered socials ---
+  // --- Quiet post footer: full rule, three other posts, centered socials ---
+  // Rows mirror the index list (14px/1.4, 12px rhythm, hairline separators).
   .quiet-post-footer {
     display: block;
-    // Article-to-divider matches divider-to-first-link (border 1 + padding 40 + item 14) below.
-    margin-top: 55px;
-    padding-top: 40px;
+    // Article-to-divider matches divider-to-first-link (border 1 + padding 27 + item 12) below.
+    margin-top: 40px;
+    padding-top: 27px;
     border-top: 1px solid var(--hairline);
   }
 
@@ -2628,19 +2629,22 @@ html[data-design='quiet'] {
     align-items: baseline;
     justify-content: space-between;
     gap: 16px;
-    padding: 14px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--hairline);
   }
 
+  .quiet-post-footer-item:last-child { border-bottom: 0; }
+
   .quiet-post-footer-link {
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.4;
     text-decoration: none;
   }
 
   .quiet-post-footer-date {
     flex-shrink: 0;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.4;
     color: var(--muted);
     white-space: nowrap;
   }

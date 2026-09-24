@@ -1,11 +1,11 @@
 <!-- Quiet post footer only. Hidden by default; main.scss shows it under html[data-design='quiet']. -->
 <footer class="quiet-post-footer" aria-label="More posts and links">
   <ul class="quiet-post-footer-list">
-    {% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" | slice: 0, 2 %}
+    {% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" | slice: 0, 3 %}
     {% for post in other_posts %}
     <li class="quiet-post-footer-item">
       <a class="quiet-post-footer-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      <span class="quiet-post-footer-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+      <span class="quiet-post-footer-date">{{ post.date | date: "%b %-d" }}</span>
     </li>
     {% endfor %}
   </ul>
