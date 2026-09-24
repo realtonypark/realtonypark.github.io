@@ -1,5 +1,5 @@
 # personal info
-url: https://realtonypark.github.io
+url: https://tonypark.dev
 title: Tony Park
 description: Essays and projects by Tony Park on software, AI, investing, startups, and film.
 lang: en
@@ -7,7 +7,7 @@ locale: en_US
 timezone: Etc/UTC
 author:
   name: Tony (Seunghyeon) Park
-  url: https://realtonypark.github.io/about/
+  url: https://tonypark.dev/about/
   twitter: rtnyprk
   email: realtonypark [at] gmail [dot] com
   education:
@@ -95,6 +95,7 @@ exclude:
   - '*.py'
   - '*.gv'
   - assets/slides
+  - assets/ai-img
 
 plugins:
   - jekyll-feed
@@ -115,7 +116,7 @@ defaults:
       image: /assets/banner-1200.webp
   - scope: {path: "posts.md"}
     values:
-      canonical_url: https://realtonypark.github.io/
+      canonical_url: https://tonypark.dev/
       sitemap: false
   - scope: {path: "about.md"}
     values:

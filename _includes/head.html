@@ -25,4 +25,7 @@
 
       gtag('config', 'G-P1NKJG1GJ2');
     </script>
+    {%- if jekyll.environment == "production" -%}
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7fecad21239a40db9fa47ed7f7ad34fc"}'></script><!-- End Cloudflare Web Analytics -->
+    {%- endif -%}
   </head>

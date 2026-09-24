@@ -1,0 +1,12 @@
+{
+	"name": "tonypark-blog",
+	"compatibility_date": "2026-09-24",
+	"assets": {
+		"directory": "./_site",
+		"not_found_handling": "404-page"
+	},
+	"routes": [
+		{ "pattern": "tonypark.dev", "custom_domain": true },
+		{ "pattern": "www.tonypark.dev", "custom_domain": true }
+	]
+}

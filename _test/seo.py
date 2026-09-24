@@ -1,6 +1,8 @@
 """Check a production Jekyll build: python3 _test/seo.py [site directory]."""
 
 import json
+import os
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -52,7 +54,18 @@ class Page(HTMLParser):
 
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else "_site")
-origin = "https://realtonypark.github.io"
+
+
+def site_origin():
+    configured = os.environ.get("SITE_ORIGIN")
+    if configured:
+        return configured.rstrip("/")
+    config = Path(__file__).resolve().parent.parent / "_config.yml"
+    match = re.search(r"^url:\s*(\S+)", config.read_text(), re.M)
+    return match.group(1).rstrip("/") if match else "https://tonypark.dev"
+
+
+origin = site_origin()
 errors = []
 
 
