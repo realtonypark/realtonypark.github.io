@@ -3,11 +3,9 @@ layout: default
 ---
 
 <div class="home">
-  <!-- {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%} -->
-
-  {{ content }} {% if site.paginate %} {% assign posts = paginator.posts %} {%
+  {{ content }}
+  <h1 class="si-section">{{ page.list_title | default: 'Writing' | escape }}</h1>
+  {% if site.paginate %} {% assign posts = paginator.posts %} {%
   else %} {% assign posts = site.posts %} {% endif %} {%- if posts != empty -%}
   {%- if page.list_title -%}
   <h2 class="post-list-heading">{{ page.list_title }}</h2>
@@ -49,11 +47,11 @@ layout: default
             </a>
           </div> -->
         <div class="title-meta">
-          <h3 class="post-heading">
+          <h2 class="post-heading">
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
             </a>
-          </h3>
+          </h2>
           <div class="post-meta-row">
             <time
               class="post-meta post-list-date"

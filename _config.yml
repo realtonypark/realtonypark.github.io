@@ -1,8 +1,14 @@
 # personal info
 url: https://realtonypark.github.io
 title: Tony Park
+description: Essays and projects by Tony Park on software, AI, investing, startups, and film.
+lang: en
+locale: en_US
+timezone: Etc/UTC
 author:
   name: Tony (Seunghyeon) Park
+  url: https://realtonypark.github.io/about/
+  twitter: rtnyprk
   email: realtonypark [at] gmail [dot] com
   education:
     uni: Northwestern University
@@ -36,6 +42,15 @@ github: https://github.com/realtonypark
 linkedin: https://www.linkedin.com/in/realtonypark/
 instagram: https://www.instagram.com/tnyprk
 x: https://x.com/rtnyprk
+twitter:
+  username: rtnyprk
+social:
+  name: Tony (Seunghyeon) Park
+  links:
+    - https://github.com/realtonypark
+    - https://www.linkedin.com/in/realtonypark/
+    - https://x.com/rtnyprk
+    - https://www.instagram.com/tnyprk
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -58,10 +73,165 @@ show_excerpts: true # set to true to show excerpts on the homepage
 
 # Build settings
 theme: minima
+sass:
+  style: compressed
 
 exclude:
   - _brain
+  - _memo
+  - _research
+  - _syllabi
+  - AGENTS.md
+  - CLAUDE.md
+  - README.md
+  - SEO-AUDIT.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - graphify-out
+  - '*.py'
+  - '*.gv'
+  - assets/slides
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Metadata stays here so published post sources remain unchanged.
+defaults:
+  - scope: {path: "assets"}
+    values:
+      sitemap: false
+  - scope: {path: "Profile.pdf"}
+    values:
+      sitemap: false
+  - scope: {path: "index.md"}
+    values:
+      description: Essays and projects by Tony Park on software, AI, investing, startups, and film.
+      image: /assets/banner-1200.webp
+  - scope: {path: "posts.md"}
+    values:
+      canonical_url: https://realtonypark.github.io/
+      sitemap: false
+  - scope: {path: "about.md"}
+    values:
+      description: Find Tony Park's featured writing, software projects, and affiliated websites.
+      seo:
+        type: Person
+        name: Tony (Seunghyeon) Park
+  - scope: {path: "posts-by-tag.md"}
+    values:
+      description: Browse Tony Park's writing by topic, including software development, projects, investing, essays, and film.
+  - scope: {path: "holdings.md"}
+    values:
+      robots: noindex, follow
+      sitemap: false
+  - scope: {path: "publications.md"}
+    values:
+      robots: noindex, follow
+      sitemap: false
+  - scope: {path: "grad.html"}
+    values:
+      sitemap: false
+
+  - scope: {path: "_posts/2023-05-15-isef.md"}
+    values:
+      description: "A hand-gesture-controlled wheelchair for people with severe mobility loss, presented at Regeneron ISEF 2023."
+      image: /assets/posts/isef.webp
+
+  - scope: {path: "_posts/2023-11-10-kmla-forge-and-buz-aerospace.md"}
+    values:
+      description: "How KMLA students built a maker community and a rocket through KMLA Forge and BUZ Aerospace."
+
+  - scope: {path: "_posts/2024-10-04-cinematography-in-citizen-lane.md"}
+    values:
+      description: "How deep focus and long takes in Citizen Kane connect childhood, memory, and the search for truth."
+      image: /assets/posts/citizen-kane.webp
+
+  - scope: {path: "_posts/2024-11-13-the-transfer-of-green-in-vertigo.md"}
+    values:
+      description: "An analysis of how Hitchcock uses green in Vertigo to trace obsession, identity, and illusion."
+      image: /assets/posts/vertigo.webp
+
+  - scope: {path: "_posts/2024-12-06-match-cut-editing-in-inception.md"}
+    values:
+      description: "How match cuts in Inception connect dream levels and make the relationships between them visible."
+      image: /assets/posts/inception.webp
+
+  - scope: {path: "_posts/2024-12-10-designing-the-smart-city.md"}
+    values:
+      description: "A people-centered smart city design built around walkability, compact land use, green space, and participatory budgeting."
+
+  - scope: {path: "_posts/2025-02-12-idntity-division-and-dissolution-mind-body-split-in-sleep.md"}
+    values:
+      description: "An analysis of identity, insomnia, and the mind-body split in Haruki Murakami’s short story Sleep."
+
+  - scope: {path: "_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md"}
+    values:
+      description: "How framing, lenses, and slow motion in Jaws center human experience and turn the shark into a monster."
+      image: /assets/posts/jaws.webp
+
+  - scope: {path: "_posts/2025-04-15-mediamatch.md"}
+    values:
+      description: "MediaMatch uses Next.js, Gemini, Google Books, and TMDB to help readers and viewers discover books, movies, and TV shows."
+
+  - scope: {path: "_posts/2025-04-29-what-makes-‘dream-team’-mlb.md"}
+    values:
+      description: "An analysis of MLB batting metrics from 2015–2024: which measures best explain team run production in the Statcast era?"
+      image: /assets/posts/Image2.jpg
+
+  - scope: {path: "_posts/2025-10-27-nu-osm.md"}
+    values:
+      description: "A C++ campus navigation project using OpenStreetMap data, building search, and real-time CTA bus arrivals at Northwestern."
+
+  - scope: {path: "_posts/2026-01-19-investement-strategy-memo.md"}
+    values:
+      description: "An investing framework for finding bottlenecks and market misconceptions, and reasoning about an uncertain future."
+
+  - scope: {path: "_posts/2026-02-02-building-python-interpreter-in-c.md"}
+    values:
+      description: "Inside nuPython, a Python interpreter built in C: scanning tokens, parsing a program graph, and executing code in a custom memory model."
+
+  - scope: {path: "_posts/2026-03-01-one-thing.md"}
+    values:
+      description: "A reflection on choosing one priority, taking risks, and finding the work that makes other work easier or unnecessary."
+
+  - scope: {path: "_posts/2026-03-06-ai-governance.md"}
+    values:
+      description: "What Hayek’s knowledge problem reveals about AI governance, centralized control, and the Anthropic–Pentagon conflict."
+
+  - scope: {path: "_posts/2026-04-12-lessons.md"}
+    values:
+      description: "Lessons from a year of building a startup, with reflections on learning, decisions, and the compounding value of small improvements."
+
+  - scope: {path: "_posts/2026-05-01-tokenization.md"}
+    values:
+      description: "How tokenization, institutional capital, and Ethereum are changing financial infrastructure and the role of the EVM."
+      image: /assets/posts/eth.webp
+
+  - scope: {path: "_posts/2026-05-08-circle.md"}
+    values:
+      description: "Can Circle become a payment rail for the AI era? An argument about stablecoins, machine payments, and where digital dollars get used."
+      image: /assets/posts/circle.webp
+
+  - scope: {path: "_posts/2026-05-09-second-brain.md"}
+    values:
+      description: "How I use Claude Code and Obsidian to turn notes, articles, and published writing into a wiki that builds knowledge over time."
+      image: /assets/posts/obsidian-brain-graph.png
+
+  - scope: {path: "_posts/2026-07-17-building-a-mini-bitcoin.md"}
+    values:
+      description: "Build a Bitcoin-style node in Rust and explore proof of work, signed transactions, peer-to-peer gossip, forks, and consensus."
+
+  - scope: {path: "_posts/2026-08-15-market-exam-subject-keeps-changing.md"}
+    values:
+      description: "Why investing requires adapting to changing narratives and fundamentals while staying in the market long enough to learn."
+
+  - scope: {path: "_posts/2026-09-07-clone-aesthetic-image-online.md"}
+    values:
+      description: "How I used AI to study the visual style of a blog cover and apply its painterly ASCII-mosaic aesthetic to my own photos."
+      image: /assets/posts/ai-aesthetic/wafer-inspiration.jpg

@@ -7,3 +7,9 @@ research..md
 teaching.md
 publications.md
 CV.md
+_site/
+.bundle/
+vendor/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/

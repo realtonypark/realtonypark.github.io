@@ -124,7 +124,7 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   // Single-index markup ships hidden; only the designs that use it display it.
   assert.match(index, /\{% include single-index\.html %\}/);
   assert.match(home, /<section class="single-index" hidden>/);
-  assert.match(home, /moneyball-ai\.webp/);
+  assert.match(home, /moneyball-ai-1200\.webp/);
   assert.match(layout, /<span class="si-year" hidden>/);
   assert.match(layout, /data-short="\{\{ post\.date \| date: '%b %-d' \}\}"/);
   // The Evanston clock footer is gone; quiet keeps only the hairline rule.

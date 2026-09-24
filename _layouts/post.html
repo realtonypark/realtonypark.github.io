@@ -1,20 +1,20 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry">
 
   <!-- Filled by _includes/blog-nav.js from the headings in .post-content; stays hidden when the post has none. -->
   <aside class="post-toc" hidden aria-label="On this page"></aside>
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <h1 class="post-title p-name">{{ page.title | escape }}</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        • <span class="p-author h-card">{{ page.author }}</span>
       {%- endif -%}
       {% for tag in page.tags %}
         {% capture tag_name %}{{ tag }}{% endcapture %}
@@ -23,8 +23,16 @@ layout: default
     </p>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+  <div class="post-content e-content">
+    {%- comment -%}ponytail: handles Jekyll's lowercase img tags; use a build-time HTML parser if custom markup needs rewriting.{%- endcomment -%}
+    {%- assign image_parts = content | split: '<img ' -%}
+    {%- for part in image_parts -%}
+      {%- unless forloop.first -%}
+        {%- assign image_tag = part | split: '>' | first -%}
+        <img {% if forloop.index == 2 %}{% unless image_tag contains 'fetchpriority=' %}fetchpriority="high" {% endunless %}{% else %}{% unless image_tag contains 'loading=' %}loading="lazy" {% endunless %}{% endif %}
+      {%- endunless -%}
+      {{- part -}}
+    {%- endfor -%}
   </div>
 
   {%- include quiet-post-footer.html -%}
