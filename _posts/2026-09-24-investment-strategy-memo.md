@@ -139,7 +139,7 @@ This is where my long-term investment perspective comes from. **The biggest risk
 
 During a downturn, many investors decide, "I should get out of the market entirely now," afraid that prices might fall further. But saying, "I'll sell everything now and get back in later," is essentially saying, "I'll time the market." Selling because you are certain "this is the top" and buying because you are certain "this is the bottom" both fall within the realm of short-term trading, where the odds of winning converge on 50%. If you give up reading the seasons, where the odds are close to 100%, and start playing the weather-prediction game of market timing, it is only natural that your odds fall.
 
-## VIII. It's all about sizing (position sizing): Include opportunity cost when weighing risk and reward
+## VIII. Include opportunity cost when weighing risk and reward
 
 Risk-Reward Ratio = (L × pL) + (G × pG)
 
