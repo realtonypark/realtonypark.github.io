@@ -3,6 +3,7 @@ layout: post
 title: The Visual Grammar of Anthropocentrism in Jaws
 tags: film essay
 published: true
+featured: true
 excerpt: |
   <p>An argument essay. Building on Brett Mills' article about <i>Jaws</i>, this essay analyzes how cinematographic techniques like edge framing, lens choices, and slow-motion reinforce the film's anthropocentric perspective. The analysis demonstrates how these formal elements center human experiences while reducing the shark to a narrative device, extending Mills' argument that cinema inherently privileges human perspectives and constructs animals as monsters rather than natural beings.</p>
 ---

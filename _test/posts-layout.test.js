@@ -105,6 +105,49 @@ test("about featured posts use build-time links", () => {
   // {% link %} is Jekyll core and fails the build if a target is missing.
   assert.doesNotMatch(about, /\]\(_posts\//);
   assert.match(about, /\{% link _posts\/2026-02-02-building-python-interpreter-in-c\.md %\}/);
+  assert.match(about, /\{% link _posts\/2026-09-24-investment-strategy-memo\.md %\}/);
+  assert.doesNotMatch(about, /2026-03-06-ai-governance/);
+  assert.doesNotMatch(about, /2026-03-01-one-thing/);
+});
+
+test("non-Quiet themes hide page and index headings visually", () => {
+  const page = fs.readFileSync(path.join(root, "_layouts", "page.html"), "utf8");
+  // The hook distinguishes page titles (About, Personal) from post titles
+  // so only the former are hidden; the h1 stays in the DOM for SEO.
+  assert.match(page, /<article class="post page">/);
+  assert.match(
+    styles,
+    /html:not\(\[data-design='quiet'\]\)[\s\S]*?article\.post\.page > \.post-header[\s\S]*?display: none;/,
+  );
+  assert.match(
+    styles,
+    /html:not\(\[data-design='quiet'\]\)[\s\S]*?\.home > \.si-section[\s\S]*?display: none;/,
+  );
+  assert.match(
+    styles,
+    /html:not\(\[data-design='quiet'\]\)[\s\S]*?\.page-heading[\s\S]*?display: none;/,
+  );
+});
+
+test("quiet badges featured posts instead of recency", () => {
+  // The badge follows the about.md featured list via `featured: true`
+  // front matter, not the age of the newest post.
+  assert.match(layout, /post\.featured/);
+  assert.match(layout, /is-featured/);
+  assert.doesNotMatch(layout, /is-new/);
+  assert.match(styles, /\.post-list-item\.is-featured \.post-link::after/);
+  assert.match(styles, /content: 'Featured';/);
+  const featured = [
+    "_posts/2026-07-17-building-a-mini-bitcoin.md",
+    "_posts/2026-02-02-building-python-interpreter-in-c.md",
+    "_posts/2025-04-29-what-makes-‘dream-team’-mlb.md",
+    "_posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md",
+    "_posts/2026-09-24-investment-strategy-memo.md",
+  ];
+  for (const file of featured) {
+    const post = fs.readFileSync(path.join(root, file), "utf8");
+    assert.match(post, /featured: true/);
+  }
 });
 
 test("quiet design shows the single-index markup and nothing else does", () => {
