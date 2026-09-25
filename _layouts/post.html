@@ -18,6 +18,11 @@ layout: default
         {% capture tag_name %}{{ tag }}{% endcapture %}
            <a href="{{ site.baseurl }}{% link posts-by-tag.md %}#{{ tag_name }}">{{ tag_name }}</a>
       {% endfor %}
+      <span class="post-meta-sep" aria-hidden="true">/</span>
+      <span class="post-design">
+        <button class="post-design-toggle" type="button" data-design-toggle aria-label="Design style" aria-haspopup="menu" aria-expanded="false">Aa</button>
+        <span class="design-menu" data-design-menu hidden role="menu" aria-label="Design style"></span>
+      </span>
     </p>
   </header>
 

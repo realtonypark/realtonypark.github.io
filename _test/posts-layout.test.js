@@ -150,6 +150,22 @@ test("quiet badges featured posts instead of recency", () => {
   }
 });
 
+test("quiet post pages use a back link and date-line Aa, ToC below header", () => {
+  const post = fs.readFileSync(path.join(root, "_layouts", "post.html"), "utf8");
+  // Back link to the index replaces the site title under Quiet.
+  assert.match(post, /<a class="quiet-back" href="\{\{ "\/" \| relative_url \}\}">← Posts<\/a>/);
+  // Date line carries its own Aa trigger plus menu, like the reference's "/ Caveman".
+  assert.match(post, /<span class="post-meta-sep" aria-hidden="true">\/<\/span>/);
+  assert.match(post, /<button class="post-design-toggle"[^>]*data-design-toggle/);
+  assert.match(post, /<span class="post-design">[\s\S]*?<span class="design-menu" data-design-menu hidden/);
+  // The ToC anchors at the article body, not the title.
+  assert.match(post, /<\/header>[\s\S]*?<aside class="post-toc" hidden/);
+  assert.match(styles, /\.quiet-back,[\s\S]*?\.post-design \{ display: none; \}/);
+  assert.match(styles, /body\.is-post \{[\s\S]*?\.site-title,[\s\S]*?\.header-actions \.design-toggle \{ display: none; \}/);
+  assert.match(styles, /\.post-header \.post-meta \{\s*margin: 8px 0 0;/);
+  assert.match(styles, /\.post-design-toggle \{[\s\S]*?text-decoration: underline;/);
+});
+
 test("quiet design shows the single-index markup and nothing else does", () => {
   const index = fs.readFileSync(path.join(root, "index.md"), "utf8");
   const footer = fs.readFileSync(

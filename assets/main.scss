@@ -246,9 +246,13 @@ blockquote {
 
 .design-menu-item.is-selected .design-menu-check { visibility: visible; }
 
-// Touch targets: the "Aa" button is small by desktop standards.
+// Touch targets: the "Aa" buttons are small by desktop standards.
 @media (pointer: coarse) {
   .design-toggle { min-width: 44px; min-height: 44px; }
+}
+
+@media (pointer: coarse) {
+  .post-design-toggle { min-width: 44px; min-height: 44px; }
 }
 
 .site-title {
@@ -2399,11 +2403,35 @@ html[data-design='quiet'] {
   }
 
   .post-header .post-meta {
-    margin: 0;
+    margin: 8px 0 0;
     font-size: 14px;
     line-height: 1.5;
     color: var(--muted);
     a { display: none; }
+  }
+
+  // The date line carries its own Aa trigger, like the reference's "/ Caveman".
+  body.is-post {
+    .post-meta-sep {
+      display: inline;
+      margin: 0 6px;
+    }
+    .post-design {
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  .post-design-toggle {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    &:hover { color: var(--text); }
   }
 
   .post-content {

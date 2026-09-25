@@ -22,6 +22,7 @@ function makeEl(tag) {
     className: "",
     textContent: "",
     parent: null,
+    parentNode: null,
     isMenu: false,
     focused: false,
     setAttribute(name, value) {
@@ -42,6 +43,13 @@ function makeEl(tag) {
       child.parent = this;
       this.children.push(child);
       return child;
+    },
+    querySelector(selector) {
+      if (selector === "[data-design-menu]") {
+        const found = this.children.find((child) => child.isMenu);
+        return found || null;
+      }
+      return null;
     },
     contains(node) {
       let current = node;
@@ -89,6 +97,20 @@ function bootController(initialValue, options = {}) {
   const menu = makeEl("div");
   menu.isMenu = true;
   menu.setAttribute("hidden", "");
+  const headerActions = makeEl("div");
+  headerActions.appendChild(button);
+  headerActions.appendChild(menu);
+  button.parentNode = headerActions;
+
+  // A second trigger lives in the post date line, with its own menu.
+  const button2 = makeEl("button");
+  const menu2 = makeEl("div");
+  menu2.isMenu = true;
+  menu2.setAttribute("hidden", "");
+  const postDesign = makeEl("span");
+  postDesign.appendChild(button2);
+  postDesign.appendChild(menu2);
+  button2.parentNode = postDesign;
 
   const document = {
     readyState: "loading",
@@ -96,10 +118,9 @@ function bootController(initialValue, options = {}) {
     addEventListener(type, handler) {
       documentEvents[type] = handler;
     },
-    querySelector(selector) {
-      if (selector === "[data-design-toggle]") return button;
-      if (selector === "[data-design-menu]") return menu;
-      return null;
+    querySelectorAll(selector) {
+      if (selector === "[data-design-toggle]") return [button, button2];
+      return [];
     },
     createElement(tag) {
       return makeEl(tag);
@@ -125,7 +146,7 @@ function bootController(initialValue, options = {}) {
     localStorage,
   });
   if (documentEvents.DOMContentLoaded) documentEvents.DOMContentLoaded();
-  return { button, menu, documentEvents, dataset, values };
+  return { button, menu, button2, menu2, documentEvents, dataset, values };
 }
 
 function menuItem(menu, design) {
@@ -191,6 +212,23 @@ test("outside click and Escape dismiss the menu", () => {
   documentEvents.keydown({ key: "Escape" });
   assert.equal(button.getAttribute("aria-expanded"), "false");
   assert.equal(button.focused, true);
+});
+
+test("every Aa trigger opens its own menu and stays in sync", () => {
+  const state = bootController();
+  const { button, menu, button2, menu2 } = state;
+
+  button2.events.click({});
+  assert.equal(button2.getAttribute("aria-expanded"), "true");
+  assert.equal(menu2.getAttribute("hidden"), null);
+  assert.equal(button.getAttribute("aria-expanded"), "false");
+  assert.notEqual(menu.getAttribute("hidden"), null);
+
+  menu2.events.click({ target: menuItem(menu2, "modern") });
+  assert.equal(state.dataset.design, "modern");
+  assert.match(button.getAttribute("aria-label"), /Modern/);
+  assert.match(button2.getAttribute("aria-label"), /Modern/);
+  assert.equal(menuItem(menu, "modern").getAttribute("aria-checked"), "true");
 });
 
 test("still applies the chosen design when browser storage is unavailable", () => {
