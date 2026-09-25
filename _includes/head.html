@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>{%- include design-language.js -%}</script>
     {%- seo -%}
+    {% if page.layout == 'post' and page.image == nil %}
+      {% assign first_image_tag = content | split: '<img ' | slice: 1 | first %}
+      {% if first_image_tag %}
+        {% assign post_image = first_image_tag | split: 'src="' | last | split: '"' | first %}
+      {% else %}
+        {% assign post_image = '/assets/banner-1200.webp' %}
+      {% endif %}
+      <meta property="og:image" content="{{ post_image | relative_url | absolute_url }}">
+      <meta name="twitter:image" content="{{ post_image | relative_url | absolute_url }}">
+    {% endif %}
     <meta name="robots" content="{{ page.robots | default: 'max-image-preview:large' }}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
