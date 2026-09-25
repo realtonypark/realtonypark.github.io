@@ -2106,6 +2106,16 @@ html[data-design='modern'] {
 .ai-nav[hidden] { display: none; }
 .ai-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+// Page and index headings ship in the DOM for SEO; non-Quiet designs hide
+// them visually (About, Personal, Writing). Quiet keeps its own display.
+html:not([data-design='quiet']) {
+  article.post.page > .post-header,
+  .home > .si-section,
+  .page-heading {
+    display: none;
+  }
+}
+
 /**
  * Quiet — reference: benji.org. "A personal website should feel like you've
  * briefly left the rest of the internet." One index page: a short bio, the
@@ -2326,8 +2336,8 @@ html[data-design='quiet'] {
     &:visited, &:hover { color: var(--text); }
   }
 
-  .post-list-item.is-new .post-link::after {
-    content: 'New';
+  .post-list-item.is-featured .post-link::after {
+    content: 'Featured';
     margin-left: 12px;
     color: var(--q-new);
   }

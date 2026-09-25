@@ -3,6 +3,7 @@ layout: post
 title: "What Makes the 'Dream Team' in the MLB - Identifying Key Batting Metrics that Drive Offensive Production in the Statcast Era (2015-2024)"
 tags: dev project
 published: true
+featured: true
 excerpt: |
   <p>This study investigates which batting metrics most consistently correlate with team run production in Major League Baseball during the Statcast era (2015-2024). Using team-level offensive statistics for all 30 MLB teams, the research analyzes traditional metrics alongside advanced Statcast measurements through correlation analysis, multiple regression modeling, and longitudinal trend analysis. Results reveal that traditional metrics, particularly walks (r = 0.890) and home runs (r = 0.875), demonstrate stronger correlations with run production than Statcast metrics such as exit velocity (r = 0.216) and barrel percentage (r = 0.039). Regression models using traditional statistics significantly outperform Statcast-based models in predicting team run totals (R-squared = 0.955 vs. much lower values for Statcast-only models). These findings suggest that despite technological advancements in baseball analytics, traditional outcome-based statistics remain more directly tied to offensive production, with important implications for how MLB teams should evaluate offensive talent and construct lineups to maximize run production.</p>
 ---

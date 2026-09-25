@@ -194,6 +194,10 @@ defaults:
     values:
       description: "An investing framework for finding bottlenecks and market misconceptions, and reasoning about an uncertain future."
 
+  - scope: {path: "_posts/2026-09-24-investment-strategy-memo.md"}
+    values:
+      description: "My investment principles, organized around narratives, position sizing, and opportunity cost."
+
   - scope: {path: "_posts/2026-02-02-building-python-interpreter-in-c.md"}
     values:
       description: "Inside nuPython, a Python interpreter built in C: scanning tokens, parsing a program graph, and executing code in a custom memory model."

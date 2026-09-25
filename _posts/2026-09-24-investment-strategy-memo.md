@@ -4,6 +4,7 @@ title: Investment Strategy Memo
 tags:
   - investing
 published: true
+featured: true
 excerpt: My investment principles, organized around narratives, position sizing, and opportunity cost.
 ---
 *This post distills key ideas and investment principles from Jeongsu Han’s Principles of Investment that Change Your Life, along with my own interpretation and perspective. This approach may not be for everyone.*

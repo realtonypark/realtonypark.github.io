@@ -3,6 +3,7 @@ layout: post
 title: "Building a (Mini) Bitcoin: How a Blockchain Actually Reaches Consensus"
 tags: dev project
 published: true
+featured: true
 excerpt: |
   <p>Strip away the price charts and the ideology, and Bitcoin is a surprisingly small idea: thousands of machines that don't trust each other, all converging on the same ordered list of transactions. mini-bitcoin is a Bitcoin-style full node written in Rust from scratch — proof-of-work mining, Ed25519-signed transactions, a gossip P2P network, and the longest-chain rule. Run three of them on your laptop and watch them fight over forks and settle on one chain in real time. This post walks through how each piece works: the block, the mining lottery, the orphan buffer, the ledger, and the gossip protocol that ties it all together.</p>
 ---

@@ -18,8 +18,7 @@ You can never lose if you never quit.
 
 - [Building a (Mini) Bitcoin: How a Blockchain Actually Reaches Consensus]({% link _posts/2026-07-17-building-a-mini-bitcoin.md %})
 - [Building a Python Interpreter in C]({% link _posts/2026-02-02-building-python-interpreter-in-c.md %})
-- [The Knowledge Problem and AI Governance: Hayek on the Anthropic–Pentagon Conflict]({% link _posts/2026-03-06-ai-governance.md %})
-- [The ONE Thing]({% link _posts/2026-03-01-one-thing.md %})
+- [Investment Strategy Memo]({% link _posts/2026-09-24-investment-strategy-memo.md %})
 - [What Makes the 'Dream Team' in the MLB: Identifying Key Batting Metrics that Drive Offensive Production in the Statcast Era (2015-2024)]({% link _posts/2025-04-29-what-makes-‘dream-team’-mlb.md %})
 - [The Visual Grammar of Anthropocentrism in Jaws]({% link _posts/2025-03-17-the-visual-grammar-of-anthropocentrism-in-jaws.md %})
 
