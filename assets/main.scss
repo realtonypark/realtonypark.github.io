@@ -215,6 +215,11 @@ blockquote {
 
 .design-menu[hidden] { display: none; }
 
+// Quiet-only post chrome ships in the markup but stays hidden elsewhere.
+.quiet-back,
+.post-meta-sep,
+.post-design { display: none; }
+
 .design-menu-item {
   display: flex;
   align-items: center;
@@ -2361,8 +2366,20 @@ html[data-design='quiet'] {
   // --- Posts ---
   body.is-post {
     --post-offset: 0;
-    .site-header { background: transparent; }
+    .site-header { background: transparent; padding: 24px 0 0; }
     main.page-content::before { display: none; }
+    // The back link replaces the site chrome.
+    .site-title,
+    .header-actions .design-toggle { display: none; }
+    .quiet-back {
+      display: block;
+      margin: 0 0 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+      text-decoration: none;
+      &:hover { color: var(--text); }
+    }
   }
 
   .post { padding-top: 0; }
