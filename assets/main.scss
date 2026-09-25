@@ -2363,11 +2363,6 @@ html[data-design='quiet'] {
     --post-offset: 0;
     .site-header { background: transparent; }
     main.page-content::before { display: none; }
-    // Chrome recedes so the article holds focus.
-    .site-title {
-      &, &:visited, &:hover { color: var(--muted); }
-    }
-    .design-toggle { color: var(--muted); opacity: 1; }
   }
 
   .post { padding-top: 0; }
