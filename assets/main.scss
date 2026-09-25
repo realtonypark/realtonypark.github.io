@@ -215,6 +215,11 @@ blockquote {
 
 .design-menu[hidden] { display: none; }
 
+// Quiet-only post chrome ships in the markup but stays hidden elsewhere.
+.quiet-back,
+.post-meta-sep,
+.post-design { display: none; }
+
 .design-menu-item {
   display: flex;
   align-items: center;
@@ -241,9 +246,13 @@ blockquote {
 
 .design-menu-item.is-selected .design-menu-check { visibility: visible; }
 
-// Touch targets: the "Aa" button is small by desktop standards.
+// Touch targets: the "Aa" buttons are small by desktop standards.
 @media (pointer: coarse) {
   .design-toggle { min-width: 44px; min-height: 44px; }
+}
+
+@media (pointer: coarse) {
+  .post-design-toggle { min-width: 44px; min-height: 44px; }
 }
 
 .site-title {
@@ -2136,26 +2145,11 @@ html[data-design='quiet'] {
   --muted: rgba(0, 0, 0, 0.4);
   --box-bg: #f4f4f2;
   --hairline: #ececea;
-  --q-new: #ff2d8f;
+  --q-pill-bg: #eaf1ff;
+  --q-pill-text: #2f63e7;
 
   font-size: 15px;
   background: var(--bg);
-}
-
-@media (prefers-color-scheme: dark) {
-  html[data-design='quiet'] {
-    --bg: #121212;
-    --text: #e9e9e6;
-    --heading: #e9e9e6;
-    --link: #e9e9e6;
-    --link-hover: #e9e9e6;
-    --accent: #e9e9e6;
-    --meta: rgba(255, 255, 255, 0.45);
-    --muted: rgba(255, 255, 255, 0.45);
-    --box-bg: #1c1c1c;
-    --hairline: #262626;
-    --q-new: #ff4fa3;
-  }
 }
 
 html[data-design='quiet'] body {
@@ -2338,8 +2332,15 @@ html[data-design='quiet'] {
 
   .post-list-item.is-featured .post-link::after {
     content: 'Featured';
-    margin-left: 12px;
-    color: var(--q-new);
+    margin-left: 8px;
+    padding: 1px 9px;
+    border-radius: 999px;
+    background: var(--q-pill-bg);
+    color: var(--q-pill-text);
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    vertical-align: 1px;
   }
 
   // The full date stays in the DOM for readers and copy; the eye gets "Sep 7".
@@ -2369,8 +2370,20 @@ html[data-design='quiet'] {
   // --- Posts ---
   body.is-post {
     --post-offset: 0;
-    .site-header { background: transparent; }
+    .site-header { background: transparent; padding: 24px 0 0; }
     main.page-content::before { display: none; }
+    // The back link replaces the site chrome.
+    .site-title,
+    .header-actions .design-toggle { display: none; }
+    .quiet-back {
+      display: block;
+      margin: 0 0 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+      text-decoration: none;
+      &:hover { color: var(--text); }
+    }
   }
 
   .post { padding-top: 0; }
@@ -2390,11 +2403,35 @@ html[data-design='quiet'] {
   }
 
   .post-header .post-meta {
-    margin: 0;
+    margin: 8px 0 0;
     font-size: 14px;
     line-height: 1.5;
     color: var(--muted);
     a { display: none; }
+  }
+
+  // The date line carries its own Aa trigger, like the reference's "/ Caveman".
+  body.is-post {
+    .post-meta-sep {
+      display: inline;
+      margin: 0 6px;
+    }
+    .post-design {
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  .post-design-toggle {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    &:hover { color: var(--text); }
   }
 
   .post-content {
@@ -2548,8 +2585,8 @@ html[data-design='quiet'] {
 
   .post-toc {
     top: 80px;
-    width: 180px;
-    margin-right: -220px;
+    width: 240px;
+    margin-right: -280px;
     margin-top: 0;
     font-size: 13px;
     line-height: 1.5;
