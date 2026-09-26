@@ -2,80 +2,72 @@ holdings:
   - rank: 1
     ticker: "IREN"
     company: "Iris Energy Limited"
-    weight: "11.60%"
+    weight: "13.40%"
   - rank: 2
+    ticker: "META"
+    company: "Meta Platforms, Inc."
+    weight: "9.45%"
+  - rank: 3
+    ticker: "₿TC"
+    company: "₿itcoin"
+    weight: "7.97%"
+  - rank: 4
     ticker: "QQQM"
     company: "Nasdaq 100 ETF"
-    weight: "9.26%"
-  - rank: 3
-    ticker: "AMZN"
-    company: "Amazon.com, Inc."
-    weight: "9.00%"
-  - rank: 4
-    ticker: "ETH"
-    company: "Ethereum"
-    weight: "8.43%"
+    weight: "7.04%"
   - rank: 5
     ticker: "SPYM"
     company: "S&P 500 ETF"
-    weight: "7.99%"
+    weight: "6.79%"
   - rank: 6
-    ticker: "META"
-    company: "Meta Platforms, Inc."
-    weight: "7.30%"
+    ticker: "ETH"
+    company: "Ethereum"
+    weight: "6.47%"
   - rank: 7
-    ticker: "₿TC"
-    company: "₿itcoin"
-    weight: "7.21%"
+    ticker: "GOOGL"
+    company: "Alphabet Inc."
+    weight: "6.18%"
   - rank: 8
     ticker: "NVDA"
     company: "NVIDIA Corporation"
-    weight: "6.18%"
+    weight: "5.66%"
   - rank: 9
+    ticker: "AMZN"
+    company: "Amazon.com, Inc."
+    weight: "5.38%"
+  - rank: 10
     ticker: "RKLB"
     company: "Rocket Lab USA, Inc."
-    weight: "4.91%"
-  - rank: 10
-    ticker: "GOOGL"
-    company: "Alphabet Inc."
-    weight: "4.62%"
+    weight: "4.92%"
   - rank: 11
-    ticker: "ZETA"
-    company: "Zeta Global Holdings Corp."
-    weight: "4.43%"
-  - rank: 12
     ticker: "COIN"
     company: "Coinbase Global, Inc."
-    weight: "4.13%"
-  - rank: 13
-    ticker: "NBIS"
-    company: "Nebius Group N.V."
-    weight: "3.71%"
-  - rank: 14
+    weight: "4.91%"
+  - rank: 12
     ticker: "CRCL"
     company: "Circle Internet Group Inc."
-    weight: "3.59%"
+    weight: "4.64%"
+  - rank: 13
+    ticker: "HOOD"
+    company: "Robinhood Markets, Inc."
+    weight: "4.08%"
+  - rank: 14
+    ticker: "DRAM"
+    company: "Roundhill Memory ETF"
+    weight: "3.23%"
   - rank: 15
-    ticker: "AMD"
-    company: "Advanced Micro Devices, Inc."
-    weight: "3.46%"
-  - rank: 16
-    ticker: "FIGR"
-    company: "Figure Technology Solutions Inc."
-    weight: "1.75%"
-  - rank: 17
-    ticker: "TEM"
-    company: "Tempus AI, Inc."
-    weight: "1.65%"
-  - rank: 18
     ticker: "CDE"
     company: "Coeur Mining, Inc."
-    weight: "0.34%"
-  - rank: 19
-    ticker: "DUOL"
-    company: "Duolingo, Inc."
-    weight: "0.27%"
-  - rank: 20
+    weight: "3.07%"
+  - rank: 16
+    ticker: "ZETA"
+    company: "Zeta Global Holdings Corp."
+    weight: "3.07%"
+  - rank: 17
+    ticker: "FIGR"
+    company: "Figure Technology Solutions Inc."
+    weight: "2.98%"
+  - rank: 18
     ticker: "INFQ"
     company: "Infleqtion, Inc."
-    weight: "0.18%"
+    weight: "0.78%"
