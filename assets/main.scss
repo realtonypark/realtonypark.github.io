@@ -1151,6 +1151,18 @@ $nav-breakpoint: 1199px;
   }
 }
 
+// Post title mirrored on top of the ToC, visible only after the in-page
+// title scrolls out of view (toggled via .is-title-visible in blog-nav.js).
+.post-toc-title {
+  display: none;
+  margin: 0 0 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.post-toc.is-title-visible .post-toc-title { display: block; }
+
 .post-content h2,
 .post-content h3 { scroll-margin-top: 80px; }
 
