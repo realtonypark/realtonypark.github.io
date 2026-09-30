@@ -22,6 +22,24 @@
     if (headings.length) {
       var links = [];
 
+      // Post title on top of the ToC, shown only once the title itself
+      // has scrolled out of view (mirrors the claude.dev reference).
+      var postTitle = document.querySelector('.post-title');
+      if (postTitle && postTitle.textContent.trim()) {
+        var tocTitle = document.createElement('div');
+        tocTitle.className = 'post-toc-title';
+        tocTitle.textContent = postTitle.textContent.trim();
+        toc.insertBefore(tocTitle, toc.firstChild);
+        if ('IntersectionObserver' in window) {
+          var titleSpy = new IntersectionObserver(function (entries) {
+            toc.classList.toggle('is-title-visible', !entries[0].isIntersecting);
+          }, { threshold: 0 });
+          titleSpy.observe(postTitle);
+        } else {
+          toc.classList.add('is-title-visible');
+        }
+      }
+
       Array.prototype.forEach.call(headings, function (heading, i) {
         // kramdown supplies ids, but a heading written as raw HTML may not have one.
         if (!heading.id) heading.id = slugify(heading.textContent) || 'section-' + i;
