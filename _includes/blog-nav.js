@@ -18,42 +18,47 @@
 
   if (toc && content) {
     var headings = content.querySelectorAll('h2, h3');
+    var links = [];
+    var hasTitle = false;
 
-    if (headings.length) {
-      var links = [];
-
-      // Post title on top of the ToC, shown only once the title itself
-      // has scrolled out of view (mirrors the claude.dev reference).
-      var postTitle = document.querySelector('.post-title');
-      if (postTitle && postTitle.textContent.trim()) {
-        var tocTitle = document.createElement('div');
-        tocTitle.className = 'post-toc-title';
-        tocTitle.textContent = postTitle.textContent.trim();
-        toc.insertBefore(tocTitle, toc.firstChild);
-        if ('IntersectionObserver' in window) {
-          var titleSpy = new IntersectionObserver(function (entries) {
-            toc.classList.toggle('is-title-visible', !entries[0].isIntersecting);
-          }, { threshold: 0 });
-          titleSpy.observe(postTitle);
-        } else {
-          toc.classList.add('is-title-visible');
-        }
+    // Post title on top of the ToC, shown only once the title itself
+    // has scrolled out of view (mirrors the claude.dev reference).
+    // Lives outside the headings guard so posts without sections still
+    // get a title-only ToC and keep the same reading context.
+    var postTitle = document.querySelector('.post-title');
+    if (postTitle && postTitle.textContent.trim()) {
+      var tocTitle = document.createElement('div');
+      tocTitle.className = 'post-toc-title';
+      tocTitle.textContent = postTitle.textContent.trim();
+      toc.insertBefore(tocTitle, toc.firstChild);
+      if ('IntersectionObserver' in window) {
+        var titleSpy = new IntersectionObserver(function (entries) {
+          toc.classList.toggle('is-title-visible', !entries[0].isIntersecting);
+        }, { threshold: 0 });
+        titleSpy.observe(postTitle);
+      } else {
+        toc.classList.add('is-title-visible');
       }
+      hasTitle = true;
+    }
 
-      Array.prototype.forEach.call(headings, function (heading, i) {
-        // kramdown supplies ids, but a heading written as raw HTML may not have one.
-        if (!heading.id) heading.id = slugify(heading.textContent) || 'section-' + i;
+    Array.prototype.forEach.call(headings, function (heading, i) {
+      // kramdown supplies ids, but a heading written as raw HTML may not have one.
+      if (!heading.id) heading.id = slugify(heading.textContent) || 'section-' + i;
 
-        var link = document.createElement('a');
-        link.href = '#' + heading.id;
-        link.textContent = heading.textContent;
-        link.className = 'post-toc-link lvl-' + heading.tagName.charAt(1);
-        toc.appendChild(link);
-        links.push(link);
-      });
+      var link = document.createElement('a');
+      link.href = '#' + heading.id;
+      link.textContent = heading.textContent;
+      link.className = 'post-toc-link lvl-' + heading.tagName.charAt(1);
+      toc.appendChild(link);
+      links.push(link);
+    });
 
+    if (hasTitle || links.length) {
       toc.removeAttribute('hidden');
+    }
 
+    if (links.length) {
       toc.addEventListener('click', function (e) {
         var link = e.target.closest('.post-toc-link');
         if (!link) return;

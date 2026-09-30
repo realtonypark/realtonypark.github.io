@@ -208,3 +208,14 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(styles, /table \{\s*display: block;\s*overflow-x: auto;\s*\}/);
   assert.match(styles, /@media \(pointer: coarse\) \{\s*\.design-toggle \{ min-width: 44px; min-height: 44px; \}/);
 });
+
+test("post ToC shows the title even when the post has no headings", () => {
+  const nav = fs.readFileSync(path.join(root, "_includes", "blog-nav.js"), "utf8");
+  // Title injection lives outside any headings guard so heading-less posts
+  // still get a title-only ToC; unhide needs only a title or links, while
+  // the click handler and scroll spy stay guarded on links.
+  assert.doesNotMatch(nav, /if \(headings\.length\)/);
+  assert.match(nav, /post-toc-title/);
+  assert.match(nav, /if \(hasTitle \|\| links\.length\)/);
+  assert.match(nav, /if \(links\.length\) \{/);
+});
