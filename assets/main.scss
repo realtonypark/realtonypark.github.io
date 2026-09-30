@@ -1153,9 +1153,11 @@ $nav-breakpoint: 1199px;
 
 // Post title mirrored on top of the ToC, visible only after the in-page
 // title scrolls out of view (toggled via .is-title-visible in blog-nav.js).
+// padding-left matches the link text inset (12px padding + 2px border).
 .post-toc-title {
   display: none;
   margin: 0 0 10px;
+  padding-left: 14px;
   font-weight: 600;
   line-height: 1.4;
   color: var(--text);
@@ -1711,6 +1713,9 @@ html[data-design='modern'] {
       border-left-color: var(--text);
     }
   }
+
+  // Modern's link text sits 1px further in (14px padding + 1px border).
+  .post-toc-title { padding-left: 15px; }
 
   body.is-post {
     --post-offset: 0;
