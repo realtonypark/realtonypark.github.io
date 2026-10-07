@@ -28,6 +28,8 @@ test("404 drops the browse-all-posts and find-a-topic links", () => {
 test("404 compare frame ships both red-panda pairs with drag affordance", () => {
   assert.match(page, /<figure class="ai-compare ai-compare-wide ai-compare-flat not-found-photo"[^>]*data-ai-pairs/);
   assert.match(page, /data-before-1="\{\{ '\/assets\/404-image-1\.webp' \| relative_url \}\}"/);
+  assert.match(page, /data-after-1="\{\{ '\/assets\/404-image-1-ai\.webp' \| relative_url \}\}"/);
+  assert.match(page, /data-before-2="\{\{ '\/assets\/404-image-2\.webp' \| relative_url \}\}"/);
   assert.match(page, /data-after-2="\{\{ '\/assets\/404-image-2-ai\.webp' \| relative_url \}\}"/);
   assert.match(page, /<span class="ai-knob" aria-hidden="true">‹ ›<\/span>/);
 });
@@ -50,6 +52,36 @@ test("404 caption links AI-tuned to the steal-the-aesthetic post", () => {
     page,
     /<p class="not-found-caption">Napping red panda · <a href="\{% link _posts\/2026-09-07-clone-aesthetic-image-online\.md %\}">AI-tuned<\/a><\/p>/,
   );
+});
+
+function webpSize(file) {
+  const buf = fs.readFileSync(file);
+  assert.equal(buf.subarray(0, 4).toString("ascii"), "RIFF");
+  assert.equal(buf.subarray(8, 12).toString("ascii"), "WEBP");
+  let off = 12;
+  while (off + 8 <= buf.length) {
+    const fourcc = buf.subarray(off, off + 4).toString("ascii");
+    const size = buf.readUInt32LE(off + 4);
+    if (fourcc === "VP8 ") {
+      const data = off + 8;
+      assert.deepEqual(
+        [buf[data + 3], buf[data + 4], buf[data + 5]],
+        [0x9d, 0x01, 0x2a],
+      );
+      return {
+        width: buf.readUInt16LE(data + 6) & 0x3fff,
+        height: buf.readUInt16LE(data + 8) & 0x3fff,
+      };
+    }
+    off += 8 + size + (size % 2);
+  }
+  throw new Error(`${file}: no lossy VP8 chunk (extend webpSize for VP8L/VP8X)`);
+}
+
+test("404 pair 1 before/after share dimensions so the wipe aligns", () => {
+  const before = webpSize(path.join(root, "assets", "404-image-1.webp"));
+  const after = webpSize(path.join(root, "assets", "404-image-1-ai.webp"));
+  assert.deepEqual(after, before);
 });
 
 test("404 assets are real WebP pairs", () => {
