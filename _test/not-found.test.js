@@ -26,10 +26,15 @@ test("404 drops the browse-all-posts and find-a-topic links", () => {
 });
 
 test("404 compare frame ships both red-panda pairs with drag affordance", () => {
-  assert.match(page, /class="ai-compare ai-compare-wide ai-compare-flat not-found-photo"/);
+  assert.match(page, /<figure class="ai-compare ai-compare-wide ai-compare-flat not-found-photo"[^>]*data-ai-pairs/);
   assert.match(page, /data-before-1="\{\{ '\/assets\/404-image-1\.webp' \| relative_url \}\}"/);
   assert.match(page, /data-after-2="\{\{ '\/assets\/404-image-2-ai\.webp' \| relative_url \}\}"/);
   assert.match(page, /<span class="ai-knob" aria-hidden="true">‹ ›<\/span>/);
+});
+
+test("404 compare frame defaults to pair 1 without JS", () => {
+  assert.match(page, /<img class="ai-after" src="\{\{ '\/assets\/404-image-1-ai\.webp' \| relative_url \}\}"/);
+  assert.match(page, /<img class="ai-before" src="\{\{ '\/assets\/404-image-1\.webp' \| relative_url \}\}"/);
 });
 
 test("404 picks pair 1 on even minutes and pair 2 on odd minutes", () => {
