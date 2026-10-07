@@ -2132,6 +2132,28 @@ html[data-design='modern'] {
 .ai-nav[hidden] { display: none; }
 .ai-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+// 404 page: breathing room below the header, an underlined Home link, and a
+// Moneyball-style compare frame with caption. Global: the 404 page renders
+// in every design.
+.not-found { margin-top: 56px; }
+
+.not-found-title { margin: 0; }
+
+.not-found-home {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.not-found .not-found-photo { margin: 32px 0 0; }
+
+.not-found-caption {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  a { color: var(--muted); &:hover { color: var(--text); } }
+}
+
 // Page and index headings ship in the DOM for SEO; non-Quiet designs hide
 // them visually (About, Personal, Writing). Quiet keeps its own display.
 html:not([data-design='quiet']) {

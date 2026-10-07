@@ -96,6 +96,21 @@
     });
   });
 
+  // --- Minute-parity pair picker -------------------------------------------
+  // Figures with [data-ai-pairs] show pair 1 on even minutes, pair 2 on odd.
+  // Pair 1 ships in the markup as the no-JS fallback.
+  Array.prototype.forEach.call(document.querySelectorAll('.ai-compare[data-ai-pairs]'), function (frame) {
+    var pick = new Date().getMinutes() % 2 === 0 ? '1' : '2';
+    var before = frame.querySelector('.ai-before');
+    var after = frame.querySelector('.ai-after');
+    var beforeSrc = frame.getAttribute('data-before-' + pick);
+    var afterSrc = frame.getAttribute('data-after-' + pick);
+    var alt = frame.getAttribute('data-alt-' + pick);
+    if (before && beforeSrc) before.setAttribute('src', beforeSrc);
+    if (before && alt) before.setAttribute('alt', alt);
+    if (after && afterSrc) after.setAttribute('src', afterSrc);
+  });
+
   if (reduceMotion) {
     Array.prototype.forEach.call(document.querySelectorAll('.ai-track'), function (t) {
       t.style.transition = 'none';
