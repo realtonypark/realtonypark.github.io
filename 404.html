@@ -5,5 +5,14 @@ permalink: /404.html
 robots: noindex, follow
 sitemap: false
 ---
-<h1>Page not found</h1>
-<p><a href="{{ '/' | relative_url }}">Browse all posts</a> or <a href="{{ '/posts-by-tag/' | relative_url }}">find a topic</a>.</p>
+<section class="not-found">
+  <h1 class="not-found-title">You're drunk! Go <a class="not-found-home" href="{{ '/' | relative_url }}">Home</a></h1>
+
+  <figure class="ai-compare ai-compare-wide ai-compare-flat not-found-photo" role="slider" tabindex="0" aria-label="Drag to compare the original and AI-styled photo" aria-valuemin="2" aria-valuemax="98" aria-valuenow="50" data-ai-pairs data-before-1="{{ '/assets/404-image-1.webp' | relative_url }}" data-after-1="{{ '/assets/404-image-1-ai.webp' | relative_url }}" data-alt-1="Red panda asleep on a mossy branch" data-before-2="{{ '/assets/404-image-2.webp' | relative_url }}" data-after-2="{{ '/assets/404-image-2-ai.webp' | relative_url }}" data-alt-2="Red panda draped over a branch">
+    <img class="ai-after" src="{{ '/assets/404-image-1-ai.webp' | relative_url }}" alt="" width="1916" height="821" draggable="false">
+    <img class="ai-before" src="{{ '/assets/404-image-1.webp' | relative_url }}" alt="Red panda asleep on a mossy branch" width="1730" height="980" draggable="false">
+    <span class="ai-divider" aria-hidden="true"></span>
+    <span class="ai-knob" aria-hidden="true">‹ ›</span>
+  </figure>
+  <p class="not-found-caption">Napping red panda · <a href="{% link _posts/2026-09-07-clone-aesthetic-image-online.md %}">AI-tuned</a></p>
+</section>
