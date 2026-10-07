@@ -229,7 +229,7 @@ test("quiet code blocks get their own visible selection fill", () => {
     "code *::selection",
   ]
     .map((selector) => `html[data-design='quiet'] ${selector}`)
-    .join(",\n");
+    .join(", ");
   assert.match(
     cssRule(selectors),
     /^\s*background: color-mix\(in srgb, var\(--text\) 22%, var\(--box-bg\)\);$/m,
