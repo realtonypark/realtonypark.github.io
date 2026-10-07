@@ -1,0 +1,233 @@
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const test = require("node:test");
+const vm = require("node:vm");
+
+const root = path.join(__dirname, "..");
+const styles = fs.readFileSync(
+  path.join(root, "assets", "main.scss"),
+  "utf8",
+);
+const controller = fs.readFileSync(
+  path.join(root, "_includes", "code-copy.js"),
+  "utf8",
+);
+const layout = fs.readFileSync(
+  path.join(root, "_layouts", "default.html"),
+  "utf8",
+);
+
+function makeEl(tag) {
+  const el = {
+    tagName: tag,
+    children: [],
+    attributes: {},
+    events: {},
+    classes: new Set(),
+    type: "",
+    className: "",
+    textContent: "",
+    innerHTML: "",
+    parent: null,
+    style: {},
+    setAttribute(name, value) {
+      this.attributes[name] = String(value);
+    },
+    getAttribute(name) {
+      return Object.prototype.hasOwnProperty.call(this.attributes, name)
+        ? this.attributes[name]
+        : null;
+    },
+    addEventListener(type, handler) {
+      this.events[type] = handler;
+    },
+    appendChild(child) {
+      child.parent = this;
+      this.children.push(child);
+      return child;
+    },
+    removeChild(child) {
+      this.children = this.children.filter((c) => c !== child);
+    },
+    querySelector(selector) {
+      if (selector === "pre code" || selector === "pre") {
+        const found = [];
+        const walk = (node) => {
+          node.children.forEach((child) => {
+            if (
+              (selector === "pre code" && child.tagName === "CODE") ||
+              (selector === "pre" && child.tagName === "PRE")
+            )
+              found.push(child);
+            walk(child);
+          });
+        };
+        walk(this);
+        return found[0] || null;
+      }
+      return null;
+    },
+    closest(selector) {
+      let current = this;
+      while (current) {
+        if (
+          selector === "div.highlighter-rouge" &&
+          current.tagName === "DIV" &&
+          current.classes.has("highlighter-rouge")
+        )
+          return current;
+        if (
+          selector === ".ai-codefold" &&
+          current.classes.has("ai-codefold")
+        )
+          return current;
+        current = current.parent;
+      }
+      return null;
+    },
+    select() {},
+  };
+  el.classList = {
+    add(name) {
+      el.classes.add(name);
+    },
+    remove(name) {
+      el.classes.delete(name);
+    },
+  };
+  return el;
+}
+
+function bootController(blocks, options = {}) {
+  const documentEvents = {};
+  const created = [];
+  const document = {
+    readyState: "loading",
+    body: makeEl("BODY"),
+    addEventListener(type, handler) {
+      documentEvents[type] = handler;
+    },
+    querySelectorAll(selector) {
+      assert.equal(selector, "div.highlighter-rouge, pre");
+      return blocks;
+    },
+    createElement(tag) {
+      const el = makeEl(tag.toUpperCase());
+      created.push(el);
+      return el;
+    },
+    execCommand(cmd) {
+      assert.equal(cmd, "copy");
+      return options.execResult !== undefined ? options.execResult : true;
+    },
+  };
+  const sandbox = { document, navigator: options.navigator || {} };
+  if (options.timers !== false) {
+    sandbox.setTimeout = (fn) => 0;
+    sandbox.clearTimeout = () => {};
+  }
+  vm.runInNewContext(controller, sandbox);
+  documentEvents.DOMContentLoaded();
+  return { document, created };
+}
+
+function rougeBlock(text) {
+  const div = makeEl("DIV");
+  div.classes.add("highlighter-rouge");
+  const inner = makeEl("DIV");
+  const pre = makeEl("PRE");
+  const code = makeEl("CODE");
+  code.textContent = text;
+  pre.appendChild(code);
+  inner.appendChild(pre);
+  div.appendChild(inner);
+  return { div, pre, code };
+}
+
+test("layout loads the copy controller on every page", () => {
+  assert.match(layout, /\{%- include code-copy\.js -%\}/);
+});
+
+test("copy button styles work under every theme", () => {
+  assert.match(styles, /\.has-code-copy \{ position: relative; \}/);
+  assert.match(
+    styles,
+    /\.code-copy-btn \{[\s\S]*?background: var\(--bg\);[\s\S]*?color: var\(--muted\);/,
+  );
+  assert.match(styles, /\.has-code-copy:hover \.code-copy-btn \{ opacity: 1; \}/);
+  // Touch screens have no hover — the button stays visible.
+  assert.match(
+    styles,
+    /@media \(hover: none\) \{\s*\.code-copy-btn \{ opacity: 1; \}/,
+  );
+  assert.match(styles, /\.code-copy-btn[\s\S]*?&\.is-copied \{ color: var\(--text\);/);
+});
+
+test("quiet code blocks get their own visible selection fill", () => {
+  assert.match(styles, /::selection \{ background: var\(--box-bg\); \}/);
+  assert.match(
+    styles,
+    /pre::selection,[\s\S]*?pre \*::selection,[\s\S]*?code::selection,[\s\S]*?code \*::selection \{[\s\S]*?background: color-mix\(in srgb, var\(--text\) 22%, var\(--box-bg\)\);/,
+  );
+});
+
+test("one button per block: rouge wrappers and bare pre blocks", () => {
+  const a = rougeBlock("puts 1\n");
+  const fold = makeEl("DIV");
+  fold.classes.add("ai-codefold");
+  const barePre = makeEl("PRE");
+  const bareCode = makeEl("CODE");
+  bareCode.textContent = "x = 1\n";
+  barePre.appendChild(bareCode);
+  fold.appendChild(barePre);
+
+  // querySelectorAll returns document order: wrapper divs before their pre.
+  const { created } = bootController([a.div, a.pre, barePre]);
+  const buttons = created.filter((el) => el.tagName === "BUTTON");
+
+  assert.equal(buttons.length, 2);
+  assert.equal(a.div.classes.has("has-code-copy"), true);
+  assert.equal(fold.classes.has("has-code-copy"), true);
+  assert.equal(barePre.classes.has("has-code-copy"), false);
+  for (const button of buttons) {
+    assert.equal(button.getAttribute("aria-label"), "Copy code");
+    assert.match(button.innerHTML, /<svg/);
+  }
+});
+
+test("clicking copies the block text and shows Copied feedback", () => {
+  const a = rougeBlock("puts 1\n");
+  let written = null;
+  const { created } = bootController([a.div, a.pre], {
+    navigator: {
+      clipboard: {
+        writeText(text) {
+          written = text;
+          return Promise.resolve();
+        },
+      },
+    },
+  });
+  const button = created.find((el) => el.tagName === "BUTTON");
+  button.events.click();
+  return Promise.resolve().then(() => {
+    assert.equal(written, "puts 1");
+    assert.equal(button.getAttribute("aria-label"), "Copied!");
+    assert.equal(button.classes.has("is-copied"), true);
+  });
+});
+
+test("falls back to execCommand when the clipboard API is missing", () => {
+  const a = rougeBlock("x\n");
+  const { document, created } = bootController([a.div, a.pre], {
+    navigator: {},
+  });
+  const button = created.find((el) => el.tagName === "BUTTON");
+  button.events.click();
+  assert.equal(button.getAttribute("aria-label"), "Copied!");
+  assert.equal(
+    document.body.children.filter((el) => el.tagName === "TEXTAREA").length,
+    0,
+  );
+});

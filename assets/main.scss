@@ -1015,6 +1015,41 @@ pre > code { border: 0; background: transparent; padding: 0; }
 .highlight { background: var(--box-bg); }
 .highlighter-rouge .highlight { background: var(--box-bg); }
 
+// Code copy button — injected by _includes/code-copy.js into every code
+// block. Vars keep it legible under every design, light and dark.
+.has-code-copy { position: relative; }
+
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+
+  &:hover { color: var(--text); }
+  &:focus-visible { opacity: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  &.is-copied { color: var(--text); opacity: 1; }
+}
+
+.has-code-copy:hover .code-copy-btn { opacity: 1; }
+
+// Touch screens have no hover — keep the button visible.
+@media (hover: none) {
+  .code-copy-btn { opacity: 1; }
+}
+
 // Preserve holdings password gate theming — override inline #007cba via CSS where possible
 #password-prompt {
   input {
@@ -2544,6 +2579,16 @@ html[data-design='quiet'] {
 
   div.highlighter-rouge,
   div.highlighter-rouge > div.highlight { background: transparent; }
+
+  // Quiet's global selection is var(--box-bg) — the same paint as the code
+  // block itself, so selected code looks unselected. Code gets its own
+  // darker fill; the descendant form covers Rouge's token spans.
+  pre::selection,
+  pre *::selection,
+  code::selection,
+  code *::selection {
+    background: color-mix(in srgb, var(--text) 22%, var(--box-bg));
+  }
 
   // Near-monochrome code: comments recede, strings and numbers sit between.
   .highlight { color: var(--text); }
