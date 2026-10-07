@@ -1,13 +1,40 @@
 const assert = require("node:assert/strict");
+const { execFileSync } = require("node:child_process");
 const fs = require("node:fs");
 const path = require("node:path");
 const test = require("node:test");
 const vm = require("node:vm");
 
 const root = path.join(__dirname, "..");
-const styles = fs.readFileSync(
+const scss = fs.readFileSync(
   path.join(root, "assets", "main.scss"),
   "utf8",
+).replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "");
+// Compile with the site's locked Sass compiler, including its import paths.
+const styles = execFileSync(
+  "bundle",
+  [
+    "exec",
+    "ruby",
+    "-e",
+    `require 'sass'
+STDIN.set_encoding('UTF-8')
+puts Sass::Engine.new(
+  STDIN.read,
+  syntax: :scss,
+  style: :expanded,
+  load_paths: [
+    File.join(Dir.pwd, '_sass'),
+    File.join(Gem::Specification.find_by_name('minima').full_gem_path, '_sass')
+  ]
+).render`,
+  ],
+  {
+    cwd: root,
+    input: scss,
+    encoding: "utf8",
+    env: { ...process.env, BUNDLE_FROZEN: "true" },
+  },
 );
 const controller = fs.readFileSync(
   path.join(root, "_includes", "code-copy.js"),
@@ -159,26 +186,53 @@ test("layout loads the copy controller on every page", () => {
   assert.match(layout, /\{%- include code-copy\.js -%\}/);
 });
 
-test("copy button styles work under every theme", () => {
-  assert.match(styles, /\.has-code-copy \{ position: relative; \}/);
-  assert.match(
-    styles,
-    /\.code-copy-btn \{[\s\S]*?background: var\(--bg\);[\s\S]*?color: var\(--muted\);/,
-  );
-  assert.match(styles, /\.has-code-copy:hover \.code-copy-btn \{ opacity: 1; \}/);
+function cssRule(selector, css = styles) {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = css.match(new RegExp(`^${escaped} \\{([^}]*)\\}`, "m"));
+  assert.ok(match, `Missing exact compiled CSS rule: ${selector}`);
+  return match[1];
+}
+
+test("copy button styles are global and theme-independent", () => {
+  assert.match(cssRule(".has-code-copy"), /^\s*position: relative;$/m);
+  const button = cssRule(".code-copy-btn");
+  assert.match(button, /^\s*position: absolute;$/m);
+  assert.match(button, /^\s*background: var\(--bg\);$/m);
+  assert.match(button, /^\s*color: var\(--muted\);$/m);
+  assert.match(button, /^\s*opacity: 0;$/m);
+  assert.match(cssRule(".has-code-copy:hover .code-copy-btn"), /^\s*opacity: 1;$/m);
+  assert.match(cssRule(".code-copy-btn:hover"), /^\s*color: var\(--text\);$/m);
+  const focus = cssRule(".code-copy-btn:focus-visible");
+  assert.match(focus, /^\s*opacity: 1;$/m);
+  assert.match(focus, /^\s*outline: 2px solid var\(--accent\);$/m);
+  assert.match(focus, /^\s*outline-offset: 2px;$/m);
+  const copied = cssRule(".code-copy-btn.is-copied");
+  assert.match(copied, /^\s*color: var\(--text\);$/m);
+  assert.match(copied, /^\s*opacity: 1;$/m);
   // Touch screens have no hover — the button stays visible.
-  assert.match(
-    styles,
-    /@media \(hover: none\) \{\s*\.code-copy-btn \{ opacity: 1; \}/,
+  const touch = styles.match(
+    /^@media \(hover: none\) \{\n((?:[^{}]|\{[^{}]*\})*)^\}/m,
   );
-  assert.match(styles, /\.code-copy-btn[\s\S]*?&\.is-copied \{ color: var\(--text\);/);
+  assert.ok(touch, "Missing compiled hover: none media block");
+  assert.match(cssRule("  .code-copy-btn", touch[1]), /^\s*opacity: 1;$/m);
 });
 
 test("quiet code blocks get their own visible selection fill", () => {
-  assert.match(styles, /::selection \{ background: var\(--box-bg\); \}/);
   assert.match(
-    styles,
-    /pre::selection,[\s\S]*?pre \*::selection,[\s\S]*?code::selection,[\s\S]*?code \*::selection \{[\s\S]*?background: color-mix\(in srgb, var\(--text\) 22%, var\(--box-bg\)\);/,
+    cssRule("html[data-design='quiet'] ::selection"),
+    /^\s*background: var\(--box-bg\);$/m,
+  );
+  const selectors = [
+    "pre::selection",
+    "pre *::selection",
+    "code::selection",
+    "code *::selection",
+  ]
+    .map((selector) => `html[data-design='quiet'] ${selector}`)
+    .join(",\n");
+  assert.match(
+    cssRule(selectors),
+    /^\s*background: color-mix\(in srgb, var\(--text\) 22%, var\(--box-bg\)\);$/m,
   );
 });
 
