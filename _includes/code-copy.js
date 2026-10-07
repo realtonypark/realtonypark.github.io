@@ -7,9 +7,11 @@
   var CHECK_SVG = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5L13 4.5"/></svg>';
 
   function blockText(block) {
-    var code = block.querySelector
-      ? block.querySelector("pre code") || block.querySelector("pre")
-      : null;
+    var code = block.tagName === "PRE"
+      ? block
+      : block.querySelector
+        ? block.querySelector("pre code") || block.querySelector("pre")
+        : null;
     var text = code ? code.textContent || code.innerText || "" : "";
     return text.replace(/\n$/, "");
   }

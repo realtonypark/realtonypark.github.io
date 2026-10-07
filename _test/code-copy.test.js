@@ -19,6 +19,7 @@ const layout = fs.readFileSync(
 );
 
 function makeEl(tag) {
+  let text = "";
   const el = {
     tagName: tag,
     children: [],
@@ -27,7 +28,16 @@ function makeEl(tag) {
     classes: new Set(),
     type: "",
     className: "",
-    textContent: "",
+    get textContent() {
+      return text + this.children.map((child) => child.textContent).join("");
+    },
+    set textContent(value) {
+      text = String(value);
+      this.children.forEach((child) => {
+        child.parent = null;
+      });
+      this.children = [];
+    },
     innerHTML: "",
     parent: null,
     style: {},
@@ -225,9 +235,69 @@ test("falls back to execCommand when the clipboard API is missing", () => {
   });
   const button = created.find((el) => el.tagName === "BUTTON");
   button.events.click();
+  assert.equal(created.find((el) => el.tagName === "TEXTAREA").value, "x");
   assert.equal(button.getAttribute("aria-label"), "Copied!");
   assert.equal(
     document.body.children.filter((el) => el.tagName === "TEXTAREA").length,
     0,
   );
 });
+
+for (const nestedCode of [false, true]) {
+  function standalonePre() {
+    const pre = makeEl("PRE");
+    if (nestedCode) {
+      pre.textContent = "  first\n";
+      const code = makeEl("CODE");
+      code.textContent = "\tsecond\n\n";
+      pre.appendChild(code);
+    } else {
+      pre.textContent = "  first\n\tsecond\n\n";
+    }
+    return pre;
+  }
+
+  const description = nestedCode ? "with nested CODE" : "without nested CODE";
+  test(`standalone PRE ${description} copies exact text on repeated clipboard clicks`, async () => {
+    const pre = standalonePre();
+    const written = [];
+    const { created } = bootController([pre], {
+      navigator: {
+        clipboard: {
+          writeText(text) {
+            written.push(text);
+            return Promise.resolve();
+          },
+        },
+      },
+    });
+    const buttons = created.filter((el) => el.tagName === "BUTTON");
+    assert.equal(buttons.length, 1);
+    const button = buttons[0];
+    assert.equal(button.parent, pre);
+    assert.equal(pre.children.filter((el) => el.tagName === "BUTTON").length, 1);
+    button.events.click();
+    await Promise.resolve();
+    assert.equal(button.getAttribute("aria-label"), "Copied!");
+    assert.equal(button.classes.has("is-copied"), true);
+    button.events.click();
+    await Promise.resolve();
+    assert.deepEqual(written, ["  first\n\tsecond\n", "  first\n\tsecond\n"]);
+  });
+
+  test(`standalone PRE ${description} copies exact text through execCommand`, () => {
+    const pre = standalonePre();
+    const { document, created } = bootController([pre]);
+    const buttons = created.filter((el) => el.tagName === "BUTTON");
+    assert.equal(buttons.length, 1);
+    const button = buttons[0];
+    assert.equal(button.parent, pre);
+    assert.equal(pre.children.filter((el) => el.tagName === "BUTTON").length, 1);
+    button.events.click();
+    const areas = created.filter((el) => el.tagName === "TEXTAREA");
+    assert.equal(areas.length, 1);
+    assert.equal(areas[0].value, "  first\n\tsecond\n");
+    assert.equal(button.getAttribute("aria-label"), "Copied!");
+    assert.equal(document.body.children.length, 0);
+  });
+}
