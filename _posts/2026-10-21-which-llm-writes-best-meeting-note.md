@@ -35,7 +35,7 @@ Fourth, aggregation. Each ballot ranks all eight models per meeting. Ranks conve
 
 ## The leaderboard
 
-| Rank | Model | Borda | Mammoth's Rank | Jev's Rank | Decider's Rank |
+| Rank | Model | Borda | Mammoth's | Jev's | Decider's |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Grok 4.6 | 309 | 1 | 1 | 2 |
 | 2 | GPT-6 Luna | 268 | 2 | 2 | 4 |
