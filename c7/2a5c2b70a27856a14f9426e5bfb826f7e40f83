@@ -1,0 +1,14 @@
+_posts/2026-10-21-which-llm-writes-best-meeting-note.md
+  h_05e5164a29872e 6,14-19,22,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c72a5c2b70a27856a14f9426e5bfb826f7e40f83",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
