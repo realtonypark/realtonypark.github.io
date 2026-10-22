@@ -65,7 +65,7 @@ Grok tops two of the three ballots. Decider is the outlier ballot: GLM first, Lu
 
 Winners by meeting, 1 through 15: Grok, Muse Spark, DeepSeek, Grok, Luna, Grok, Grok, Grok, GLM, Grok, Luna, GLM, DeepSeek, GLM, Grok. Grok won 7 outright. Nobody else won more than 3.
 
-## The chart that matters
+## Pareto
 
 ![Cost per note versus Borda points with Pareto frontier](/assets/posts/meeting-bench-pareto.svg)
 
