@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Which LLM writes the best meeting note? (MeetingNoteBench)
+title: Which LLM writes the best meeting note? (Meeting-Note-Bench)
 tags: essay dev
 published: true
 excerpt: <p>I ran 8 models on 15 real meetings through the AI meeting note and had three decision models judge them.</p>
