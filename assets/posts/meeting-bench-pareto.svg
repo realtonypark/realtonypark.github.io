@@ -1,44 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 110 1210 630" width="1210" height="630" role="img" aria-labelledby="title description">
+<title id="title">Meeting-note models: cost per note versus Borda points</title>
+<desc id="description">Eight models compared across 15 meetings and three judges. Lower cost is left; higher Borda points are up. The Pareto frontier connects Muse Spark 1.3 Contributor (209 points), GPT-6 Luna (268), and Grok 4.6 (309). DeepSeek V4.1 Flash 1017 and GLM 5.3 Flash have 248 points, Claude Haiku 5.5 has 168, Nemotron 3.5 Super VL has 89, and Gemini 3.8 Flash has 81. The horizontal axis is logarithmic. Generation costs exclude judging.</desc>
+<!-- Cost positions retained from the original benchmark SVG. Scores use the post's Borda totals. Provider marks: lobehub/lobe-icons, MIT license. All graphics are embedded. -->
+<defs>
+  <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#bbb8ad" opacity=".48"/></pattern>
+</defs>
 <style>
-text{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-.t{fill:#2a251c}.g{stroke:#e2dccb}.m{fill:#8a8271}
-@media (prefers-color-scheme:dark){.t{fill:#ece5d3}.g{stroke:#2b2921}.m{fill:#8a8474}}
-.frontier{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 1.8s ease-out .3s forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-@media (prefers-reduced-motion:reduce){.frontier{animation:none;stroke-dashoffset:0}}
+  text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #282c28; }
+  .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; }
+  .muted { fill: #73796f; }
+  .grid { stroke: #a9afa4; stroke-width: 1; stroke-dasharray: 3 6; opacity: .55; }
+  .name { font-size: 23px; font-weight: 500; }
+  .secondary { font-size: 18px; fill: #72786f; }
+  .badge { fill: #fafbf7; stroke: #c4c9bd; stroke-width: 1.5; }
+  .efficient .badge { fill: #fff; stroke: #479264; stroke-width: 2; }
 </style>
-<line x1="52" y1="352.0" x2="828.0" y2="352.0" class="g"/>
-<text x="44" y="356.0" font-size="11" text-anchor="end" class="m">0</text>
-<line x1="52" y1="269.0" x2="828.0" y2="269.0" class="g"/>
-<text x="44" y="273.0" font-size="11" text-anchor="end" class="m">85</text>
-<line x1="52" y1="186.0" x2="828.0" y2="186.0" class="g"/>
-<text x="44" y="190.0" font-size="11" text-anchor="end" class="m">170</text>
-<line x1="52" y1="103.0" x2="828.0" y2="103.0" class="g"/>
-<text x="44" y="107.0" font-size="11" text-anchor="end" class="m">255</text>
-<line x1="52" y1="20.0" x2="828.0" y2="20.0" class="g"/>
-<text x="44" y="24.0" font-size="11" text-anchor="end" class="m">340</text>
-<text x="107.7" y="372" font-size="11" text-anchor="middle" class="m">$0.002</text>
-<text x="277.6" y="372" font-size="11" text-anchor="middle" class="m">$0.005</text>
-<text x="406.2" y="372" font-size="11" text-anchor="middle" class="m">$0.01</text>
-<text x="534.7" y="372" font-size="11" text-anchor="middle" class="m">$0.02</text>
-<text x="704.7" y="372" font-size="11" text-anchor="middle" class="m">$0.05</text>
-<text x="440.0" y="394" font-size="11" text-anchor="middle" class="m">generation cost per note, log scale</text>
-<text x="14" y="186.0" font-size="11" text-anchor="middle" class="m" transform="rotate(-90 14 186.0)">Borda points</text>
-<polyline class="frontier" points="107.7,147.9 202.4,90.2 772.3,50.2" fill="none" stroke="#c98f2b" stroke-width="2.5"/>
-<circle cx="107.7" cy="147.9" r="6" fill="#c98f2b"/>
-<text x="117.7" y="151.9" font-size="12" class="t">muse-spark</text>
-<circle cx="202.4" cy="90.2" r="6" fill="#c98f2b"/>
-<text x="212.4" y="94.2" font-size="12" class="t">gpt-6-luna</text>
-<circle cx="236.2" cy="265.1" r="6" fill="#8a8474"/>
-<text x="246.2" y="269.1" font-size="12" class="m">nemotron-3.5</text>
-<circle cx="264.8" cy="109.8" r="6" fill="#8a8474"/>
-<text x="274.8" y="113.8" font-size="12" class="m">glm-5p3</text>
-<circle cx="331.0" cy="187.9" r="6" fill="#8a8474"/>
-<text x="341.0" y="191.9" font-size="12" class="m">haiku-5.5</text>
-<circle cx="477.2" cy="109.8" r="6" fill="#8a8474"/>
-<text x="487.2" y="113.8" font-size="12" class="m">deepseek-v4.1</text>
-<circle cx="592.7" cy="272.9" r="6" fill="#8a8474"/>
-<text x="602.7" y="276.9" font-size="12" class="m">gemini-3.8</text>
-<circle cx="772.3" cy="50.2" r="6" fill="#c98f2b"/>
-<text x="782.3" y="54.2" font-size="12" class="t">grok-4.6</text>
+<rect width="1280" height="780" fill="#f8f8f2"/>
+
+<!-- Embedded provider icons:
+MIT License
+
+Copyright (c) 2023 LobeHub
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<path d="M95 138 H1190 V210.53 H1111.40 L307.23 268.84 L173.60 352.76 H95 Z" fill="#479264" opacity=".065"/>
+<path d="M173.60 352.76 H307.23 V268.84 H1111.40 V210.53 H1190 V650 H173.60 Z" fill="#b57364" opacity=".055"/>
+<rect x="95" y="138" width="1095" height="512" fill="url(#dots)"/>
+<line x1="95" y1="650.00" x2="1190" y2="650.00" class="grid"/>
+<text x="78" y="656.00" text-anchor="end" class="mono muted" font-size="17">0</text>
+<line x1="95" y1="564.67" x2="1190" y2="564.67" class="grid"/>
+<text x="78" y="570.67" text-anchor="end" class="mono muted" font-size="17">60</text>
+<line x1="95" y1="479.33" x2="1190" y2="479.33" class="grid"/>
+<text x="78" y="485.33" text-anchor="end" class="mono muted" font-size="17">120</text>
+<line x1="95" y1="394.00" x2="1190" y2="394.00" class="grid"/>
+<text x="78" y="400.00" text-anchor="end" class="mono muted" font-size="17">180</text>
+<line x1="95" y1="308.67" x2="1190" y2="308.67" class="grid"/>
+<text x="78" y="314.67" text-anchor="end" class="mono muted" font-size="17">240</text>
+<line x1="95" y1="223.33" x2="1190" y2="223.33" class="grid"/>
+<text x="78" y="229.33" text-anchor="end" class="mono muted" font-size="17">300</text>
+<line x1="95" y1="138.00" x2="1190" y2="138.00" class="grid"/>
+<text x="78" y="144.00" text-anchor="end" class="mono muted" font-size="17">360</text>
+<line x1="173.60" y1="138" x2="173.60" y2="650" class="grid"/>
+<text x="173.60" y="682" text-anchor="middle" class="mono muted" font-size="18">$0.002</text>
+<line x1="413.34" y1="138" x2="413.34" y2="650" class="grid"/>
+<text x="413.34" y="682" text-anchor="middle" class="mono muted" font-size="18">$0.005</text>
+<line x1="594.81" y1="138" x2="594.81" y2="650" class="grid"/>
+<text x="594.81" y="682" text-anchor="middle" class="mono muted" font-size="18">$0.01</text>
+<line x1="776.13" y1="138" x2="776.13" y2="650" class="grid"/>
+<text x="776.13" y="682" text-anchor="middle" class="mono muted" font-size="18">$0.02</text>
+<line x1="1016.01" y1="138" x2="1016.01" y2="650" class="grid"/>
+<text x="1016.01" y="682" text-anchor="middle" class="mono muted" font-size="18">$0.05</text>
+<path d="M95 138 V650 H1190" stroke="#939b8e" stroke-width="1" fill="none"/>
+<text x="27" y="394" transform="rotate(-90 27 394)" text-anchor="middle" class="mono muted" font-size="18">BORDA POINTS / HIGHER IS BETTER</text>
+<text x="642" y="722" text-anchor="middle" class="mono muted" font-size="18">GENERATION COST PER NOTE (USD, LOG SCALE)</text>
+<polyline points="173.60,352.76 307.23,268.84 1111.40,210.53" fill="none" stroke="#479264" stroke-width="2.5"/>
+<g class="model efficient" data-model="Muse Spark 1.3 Contributor" data-borda="209">
+<title>Muse Spark 1.3 Contributor: 209 Borda points</title>
+<rect x="151.60" y="330.76" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="159.60" y="338.76" color="#222822"><title>Meta</title><path d="M6.897 4h-.024l-.031 2.615h.022c1.715 0 3.046 1.357 5.94 6.246l.175.297.012.02 1.62-2.438-.012-.019a48.763 48.763 0 00-1.098-1.716 28.01 28.01 0 00-1.175-1.629C10.413 4.932 8.812 4 6.896 4z" fill="url(#lobe-icons-meta-0-_R_0_)" /><path d="M6.873 4C4.95 4.01 3.247 5.258 2.02 7.17a4.352 4.352 0 00-.01.017l2.254 1.231.011-.017c.718-1.083 1.61-1.774 2.568-1.785h.021L6.896 4h-.023z" fill="url(#lobe-icons-meta-1-_R_0_)" /><path d="M2.019 7.17l-.011.017C1.2 8.447.598 9.995.274 11.664l-.005.022 2.534.6.004-.022c.27-1.467.786-2.828 1.456-3.845l.011-.017L2.02 7.17z" fill="url(#lobe-icons-meta-2-_R_0_)" /><path d="M2.807 12.264l-2.533-.6-.005.022c-.177.918-.267 1.851-.269 2.786v.023l2.598.233v-.023a12.591 12.591 0 01.21-2.44z" fill="url(#lobe-icons-meta-3-_R_0_)" /><path d="M2.677 15.537a5.462 5.462 0 01-.079-.813v-.022L0 14.468v.024a8.89 8.89 0 00.146 1.652l2.535-.585a4.106 4.106 0 01-.004-.022z" fill="url(#lobe-icons-meta-4-_R_0_)" /><path d="M3.27 16.89c-.284-.31-.484-.756-.589-1.328l-.004-.021-2.535.585.004.021c.192 1.01.568 1.85 1.106 2.487l.014.017 2.018-1.745a2.106 2.106 0 01-.015-.016z" fill="url(#lobe-icons-meta-5-_R_0_)" /><path d="M10.78 9.654c-1.528 2.35-2.454 3.825-2.454 3.825-2.035 3.2-2.739 3.917-3.871 3.917a1.545 1.545 0 01-1.186-.508l-2.017 1.744.014.017C2.01 19.518 3.058 20 4.356 20c1.963 0 3.374-.928 5.884-5.33l1.766-3.13a41.283 41.283 0 00-1.227-1.886z" fill="#0082FB" /><path d="M13.502 5.946l-.016.016c-.4.43-.786.908-1.16 1.416.378.483.768 1.024 1.175 1.63.48-.743.928-1.345 1.367-1.807l.016-.016-1.382-1.24z" fill="url(#lobe-icons-meta-6-_R_0_)" /><path d="M20.918 5.713C19.853 4.633 18.583 4 17.225 4c-1.432 0-2.637.787-3.723 1.944l-.016.016 1.382 1.24.016-.017c.715-.747 1.408-1.12 2.176-1.12.826 0 1.6.39 2.27 1.075l.015.016 1.589-1.425-.016-.016z" fill="#0082FB" /><path d="M23.998 14.125c-.06-3.467-1.27-6.566-3.064-8.396l-.016-.016-1.588 1.424.015.016c1.35 1.392 2.277 3.98 2.361 6.971v.023h2.292v-.022z" fill="url(#lobe-icons-meta-7-_R_0_)" /><path d="M23.998 14.15v-.023h-2.292v.022c.004.14.006.282.006.424 0 .815-.121 1.474-.368 1.95l-.011.022 1.708 1.782.013-.02c.62-.96.946-2.293.946-3.91 0-.083 0-.165-.002-.247z" fill="url(#lobe-icons-meta-8-_R_0_)" /><path d="M21.344 16.52l-.011.02c-.214.402-.519.67-.917.787l.778 2.462a3.493 3.493 0 00.438-.182 3.558 3.558 0 001.366-1.218l.044-.065.012-.02-1.71-1.784z" fill="url(#lobe-icons-meta-9-_R_0_)" /><path d="M19.92 17.393c-.262 0-.492-.039-.718-.14l-.798 2.522c.449.153.927.222 1.46.222.492 0 .943-.073 1.352-.215l-.78-2.462c-.167.05-.341.075-.517.073z" fill="url(#lobe-icons-meta-10-_R_0_)" /><path d="M18.323 16.534l-.014-.017-1.836 1.914.016.017c.637.682 1.246 1.105 1.937 1.337l.797-2.52c-.291-.125-.573-.353-.9-.731z" fill="url(#lobe-icons-meta-11-_R_0_)" /><path d="M18.309 16.515c-.55-.642-1.232-1.712-2.303-3.44l-1.396-2.336-.011-.02-1.62 2.438.012.02.989 1.668c.959 1.61 1.74 2.774 2.493 3.585l.016.016 1.834-1.914a2.353 2.353 0 01-.014-.017z" fill="url(#lobe-icons-meta-12-_R_0_)" /><defs><linearGradient id="lobe-icons-meta-0-_R_0_" x1="75.897%" x2="26.312%" y1="89.199%" y2="12.194%"><stop offset=".06%" stop-color="#0867DF" /><stop offset="45.39%" stop-color="#0668E1" /><stop offset="85.91%" stop-color="#0064E0" /></linearGradient><linearGradient id="lobe-icons-meta-1-_R_0_" x1="21.67%" x2="97.068%" y1="75.874%" y2="23.985%"><stop offset="13.23%" stop-color="#0064DF" /><stop offset="99.88%" stop-color="#0064E0" /></linearGradient><linearGradient id="lobe-icons-meta-2-_R_0_" x1="38.263%" x2="60.895%" y1="89.127%" y2="16.131%"><stop offset="1.47%" stop-color="#0072EC" /><stop offset="68.81%" stop-color="#0064DF" /></linearGradient><linearGradient id="lobe-icons-meta-3-_R_0_" x1="47.032%" x2="52.15%" y1="90.19%" y2="15.745%"><stop offset="7.31%" stop-color="#007CF6" /><stop offset="99.43%" stop-color="#0072EC" /></linearGradient><linearGradient id="lobe-icons-meta-4-_R_0_" x1="52.155%" x2="47.591%" y1="58.301%" y2="37.004%"><stop offset="7.31%" stop-color="#007FF9" /><stop offset="100%" stop-color="#007CF6" /></linearGradient><linearGradient id="lobe-icons-meta-5-_R_0_" x1="37.689%" x2="61.961%" y1="12.502%" y2="63.624%"><stop offset="7.31%" stop-color="#007FF9" /><stop offset="100%" stop-color="#0082FB" /></linearGradient><linearGradient id="lobe-icons-meta-6-_R_0_" x1="34.808%" x2="62.313%" y1="68.859%" y2="23.174%"><stop offset="27.99%" stop-color="#007FF8" /><stop offset="91.41%" stop-color="#0082FB" /></linearGradient><linearGradient id="lobe-icons-meta-7-_R_0_" x1="43.762%" x2="57.602%" y1="6.235%" y2="98.514%"><stop offset="0%" stop-color="#0082FB" /><stop offset="99.95%" stop-color="#0081FA" /></linearGradient><linearGradient id="lobe-icons-meta-8-_R_0_" x1="60.055%" x2="39.88%" y1="4.661%" y2="69.077%"><stop offset="6.19%" stop-color="#0081FA" /><stop offset="100%" stop-color="#0080F9" /></linearGradient><linearGradient id="lobe-icons-meta-9-_R_0_" x1="30.282%" x2="61.081%" y1="59.32%" y2="33.244%"><stop offset="0%" stop-color="#027AF3" /><stop offset="100%" stop-color="#0080F9" /></linearGradient><linearGradient id="lobe-icons-meta-10-_R_0_" x1="20.433%" x2="82.112%" y1="50.001%" y2="50.001%"><stop offset="0%" stop-color="#0377EF" /><stop offset="99.94%" stop-color="#0279F1" /></linearGradient><linearGradient id="lobe-icons-meta-11-_R_0_" x1="40.303%" x2="72.394%" y1="35.298%" y2="57.811%"><stop offset=".19%" stop-color="#0471E9" /><stop offset="100%" stop-color="#0377EF" /></linearGradient><linearGradient id="lobe-icons-meta-12-_R_0_" x1="32.254%" x2="68.003%" y1="19.719%" y2="84.908%"><stop offset="27.65%" stop-color="#0867DF" /><stop offset="100%" stop-color="#0471E9" /></linearGradient></defs></svg>
+<text x="216" y="356" text-anchor="start" class="name">Muse Spark 1.3</text>
+<text x="216" y="381" text-anchor="start" class="secondary">Contributor</text>
+</g>
+<g class="model efficient" data-model="GPT-6 Luna" data-borda="268">
+<title>GPT-6 Luna : 268 Borda points</title>
+<rect x="285.23" y="246.84" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="293.23" y="254.84" color="#222822"><title>OpenAI</title><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z" /></svg>
+<text x="307" y="226" text-anchor="middle" class="name">GPT-6 Luna</text>
+</g>
+<g class="model" data-model="Nemotron 3.5 Super VL" data-borda="89">
+<title>Nemotron 3.5 Super VL: 89 Borda points</title>
+<rect x="332.92" y="501.42" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="340.92" y="509.42" color="#222822"><title>Nvidia</title><path d="M10.212 8.976V7.62c.127-.01.256-.017.388-.021 3.596-.117 5.957 3.184 5.957 3.184s-2.548 3.647-5.282 3.647a3.227 3.227 0 01-1.063-.175v-4.109c1.4.174 1.681.812 2.523 2.258l1.873-1.627a4.905 4.905 0 00-3.67-1.846 6.594 6.594 0 00-.729.044m0-4.476v2.025c.13-.01.259-.019.388-.024 5.002-.174 8.261 4.226 8.261 4.226s-3.743 4.69-7.643 4.69c-.338 0-.675-.031-1.007-.092v1.25c.278.038.558.057.838.057 3.629 0 6.253-1.91 8.794-4.169.421.347 2.146 1.193 2.501 1.564-2.416 2.083-8.048 3.763-11.24 3.763-.308 0-.603-.02-.894-.048V19.5H24v-15H10.21zm0 9.756v1.068c-3.356-.616-4.287-4.21-4.287-4.21a7.173 7.173 0 014.287-2.138v1.172h-.005a3.182 3.182 0 00-2.502 1.178s.615 2.276 2.507 2.931m-5.961-3.3c1.436-1.935 3.604-3.148 5.961-3.336V6.523C5.81 6.887 2 10.723 2 10.723s2.158 6.427 8.21 7.015v-1.166C5.77 16 4.25 10.958 4.25 10.958h-.002z" fill="#74B71B" fill-rule="nonzero" /></svg>
+<text x="396" y="524" text-anchor="start" class="name">Nemotron 3.5</text>
+<text x="396" y="549" text-anchor="start" class="secondary">Super VL</text>
+</g>
+<g class="model" data-model="GLM 5.3 Flash" data-borda="248">
+<title>GLM 5.3 Flash : 248 Borda points</title>
+<rect x="373.28" y="275.29" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="381.28" y="283.29" color="#222822"><title>Z.ai</title><path d="M12.105 2L9.927 4.953H.653L2.83 2h9.276zM23.254 19.048L21.078 22h-9.242l2.174-2.952h9.244zM24 2L9.264 22H0L14.736 2H24z" /></svg>
+<text x="438" y="317" text-anchor="start" class="name">GLM 5.3 Flash</text>
+</g>
+<g class="model" data-model="Claude Haiku 5.5" data-borda="168">
+<title>Claude Haiku 5.5 : 168 Borda points</title>
+<rect x="466.69" y="389.07" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="474.69" y="397.07" color="#222822"><title>Claude</title><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero" /></svg>
+<text x="530" y="413" text-anchor="start" class="name">Claude Haiku 5.5</text>
+</g>
+<g class="model" data-model="DeepSeek V4.1 Flash 1017" data-borda="248">
+<title>DeepSeek V4.1 Flash 1017: 248 Borda points</title>
+<rect x="672.99" y="275.29" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="680.99" y="283.29" color="#222822"><title>DeepSeek</title><path d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.156-.708-.311-.955-.65-.172-.241-.219-.51-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.093.172.187.129.323-.082.28-.18.552-.266.833-.055.179-.137.217-.329.14a5.526 5.526 0 01-1.736-1.18c-.857-.828-1.631-1.742-2.597-2.458a11.365 11.365 0 00-.689-.471c-.985-.957.13-1.743.388-1.836.27-.098.093-.432-.779-.428-.872.004-1.67.295-2.687.684a3.055 3.055 0 01-.465.137 9.597 9.597 0 00-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152 12.85c.403 2.284 1.569 4.175 3.36 5.653 1.858 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.133-.284 4.994-1.86.47.234.962.327 1.78.397.63.059 1.236-.03 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.746-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.96-2.015 2.093-3.517.02-.23-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.52-2.16-.392.024-.321.471-.235.763.09.288.207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.224-2.887-1.298-4.482-.02-.386.093-.522.477-.592a4.696 4.696 0 011.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.86 1.525 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306 0 01.415-.287.302.302 0 01.2.288.306.306 0 01-.31.307.303.303 0 01-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245 1.245 0 01-.798-.254c-.274-.23-.47-.358-.552-.758a1.73 1.73 0 01.016-.588c.07-.327-.008-.537-.239-.727-.187-.156-.426-.199-.688-.199a.559.559 0 01-.254-.078c-.11-.054-.2-.19-.114-.358.028-.054.16-.186.192-.21.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.25.452z" fill="#4D6BFE" /></svg>
+<text x="737" y="296" text-anchor="start" class="name">DeepSeek V4.1 Flash</text>
+<text x="737" y="321" text-anchor="start" class="secondary">1017</text>
+</g>
+<g class="model" data-model="Gemini 3.8 Flash" data-borda="81">
+<title>Gemini 3.8 Flash : 81 Borda points</title>
+<rect x="835.97" y="512.80" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="843.97" y="520.80" color="#222822"><title>Gemini</title><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="#3186FF" /><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#lobe-icons-gemini-0-_R_0_)" /><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#lobe-icons-gemini-1-_R_0_)" /><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#lobe-icons-gemini-2-_R_0_)" /><defs><linearGradient gradientUnits="userSpaceOnUse" id="lobe-icons-gemini-0-_R_0_" x1="7" x2="11" y1="15.5" y2="12"><stop stop-color="#08B962" /><stop offset="1" stop-color="#08B962" stop-opacity="0" /></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="lobe-icons-gemini-1-_R_0_" x1="8" x2="11.5" y1="5.5" y2="11"><stop stop-color="#F94543" /><stop offset="1" stop-color="#F94543" stop-opacity="0" /></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="lobe-icons-gemini-2-_R_0_" x1="3.5" x2="17.5" y1="13.5" y2="12"><stop stop-color="#FABC12" /><stop offset=".46" stop-color="#FABC12" stop-opacity="0" /></linearGradient></defs></svg>
+<text x="901" y="540" text-anchor="start" class="name">Gemini 3.8 Flash</text>
+</g>
+<g class="model efficient" data-model="Grok 4.6" data-borda="309">
+<title>Grok 4.6 : 309 Borda points</title>
+<rect x="1089.40" y="188.53" width="44" height="44" class="badge"/>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" height="28" style="flex:none;line-height:1" viewBox="0 0 24 24" width="28" x="1097.40" y="196.53" color="#222822"><title>Grok</title><path d="M6.469 8.776L16.512 23h-4.464L2.005 8.776H6.47zm-.004 7.9l2.233 3.164L6.467 23H2l4.465-6.324zM22 2.582V23h-3.659V7.764L22 2.582zM22 1l-9.952 14.095-2.233-3.163L17.533 1H22z" /></svg>
+<text x="1072" y="202" text-anchor="end" class="name">Grok 4.6</text>
+</g>
 </svg>

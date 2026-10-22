@@ -69,7 +69,9 @@ Grok tops two of the three ballots. Decider is the outlier ballot: GLM first, Lu
 
 ## Borda vs Cost
 
-![Cost per note versus Borda points with Pareto frontier](/assets/posts/meeting-bench-pareto.svg)
+<div class="bleed">
+<img src="/assets/posts/meeting-bench-pareto.svg" alt="All eight meeting-note models by cost per note and Borda points, with Muse Spark, GPT-6 Luna, and Grok on the Pareto frontier" width="1210" height="630" style="width: 100%; height: auto;">
+</div>
 
 Grok costs $1.08 to write all 120 notes. GPT-6-Luna costs five cents. That is 87% of the winner's Borda at under 5% of the generation cost. The Pareto frontier runs Muse Spark 1.3 Contributor → GPT-6 Luna → Grok 4.6. 
 
