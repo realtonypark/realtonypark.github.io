@@ -1,0 +1,21 @@
+_posts/2026-10-21-which-llm-writes-best-meeting-note.md
+  s_6e0fe5aa56fff3::t_225060d0ea1f92 72-74
+assets/posts/meeting-bench-pareto.svg
+  s_6e0fe5aa56fff3::t_d62a8a9671f575 1-7,9-16,18-125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9690b0977865edc30817acb9cdb327ce37c9244c",
+  "prompts": {},
+  "sessions": {
+    "s_6e0fe5aa56fff3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a161b1-7c96-78f0-b098-f7faa4bb5b8b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
