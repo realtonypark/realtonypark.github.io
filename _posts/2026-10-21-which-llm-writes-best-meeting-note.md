@@ -3,7 +3,7 @@ layout: post
 title: Which LLM writes the best meeting note?
 tags: essay ai
 published: true
-excerpt: <p>I ran 8 models on 15 real meetings through the production Analog prompt and had three decision models judge 1,620 blind comparisons. Grok won. The interesting result is who came second.</p>
+excerpt: <p>I ran 8 models on 15 real meetings through the production Anarlog prompt and had three decision models judge 1,620 blind comparisons. Grok won. The interesting result is who came second.</p>
 ---
 ![Speech bubbles condensing into a single sealed document](/assets/posts/meeting-bench-cover.webp)
 
@@ -11,15 +11,21 @@ Every meeting tool claims the smartest summaries. Nobody publishes numbers.
 
 Transcription is solved. Whisper-class models turn speech into text, and the remaining errors are small. The unmeasured step is what happens next: transcript goes in, meeting note comes out. That step is pure language-model intelligence. Deciding what matters, who committed to what, what gets dropped. Nobody benchmarks it, so I did.
 
+## Motivation
+
+I take all my meeting notes in [Anarlog](https://anarlog.so/). The setup matters for this post: Anarlog lets me bring my own models from different providers. My notes can run on whatever I plug in, cheap or expensive.
+
+That choice stopped feeling free. Every meeting I was either overpaying for intelligence I couldn't measure or saving money on quality I couldn't see. This benchmark is me checking my ROI: run the same meetings through eight models, grade the notes blind, and find out what the extra dollars actually buy.
+
 ## What I ran
 
-Fifteen real meetings through the production Analog enhance prompt. Eight candidate models, all at high reasoning effort: Grok 4.6, GPT-6 Luna, DeepSeek V4.1 Flash, GLM-5p3 Flash, Claude Haiku 5.5, Gemini 3.8 Flash, Nemotron 3.5 Super, and Meta's Muse Spark. Each wrote one note per meeting. 120 notes.
+Fifteen real meetings through the production Anarlog enhance prompt. Eight candidate models, all at high reasoning effort: Grok 4.6, GPT-6 Luna, DeepSeek V4.1 Flash, GLM-5p3 Flash, Claude Haiku 5.5, Gemini 3.8 Flash, Nemotron 3.5 Super, and Meta's Muse Spark. Each wrote one note per meeting. 120 notes.
 
 Then three judges graded them blind. I didn't use chatbots as judges. I used decision models: Baseten's Mammoth, TypeSafe's Jev, and Perplexity's Decider. They return calibrated probabilities instead of prose, which makes them cheaper and more consistent than asking a chatbot for a score. The design owes a lot to [Vals AI](https://www.vals.ai).
 
 ## How it works
 
-Four steps. First, generation. Fifteen real meetings from my Analog library. Each candidate gets the transcript plus the session title and participants through the production enhance template: one note per meeting, high reasoning effort. 120 notes.
+Four steps. First, generation. Fifteen real meetings from my Anarlog library. Each candidate gets the transcript plus the session title and participants through the production enhance template: one note per meeting, high reasoning effort. 120 notes.
 
 Second, absolute scoring. Each judge answers six yes/no questions about every note. Is it faithful to the transcript. Are decisions captured. Are action items captured. Is the coverage complete. Is attribution right, who said and committed to what. Is it concise. Each answer is a probability. 360 judgments.
 
