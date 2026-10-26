@@ -1,0 +1,16 @@
+_data/portfolio.yml
+  h_05e5164a29872e 5,9,13,17,21-25,29,33-37,41,45,47-50,53,55-57,59-61,65,69
+holdings.md
+  h_05e5164a29872e 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "92a17193d29e9d6c5ce1300f7b580493dd87c3f8",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
