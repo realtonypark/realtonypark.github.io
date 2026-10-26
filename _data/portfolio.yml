@@ -2,72 +2,68 @@ holdings:
   - rank: 1
     ticker: "IREN"
     company: "Iris Energy Limited"
-    weight: "13.40%"
+    weight: "10.67%"
   - rank: 2
     ticker: "META"
     company: "Meta Platforms, Inc."
-    weight: "9.45%"
+    weight: "10.58%"
   - rank: 3
     ticker: "₿TC"
     company: "₿itcoin"
-    weight: "7.97%"
+    weight: "9.12%"
   - rank: 4
     ticker: "QQQM"
     company: "Nasdaq 100 ETF"
-    weight: "7.04%"
+    weight: "7.10%"
   - rank: 5
-    ticker: "SPYM"
-    company: "S&P 500 ETF"
-    weight: "6.79%"
-  - rank: 6
     ticker: "ETH"
     company: "Ethereum"
-    weight: "6.47%"
+    weight: "6.74%"
+  - rank: 6
+    ticker: "NVDA"
+    company: "NVIDIA Corporation"
+    weight: "6.34%"
   - rank: 7
     ticker: "GOOGL"
     company: "Alphabet Inc."
-    weight: "6.18%"
+    weight: "5.99%"
   - rank: 8
-    ticker: "NVDA"
-    company: "NVIDIA Corporation"
-    weight: "5.66%"
-  - rank: 9
     ticker: "AMZN"
     company: "Amazon.com, Inc."
-    weight: "5.38%"
+    weight: "5.73%"
+  - rank: 9
+    ticker: "DRAM"
+    company: "Roundhill Memory ETF"
+    weight: "5.41%"
   - rank: 10
     ticker: "RKLB"
     company: "Rocket Lab USA, Inc."
-    weight: "4.92%"
+    weight: "5.05%"
   - rank: 11
     ticker: "COIN"
     company: "Coinbase Global, Inc."
-    weight: "4.91%"
+    weight: "5.02%"
   - rank: 12
+    ticker: "NBIS"
+    company: "Nebius Group N.V."
+    weight: "4.69%"
+  - rank: 13
     ticker: "CRCL"
     company: "Circle Internet Group Inc."
-    weight: "4.64%"
-  - rank: 13
+    weight: "4.68%"
+  - rank: 14
+    ticker: "SPYM"
+    company: "S&P 500 ETF"
+    weight: "3.61%"
+  - rank: 15
     ticker: "HOOD"
     company: "Robinhood Markets, Inc."
-    weight: "4.08%"
-  - rank: 14
-    ticker: "DRAM"
-    company: "Roundhill Memory ETF"
-    weight: "3.23%"
-  - rank: 15
-    ticker: "CDE"
-    company: "Coeur Mining, Inc."
-    weight: "3.07%"
+    weight: "3.51%"
   - rank: 16
     ticker: "ZETA"
     company: "Zeta Global Holdings Corp."
-    weight: "3.07%"
+    weight: "3.17%"
   - rank: 17
     ticker: "FIGR"
     company: "Figure Technology Solutions Inc."
-    weight: "2.98%"
-  - rank: 18
-    ticker: "INFQ"
-    company: "Infleqtion, Inc."
-    weight: "0.78%"
+    weight: "2.57%"
