@@ -1,0 +1,16 @@
+_config.yml
+  h_05e5164a29872e 117
+_includes/head.html
+  h_05e5164a29872e 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5e74f37089917379440c90467e01bfb8ec1fa43d",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
