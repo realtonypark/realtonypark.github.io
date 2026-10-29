@@ -11,7 +11,7 @@
       {% if first_image_tag %}
         {% assign post_image = first_image_tag | split: 'src="' | last | split: '"' | first %}
       {% else %}
-        {% assign post_image = '/assets/banner-1200.webp' %}
+        {% assign post_image = '/assets/og-share-1200x630.jpg' %}
       {% endif %}
       <meta property="og:image" content="{{ post_image | relative_url | absolute_url }}">
       <meta name="twitter:image" content="{{ post_image | relative_url | absolute_url }}">
