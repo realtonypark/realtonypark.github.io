@@ -49,7 +49,7 @@
   "unicode_range": "U+A0-B6, U+B8-D6, U+D8-148, U+14A-17E"
  },
  "spectral-400-core.woff2": {
-  "bytes": 7988,
+  "bytes": 7984,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -61,7 +61,30 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-400-ext.woff2": {
-  "bytes": 9872,
+  "bytes": 9952,
+  "glyphs": 322,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "spectral-500-core.woff2": {
+  "bytes": 8656,
+  "glyphs": 133,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
+ },
+ "spectral-500-ext.woff2": {
+  "bytes": 10352,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -72,7 +95,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-600-core.woff2": {
-  "bytes": 8664,
+  "bytes": 8660,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -84,7 +107,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-600-ext.woff2": {
-  "bytes": 10464,
+  "bytes": 10452,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -95,7 +118,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-700-core.woff2": {
-  "bytes": 8756,
+  "bytes": 8752,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -107,7 +130,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-700-ext.woff2": {
-  "bytes": 10412,
+  "bytes": 10416,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -118,7 +141,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-italic400-core.woff2": {
-  "bytes": 8528,
+  "bytes": 8524,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -130,7 +153,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-italic400-ext.woff2": {
-  "bytes": 10580,
+  "bytes": 10600,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -141,7 +164,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-italic500-core.woff2": {
-  "bytes": 9380,
+  "bytes": 9368,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -153,7 +176,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-italic500-ext.woff2": {
-  "bytes": 11052,
+  "bytes": 11108,
   "glyphs": 322,
   "gsub": [
    "locl"

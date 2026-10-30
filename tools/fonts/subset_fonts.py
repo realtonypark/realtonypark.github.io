@@ -4,14 +4,14 @@
 Usage:
     python3 tools/fonts/subset_fonts.py
 
-Reads pinned sources from tools/fonts/sources/, writes 14 .woff2 files plus
+Reads pinned sources from tools/fonts/sources/, writes 16 .woff2 files plus
 fonts.css into assets/fonts/. Commit the outputs.
 
 Rerun when any of these change:
   - site content gains characters outside the current coverage (the script
-    rescans _posts, _includes, _layouts, top-level pages, _config.yml, and
-    assets/main.scss on every run, so just rerun it after content changes
-    and commit whatever changed);
+    rescans _posts, _data, _research, _syllabi, _includes, _layouts,
+    top-level pages, _config.yml, and assets/main.scss on every run, so
+    just rerun it after content changes and commit whatever changed);
   - the Google Fonts request in _includes/head.html changes (families,
     weights, styles);
   - font-family / font-weight / font-style rules in assets/main.scss change
@@ -98,6 +98,9 @@ FACES = [
     ("spectral-400", "Spectral", "normal", (400,), "spectral-400",
      ("merge", ["spectral-400-latin.woff2", "spectral-400-latinext.woff2"]),
      [({}, "static")]),
+    ("spectral-500", "Spectral", "normal", (500,), "spectral-500",
+     ("merge", ["spectral-500-latin.woff2", "spectral-500-latinext.woff2"]),
+     [({}, "static")]),
     ("spectral-600", "Spectral", "normal", (600,), "spectral-600",
      ("merge", ["spectral-600-latin.woff2", "spectral-600-latinext.woff2"]),
      [({}, "static")]),
@@ -114,8 +117,15 @@ FACES = [
      [({}, "static")]),
 ]
 
-# Directories and files whose text can reach rendered pages.
-SCAN_DIRS = ["_posts", "_includes", "_layouts"]
+# Directories and files whose text can reach rendered pages. Jekyll input
+# directories only -- never _site (gitignored build output: stale and
+# machine-local, so scanning it makes the charset unreproducible).
+# _data matters: holdings.md renders values from _data/portfolio.yml.
+# _research/_syllabi are output:true collections; they may not exist on
+# every machine, so missing dirs are skipped, not an error.
+SCAN_DIRS = ["_posts", "_data", "_research", "_syllabi",
+             "_includes", "_layouts"]
+SCAN_SUFFIXES = (".md", ".html", ".js", ".scss", ".yml", ".yaml")
 SCAN_GLOBS = ["*.md", "*.html", "_config.yml", "assets/main.scss"]
 
 
@@ -123,17 +133,16 @@ def scan_content():
     """Collect every character that can appear in rendered pages."""
     texts = []
     for d in SCAN_DIRS:
-        for p in (ROOT / d).rglob("*"):
-            if p.is_file() and p.suffix in (".md", ".html", ".js", ".scss"):
+        root = ROOT / d
+        if not root.is_dir():
+            continue
+        for p in root.rglob("*"):
+            if p.is_file() and p.suffix in SCAN_SUFFIXES:
                 texts.append(p.read_text(encoding="utf-8", errors="replace"))
     for g in SCAN_GLOBS:
         for p in ROOT.glob(g):
             if p.is_file():
                 texts.append(p.read_text(encoding="utf-8", errors="replace"))
-    site = ROOT / "_site"
-    if site.is_dir():
-        for p in site.rglob("*.html"):
-            texts.append(p.read_text(encoding="utf-8", errors="replace"))
     chars = set()
     for t in texts:
         chars |= set(html.unescape(t))
