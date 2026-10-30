@@ -92,11 +92,13 @@ exclude:
   - package.json
   - package-lock.json
   - graphify-out
+  - tools
   - '*.py'
   - '*.gv'
   - assets/slides
   - assets/ai-img
   - worker
+  - tools # font-subsetting sources; outputs live in assets/fonts
 
 plugins:
   - jekyll-feed
