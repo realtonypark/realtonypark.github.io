@@ -1,0 +1,22 @@
+assets/fonts/fonts.css
+  h_05e5164a29872e 110-127
+tools/fonts/README.md
+  h_05e5164a29872e 24-27,34-43,71,93-97,101-104,125-131
+tools/fonts/charset-used.txt
+  h_05e5164a29872e 1
+tools/fonts/manifest.json
+  h_05e5164a29872e 52,64-87,98,110,121,133,144,156,167,179
+tools/fonts/subset_fonts.py
+  h_05e5164a29872e 7,12-14,101-103,120-128,136-140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "064b008015b1cddf91f2a4925e16c0ec343ace86",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
