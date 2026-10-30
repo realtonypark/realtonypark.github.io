@@ -9,9 +9,9 @@ fonts.css into assets/fonts/. Commit the outputs.
 
 Rerun when any of these change:
   - site content gains characters outside the current coverage (the script
-    rescans _posts, _data, _research, _syllabi, _includes, _layouts,
-    top-level pages, _config.yml, and assets/main.scss on every run, so
-    just rerun it after content changes and commit whatever changed);
+    rescans _posts, _data, _drafts, _includes, _layouts, top-level
+    pages, _config.yml, and assets/main.scss on every run, so just
+    rerun it after content changes and commit whatever changed);
   - the Google Fonts request in _includes/head.html changes (families,
     weights, styles);
   - font-family / font-weight / font-style rules in assets/main.scss change
@@ -121,12 +121,21 @@ FACES = [
 # directories only -- never _site (gitignored build output: stale and
 # machine-local, so scanning it makes the charset unreproducible).
 # _data matters: holdings.md renders values from _data/portfolio.yml.
-# _research/_syllabi are output:true collections; they may not exist on
-# every machine, so missing dirs are skipped, not an error.
-SCAN_DIRS = ["_posts", "_data", "_research", "_syllabi",
-             "_includes", "_layouts"]
-SCAN_SUFFIXES = (".md", ".html", ".js", ".scss", ".yml", ".yaml")
+# _drafts is rendered by local `jekyll --drafts` previews against these
+# same committed fonts, so it counts despite never publishing.
+# _research/_syllabi are deliberately NOT scanned: _config.yml excludes
+# them from the build, so Jekyll never publishes their content and
+# their characters must not leak into font payloads.
+# Missing dirs are skipped, not an error (not every checkout has all).
+SCAN_DIRS = ["_posts", "_data", "_drafts", "_includes", "_layouts"]
+# Jekyll _data formats (.yml/.yaml/.json/.csv/.tsv) plus page/template
+# formats. New data files in any supported format are picked up.
+SCAN_SUFFIXES = (".md", ".html", ".js", ".scss",
+                 ".yml", ".yaml", ".json", ".csv", ".tsv")
 SCAN_GLOBS = ["*.md", "*.html", "_config.yml", "assets/main.scss"]
+# Top-level docs mirrored from _config.yml `exclude:`: never published,
+# so their characters must not enter the subsets either.
+SKIP_TOP = {"AGENTS.md", "CLAUDE.md", "README.md", "SEO-AUDIT.md"}
 
 
 def scan_content():
@@ -141,7 +150,7 @@ def scan_content():
                 texts.append(p.read_text(encoding="utf-8", errors="replace"))
     for g in SCAN_GLOBS:
         for p in ROOT.glob(g):
-            if p.is_file():
+            if p.is_file() and p.name not in SKIP_TOP:
                 texts.append(p.read_text(encoding="utf-8", errors="replace"))
     chars = set()
     for t in texts:

@@ -21,10 +21,10 @@ self-check fails; do not commit its output in that case.
 ## When to rerun
 
 - After adding or editing content with characters outside the current
-  coverage. The script rescans `_posts`, `_data`, `_research`,
-  `_syllabi`, `_includes`, `_layouts`, top-level pages,
-  `_config.yml`, and `assets/main.scss` on every run, so rerunning
-  after a content change is enough;
+  coverage. The script rescans `_posts`, `_data` (all Jekyll data
+  formats: yml, yaml, json, csv, tsv), `_drafts`, `_includes`,
+  `_layouts`, top-level pages, `_config.yml`, and `assets/main.scss`
+  on every run, so rerunning after a content change is enough;
   `git diff tools/fonts/charset-used.txt` shows what newly appeared.
   Rule of thumb: rerun when a post adds non-ASCII characters (accented
   names, symbols, new punctuation) or when you touch anything that
@@ -123,9 +123,14 @@ Spectral file hashes with no charset change (`git diff
 tools/fonts/charset-used.txt` empty), the new bytes render
 identically and are safe to commit or discard.
 
-`charset-used.txt` reflects the working tree, including untracked
-files (Jekyll renders on-disk files, so drafts count). The scan
-deliberately excludes `_site`: it is gitignored build output, so
-reading it would bake one machine's stale build into the inputs.
+`charset-used.txt` reflects the working tree, including uncommitted
+files and `_drafts` (Jekyll renders on-disk files, and local
+`--drafts` previews use these same committed fonts). The scan
+deliberately excludes everything Jekyll never publishes: `_site`
+(gitignored build output; reading it would bake one machine's
+stale build into the inputs), `_research`/`_syllabi` and the
+top-level AGENTS/CLAUDE/README/SEO-AUDIT docs (all in
+`_config.yml`'s build `exclude:` list). If you ever lift one of
+those exclusions, add the directory back to `SCAN_DIRS` and rerun.
 `feed.xml`/`sitemap.xml` are not scanned either (feed readers use
 system fonts, and feed text duplicates `_posts`).

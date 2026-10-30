@@ -13,6 +13,10 @@ const head = fs.readFileSync(
   path.join(root, "_includes", "head.html"),
   "utf8",
 );
+const fonts = fs.readFileSync(
+  path.join(root, "assets", "fonts", "fonts.css"),
+  "utf8",
+);
 const about = fs.readFileSync(path.join(root, "about.md"), "utf8");
 
 test("Soft Classic post list is scoped to the default design", () => {
@@ -74,7 +78,10 @@ test("Soft Classic post list is scoped to the default design", () => {
 });
 
 test("modern theme follows the reference design language", () => {
-  assert.match(head, /family=Fraunces:/);
+  assert.match(head, /assets\/fonts\/fonts\.css/);
+  assert.match(head, /inter-var-core\.woff2/);
+  assert.doesNotMatch(head, /fonts\.googleapis\.com/);
+  assert.match(fonts, /font-family: 'Fraunces'/);
   assert.match(styles, /html\[data-design='modern'\] \{\s*--bg: #fcfcfc;/);
   assert.match(
     styles,
