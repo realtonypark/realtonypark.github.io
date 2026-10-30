@@ -1,0 +1,189 @@
+{
+ "inter-var-core.woff2": {
+  "bytes": 26384,
+  "glyphs": 205,
+  "gsub": [
+   "calt",
+   "locl",
+   "tnum"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+20BF, U+2191"
+ },
+ "inter-var-ext.woff2": {
+  "bytes": 24704,
+  "glyphs": 305,
+  "gsub": [
+   "calt",
+   "locl",
+   "tnum"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "fraunces-var-core.woff2": {
+  "bytes": 45444,
+  "glyphs": 122,
+  "gsub": [
+   "liga",
+   "rvrn"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A"
+ },
+ "fraunces-var-ext.woff2": {
+  "bytes": 53276,
+  "glyphs": 308,
+  "gsub": [
+   "rvrn"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-B6, U+B8-D6, U+D8-148, U+14A-17E"
+ },
+ "spectral-400-core.woff2": {
+  "bytes": 7972,
+  "glyphs": 133,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
+ },
+ "spectral-400-ext.woff2": {
+  "bytes": 9948,
+  "glyphs": 322,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "spectral-500-core.woff2": {
+  "bytes": 8656,
+  "glyphs": 133,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
+ },
+ "spectral-500-ext.woff2": {
+  "bytes": 10340,
+  "glyphs": 322,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "spectral-600-core.woff2": {
+  "bytes": 8660,
+  "glyphs": 133,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
+ },
+ "spectral-600-ext.woff2": {
+  "bytes": 10456,
+  "glyphs": 322,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "spectral-700-core.woff2": {
+  "bytes": 8752,
+  "glyphs": 133,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
+ },
+ "spectral-700-ext.woff2": {
+  "bytes": 10428,
+  "glyphs": 322,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "spectral-italic400-core.woff2": {
+  "bytes": 8524,
+  "glyphs": 133,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
+ },
+ "spectral-italic400-ext.woff2": {
+  "bytes": 10612,
+  "glyphs": 322,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "spectral-italic500-core.woff2": {
+  "bytes": 9340,
+  "glyphs": 133,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
+ },
+ "spectral-italic500-ext.woff2": {
+  "bytes": 11044,
+  "glyphs": 322,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ }
+}
