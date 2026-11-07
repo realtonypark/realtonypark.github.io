@@ -223,7 +223,7 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(styles, /html\[data-design='quiet'\] \{\s*--bg: #fdfdfc;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.single-index \{\s*display: block;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
-  assert.match(styles, /\.qilinked a \{[\s\S]*?text-decoration-color: oklch\(/);
+  assert.match(styles, /\.qilinked a \{[\s\S]*?background-color: oklch\(/);
   assert.match(styles, /\.qpeek \{[\s\S]*?position: fixed;/);
   assert.match(styles, /\.qp-panel \{[\s\S]*?width: 208px;/);
   // One "Aa" button opens the theme list everywhere; the active TOC entry

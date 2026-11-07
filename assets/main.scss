@@ -2868,32 +2868,19 @@ html[data-design='quiet'] {
   --ul-c: 0.125;
   --wash-a: 0.16;
 
-  .qi-hi { font-weight: 500; }
-
+  // Intro links keep Quiet's grey underline; the hue appears only as a
+  // hover wash behind the word while its card is open.
   .qilinked a {
-    text-decoration: underline;
-    text-decoration-color: oklch(var(--ul-l) var(--ul-c) var(--h, 150));
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
     border-radius: 2px;
     transition: background-color 140ms ease;
     -webkit-tap-highlight-color: transparent;
     &:hover, &:focus-visible, &.is-active {
-      text-decoration-color: oklch(var(--ul-l) var(--ul-c) var(--h, 150));
       background-color: oklch(var(--ul-l) var(--ul-c) var(--h, 150) / var(--wash-a));
     }
   }
   .qilinked a:focus-visible {
     outline: 2px solid oklch(var(--ul-l) var(--ul-c) var(--h, 150));
     outline-offset: 2px;
-  }
-
-  .qi-motto { margin-bottom: 16px; }
-
-  .qi-contact { color: var(--muted); }
-  .qi-contact a {
-    color: var(--muted);
-    &:hover { color: var(--text); }
   }
 
   .qpeek {
