@@ -1,0 +1,24 @@
+_includes/quiet-post-footer.html
+  h_05e5164a29872e 4
+_layouts/posts.html
+  h_05e5164a29872e 9
+_posts/2026-09-24-investment-strategy-memo-kor.md
+  h_05e5164a29872e 1-313
+_test/seo.py
+  h_05e5164a29872e 72-88,146-147
+feed.xml
+  h_05e5164a29872e 1-119
+posts-by-tag.md
+  h_05e5164a29872e 11-13,15,20-21,25,34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8620fe843f3cfc69b926a70ec7676cbd35637811",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
