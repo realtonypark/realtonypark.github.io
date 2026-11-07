@@ -3029,6 +3029,23 @@ html[data-design='new'] {
     color: var(--lead);
   }
 
+  .ni-contact {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+  .ni-contact a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--muted) 45%, transparent);
+    &:hover { color: var(--text); text-decoration-color: var(--text); }
+  }
+
   .linked a {
     color: inherit;
     text-decoration: underline;
