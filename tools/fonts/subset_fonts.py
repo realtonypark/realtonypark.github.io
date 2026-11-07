@@ -23,7 +23,8 @@ What it does per face:
      variable fonts (fontTools cannot merge variable fonts, and the
      upstream files were verified outline-identical to what Google serves).
   2. Pin variable axes Google doesn't serve at their defaults
-     (Inter opsz at 14, Fraunces SOFT at 0 and WONK at 1) and keep the
+     (Inter opsz at 14, Fraunces SOFT at 0 and WONK at 1; Newsreader
+     keeps wght + opsz) and keep the
      full wght and opsz ranges. Narrowing wght was measured: it saves
      roughly 10KB per Inter file and 7KB per Fraunces file, but the
      instancer's delta re-normalization shifts interpolated
@@ -114,6 +115,26 @@ FACES = [
     ("spectral-italic500", "Spectral", "italic", (500,), "spectral-italic500",
      ("merge", ["spectral-italic500-latin.woff2",
                 "spectral-italic500-latinext.woff2"]),
+     [({}, "static")]),
+    ("newsreader", "Newsreader", "normal", (340, 360, 400, 500, 600),
+     "newsreader-var",
+     ("variable", "Newsreader.ttf", {"pin": {}}),
+     [({"wght": w, "opsz": o}, "wght=%d opsz=%d" % (w, o))
+      for w in (340, 360, 400, 500, 600) for o in (18, 28)]),
+    ("newsreader-italic", "Newsreader", "italic", (340, 360, 400),
+     "newsreader-italic-var",
+     ("variable", "Newsreader-Italic.ttf", {"pin": {}}),
+     [({"wght": w, "opsz": o}, "wght=%d opsz=%d" % (w, o))
+      for w in (340, 360, 400) for o in (18, 28)]),
+    ("plexsanscondensed-400", "IBM Plex Sans Condensed", "normal", (400,),
+     "plexsanscondensed-400",
+     ("merge", ["plexsanscondensed-400-latin.woff2",
+                "plexsanscondensed-400-latinext.woff2"]),
+     [({}, "static")]),
+    ("plexsanscondensed-500", "IBM Plex Sans Condensed", "normal", (500,),
+     "plexsanscondensed-500",
+     ("merge", ["plexsanscondensed-500-latin.woff2",
+                "plexsanscondensed-500-latinext.woff2"]),
      [({}, "static")]),
 ]
 
@@ -547,9 +568,10 @@ def main():
                 print("  UNEXPECTED FEATURES %s: %s" % (name, sorted(bad)))
                 ok = False
             fam = out["name"].getDebugName(1)
-            if fam != family and not (
-                    family == "Spectral" and fam and
-                    fam.startswith("Spectral")):
+            if fam != family and not any(
+                    family == prefix and fam and
+                    fam.startswith(prefix) for prefix in
+                    ("Spectral", "Newsreader", "IBM Plex Sans Condensed")):
                 print("  FAMILY RENAMED %s: %s" % (name, fam))
                 ok = False
             print("  %s: %d bytes, %d glyphs, gsub=%s gpos=%s" % (

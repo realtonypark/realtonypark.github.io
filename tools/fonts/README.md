@@ -32,7 +32,8 @@ self-check fails; do not commit its output in that case.
 - After changing which font weights or styles the CSS needs. The kept
   faces are fixed in the `FACES` table in `subset_fonts.py` (Inter
   400/500/600, Fraunces 300/400, Spectral 400/500/600/700 + italics
-  400/500). For a variable family (Inter, Fraunces), extend the
+  400/500, Newsreader 340/360/400/500/600 + italics 340/360/400,
+  IBM Plex Sans Condensed 400/500). For a variable family (Inter, Fraunces, Newsreader), extend the
   weights tuple on its one entry. For a static family (Spectral),
   each weight is a separate entry with its own pinned source
   slices: adding a weight means downloading its latin + latin-ext
