@@ -1,0 +1,16 @@
+_test/posts-layout.test.js
+  h_05e5164a29872e 226
+assets/main.scss
+  h_05e5164a29872e 2871-2872
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "47b97a23ce859f303a4f4fb7bddcbc53ed880b97",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
