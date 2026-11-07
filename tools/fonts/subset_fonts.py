@@ -4,8 +4,9 @@
 Usage:
     python3 tools/fonts/subset_fonts.py
 
-Reads pinned sources from tools/fonts/sources/, writes 16 .woff2 files plus
-fonts.css into assets/fonts/. Commit the outputs.
+Reads pinned sources from tools/fonts/sources/, writes two .woff2 files
+(core + extended) per FACES entry plus fonts.css into assets/fonts/.
+Commit the outputs.
 
 Rerun when any of these change:
   - site content gains characters outside the current coverage (the script

@@ -33,10 +33,14 @@
     })(links[i]);
   }
 
-  // Preload previews once idle so the first hover feels instant.
+  // Preload previews once idle so the first hover feels instant — but only
+  // while this theme is active, so other designs never pay the ~2.3 MB.
   var preloaded = false;
+  function useNewTheme() {
+    return document.documentElement.dataset.design === "new";
+  }
   function preload() {
-    if (preloaded) return;
+    if (preloaded || !useNewTheme()) return;
     preloaded = true;
     for (var key in WORKS) {
       if (WORKS[key].img) new Image().src = WORKS[key].img;
@@ -45,6 +49,13 @@
   if ("requestIdleCallback" in window) requestIdleCallback(preload, { timeout: 4000 });
   else setTimeout(preload, 2000);
   main.addEventListener("pointerover", preload, { once: true });
+  // A visitor can switch to this theme without reloading; preload then.
+  if ("MutationObserver" in window) {
+    new MutationObserver(preload).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-design"]
+    });
+  }
 
   var peek = document.getElementById("new-peek");
   var pImg = document.getElementById("new-peek-img");

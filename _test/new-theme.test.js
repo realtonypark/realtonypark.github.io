@@ -66,6 +66,8 @@ test("new theme styles paper, serif, cards, and fog", () => {
     "assets/new-theme/fog-1800.jpg",
     "assets/new-theme/bitcoin-960.png",
     "assets/new-theme/nupython-960.png",
+    "assets/posts/ai-aesthetic/wafer-inspiration.jpg",
+    "assets/posts/vertigo.webp",
     "assets/astronaut.webp",
   ]) {
     assert.ok(

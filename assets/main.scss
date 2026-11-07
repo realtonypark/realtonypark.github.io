@@ -3156,8 +3156,12 @@ html[data-design='new'] {
     height: 64px;
     aspect-ratio: auto !important;
   }
-  .new-peek.np-compact .np-t { grid-row: 2; padding: 0; font-size: 1rem; }
-  .new-peek.np-compact .np-m { grid-row: 3; padding: 3px 0 0; gap: 2px; font-size: 0.66rem; }
+  .new-peek.np-compact .np-t { grid-row: 2; grid-column: 2; padding: 0; font-size: 1rem; }
+  .new-peek.np-compact .np-m { grid-row: 3; grid-column: 2; padding: 3px 0 0; gap: 2px; font-size: 0.66rem; }
+  // Text-only cards have no thumbnail: span the reserved image column
+  // instead of leaving a blank gutter.
+  .new-peek.np-compact:has(> .np-pic[hidden]) .np-t,
+  .new-peek.np-compact:has(> .np-pic[hidden]) .np-m { grid-column: 1 / -1; }
   .new-peek.np-compact::after {
     content: '';
     position: absolute;
