@@ -1,0 +1,18 @@
+_includes/new-intro.html
+  h_05e5164a29872e 4-6
+_includes/new-theme.js
+  h_05e5164a29872e 13,15-16,37,128-135
+assets/main.scss
+  h_05e5164a29872e 3032-3048
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "11e9ab81a2010d2fc36d03f0f18c06274e604d01",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
