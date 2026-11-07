@@ -1,0 +1,20 @@
+_includes/quiet-peek.js
+  h_05e5164a29872e 1-254
+_includes/single-index.html
+  h_05e5164a29872e 3-7,9,11
+_test/posts-layout.test.js
+  h_05e5164a29872e 193-217,226-228
+assets/main.scss
+  h_05e5164a29872e 2862-3044
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "88c9d33e51f0f6487acc4228a850112c413ac0d2",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
