@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Essays and Projects
+title: Tony Park
 ---
 
 Sort by: [**date**]({{ site.baseurl }}{% link index.md %}) \| [tag]({{ site.baseurl }}{% link posts-by-tag.md %})

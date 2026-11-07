@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>{%- include design-language.js -%}</script>
-    {%- seo -%}
+    {%- if page.url == "/" -%}
+      {%- seo title=false -%}
+      <title>{{ site.title | escape }}</title>
+    {%- else -%}
+      {%- seo -%}
+    {%- endif -%}
     {% if page.layout == 'post' and page.image == nil %}
       {% assign first_image_tag = content | split: '<img ' | slice: 1 | first %}
       {% if first_image_tag %}
