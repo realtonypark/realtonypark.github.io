@@ -1,0 +1,22 @@
+_includes/new-theme.js
+  h_05e5164a29872e 36-37,39-41,43,52-58
+_test/new-theme.test.js
+  h_05e5164a29872e 69-70
+assets/main.scss
+  h_05e5164a29872e 3159-3164
+tools/fonts/README.md
+  h_05e5164a29872e 3-6,36-41,58-59,61-76,80,97,117-119,127-135
+tools/fonts/subset_fonts.py
+  h_05e5164a29872e 7-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ea93cdb03f42b29d89ffa8e548ce29832bf38245",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
