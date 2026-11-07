@@ -6,7 +6,7 @@ layout: default
   {{ content }}
   <h1 class="si-section">{{ page.list_title | default: 'Writing' | escape }}</h1>
   {% if site.paginate %} {% assign posts = paginator.posts %} {%
-  else %} {% assign posts = site.posts %} {% endif %} {%- if posts != empty -%}
+  else %} {% assign posts = site.posts | where_exp: "post", "post.unlisted != true" %} {% endif %} {%- if posts != empty -%}
   {%- if page.list_title -%}
   <h2 class="post-list-heading">{{ page.list_title }}</h2>
   {%- endif -%} {%- assign date_format = site.minima.date_format | default: "%b

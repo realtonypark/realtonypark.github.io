@@ -69,6 +69,23 @@ origin = site_origin()
 errors = []
 
 
+def unlisted_paths():
+    """Pretty URLs of posts marked unlisted: true (excluded from sitemap by design)."""
+    posts = Path(__file__).resolve().parent.parent / "_posts"
+    paths = set()
+    for file in posts.glob("*.md"):
+        front_matter = file.read_text().split("---", 2)
+        if len(front_matter) < 3 or not re.search(r"^unlisted:\s*true\s*$", front_matter[1], re.M):
+            continue
+        match = re.match(r"(\d{4})-(\d{2})-(\d{2})-(.+)\.md$", file.name)
+        if match:
+            paths.add("/{}/{}/{}/{}/".format(*match.groups()))
+    return paths
+
+
+unlisted = unlisted_paths()
+
+
 def check(condition, message):
     if not condition:
         errors.append(message)
@@ -122,11 +139,12 @@ for path, page in pages.items():
     check(page.values("meta", "property", "og:url") == canonical, f"{path}: social URL mismatch")
     check(bool(page.values("meta", "name", "viewport")), f"{path}: missing viewport")
     if canonical == [origin + path]:
-        indexable.add(origin + path)
         check(page.title not in titles, f"{path}: duplicate title")
         check(tuple(description) not in descriptions, f"{path}: duplicate description")
         titles.add(page.title)
         descriptions.add(tuple(description))
+        if path not in unlisted:
+            indexable.add(origin + path)
     articles = [s for s in page.schemas if s.get("@type") == "BlogPosting"]
     check(not is_post or len(articles) == 1, f"{path}: missing or duplicate article schema")
     if articles:
