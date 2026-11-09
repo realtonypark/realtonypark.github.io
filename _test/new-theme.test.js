@@ -24,22 +24,31 @@ test("new theme is second under quiet and ships hidden intro markup", () => {
   assert.match(intro, /<section class="new-intro" hidden>/);
   for (const key of [
     "tars",
+    "invest",
     "bitcoin",
-    "nupython",
-    "ai",
+    "scratch",
+    "aiplay",
     "moneyball",
     "vertigo",
     "social",
     "basterds",
-    "season",
   ]) {
     assert.match(intro, new RegExp(`data-key="${key}"`));
   }
   assert.match(
     intro,
-    /<a class="new-peek" id="new-peek"[^>]*aria-hidden="true"[^>]*hidden>/,
+    /<div class="new-peek" id="new-peek"[^>]*aria-hidden="true"[^>]*hidden>/,
   );
   assert.match(intro, /\{%- include new-theme\.js -%\}/);
+  const peek = fs.readFileSync(
+    path.join(root, "_includes", "new-theme.js"),
+    "utf8",
+  );
+  // The investing and AI phrases preview two targets side by side.
+  assert.match(peek, /invest: \{ h: 100, panels: \[/);
+  assert.match(peek, /aiplay: \{ h: 340, panels: \[/);
+  assert.match(peek, /market-exam-subject-keeps-changing\.md/);
+  assert.match(peek, /which-llm-writes-best-meeting-note\.md/);
 });
 
 test("new theme styles paper, serif, cards, and fog", () => {
