@@ -25,13 +25,7 @@
       var caption = w.panels.map(function (p) {
         return p.title + ", " + p.meta;
       }).join(" / ");
-      // Text nodes only: the link may embed an icon whose title is not
-      // part of its name.
-      var name = "";
-      for (var n = a.firstChild; n; n = n.nextSibling) {
-        if (n.nodeType === 3) name += n.textContent;
-      }
-      a.setAttribute("aria-label", name.trim() + ": " + caption);
+      a.setAttribute("aria-label", a.textContent + ": " + caption);
       a.style.setProperty("--h", w.h);
     })(links[i]);
   }
@@ -80,6 +74,9 @@
     while (peek.firstChild) peek.removeChild(peek.firstChild);
     panels.forEach(function (p) {
       var a = el("a", "qp-panel");
+      // Preview only: keyboard users activate the word link itself, so
+      // panels never join the tab order, open or closed.
+      a.tabIndex = -1;
       a.href = p.href;
       if (/^https?:/.test(p.href)) {
         a.target = "_blank";
@@ -164,8 +161,6 @@
     buildPanels(w.panels);
     peek.style.setProperty("--h", w.h);
     peek.style.setProperty("--tilt", ((w.h % 5) - 2) * 0.45 + "deg");
-    if (lastPointer === "touch") peek.classList.add("is-touch");
-    else peek.classList.remove("is-touch");
     place(link, clientX);
     requestAnimationFrame(function () { peek.classList.add("is-open"); });
   }
@@ -173,7 +168,7 @@
   function hide() {
     if (active) active.classList.remove("is-active");
     active = null;
-    peek.classList.remove("is-open", "is-touch");
+    peek.classList.remove("is-open");
   }
 
   document.addEventListener("pointerdown", function (e) {
@@ -195,6 +190,15 @@
     if (e.relatedTarget && a.contains(e.relatedTarget)) return;
     hideTimer = setTimeout(hide, 60);
   });
+  // The open card is clickable: moving onto it cancels the hide.
+  peek.addEventListener("pointerenter", function (e) {
+    if (e.pointerType === "touch") return;
+    clearTimeout(hideTimer);
+  });
+  peek.addEventListener("pointerleave", function (e) {
+    if (e.pointerType === "touch") return;
+    hideTimer = setTimeout(hide, 60);
+  });
   main.addEventListener("focusin", function (e) {
     var a = keyLink(e.target);
     if (!a) return;
@@ -211,11 +215,12 @@
   });
 
   // Touch: first tap shows the preview, tapping a panel (or the same word
-  // again for its primary link) follows the link.
+  // again for its primary link) follows the link. Keyboard activation
+  // (detail 0) always navigates, even after touch input.
   main.addEventListener("click", function (e) {
     var a = keyLink(e.target);
     if (!a) return;
-    if (lastPointer === "touch" && active !== a) {
+    if (e.detail !== 0 && lastPointer === "touch" && active !== a) {
       e.preventDefault();
       show(a, e.clientX);
     }

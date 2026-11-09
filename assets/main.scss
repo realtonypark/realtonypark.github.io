@@ -2884,14 +2884,6 @@ html[data-design='quiet'] {
       background-color: oklch(var(--ul-l) var(--ul-c) var(--h, 150) / var(--wash-a));
     }
   }
-  .qilinked a[data-key="tars"] { white-space: nowrap; }
-  .qi-logo {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
-    vertical-align: middle;
-  }
   .qilinked a:focus-visible {
     outline: 2px solid oklch(var(--ul-l) var(--ul-c) var(--h, 150));
     outline-offset: 2px;
@@ -2918,8 +2910,8 @@ html[data-design='quiet'] {
   .qpeek.is-open {
     opacity: 1;
     transform: translateY(0) rotate(var(--tilt, -1deg));
+    pointer-events: auto;
   }
-  .qpeek.is-touch { pointer-events: auto; }
 
   .qp-panel {
     display: grid;
@@ -2931,8 +2923,9 @@ html[data-design='quiet'] {
   }
 
   // Paired panels share the margin card, so each narrows to fit beside
-  // the centered column at desktop widths.
-  .qpeek.qp-pair .qp-panel { width: 150px; }
+  // the centered column at desktop widths. Stacked compact panels keep
+  // full width.
+  .qpeek.qp-pair:not(.qp-compact) .qp-panel { width: 150px; }
 
   .qp-pic {
     display: block;

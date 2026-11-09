@@ -192,7 +192,7 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(home, /<section class="single-index" hidden>/);
   assert.match(home, /<p class="si-updated" aria-hidden="true">&nbsp;<\/p>/);
   assert.match(home, /data-key="tars"/);
-  assert.match(home, /\{% include social\/tars\.svg %\}Tars Discovery/);
+  assert.doesNotMatch(home, /tars\.svg/);
   assert.doesNotMatch(home, /qi-blurb/);
   assert.doesNotMatch(home, /qi-motto/);
   assert.match(home, /<div class="qpeek" id="qpeek"[^>]*hidden>/);
@@ -203,6 +203,10 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   );
   assert.match(peek, /tars: \{ h: 220, panels: \[/);
   assert.doesNotMatch(peek, /invest: \{/);
+  assert.match(peek, /a\.tabIndex = -1;/);
+  assert.match(peek, /e\.detail !== 0 && lastPointer === "touch"/);
+  assert.match(peek, /peek\.addEventListener\("pointerenter"/);
+  assert.match(peek, /peek\.addEventListener\("pointerleave"/);
   assert.match(layout, /<span class="si-year" hidden>/);
   assert.match(layout, /data-short="\{\{ post\.date \| date: '%b %-d' \}\}"/);
   // The Evanston clock footer is gone; quiet keeps only the hairline rule.
@@ -213,7 +217,8 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
   assert.match(styles, /\.qilinked a \{[\s\S]*?font-weight: 500;/);
   assert.match(styles, /\.qilinked a \{[\s\S]*?text-decoration-color: #d9d9d9;/);
-  assert.match(styles, /\.qi-logo \{[\s\S]*?width: 16px;/);
+  assert.match(styles, /\.qpeek\.is-open \{[\s\S]*?pointer-events: auto;/);
+  assert.match(styles, /\.qpeek\.qp-pair:not\(\.qp-compact\) \.qp-panel \{ width: 150px; \}/);
   assert.match(styles, /\.qpeek \{[\s\S]*?position: fixed;/);
   assert.match(styles, /\.qp-panel \{[\s\S]*?width: 208px;/);
   // One "Aa" button opens the theme list everywhere; the active TOC entry
