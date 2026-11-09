@@ -49,7 +49,7 @@
   "unicode_range": "U+A0-B6, U+B8-D6, U+D8-148, U+14A-17E"
  },
  "spectral-400-core.woff2": {
-  "bytes": 7972,
+  "bytes": 7984,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -61,7 +61,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-400-ext.woff2": {
-  "bytes": 9948,
+  "bytes": 9936,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -72,7 +72,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-500-core.woff2": {
-  "bytes": 8656,
+  "bytes": 8664,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -84,7 +84,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-500-ext.woff2": {
-  "bytes": 10340,
+  "bytes": 10364,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -107,7 +107,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-600-ext.woff2": {
-  "bytes": 10456,
+  "bytes": 10420,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -118,7 +118,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-700-core.woff2": {
-  "bytes": 8752,
+  "bytes": 8724,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -130,7 +130,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-700-ext.woff2": {
-  "bytes": 10428,
+  "bytes": 10412,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -141,7 +141,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-italic400-core.woff2": {
-  "bytes": 8524,
+  "bytes": 8528,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -153,7 +153,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-italic400-ext.woff2": {
-  "bytes": 10612,
+  "bytes": 10608,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -164,7 +164,7 @@
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
  },
  "spectral-italic500-core.woff2": {
-  "bytes": 9340,
+  "bytes": 9368,
   "glyphs": 133,
   "gsub": [
    "liga",
@@ -176,7 +176,7 @@
   "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+2191"
  },
  "spectral-italic500-ext.woff2": {
-  "bytes": 11044,
+  "bytes": 11056,
   "glyphs": 322,
   "gsub": [
    "locl"
@@ -185,5 +185,97 @@
    "kern"
   ],
   "unicode_range": "U+A0-AC, U+AE-B6, U+B8-D6, U+D8-148, U+14A-17F"
+ },
+ "newsreader-var-core.woff2": {
+  "bytes": 82084,
+  "glyphs": 129,
+  "gsub": [
+   "liga",
+   "rvrn"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A"
+ },
+ "newsreader-var-ext.woff2": {
+  "bytes": 83288,
+  "glyphs": 291,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-B6, U+B8-D6, U+D8-131, U+134-148, U+14A-17E"
+ },
+ "newsreader-italic-var-core.woff2": {
+  "bytes": 93192,
+  "glyphs": 129,
+  "gsub": [
+   "liga",
+   "rvrn"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A"
+ },
+ "newsreader-italic-var-ext.woff2": {
+  "bytes": 93740,
+  "glyphs": 291,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-B6, U+B8-D6, U+D8-131, U+134-148, U+14A-17E"
+ },
+ "plexsanscondensed-400-core.woff2": {
+  "bytes": 7176,
+  "glyphs": 112,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+20BF, U+2191"
+ },
+ "plexsanscondensed-400-ext.woff2": {
+  "bytes": 10304,
+  "glyphs": 327,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-B6, U+B8-D6, U+D8-17F"
+ },
+ "plexsanscondensed-500-core.woff2": {
+  "bytes": 7244,
+  "glyphs": 112,
+  "gsub": [
+   "liga",
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+20-7E, U+B7, U+D7, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2039-203A, U+20BF, U+2191"
+ },
+ "plexsanscondensed-500-ext.woff2": {
+  "bytes": 10348,
+  "glyphs": 327,
+  "gsub": [
+   "locl"
+  ],
+  "gpos": [
+   "kern"
+  ],
+  "unicode_range": "U+A0-B6, U+B8-D6, U+D8-17F"
  }
 }

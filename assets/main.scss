@@ -2859,3 +2859,586 @@ html[data-design='quiet'] {
     .site-footer { margin-top: 48px; }
   }
 }
+
+/**
+ * New — second theme under Quiet. A mist-paper letter: one left-set column
+ * of Newsreader serif, each linked phrase underlined in its own hue, a
+ * snapshot card beside the hovered word, and a treeline photograph rising
+ * out of the foot of the page. Light only: these vars outrank the :root
+ * dark block by specificity, so the paper never inverts.
+ */
+html[data-design='new'] {
+  --bg: #ebf0eb;
+  --text: #1b2420;
+  --heading: #1b2420;
+  --link: #1b2420;
+  --link-hover: #1b2420;
+  --accent: #3f5e47;
+  --meta: #5d6963;
+  --muted: #5d6963;
+  --box-bg: #f8faf7;
+  --hairline: rgba(27, 36, 32, 0.14);
+  --lead: #3f5e47;
+  --ul-l: 0.58;
+  --ul-c: 0.125;
+  --wash-a: 0.16;
+  --q-pill-bg: #dde8dd;
+  --q-pill-text: #3f5e47;
+
+  font-size: 16px;
+  color-scheme: light;
+  background: var(--bg);
+}
+
+html[data-design='new'] body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+}
+
+// Treeline foot: an owned photograph, tamed toward mist, fading out of the
+// paper instead of sitting as a rectangle. Content stacks above it.
+html[data-design='new'] body::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  height: max(73.1vw, 480px);
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(235, 240, 235, 0.9), rgba(235, 240, 235, 0.45) 45%, rgba(235, 240, 235, 0.25)),
+    url('/assets/new-theme/fog-1800.jpg') center bottom / cover no-repeat;
+  filter: saturate(0.5) brightness(1.05);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 22%);
+}
+
+html[data-design='new'] {
+  // Header above content so the open theme menu never slides under text.
+  .site-header {
+    position: relative;
+    z-index: 3;
+  }
+  main.page-content,
+  .site-footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--heading);
+  }
+
+  a {
+    color: var(--text);
+    &:visited { color: var(--text); }
+  }
+
+  ::selection { background: color-mix(in srgb, var(--lead) 22%, transparent); }
+
+  // --- Column: 36rem, left-set ---
+  .wrapper {
+    width: 100%;
+    max-width: 36rem;
+    margin-left: max(20px, 7vw);
+    margin-right: 24px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .toc-wrapper { max-width: none; }
+  .page-content { padding: 0; }
+
+  // --- Header: keep nav and the Aa toggle, drop the chrome ---
+  .site-header {
+    padding: clamp(56px, 14vh, 140px) 0 0;
+    min-height: 0;
+    border-top: 0;
+    border-bottom: 0;
+    background: transparent;
+  }
+
+  .site-header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .site-title {
+    float: none;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-decoration: none;
+    &, &:visited, &:hover { color: var(--heading); }
+  }
+
+  .header-actions { float: none; margin: 0 0 0 auto; }
+
+  .site-nav .page-link {
+    color: var(--muted);
+    &:hover { color: var(--text); }
+  }
+
+  .design-toggle {
+    padding: 3px;
+    color: var(--muted);
+    &:hover, &:focus-visible { color: var(--text); }
+  }
+
+  // --- Intro ---
+  .home > p:first-child,
+  .post-rail { display: none; }
+
+  .new-intro {
+    display: grid;
+    gap: 0.85em;
+    margin: 0;
+    padding: 0 0 8px;
+    font-size: unquote('clamp(1.42rem, 1.05rem + 1.55vw, 2.05rem)');
+  }
+
+  .ni-lead,
+  .ni-blurb {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 360;
+    font-variation-settings: 'opsz' 28;
+    line-height: 1.5;
+    letter-spacing: -0.003em;
+    text-wrap: pretty;
+    hyphens: manual;
+  }
+
+  .ni-hi {
+    font-style: italic;
+    font-weight: 340;
+    color: var(--lead);
+  }
+
+  .ni-contact {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+  .ni-contact a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--muted) 45%, transparent);
+    &:hover { color: var(--text); text-decoration-color: var(--text); }
+  }
+
+  .linked a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: oklch(calc(var(--ul-l) + var(--dl, 0)) var(--c, var(--ul-c)) var(--h, 150));
+    text-decoration-thickness: 0.075em;
+    text-underline-offset: 0.2em;
+    text-decoration-skip-ink: auto;
+    border-radius: 0.12em;
+    transition: background-color 140ms ease, text-decoration-thickness 140ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .linked a:hover,
+  .linked a:focus-visible,
+  .linked a.is-active {
+    background-color: oklch(calc(var(--ul-l) + var(--dl, 0)) var(--c, var(--ul-c)) var(--h, 150) / var(--wash-a));
+    text-decoration-thickness: 0.12em;
+  }
+  .linked a:focus-visible {
+    outline: 2px solid oklch(calc(var(--ul-l) + var(--dl, 0)) var(--c, var(--ul-c)) var(--h, 150));
+    outline-offset: 2px;
+  }
+
+  // --- Snapshot card ---
+  .new-peek {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 248px;
+    z-index: 10;
+    display: grid;
+    gap: 0;
+    padding: 8px 8px 12px;
+    background: var(--box-bg);
+    border: 1px solid var(--hairline);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(20, 22, 30, 0.08), 0 14px 34px -10px rgba(20, 22, 30, 0.32);
+    color: var(--text);
+    text-decoration: none;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px) rotate(var(--tilt, -1deg));
+    transition: opacity 130ms ease, transform 160ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+  .new-peek.is-open {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--tilt, -1deg));
+  }
+  .new-peek.is-touch { pointer-events: auto; }
+
+  // A lone panel dissolves into the card; paired panels stand side by
+  // side, each linking its own target.
+  .np-panel { display: contents; color: inherit; text-decoration: none; }
+  .new-peek.np-pair { width: auto; grid-auto-flow: column; gap: 12px; }
+  .np-pair .np-panel { display: grid; align-content: start; width: 208px; }
+
+  // The frame takes the image's shape from its declared size before the
+  // file arrives, so the card never grows mid-load.
+  .new-peek .np-pic {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-height: 360px;
+    overflow: hidden;
+    background: var(--hairline);
+    border-radius: 1px;
+  }
+  .new-peek .np-pic[hidden] { display: none; }
+  .new-peek img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .new-peek .np-t {
+    display: block;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    font-variation-settings: 'opsz' 18;
+    padding: 14px 4px 0;
+    text-wrap: balance;
+  }
+  .new-peek .np-m {
+    display: grid;
+    justify-items: start;
+    gap: 5px;
+    padding: 4px 4px 0;
+    font-family: 'IBM Plex Sans Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  .new-peek .np-m > span:first-child { color: var(--muted); }
+  .new-peek .np-src {
+    color: oklch(calc(var(--ul-l) + var(--dl, 0)) var(--c, var(--ul-c)) var(--h, 150));
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    white-space: nowrap;
+  }
+  .new-peek .np-src:empty { display: none; }
+  .new-peek .np-src .np-ext {
+    width: 0.8em;
+    height: 0.8em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  // Narrow screens: a short strip just above the word (below it near the
+  // top of the screen), pointing at the word.
+  .new-peek.np-compact {
+    box-sizing: border-box;
+    width: max-content;
+    max-width: unquote('min(340px, calc(100vw - 28px))');
+    grid-template-columns: 64px auto;
+    grid-template-rows: 1fr auto auto 1fr;
+    column-gap: 11px;
+    padding: 6px 12px 6px 6px;
+  }
+  .new-peek.np-compact { transform: translateY(4px); }
+  .new-peek.np-compact.is-open { transform: none; }
+  .new-peek.np-compact .np-pic {
+    grid-row: 1 / -1;
+    width: 64px;
+    height: 64px;
+    aspect-ratio: auto !important;
+  }
+  .new-peek.np-compact .np-t { grid-row: 2; grid-column: 2; padding: 0; font-size: 1rem; }
+  .new-peek.np-compact .np-m { grid-row: 3; grid-column: 2; padding: 3px 0 0; gap: 2px; font-size: 0.66rem; }
+  // Text-only cards have no thumbnail: span the reserved image column
+  // instead of leaving a blank gutter.
+  .new-peek.np-compact:not(.np-pair):has(.np-pic[hidden]) .np-t,
+  .new-peek.np-compact:not(.np-pair):has(.np-pic[hidden]) .np-m { grid-column: 1 / -1; }
+
+  // Paired panels stack on narrow screens; each becomes its own strip.
+  .new-peek.np-compact.np-pair { grid-auto-flow: row; grid-template-columns: none; grid-template-rows: none; }
+  .np-compact.np-pair .np-panel {
+    display: grid;
+    grid-template-columns: 64px auto;
+    grid-template-rows: auto auto;
+    column-gap: 11px;
+    width: auto;
+  }
+  .np-compact.np-pair .np-t { grid-row: 1; grid-column: 2; padding: 0; font-size: 1rem; }
+  .np-compact.np-pair .np-m { grid-row: 2; grid-column: 2; padding: 3px 0 0; gap: 2px; font-size: 0.66rem; }
+  .np-compact.np-pair .np-panel:has(.np-pic[hidden]) .np-t,
+  .np-compact.np-pair .np-panel:has(.np-pic[hidden]) .np-m { grid-column: 1 / -1; }
+  .new-peek.np-compact::after {
+    content: '';
+    position: absolute;
+    left: unquote('calc(var(--ax, 50%) - 5px)');
+    bottom: -6px;
+    width: 10px;
+    height: 10px;
+    background: var(--box-bg);
+    border-right: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    transform: rotate(45deg);
+  }
+  .new-peek.np-compact.np-below::after {
+    bottom: auto;
+    top: -6px;
+    border: 0;
+    border-left: 1px solid var(--hairline);
+    border-top: 1px solid var(--hairline);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .new-peek, .linked a { transition: none; }
+    .new-peek, .new-peek.is-open { transform: none; }
+  }
+
+  // --- Index list: titles and dates, no excerpts ---
+  ul.post-list {
+    margin: 56px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .post-list-item {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--hairline);
+    scroll-margin-top: 0;
+  }
+
+  .post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+    padding: 14px 0;
+  }
+
+  .title-meta,
+  .post-meta-row { display: contents; }
+
+  .post-heading {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .post-link {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    text-decoration: none;
+    &:visited, &:hover { color: var(--text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  }
+
+  .post-list-item.is-featured .post-link::after {
+    content: 'Featured';
+    margin-left: 8px;
+    padding: 1px 9px;
+    border-radius: 999px;
+    background: var(--q-pill-bg);
+    color: var(--q-pill-text);
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'Inter', system-ui, sans-serif;
+    white-space: nowrap;
+    vertical-align: 2px;
+  }
+
+  .post-list-date {
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .post-tags,
+  .post-excerpt { display: none; }
+
+  .home { padding-bottom: 30vh; }
+
+  // --- Posts: paper, serif, same ink; header stays the way back ---
+  body.is-post {
+    .site-header { padding-top: 24px; }
+  }
+
+  .post { padding-top: 0; }
+
+  .post-header {
+    display: flex;
+    flex-direction: column;
+    margin: 44px 0 32px;
+  }
+
+  .post-title {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+  }
+
+  .post-header .post-meta {
+    margin: 10px 0 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--muted);
+    a { color: var(--muted); &:hover { color: var(--text); } }
+  }
+
+  body.is-post {
+    .post-meta-sep {
+      display: inline;
+      margin: 0 6px;
+    }
+    .post-design {
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  .post-design-toggle {
+    padding: 3px;
+    border: 0;
+    background: none;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: var(--muted);
+    cursor: pointer;
+    &:hover, &:focus-visible { color: var(--text); }
+  }
+
+  .post-content {
+    font-size: 19px;
+    line-height: 1.65;
+    h1, h2, h3 { letter-spacing: -0.005em; }
+    a {
+      text-decoration: underline;
+      text-decoration-color: oklch(var(--ul-l) var(--ul-c) 150);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      border-radius: 0.12em;
+      &:hover { background-color: oklch(var(--ul-l) var(--ul-c) 150 / var(--wash-a)); }
+    }
+    blockquote { border-left-color: var(--hairline); color: var(--muted); }
+    code { background: color-mix(in srgb, var(--text) 7%, transparent); }
+  }
+
+  // --- Footer: short rule, quiet links ---
+  .site-footer {
+    margin-top: 64px;
+    padding: 0 0 96px;
+    border-top: 0;
+    background: transparent;
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .site-footer .wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    &::before {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 1px;
+      margin-bottom: 38px;
+      background: var(--hairline);
+    }
+  }
+
+  .site-footer a { color: var(--muted); &:hover { color: var(--text); } }
+
+  // Slim footer: name and email on one line, social icons below. The
+  // address column stays hidden.
+  .nd-footer { display: block; }
+  .footer-col {
+    float: none;
+    width: auto;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .footer-col + .footer-col { display: none; }
+  .contact-list {
+    margin: 0 0 12px;
+    padding: 0;
+    li { display: inline; }
+    li + li::before { content: ' · '; }
+  }
+  .social-media-list {
+    display: flex;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+  }
+  .social-media-list svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: var(--muted);
+  }
+  .social-media-list a:hover svg { fill: var(--text); }
+}
+
+@media (max-width: 600px) {
+  html[data-design='new'] {
+    .wrapper {
+      width: auto;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .site-header { padding-top: 48px; }
+    .post-header { margin: 32px 0 24px; }
+    .post-title { font-size: 28px; }
+    .post-heading, .post-link { font-size: 18px; }
+
+    .post-content {
+      font-size: 18px;
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    .home { padding-bottom: 22vh; }
+    .site-footer { margin-top: 48px; padding-bottom: 64px; }
+  }
+}

@@ -157,6 +157,7 @@ function menuItem(menu, design) {
 
 test("restores the persisted design, defaulting to quiet", () => {
   assert.equal(bootController("quiet").dataset.design, "quiet");
+  assert.equal(bootController("new").dataset.design, "new");
   assert.equal(bootController("classic").dataset.design, "classic");
   assert.equal(bootController("modern").dataset.design, "modern");
   assert.equal(bootController("").dataset.design, undefined);
@@ -170,8 +171,9 @@ test("quiet is first; the menu applies the chosen design and persists it", () =>
 
   assert.equal(state.dataset.design, "quiet");
   assert.match(button.getAttribute("aria-label"), /Quiet/);
-  assert.equal(menu.children.length, 4);
+  assert.equal(menu.children.length, 5);
   assert.equal(menu.children[0].getAttribute("data-design-value"), "quiet");
+  assert.equal(menu.children[1].getAttribute("data-design-value"), "new");
 
   button.events.click({});
   assert.equal(button.getAttribute("aria-expanded"), "true");

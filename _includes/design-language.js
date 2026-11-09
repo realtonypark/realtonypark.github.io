@@ -10,8 +10,8 @@
     }
   }
 
-  var designs = ["quiet", "", "classic", "modern"];
-  var labels = ["Quiet", "Soft Classic", "Classic", "Modern"];
+  var designs = ["quiet", "new", "", "classic", "modern"];
+  var labels = ["Quiet", "New", "Soft Classic", "Classic", "Modern"];
   var defaultDesign = "quiet";
 
   function writePreference(design) {
