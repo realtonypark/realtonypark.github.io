@@ -217,6 +217,7 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
   assert.match(styles, /\.qilinked a \{[\s\S]*?font-weight: 500;/);
   assert.match(styles, /\.qilinked a \{[\s\S]*?text-decoration-color: #d9d9d9;/);
+  assert.match(styles, /\.qi-contact a \{ font-weight: 500; \}/);
   assert.match(styles, /\.qpeek\.is-open \{[\s\S]*?pointer-events: auto;/);
   assert.match(styles, /\.qpeek\.qp-pair:not\(\.qp-compact\) \.qp-panel \{ width: 150px; \}/);
   assert.match(styles, /\.qpeek \{[\s\S]*?position: fixed;/);
