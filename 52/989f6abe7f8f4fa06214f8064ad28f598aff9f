@@ -1,0 +1,22 @@
+_includes/quiet-peek.js
+  h_05e5164a29872e 2,28-34,40
+_includes/single-index.html
+  h_05e5164a29872e 3-4
+_includes/social/tars.svg
+  h_05e5164a29872e 1
+_test/posts-layout.test.js
+  h_05e5164a29872e 193-197,204-205,214-216
+assets/main.scss
+  h_05e5164a29872e 2871-2874,2876-2878,2883,2887-2894
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "52989f6abe7f8f4fa06214f8064ad28f598aff9f",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
