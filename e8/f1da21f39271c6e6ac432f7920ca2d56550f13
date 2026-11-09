@@ -1,0 +1,20 @@
+_includes/new-intro.html
+  h_05e5164a29872e 4,9
+_includes/new-theme.js
+  h_05e5164a29872e 6-7,9-37,51-54,60,69-72,87,95-143,156-158,163,187,223-230,236-237
+_test/new-theme.test.js
+  h_05e5164a29872e 27,29-30,40,43-51
+assets/main.scss
+  h_05e5164a29872e 3098-3103,3186-3201
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e8f1da21f39271c6e6ac432f7920ca2d56550f13",
+  "prompts": {},
+  "humans": {
+    "h_05e5164a29872e": {
+      "author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
