@@ -1,5 +1,5 @@
 (function () {
-  var blurb = document.getElementById("quiet-blurb");
+  var blurb = document.getElementById("qi-lead");
   var main = document.querySelector("main");
   if (!blurb || !main) return;
 
@@ -8,32 +8,6 @@
   var WORKS = {
     tars: { h: 220, panels: [
       { title: "Tars Discovery", meta: "Space-native robots", img: "/assets/astronaut.webp", size: [2216, 1660], href: "https://tarsdiscovery.com", src: "Website" }
-    ] },
-    invest: { h: 100, panels: [
-      { title: "Investment Strategy Memo", meta: "Investing · 2026", href: "{% link _posts/2026-09-24-investment-strategy-memo.md %}", src: "Post" },
-      { title: "Investing Is an Exam Where the Subject Keeps Changing", meta: "Investing · 2026", href: "{% link _posts/2026-08-15-market-exam-subject-keeps-changing.md %}", src: "Post" }
-    ] },
-    bitcoin: { h: 55, panels: [
-      { title: "Building a (Mini) Bitcoin", meta: "Rust full node · 2026", img: "/assets/new-theme/bitcoin-960.png", size: [960, 960], href: "{% link _posts/2026-07-17-building-a-mini-bitcoin.md %}", src: "Post" }
-    ] },
-    scratch: { h: 265, panels: [
-      { title: "Building a Python Interpreter in C", meta: "nuPython · 2026", img: "/assets/new-theme/nupython-960.png", size: [960, 725], href: "{% link _posts/2026-02-02-building-python-interpreter-in-c.md %}", src: "Post" }
-    ] },
-    aiplay: { h: 340, panels: [
-      { title: "Steal the Aesthetic of Any Image", meta: "Playing with AI · 2026", img: "/assets/posts/ai-aesthetic/wafer-inspiration.jpg", size: [1600, 1117], href: "{% link _posts/2026-09-07-clone-aesthetic-image-online.md %}", src: "Post" },
-      { title: "Which LLM writes the best meeting note?", meta: "Meeting-Note-Bench · 2026", img: "/assets/posts/meeting-bench-cover.webp", size: [1920, 1280], href: "{% link _posts/2026-10-21-which-llm-writes-best-meeting-note.md %}", src: "Post" }
-    ] },
-    moneyball: { h: 135, panels: [
-      { title: "Moneyball", meta: "Bennett Miller · 2011", img: "https://upload.wikimedia.org/wikipedia/en/2/2e/Moneyball_Poster.jpg", size: [259, 384], href: "https://en.wikipedia.org/wiki/Moneyball_(film)", src: "Wikipedia" }
-    ] },
-    vertigo: { h: 152, panels: [
-      { title: "The Transfer of Green in Vertigo", meta: "Film essay · 2024", img: "/assets/posts/vertigo.webp", size: [1024, 576], href: "{% link _posts/2024-11-13-the-transfer-of-green-in-vertigo.md %}", src: "Post" }
-    ] },
-    social: { h: 210, panels: [
-      { title: "The Social Network", meta: "David Fincher · 2010", img: "https://upload.wikimedia.org/wikipedia/en/8/8c/The_Social_Network_film_poster.png", size: [259, 384], href: "https://en.wikipedia.org/wiki/The_Social_Network", src: "Wikipedia" }
-    ] },
-    basterds: { h: 18, panels: [
-      { title: "Inglourious Basterds", meta: "Quentin Tarantino · 2009", img: "https://upload.wikimedia.org/wikipedia/en/c/c3/Inglourious_Basterds_poster.jpg", size: [260, 385], href: "https://en.wikipedia.org/wiki/Inglourious_Basterds", src: "Wikipedia" }
     ] }
   };
 
@@ -51,13 +25,19 @@
       var caption = w.panels.map(function (p) {
         return p.title + ", " + p.meta;
       }).join(" / ");
-      a.setAttribute("aria-label", a.textContent + ": " + caption);
+      // Text nodes only: the link may embed an icon whose title is not
+      // part of its name.
+      var name = "";
+      for (var n = a.firstChild; n; n = n.nextSibling) {
+        if (n.nodeType === 3) name += n.textContent;
+      }
+      a.setAttribute("aria-label", name.trim() + ": " + caption);
       a.style.setProperty("--h", w.h);
     })(links[i]);
   }
 
   // Preload previews once idle so the first hover feels instant — but only
-  // while Quiet is active, so other designs never pay the ~2.8 MB.
+  // while Quiet is active, so other designs never pay for the preview.
   var preloaded = false;
   function useQuiet() {
     return document.documentElement.dataset.design === "quiet";

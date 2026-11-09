@@ -190,31 +190,19 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   // Single-index markup ships hidden; only the designs that use it display it.
   assert.match(index, /\{% include single-index\.html %\}/);
   assert.match(home, /<section class="single-index" hidden>/);
-  assert.match(home, /<p class="qi-blurb qilinked" id="quiet-blurb">/);
-  for (const key of [
-    "tars",
-    "invest",
-    "bitcoin",
-    "scratch",
-    "aiplay",
-    "moneyball",
-    "vertigo",
-    "social",
-    "basterds",
-  ]) {
-    assert.match(home, new RegExp(`data-key="${key}"`));
-  }
+  assert.match(home, /<p class="si-updated" aria-hidden="true">&nbsp;<\/p>/);
+  assert.match(home, /data-key="tars"/);
+  assert.match(home, /\{% include social\/tars\.svg %\}Tars Discovery/);
+  assert.doesNotMatch(home, /qi-blurb/);
+  assert.doesNotMatch(home, /qi-motto/);
   assert.match(home, /<div class="qpeek" id="qpeek"[^>]*hidden>/);
   assert.match(home, /\{%- include quiet-peek\.js -%\}/);
   const peek = fs.readFileSync(
     path.join(root, "_includes", "quiet-peek.js"),
     "utf8",
   );
-  // The investing and AI phrases preview two targets side by side.
-  assert.match(peek, /invest: \{ h: 100, panels: \[/);
-  assert.match(peek, /aiplay: \{ h: 340, panels: \[/);
-  assert.match(peek, /market-exam-subject-keeps-changing\.md/);
-  assert.match(peek, /which-llm-writes-best-meeting-note\.md/);
+  assert.match(peek, /tars: \{ h: 220, panels: \[/);
+  assert.doesNotMatch(peek, /invest: \{/);
   assert.match(layout, /<span class="si-year" hidden>/);
   assert.match(layout, /data-short="\{\{ post\.date \| date: '%b %-d' \}\}"/);
   // The Evanston clock footer is gone; quiet keeps only the hairline rule.
@@ -223,7 +211,9 @@ test("quiet design shows the single-index markup and nothing else does", () => {
   assert.match(styles, /html\[data-design='quiet'\] \{\s*--bg: #fdfdfc;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.single-index \{\s*display: block;/);
   assert.match(styles, /html\[data-design='quiet'\][\s\S]*?\.site-nav \{ display: none; \}/);
-  assert.match(styles, /\.qilinked a \{[\s\S]*?background-color: oklch\(/);
+  assert.match(styles, /\.qilinked a \{[\s\S]*?font-weight: 500;/);
+  assert.match(styles, /\.qilinked a \{[\s\S]*?text-decoration-color: #d9d9d9;/);
+  assert.match(styles, /\.qi-logo \{[\s\S]*?width: 16px;/);
   assert.match(styles, /\.qpeek \{[\s\S]*?position: fixed;/);
   assert.match(styles, /\.qp-panel \{[\s\S]*?width: 208px;/);
   // One "Aa" button opens the theme list everywhere; the active TOC entry
