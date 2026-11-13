@@ -1,0 +1,21 @@
+_layouts/posts.html
+  s_5df37f942f0037::t_ea0ceeed941ea8 110-114
+index.md
+  s_5df37f942f0037::t_f140625712a682 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0201a816aa8e94d070a80d88761df509b22e1dac",
+  "prompts": {},
+  "sessions": {
+    "s_5df37f942f0037": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1d2a6-831f-7588-a0f7-fbad207cff79",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
