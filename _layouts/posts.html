@@ -107,4 +107,9 @@ layout: default
     </ul>
   </div>
   {%- endif %} {%- endif -%}
+
+  {%- if page.entity_h1 -%}
+  <!-- Page-owner h1 for search entity clarity; visually hidden, no layout impact -->
+  <h1 style="position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0">Tony Park</h1>
+  {%- endif -%}
 </div>
