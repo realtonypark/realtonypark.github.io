@@ -1,0 +1,19 @@
+_includes/single-index.html
+  s_5df37f942f0037::t_a92a2b2ac52259 6-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "56bae71a22583d716b27a9699a2c9dc2d47a53a8",
+  "prompts": {},
+  "sessions": {
+    "s_5df37f942f0037": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1d2a6-831f-7588-a0f7-fbad207cff79",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
