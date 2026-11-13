@@ -1,0 +1,19 @@
+index.md
+  s_5df37f942f0037::t_0c0c85fe251e08 6-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "95a019833f21e6d6abc22550885878734ab5e1eb",
+  "prompts": {},
+  "sessions": {
+    "s_5df37f942f0037": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1d2a6-831f-7588-a0f7-fbad207cff79",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "realtonypark <realtonypark@gmail.com>"
+    }
+  }
+}
